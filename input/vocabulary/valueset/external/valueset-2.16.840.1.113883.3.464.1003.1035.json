@@ -1,0 +1,55 @@
+{
+  "resourceType": "ValueSet",
+  "id": "2.16.840.1.113883.3.464.1003.1035",
+  "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1035",
+  "identifier": [ {
+    "system": "urn:ietf:rfc:3986",
+    "value": "2.16.840.1.113883.3.464.1003.1035"
+  } ],
+  "version": "20240112",
+  "name": "UnilateralOophorectomy,UnspecifiedLaterality",
+  "title": "Unilateral Oophorectomy, Unspecified Laterality",
+  "status": "active",
+  "experimental": false,
+  "publisher": "NLM",
+  "expansion": {
+    "identifier": "20240502",
+    "timestamp": "2024-05-06T09:32:28-06:00",
+    "contains": [ {
+      "system": "http://snomed.info/sct",
+      "version": "2023-09",
+      "code": "116028008",
+      "display": "Salpingo-oophorectomy (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2023-09",
+      "code": "446598002",
+      "display": "Laparoscopic salpingo-oophorectomy (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2023-09",
+      "code": "446960007",
+      "display": "Laparoscopic salpingo-oophorectomy with conversion to laparotomy (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2023-09",
+      "code": "450487000",
+      "display": "Laparoscopic excision of ovary (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2023-09",
+      "code": "61893009",
+      "display": "Laparoscopic treatment of ectopic pregnancy with oophorectomy (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2023-09",
+      "code": "713285002",
+      "display": "Prophylactic oophorectomy (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "2023-09",
+      "code": "83152002",
+      "display": "Oophorectomy (procedure)"
+    } ]
+  }
+}
