@@ -1,0 +1,48 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "qicore-non-negative-immunization-status",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://hl7.org/fhir/R4/codesystem-event-status.html\"><code>http://hl7.org/fhir/event-status</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-event-status.html#event-status-completed\">completed</a></td><td>Completed</td><td>The event has now concluded.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-event-status.html#event-status-entered-in-error\">entered-in-error</a></td><td>Entered in Error</td><td>This electronic record should never have existed, though it is possible that real-world decisions were based on it.  (If real-world activity has occurred, the status should be &quot;stopped&quot; rather than &quot;entered-in-error&quot;.).</td></tr></table></li></ul></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-wg",
+    "valueCode" : "cqi"
+  }],
+  "url" : "http://hl7.org/fhir/us/qicore/ValueSet/qicore-non-negative-immunization-status",
+  "version" : "6.0.0",
+  "name" : "NonNegativeImmunizationStatus",
+  "title" : "Non-Negative Immunization Status",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2018-12-05T00:00:00+00:00",
+  "publisher" : "HL7 International / Clinical Quality Information",
+  "contact" : [{
+    "name" : "Clinical Quality Information WG",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://www.hl7.org/Special/committees/cqi"
+    }]
+  }],
+  "description" : "This value set defines the set of codes that indicate a non-negated event status for immunization resources (i.e. codes that are not `not-done`)",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "purpose" : "This value set was defined to support the set of event statuses in FHIR that do not explicitly indicate a negative status (i.e. all the codes from the http://hl7.org/fhir/event-status code system that are used for immunization status and that are not `not-done`).",
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/event-status",
+      "concept" : [{
+        "code" : "completed",
+        "display" : "Completed"
+      },
+      {
+        "code" : "entered-in-error",
+        "display" : "Entered in Error"
+      }]
+    }]
+  }
+}
