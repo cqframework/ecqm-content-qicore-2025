@@ -14,13 +14,8 @@
   "publisher": "NLM",
   "expansion": {
     "identifier": "20240502",
-    "timestamp": "2024-05-06T09:32:25-06:00",
+    "timestamp": "",
     "contains": [ {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "442023007",
-      "display": "Venous foot pump, device (physical object)"
-    }, {
       "system": "http://snomed.info/sct",
       "version": "2023-09",
       "code": "442023007",

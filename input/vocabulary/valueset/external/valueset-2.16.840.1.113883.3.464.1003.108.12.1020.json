@@ -14,7 +14,7 @@
   "publisher": "NLM",
   "expansion": {
     "identifier": "20240502",
-    "timestamp": "2024-05-06T09:32:25-06:00",
+    "timestamp": "",
     "contains": [ {
       "system": "http://www.ama-assn.org/go/cpt",
       "version": "2024",
@@ -161,12 +161,12 @@
       "code": "45398",
       "display": "Colonoscopy, flexible; with band ligation(s) (eg, hemorrhoids)"
     }, {
-      "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+      "system": "https://www.cms.gov/research/umls/hcpccs",
       "version": "2024",
       "code": "G0105",
       "display": "Colorectal cancer screening; colonoscopy on individual at high risk"
     }, {
-      "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+      "system": "https://www.cms.gov/research/umls/hcpccs",
       "version": "2024",
       "code": "G0121",
       "display": "Colorectal cancer screening; colonoscopy on individual not meeting criteria for high risk"

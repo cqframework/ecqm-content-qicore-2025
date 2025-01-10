@@ -14,7 +14,7 @@
   "publisher": "NLM",
   "expansion": {
     "identifier": "20240502",
-    "timestamp": "2024-05-06T09:32:29-06:00",
+    "timestamp": "",
     "contains": [ {
       "system": "http://loinc.org",
       "version": "2.76",
