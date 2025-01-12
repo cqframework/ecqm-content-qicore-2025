@@ -5,10 +5,9 @@ Ensure all fluent functions are not referencing any deprecated functions.
 https://oncprojectracking.healthit.gov/support/browse/CQLIT-414
 */
 
+library QICoreCommon version '3.0.000'
 
-library QICoreCommon version '2.1.000'
-
-using QICore version '4.1.1'
+using QICore version '6.0.0'
 
 include FHIRHelpers version '4.4.000'
 
@@ -103,7 +102,6 @@ code "exam": 'exam' from "ObservationCategoryCodes" display 'Exam'
 code "therapy": 'therapy' from "ObservationCategoryCodes" display 'Therapy'
 code "activity": 'activity' from "ObservationCategoryCodes" display 'Activity'
 
-
 context Patient
 
 /* Candidates for FHIRCommon */
@@ -111,7 +109,7 @@ context Patient
 /*
 @description: Returns true if the given condition has a clinical status of active, recurrence, or relapse
 */
-define fluent function isActive(condition Condition):
+define fluent function isActive(condition Choice<"ConditionEncounterDiagnosis", "ConditionProblemsHealthConcerns">):
   condition.clinicalStatus ~ "active"
     or condition.clinicalStatus ~ "recurrence"
     or condition.clinicalStatus ~ "relapse"
@@ -119,7 +117,7 @@ define fluent function isActive(condition Condition):
 /*
 @description: Returns true if the given condition has the given category
 */
-define fluent function hasCategory(condition Condition, category Code):
+define fluent function hasCategory(condition Choice<"ConditionEncounterDiagnosis", "ConditionProblemsHealthConcerns">, category Code):
   exists (condition.category C
     where C ~ category
   )
@@ -127,7 +125,7 @@ define fluent function hasCategory(condition Condition, category Code):
 /*
 @description: Returns true if the given condition is a problem list item.
 */
-define fluent function isProblemListItem(condition Condition):
+define fluent function isProblemListItem(condition Choice<"ConditionEncounterDiagnosis", "ConditionProblemsHealthConcerns">):
   exists (condition.category C
     where C ~ "problem-list-item"
   )
@@ -135,7 +133,7 @@ define fluent function isProblemListItem(condition Condition):
 /*
 @description: Returns true if the given condition is an encounter diagnosis
 */
-define fluent function isEncounterDiagnosis(condition Condition):
+define fluent function isEncounterDiagnosis(condition Choice<"ConditionEncounterDiagnosis", "ConditionProblemsHealthConcerns">):
   exists (condition.category C
     where C ~ "encounter-diagnosis"
   )
@@ -143,7 +141,7 @@ define fluent function isEncounterDiagnosis(condition Condition):
 /*
 @description: Returns true if the given condition is a health concern
 */
-define fluent function isHealthConcern(condition Condition):
+define fluent function isHealthConcern(condition Choice<"ConditionEncounterDiagnosis", "ConditionProblemsHealthConcerns">):
   exists (condition.category C
     where C ~ "health-concern"
   )
@@ -151,7 +149,13 @@ define fluent function isHealthConcern(condition Condition):
 /*
 @description: Returns true if the given observation has the given category
 */
-define fluent function hasCategory(observation Observation, category Code):
+define fluent function hasCategory(observation Choice<"SimpleObservation", 
+"ObservationCancelled",
+"NonPatientObservation",
+"LaboratoryResultObservation",
+"ObservationClinicalResult",
+"ObservationScreeningAssessment">, 
+category Code):
   exists (observation.category C
     where C ~ category
   )
@@ -159,7 +163,12 @@ define fluent function hasCategory(observation Observation, category Code):
 /*
 @description: Returns true if the given observation is a social history observation
 */
-define fluent function isSocialHistory(observation Observation):
+define fluent function isSocialHistory(observation Choice<"SimpleObservation", 
+"ObservationCancelled",
+"NonPatientObservation",
+"LaboratoryResultObservation",
+"ObservationClinicalResult",
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "social-history"
   )
@@ -167,7 +176,12 @@ define fluent function isSocialHistory(observation Observation):
 /*
 @description: Returns true if the given observation is a vital sign
 */
-define fluent function isVitalSign(observation Observation):
+define fluent function isVitalSign(observation Choice<"SimpleObservation", 
+"ObservationCancelled",
+"NonPatientObservation",
+"LaboratoryResultObservation",
+"ObservationClinicalResult",
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "vital-signs"
   )
@@ -175,7 +189,12 @@ define fluent function isVitalSign(observation Observation):
 /*
 @description: Returns true if the given observation is an imaging observation
 */
-define fluent function isImaging(observation Observation):
+define fluent function isImaging(observation Choice<"SimpleObservation", 
+"ObservationCancelled",
+"NonPatientObservation",
+"LaboratoryResultObservation",
+"ObservationClinicalResult",
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "imaging"
   )
@@ -183,15 +202,25 @@ define fluent function isImaging(observation Observation):
 /*
 @description: Returns true if the given observation is a laboratory observation
 */
-define fluent function isLaboratory(observation Observation):
+define fluent function isLaboratory(observation Choice<"SimpleObservation", 
+"ObservationCancelled",
+"NonPatientObservation",
+"LaboratoryResultObservation",
+"ObservationClinicalResult",
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "laboratory"
   )
 
 /*
-@description: REturns true if the given observation is a procedure observation
+@description: Returns true if the given observation is a procedure observation
 */
-define fluent function isProcedure(observation Observation):
+define fluent function isProcedure(observation Choice<"SimpleObservation", 
+"ObservationCancelled",
+"NonPatientObservation",
+"LaboratoryResultObservation",
+"ObservationClinicalResult",
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "procedure"
   )
@@ -199,7 +228,12 @@ define fluent function isProcedure(observation Observation):
 /*
 @description: Returns true if the given observation is a survey observation
 */
-define fluent function isSurvey(observation Observation):
+define fluent function isSurvey(observation Choice<"SimpleObservation", 
+"ObservationCancelled",
+"NonPatientObservation",
+"LaboratoryResultObservation",
+"ObservationClinicalResult",
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "survey"
   )
@@ -207,7 +241,12 @@ define fluent function isSurvey(observation Observation):
 /*
 @description: Returns true if the given observation is an exam observation
 */
-define fluent function isExam(observation Observation):
+define fluent function isExam(observation Choice<"SimpleObservation", 
+"ObservationCancelled",
+"NonPatientObservation",
+"LaboratoryResultObservation",
+"ObservationClinicalResult",
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "exam"
   )
@@ -215,7 +254,12 @@ define fluent function isExam(observation Observation):
 /*
 @description: Returns true if the given observation is a therapy observation
 */
-define fluent function isTherapy(observation Observation):
+define fluent function isTherapy(observation Choice<"SimpleObservation", 
+"ObservationCancelled",
+"NonPatientObservation",
+"LaboratoryResultObservation",
+"ObservationClinicalResult",
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "therapy"
   )
@@ -223,25 +267,20 @@ define fluent function isTherapy(observation Observation):
 /*
 @description: Returns true if the given observation is an activity observation
 */
-define fluent function isActivity(observation Observation):
+define fluent function isActivity(observation Choice<"SimpleObservation", 
+"ObservationCancelled",
+"NonPatientObservation",
+"LaboratoryResultObservation",
+"ObservationClinicalResult",
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "activity"
   )
 
-
-
 /*
 @description: Returns true if the given MedicationRequest has a category of Community
 */
-define fluent function isCommunity(medicationRequest MedicationRequest):
-  exists (medicationRequest.category C
-    where C ~ Community
-  )
-
-/*
-@description: Returns true if the given MedicationRequest has a category of Community
-*/
-define fluent function isCommunity(medicationRequest MedicationNotRequested):
+define fluent function isCommunity(medicationRequest Choice<MedicationRequest, MedicationNotRequested>):
   exists (medicationRequest.category C
     where C ~ Community
   )
@@ -249,28 +288,18 @@ define fluent function isCommunity(medicationRequest MedicationNotRequested):
 /*
 @description: Returns true if the given MedicationRequest has a category of Discharge
 */
-define fluent function isDischarge(medicationRequest MedicationRequest):
-  exists (medicationRequest.category C
-    where C ~ Discharge
-  )
-
-/*
-@description: Returns true if the given MedicationRequest has a category of Discharge
-*/
-define fluent function isDischarge(medicationRequest MedicationNotRequested):
+define fluent function isDischarge(medicationRequest Choice<MedicationRequest, MedicationNotRequested>):
   exists (medicationRequest.category C
     where C ~ Discharge
   )
 
 /*
 @description: Returns true if the given DeviceRequest is a negation (i.e. do not perform this order)
+@deprecated: This function is no longer required in QICore 6.0.0 and above
 */
 define fluent function doNotPerform(deviceRequest DeviceRequest):
-  singleton from (
-    deviceRequest.modifierExtension E
-      where E.url = 'http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-doNotPerform'
-      return E.value as Boolean
-  )
+  // KNOWN ISSUE: The translator reports this as an error but the execution still works, this is under investigation
+  deviceRequest.doNotPerform
 
 /*
 @description: Normalizes a value that is a choice of timing-valued types to an equivalent interval
@@ -360,7 +389,7 @@ which the abatement occurred. The result is an interval from the date the patien
 before one year later than the date the patient turned the ending age of the quantity interval.
 @deprecated: This function is deprecated. Use the fluent function `abatementInterval()` instead.
 */
-define function ToAbatementInterval(condition Condition):
+define function ToAbatementInterval(condition Choice<"ConditionEncounterDiagnosis", "ConditionProblemsHealthConcerns">):
 	if condition.abatement is DateTime then
 	  Interval[condition.abatement as DateTime, condition.abatement as DateTime]
 	else if condition.abatement is Quantity then
@@ -383,7 +412,7 @@ If the abatement is represented as a Quantity Interval, the quantities are expec
 which the abatement occurred. The result is an interval from the date the patient turned the starting age of the quantity interval, and ending immediately
 before one year later than the date the patient turned the ending age of the quantity interval.
 */
-define fluent function abatementInterval(condition Condition):
+define fluent function abatementInterval(condition Choice<"ConditionEncounterDiagnosis", "ConditionProblemsHealthConcerns">):
 	if condition.abatement is DateTime then
 	  Interval[condition.abatement as DateTime, condition.abatement as DateTime]
 	else if condition.abatement is Quantity then
@@ -403,7 +432,7 @@ onset to abatement as specified in the given Condition. If the condition is acti
 interval will have a closed ending boundary. Otherwise, the resulting interval will have an open ending boundary.
 @deprecated: This function is deprecated. Use the `prevalenceInterval()` fluent function instead
 */
-define function ToPrevalenceInterval(condition Condition):
+define function ToPrevalenceInterval(condition Choice<"ConditionEncounterDiagnosis", "ConditionProblemsHealthConcerns">):
 if condition.clinicalStatus ~ "active"
   or condition.clinicalStatus ~ "recurrence"
   or condition.clinicalStatus ~ "relapse" then
@@ -421,7 +450,7 @@ else
 onset to abatement as specified in the given Condition. If the condition is active, or has an abatement date the resulting 
 interval will have a closed ending boundary. Otherwise, the resulting interval will have an open ending boundary.
 */
-define fluent function prevalenceInterval(condition Condition):
+define fluent function prevalenceInterval(condition Choice<"ConditionEncounterDiagnosis", "ConditionProblemsHealthConcerns">):
 if condition.clinicalStatus ~ "active"
   or condition.clinicalStatus ~ "recurrence"
   or condition.clinicalStatus ~ "relapse" then
@@ -440,7 +469,7 @@ a single-server environment to trace references. However, this function does not
 or distinguish the base of the given url, and so cannot be used safely in multi-server environments.
 @deprecated: This function is deprecated. Use the fluent function `getId()` instead
 */
-define function GetId(uri String ):
+define function GetId(uri String):
   Last(Split(uri, '/'))
 
 /*
@@ -451,6 +480,45 @@ or distinguish the base of the given url, and so cannot be used safely in multi-
 */
 define fluent function getId(uri String):
   Last(Split(uri, '/'))
+
+/*
+@description: Returns true if the given reference is to the given resource
+@comment: Returns true if the `id` element of the given resource exactly equals the tail of the given reference.
+NOTE: This function assumes resources from the same source server.
+*/
+define fluent function references(reference Reference, resource Resource):
+  resource.id = Last(Split(reference.reference, '/'))  
+
+/*
+@description: Returns true if the given reference is to the given resourceId
+@comment: Returns true if the `resourceId` parameter exactly equals the tail of the given reference.
+NOTE: This function assumes resources from the same source server.
+*/
+define fluent function references(reference Reference, resourceId String):
+  resourceId = Last(Split(reference.reference, '/'))
+
+/*
+@description: Returns true if any of the given references are to the given resource
+@comment: Returns true if the `id` element of the given resource exactly equals the tail of any of the given references.
+NOTE: This function assumes resources from the same source server.
+*/
+define fluent function references(references List<Reference>, resource Resource):
+  exists (references R where R.references(resource))
+  
+/*
+@description: Returns true if any of the given references are to the given resourceId
+@comment: Returns true if the `resourceId` parameter exactly equals the tail of any of the given references.
+NOTE: This function assumes resources from the same source server.
+*/
+define fluent function references(references List<Reference>, resourceId String):
+  exists (references R where R.references(resourceId))
+
+/*
+@description: Returns true if the given code is in the given codeList
+@comment: Returns true if the `code` is equivalent to any of the codes in the given `codeList`, false otherwise.
+*/
+define fluent function includesCode(codeList List<Concept>, code Code):
+  exists (codeList C where C ~ code)
 
 /*
 @description: Given an interval, return true if the interval has a starting boundary specified

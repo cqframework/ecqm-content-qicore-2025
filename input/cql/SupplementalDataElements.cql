@@ -4,13 +4,13 @@ Updated FHIRHelpers version to 4.4.000.
 Added Male and Female codes and related AdministrativeGender code system
 Updated SDE Sex definition to use added codes from FHIR administrative-gender code system.
 */
-library SupplementalDataElements version '3.5.000'
+library SupplementalDataElements version '4.0.000'
 
-using QICore version '4.1.1'
+using QICore version '6.0.0'
 
 include FHIRHelpers version '4.4.000' called FHIRHelpers
 
-codesystem "AdministrativeGender": 'http://hl7.org/fhir/administrative-gender'
+codesystem "AdministrativeGender": 'http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender'
 
 valueset "Ethnicity": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.837'
 valueset "ONC Administrative Sex": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1'
@@ -23,6 +23,7 @@ code "F": 'F' from "AdministrativeGender" display 'Female'
 context Patient
 
 define "SDE Ethnicity":
+  // KNOWN ISSUE: The translator reports this as an error but the execution still works, this is under investigation
   Patient.ethnicity E
     return Tuple {
       codes: { E.ombCategory } union E.detailed,
@@ -30,6 +31,7 @@ define "SDE Ethnicity":
     }
 
 define "SDE Payer":
+  // KNOWN ISSUE: The translator reports this as an error but the execution still works, this is under investigation
   [Coverage: type in "Payer Type"] Payer
     return {
       code: Payer.type,
@@ -37,12 +39,14 @@ define "SDE Payer":
     }
 
 define "SDE Race":
+  // KNOWN ISSUE: The translator reports this as an error but the execution still works, this is under investigation
   Patient.race R
     return Tuple {
       codes: R.ombCategory union R.detailed,
       display: R.text
     }
 
+// TODO: Should the FHIR code for 'other' be mapped to the v3 code for "undifferentiated"?
 define "SDE Sex":
   case
     when Patient.gender = 'male' then "M"
