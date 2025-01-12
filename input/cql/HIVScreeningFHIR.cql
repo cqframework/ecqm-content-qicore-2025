@@ -1,11 +1,14 @@
+/*
+NOTE: Preliminary QICore 6.0.0 uplift to support connectathon 38 testing
+*/
 library HIVScreeningFHIR version '0.2.000'
 
-using QICore version '4.1.1'
+using QICore version '6.0.0'
 
 include FHIRHelpers version '4.4.000' called FHIRHelpers
-include SupplementalDataElements version '3.5.000' called SDE
-include CQMCommon version '2.2.000' called CQMCommon
-include QICoreCommon version '2.1.000' called QICoreCommon
+include SupplementalDataElements version '4.0.000' called SDE
+include CQMCommon version '3.0.000' called CQMCommon
+include QICoreCommon version '3.0.000' called QICoreCommon
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "ActCode": 'http://terminology.hl7.org/CodeSystem/v3-ActCode'
@@ -44,7 +47,7 @@ define "Numerator":
   ( "Has HIV Test Performed" )
 
 define "Denominator Exclusions":
-  exists ( ["Condition": "HIV"] ) HIV
+  exists ( ["ConditionProblemsHealthConcerns": "HIV"] ) HIV
     where HIV.prevalenceInterval ( ) starts before day of start of "Measurement Period"
       and HIV.verificationStatus !~ "refuted"
 
@@ -64,8 +67,8 @@ define "Patient Expired":
   Patient.deceased on or before end of "Measurement Period"
 
 define "Has HIV Test Performed":
-  exists ( ["Observation": "Human Immunodeficiency Virus (HIV) Laboratory Test Codes (Ab and Ag)"]
-    union ["Observation": "HIV 1 and 2 tests - Meaningful Use set"] ) HIVTest
+  exists ( ["LaboratoryResultObservation": "Human Immunodeficiency Virus (HIV) Laboratory Test Codes (Ab and Ag)"]
+    union ["LaboratoryResultObservation": "HIV 1 and 2 tests - Meaningful Use set"] ) HIVTest
     where HIVTest.value is not null
       and AgeInYearsAt(date from start of HIVTest.effective.toInterval()) in Interval[15, 65]
       and HIVTest.effective.toInterval ( ) starts before end of "Measurement Period"

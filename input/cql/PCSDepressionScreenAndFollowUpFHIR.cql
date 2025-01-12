@@ -1,11 +1,13 @@
+/*
+NOTE: Preliminary QICore 6.0.0 uplift to support connectathon 38 testing
+*/
 library PCSDepressionScreenAndFollowUpFHIR version '0.2.000'
 
 using QICore version '6.0.0'
-using FHIR version '4.0.1'
 
-include QICoreCommon version '2.1.000' called QICoreCommon
-include SupplementalDataElements version '3.5.000' called SDE
 include FHIRHelpers version '4.4.000' called FHIRHelpers
+include QICoreCommon version '3.0.000' called QICoreCommon
+include SupplementalDataElements version '4.0.000' called SDE
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "SNOMEDCT": 'http://snomed.info/sct'
@@ -98,7 +100,7 @@ define "Follow Up Intervention for Positive Adult Depression Screening":
 define "Has Adolescent Depression Screening":
   exists ( [ObservationScreeningAssessment: "Adolescent depression screening assessment"] AdolescentScreening
       with "Qualifying Encounter During Measurement Period" QualifyingEncounter
-        such that AdolescentScreening.effective.toInterval ( ) 14 days or less on or before day of start of QualifyingEncounter.period
+        such that AdolescentScreening.effective.toInterval() 14 days or less on or before day of start of QualifyingEncounter.period
           and AdolescentScreening.value is not null
           and AdolescentScreening.status = 'final'
   )
@@ -106,7 +108,7 @@ define "Has Adolescent Depression Screening":
 define "Has Adult Depression Screening":
   exists ( [ObservationScreeningAssessment: "Adult depression screening assessment"] AdultScreening
       with "Qualifying Encounter During Measurement Period" QualifyingEncounter
-        such that AdultScreening.effective.toInterval ( ) 14 days or less on or before day of start of QualifyingEncounter.period
+        such that AdultScreening.effective.toInterval() 14 days or less on or before day of start of QualifyingEncounter.period
           and AdultScreening.value is not null
           and AdultScreening.status = 'final'
   )
@@ -179,9 +181,9 @@ define "Most Recent Adult Depression Screening Positive and Follow Up Provided":
     "Most Recent Adult Depression Screening" LastAdultScreen,
     "Follow Up Intervention for Positive Adult Depression Screening" FollowUpPositiveAdultScreen,
     "Qualifying Encounter During Measurement Period" QualifyingEncounter
-    where LastAdultScreen.effective.toInterval ( ) starts 14 days or less on or before day of start of QualifyingEncounter.period
+    where LastAdultScreen.effective.toInterval() starts 14 days or less on or before day of start of QualifyingEncounter.period
       and LastAdultScreen.value ~ "Depression screening positive (finding)"
-      and ( start of FollowUpPositiveAdultScreen.performed.toInterval ( ) during QualifyingEncounter.period
+      and ( start of FollowUpPositiveAdultScreen.performed.toInterval() during QualifyingEncounter.period
           or FollowUpPositiveAdultScreen.authoredOn 2 days or less on or after day of end of QualifyingEncounter.period
       )
       and ( Coalesce(start of FollowUpPositiveAdultScreen.performed.toInterval(), FollowUpPositiveAdultScreen.authoredOn) during day of "Measurement Period" )

@@ -1,13 +1,16 @@
+/*
+NOTE: Preliminary QICore 6.0.0 uplift to support connectathon 38 testing
+*/
 library PCSBMIScreenAndFollowUpFHIR version '0.2.000'
 
 using QICore version '6.0.0'
 //using USCore version '6.1.0'
 
 include FHIRHelpers version '4.4.000' called FHIRHelpers
-include Hospice version '6.12.000' called Hospice
-include PalliativeCare version '1.11.000' called PalliativeCare
-include QICoreCommon version '2.1.000' called QICoreCommon
-include SupplementalDataElements version '3.5.000' called SDE
+include QICoreCommon version '3.0.000' called QICoreCommon
+include SupplementalDataElements version '4.0.000' called SDE
+include Hospice version '7.0.000' called Hospice
+include PalliativeCare version '2.0.000' called PalliativeCare
 
 codesystem "ActCode": 'http://terminology.hl7.org/CodeSystem/v3-ActCode'
 codesystem "ICD10CM": 'http://hl7.org/fhir/sid/icd-10-cm'
