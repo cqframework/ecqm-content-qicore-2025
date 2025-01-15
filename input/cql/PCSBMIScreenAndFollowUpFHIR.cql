@@ -4,7 +4,6 @@ NOTE: Preliminary QICore 6.0.0 uplift to support connectathon 38 testing
 library PCSBMIScreenAndFollowUpFHIR version '0.2.000'
 
 using QICore version '6.0.0'
-//using USCore version '6.1.0'
 
 include FHIRHelpers version '4.4.000' called FHIRHelpers
 include QICoreCommon version '3.0.000' called QICoreCommon
@@ -34,7 +33,7 @@ code "Encounter for palliative care": 'Z51.5' from "ICD10CM" display 'Encounter 
 code "Functional Assessment of Chronic Illness Therapy - Palliative Care Questionnaire (FACIT-Pal)": '71007-9' from "LOINC" display 'Functional Assessment of Chronic Illness Therapy - Palliative Care Questionnaire (FACIT-Pal)'
 code "virtual": 'VR' from "ActCode" display 'virtual'
 
-parameter "Measurement Period" Interval<DateTime>
+parameter "Measurement Period" Interval<DateTime> default Interval[@2025-01-01T00:00:00Z, @2026-01-01T00:00:00Z)
 
 context Patient
 
