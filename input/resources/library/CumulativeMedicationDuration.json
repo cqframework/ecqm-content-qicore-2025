@@ -1,0 +1,29 @@
+{
+  "resourceType": "Library",
+  "id": "CumulativeMedicationDuration",
+  "url": "https://madie.cms.gov/Library/CumulativeMedicationDuration",
+  "identifier": [ {
+    "use": "official",
+    "system": "https://madie.cms.gov/login",
+    "value": "660c3cee34f8773b6f26972b"
+  } ],
+  "version": "5.0.000",
+  "name": "CumulativeMedicationDuration",
+  "title": "CumulativeMedicationDuration",
+  "status": "active",
+  "experimental": false,
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/library-type",
+      "code": "logic-library"
+    } ]
+  },
+  "date": "2024-12-11T20:58:49+00:00",
+  "publisher": "ICF",
+  "description": "This library provides cumulative medication duration calculation\nlogic for use with FHIR medication prescription, administration, and dispensing\nresources. The logic here follows the guidance provided as part of the 5.6\nversion of Quality Data Model.",
+ "content": [
+    {
+      "id": "ig-loader-CumulativeMedicationDuration.cql"
+    }
+  ]
+}

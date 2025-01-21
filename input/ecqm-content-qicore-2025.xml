@@ -23,12 +23,12 @@
     <dependsOn id="tx">
       <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
       <packageId value="hl7.terminology.r4"/>
-      <version value="5.5.0"/>
+      <version value="6.1.0"/>
     </dependsOn>
     <dependsOn id="QMIG">
-      <uri value="http://hl7.org/fhir/us/cqfmeasures/ImplementationGuide/hl7.fhir.us.cqfmeasures"/>
-      <packageId value="hl7.fhir.us.cqfmeasures"/>
-      <version value="3.0.0"/>
+      <uri value="http://hl7.org/fhir/uv/cqm/ImplementationGuide/hl7.fhir.uv.cqm"/>
+      <packageId value="hl7.fhir.uv.cqm"/>
+      <version value="1.0.0-ballot"/>
     </dependsOn>
     <definition>
         <page>
@@ -104,6 +104,12 @@
           <value value="false"/>
         </parameter>
 
+        <!-- defaultVersion, if none specified -->
+        <parameter>
+          <code value="default-version"/>
+          <value value="true"/>
+        </parameter>
+
         <parameter>
           <code value="find-other-resources" />
           <value value="true" />
@@ -126,13 +132,11 @@
           <value value="input/vocabulary/valueset"/>
         </parameter>
 
-        <!-- This parameter indicates to the publisher that it should translate and package CQL libraries. See the example library resources for more -->
-        <!--
         <parameter>
           <code value="path-binary"/>
           <value value="input/cql"/>
         </parameter>
-        -->
+
         <parameter>
           <code value="path-liquid"/>
           <value value="templates\liquid"/>

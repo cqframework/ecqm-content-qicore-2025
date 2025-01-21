@@ -140,7 +140,7 @@
       "resourceType": "MedicationRequest",
       "id": "medications-for-below-normal-bmi-75ac",
       "meta": {
-        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-mednotrequested" ]
+        "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationnotrequested" ]
       },
       "status": "completed",
       "statusReason": {
