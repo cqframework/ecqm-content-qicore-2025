@@ -3,7 +3,6 @@
 Increment QICoreCommon and FHIRHelpers version
 Update principalDiagnosis function to correctly reference the 'use' element https://oncprojectracking.healthit.gov/support/browse/CQLIT-416
 */
-
 library CQMCommon version '3.0.000'
 
 using QICore version '6.0.0'
@@ -12,7 +11,6 @@ include FHIRHelpers version '4.4.000' called FHIRHelpers
 include QICoreCommon version '3.0.000' called QICoreCommon
 
 codesystem DiagnosisRole: 'http://terminology.hl7.org/CodeSystem/diagnosis-role'
-codesystem "Diagnosis Type": 'http://terminology.hl7.org/CodeSystem/ex-diagnosistype'
 codesystem "Present On Admission Indicators": 'https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/HospitalAcqCond/Coding'
 
 valueset "Emergency Department Visit": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292'
@@ -23,18 +21,6 @@ valueset "Outpatient Surgery Service": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.1
 valueset "Present on Admission or Clinically Undetermined": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1147.197'
 
 code "Billing": 'billing' from DiagnosisRole display 'Billing'
-code "Admitting Diagnosis": 'admitting' from "Diagnosis Type" display 'Admitting Diagnosis'
-code "Clinical Diagnosis": 'clinical' from "Diagnosis Type" display 'Clinical Diagnosis'
-code "Differential Diagnosis": 'differential' from "Diagnosis Type" display 'Differential Diagnosis'
-code "Discharge Diagnosis": 'discharge' from "Diagnosis Type" display 'Discharge Diagnosis'
-code "Laboratory Diagnosis": 'laboratory' from "Diagnosis Type" display 'Laboratory Diagnosis'
-code "Nursing Diagnosis": 'nursing' from "Diagnosis Type" display 'Nursing Diagnosis'
-code "Prenatal Diagnosis": 'prenatal' from "Diagnosis Type" display 'Prenatal Diagnosis'
-code "Principal Diagnosis": 'principal' from "Diagnosis Type" display 'Principal Diagnosis'
-code "Radiology Diagnosis": 'radiology' from "Diagnosis Type" display 'Radiology Diagnosis'
-code "Remote Diagnosis": 'remote' from "Diagnosis Type" display 'Remote Diagnosis'
-code "Retrospective Diagnosis": 'retrospective' from "Diagnosis Type" display 'Retrospetive Diagnosis'
-code "Self Diagnosis": 'self' from "Diagnosis Type" display 'Self Diagnosis'
 code "POA-Y": 'Y' from "Present On Admission Indicators" display 'POA-Y'
 code "POA-N": 'N' from "Present On Admission Indicators" display 'POA-N'
 code "POA-W": 'W' from "Present On Admission Indicators" display 'POA-W'
@@ -45,7 +31,6 @@ parameter "Measurement Period" Interval<DateTime>
 context Patient
 
 define "Inpatient Encounter":
-  // KNOWN ISSUE: The translator reports this as an error but the execution still works, this is under investigation
   [Encounter: "Encounter Inpatient"] EncounterInpatient
     where EncounterInpatient.status = 'finished'
       and EncounterInpatient.period ends during day of "Measurement Period"
@@ -78,7 +63,6 @@ define fluent function lengthInDays(Value Interval<DateTime> ):
 @deprecated: This function is deprecated. Use the fluent function `edVisit()` instead.
 */
 define function "ED Visit"(TheEncounter Encounter ):
-  // KNOWN ISSUE: The translator reports this as an error but the execution still works, this is under investigation
   Last(
     [Encounter: "Emergency Department Visit"] EDVisit
       where EDVisit.status = 'finished'
@@ -90,7 +74,6 @@ define function "ED Visit"(TheEncounter Encounter ):
 @description: Returns the most recent emergency department visit, if any, that occurs 1 hour or less prior to the given encounter.
 */
 define fluent function edVisit(TheEncounter Encounter ):
-  // KNOWN ISSUE: The translator reports this as an error but the execution still works, this is under investigation
   Last(
     [Encounter: "Emergency Department Visit"] EDVisit
       where EDVisit.status = 'finished'
@@ -241,7 +224,6 @@ define fluent function emergencyDepartmentArrivalTime(TheEncounter Encounter):
 @deprecated: This function is deprecated. Use the fluent function `hospitalizationWithObservationAndOutpatientSurgeryService()` instead.
 */
 define function "HospitalizationWithObservationAndOutpatientSurgeryService"(TheEncounter "Encounter" ):
-  // KNOWN ISSUE: The translator reports this as an error but the execution still works, this is under investigation
   TheEncounter Visit
 	  let ObsVisit: Last([Encounter: "Observation Services"] LastObs
 		  	where LastObs.status = 'finished'
@@ -265,7 +247,6 @@ define function "HospitalizationWithObservationAndOutpatientSurgeryService"(TheE
 @description: Hospitalization with Observation and Outpatient Surgery Service returns the total interval from the start of any immediately prior emergency department visit, outpatient surgery visit or observation visit to the discharge of the given encounter.
 */
 define fluent function hospitalizationWithObservationAndOutpatientSurgeryService(TheEncounter "Encounter" ):
-  // KNOWN ISSUE: The translator reports this as an error but the execution still works, this is under investigation
   TheEncounter Visit
 	  let ObsVisit: Last([Encounter: "Observation Services"] LastObs
 		  	where LastObs.status = 'finished'
@@ -290,7 +271,6 @@ define fluent function hospitalizationWithObservationAndOutpatientSurgeryService
 @deprecated: This function is deprecated. Use the fluent function `hospitalizationWithObservation()` instead.
 */
 define function "HospitalizationWithObservation"(TheEncounter Encounter ):
-  // KNOWN ISSUE: The translator reports this as an error but the execution still works, this is under investigation
   TheEncounter Visit
   		let ObsVisit: Last([Encounter: "Observation Services"] LastObs
   				where LastObs.status = 'finished'
@@ -309,7 +289,6 @@ define function "HospitalizationWithObservation"(TheEncounter Encounter ):
 @description: Hospitalization with Observation returns the total interval from the start of any immediately prior emergency department visit through the observation visit to the discharge of the given encounter
 */
 define fluent function hospitalizationWithObservation(TheEncounter Encounter ):
-  // KNOWN ISSUE: The translator reports this as an error but the execution still works, this is under investigation
   TheEncounter Visit
   		let ObsVisit: Last([Encounter: "Observation Services"] LastObs
   				where LastObs.status = 'finished'
@@ -342,7 +321,6 @@ define fluent function hospitalizationWithObservationLengthofStay(TheEncounter "
 @deprecated: This function is deprecated. Use the fluent function `firstInpatientIntensiveCareUnit()` instead.
 */
 define function "FirstInpatientIntensiveCareUnit"(Encounter Encounter ):
-  // KNOWN ISSUE: The translator reports this as an error but the execution still works, this is under investigation
   First((Encounter.location)HospitalLocation
   			where GetLocation(HospitalLocation.location).type in "Intensive Care Unit"
   				and HospitalLocation.period during Encounter.period
@@ -353,7 +331,6 @@ define function "FirstInpatientIntensiveCareUnit"(Encounter Encounter ):
 @description: First Inpatient Intensive Care Unit returns the first intensive care unit for the given encounter, without considering any immediately prior emergency department visit.
 */
 define fluent function firstInpatientIntensiveCareUnit(Encounter Encounter ):
-  // KNOWN ISSUE: The translator reports this as an error but the execution still works, this is under investigation
   First((Encounter.location)HospitalLocation
   			where GetLocation(HospitalLocation.location).type in "Intensive Care Unit"
   				and HospitalLocation.period during Encounter.period
