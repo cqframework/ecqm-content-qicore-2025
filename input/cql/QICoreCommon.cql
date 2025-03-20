@@ -1,4 +1,4 @@
-library QICoreCommon version '3.0.000'
+library QICoreCommon version '4.0.000'
 
 using QICore version '6.0.0'
 
@@ -19,12 +19,18 @@ codesystem "ObservationCategoryCodes": 'http://terminology.hl7.org/CodeSystem/ob
 codesystem "USCoreObservationCategoryExtensionCodes": 'http://hl7.org/fhir/us/core/CodeSystem/us-core-observation-category'  
 codesystem "ConditionCategory": 'http://terminology.hl7.org/CodeSystem/condition-category'
 codesystem "USCoreConditionCategoryExtensionCodes": 'http://hl7.org/fhir/us/core/CodeSystem/condition-category'
+codesystem "TaskCodeSystem": 'http://hl7.org/fhir/CodeSystem/task-code' 
+
+
 
 code "Birthdate": '21112-8' from "LOINC" display 'Birth date'
 code "Dead": '419099009' from "SNOMEDCT" display 'Dead'
 code "ER": 'ER' from "RoleCode" display 'Emergency room'
 code "ICU": 'ICU' from "RoleCode" display 'Intensive care unit'
 code "Billing": 'billing' from "Diagnosis Role" display 'Billing'
+
+//Task codes
+code "Fulfill": 'fulfill' from "TaskCodeSystem" display 'Fulfill'
 
 // Encounter Class Codes
 code "ambulatory": 'AMB' from ActCode display 'ambulatory'
