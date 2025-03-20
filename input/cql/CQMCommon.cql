@@ -1,8 +1,3 @@
-/*
-@update: JKR 2024-04-02 ->
-Increment QICoreCommon and FHIRHelpers version
-Update principalDiagnosis function to correctly reference the 'use' element https://oncprojectracking.healthit.gov/support/browse/CQLIT-416
-*/
 library CQMCommon version '3.0.000'
 
 using QICore version '6.0.0'

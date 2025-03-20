@@ -1,15 +1,8 @@
-/*
-@update: JKR 2024-04-02 ->
-Check display code accuracy against source system                                                        
-Ensure all fluent functions are not referencing any deprecated functions.   
-https://oncprojectracking.healthit.gov/support/browse/CQLIT-414
-*/
-
 library QICoreCommon version '3.0.000'
 
 using QICore version '6.0.0'
 
-include FHIRHelpers version '4.4.000'
+include FHIRHelpers version '4.4.000' called FHIRHelpers
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "SNOMEDCT": 'http://snomed.info/sct'
@@ -154,25 +147,7 @@ define fluent function hasCategory(observation Choice<"SimpleObservation",
 "NonPatientObservation",
 "LaboratoryResultObservation",
 "ObservationClinicalResult",
-"ObservationScreeningAssessment",
-"USCoreVitalSignsProfile",
-"USCoreBloodPressureProfile",
-"USCoreBMIProfile",
-"USCoreBodyWeightProfile",
-"USCoreBodyHeightProfile",
-"USCoreBodyTemperatureProfile",
-"USCoreHeadCircumferenceProfile",
-"USCoreHeartRateProfile",
-"USCorePediatricBMIforAgeObservationProfile",
-"USCorePediatricHeadOccipitalFrontalCircumferencePercentileProfile",
-"USCorePediatricWeightForHeightObservationProfile",
-"USCorePulseOximetryProfile",
-"USCoreRespiratoryRateProfile",
-"USCoreSmokingStatusProfile",
-"USCoreObservationOccupationProfile",
-"USCoreObservationPregnancyIntentProfile",
-"USCoreObservationPregnancyStatusProfile",
-"USCoreObservationSexualOrientationProfile">, 
+"ObservationScreeningAssessment">, 
 category Code):
   exists (observation.category C
     where C ~ category
@@ -186,25 +161,7 @@ define fluent function isSocialHistory(observation Choice<"SimpleObservation",
 "NonPatientObservation",
 "LaboratoryResultObservation",
 "ObservationClinicalResult",
-"ObservationScreeningAssessment",
-"USCoreVitalSignsProfile",
-"USCoreBloodPressureProfile",
-"USCoreBMIProfile",
-"USCoreBodyWeightProfile",
-"USCoreBodyHeightProfile",
-"USCoreBodyTemperatureProfile",
-"USCoreHeadCircumferenceProfile",
-"USCoreHeartRateProfile",
-"USCorePediatricBMIforAgeObservationProfile",
-"USCorePediatricHeadOccipitalFrontalCircumferencePercentileProfile",
-"USCorePediatricWeightForHeightObservationProfile",
-"USCorePulseOximetryProfile",
-"USCoreRespiratoryRateProfile",
-"USCoreSmokingStatusProfile",
-"USCoreObservationOccupationProfile",
-"USCoreObservationPregnancyIntentProfile",
-"USCoreObservationPregnancyStatusProfile",
-"USCoreObservationSexualOrientationProfile">):
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "social-history"
   )
@@ -217,25 +174,7 @@ define fluent function isVitalSign(observation Choice<"SimpleObservation",
 "NonPatientObservation",
 "LaboratoryResultObservation",
 "ObservationClinicalResult",
-"ObservationScreeningAssessment",
-"USCoreVitalSignsProfile",
-"USCoreBloodPressureProfile",
-"USCoreBMIProfile",
-"USCoreBodyWeightProfile",
-"USCoreBodyHeightProfile",
-"USCoreBodyTemperatureProfile",
-"USCoreHeadCircumferenceProfile",
-"USCoreHeartRateProfile",
-"USCorePediatricBMIforAgeObservationProfile",
-"USCorePediatricHeadOccipitalFrontalCircumferencePercentileProfile",
-"USCorePediatricWeightForHeightObservationProfile",
-"USCorePulseOximetryProfile",
-"USCoreRespiratoryRateProfile",
-"USCoreSmokingStatusProfile",
-"USCoreObservationOccupationProfile",
-"USCoreObservationPregnancyIntentProfile",
-"USCoreObservationPregnancyStatusProfile",
-"USCoreObservationSexualOrientationProfile">):
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "vital-signs"
   )
@@ -248,25 +187,7 @@ define fluent function isImaging(observation Choice<"SimpleObservation",
 "NonPatientObservation",
 "LaboratoryResultObservation",
 "ObservationClinicalResult",
-"ObservationScreeningAssessment",
-"USCoreVitalSignsProfile",
-"USCoreBloodPressureProfile",
-"USCoreBMIProfile",
-"USCoreBodyWeightProfile",
-"USCoreBodyHeightProfile",
-"USCoreBodyTemperatureProfile",
-"USCoreHeadCircumferenceProfile",
-"USCoreHeartRateProfile",
-"USCorePediatricBMIforAgeObservationProfile",
-"USCorePediatricHeadOccipitalFrontalCircumferencePercentileProfile",
-"USCorePediatricWeightForHeightObservationProfile",
-"USCorePulseOximetryProfile",
-"USCoreRespiratoryRateProfile",
-"USCoreSmokingStatusProfile",
-"USCoreObservationOccupationProfile",
-"USCoreObservationPregnancyIntentProfile",
-"USCoreObservationPregnancyStatusProfile",
-"USCoreObservationSexualOrientationProfile">):
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "imaging"
   )
@@ -279,25 +200,7 @@ define fluent function isLaboratory(observation Choice<"SimpleObservation",
 "NonPatientObservation",
 "LaboratoryResultObservation",
 "ObservationClinicalResult",
-"ObservationScreeningAssessment",
-"USCoreVitalSignsProfile",
-"USCoreBloodPressureProfile",
-"USCoreBMIProfile",
-"USCoreBodyWeightProfile",
-"USCoreBodyHeightProfile",
-"USCoreBodyTemperatureProfile",
-"USCoreHeadCircumferenceProfile",
-"USCoreHeartRateProfile",
-"USCorePediatricBMIforAgeObservationProfile",
-"USCorePediatricHeadOccipitalFrontalCircumferencePercentileProfile",
-"USCorePediatricWeightForHeightObservationProfile",
-"USCorePulseOximetryProfile",
-"USCoreRespiratoryRateProfile",
-"USCoreSmokingStatusProfile",
-"USCoreObservationOccupationProfile",
-"USCoreObservationPregnancyIntentProfile",
-"USCoreObservationPregnancyStatusProfile",
-"USCoreObservationSexualOrientationProfile">):
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "laboratory"
   )
@@ -310,25 +213,7 @@ define fluent function isProcedure(observation Choice<"SimpleObservation",
 "NonPatientObservation",
 "LaboratoryResultObservation",
 "ObservationClinicalResult",
-"ObservationScreeningAssessment",
-"USCoreVitalSignsProfile",
-"USCoreBloodPressureProfile",
-"USCoreBMIProfile",
-"USCoreBodyWeightProfile",
-"USCoreBodyHeightProfile",
-"USCoreBodyTemperatureProfile",
-"USCoreHeadCircumferenceProfile",
-"USCoreHeartRateProfile",
-"USCorePediatricBMIforAgeObservationProfile",
-"USCorePediatricHeadOccipitalFrontalCircumferencePercentileProfile",
-"USCorePediatricWeightForHeightObservationProfile",
-"USCorePulseOximetryProfile",
-"USCoreRespiratoryRateProfile",
-"USCoreSmokingStatusProfile",
-"USCoreObservationOccupationProfile",
-"USCoreObservationPregnancyIntentProfile",
-"USCoreObservationPregnancyStatusProfile",
-"USCoreObservationSexualOrientationProfile">):
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "procedure"
   )
@@ -341,25 +226,7 @@ define fluent function isSurvey(observation Choice<"SimpleObservation",
 "NonPatientObservation",
 "LaboratoryResultObservation",
 "ObservationClinicalResult",
-"ObservationScreeningAssessment",
-"USCoreVitalSignsProfile",
-"USCoreBloodPressureProfile",
-"USCoreBMIProfile",
-"USCoreBodyWeightProfile",
-"USCoreBodyHeightProfile",
-"USCoreBodyTemperatureProfile",
-"USCoreHeadCircumferenceProfile",
-"USCoreHeartRateProfile",
-"USCorePediatricBMIforAgeObservationProfile",
-"USCorePediatricHeadOccipitalFrontalCircumferencePercentileProfile",
-"USCorePediatricWeightForHeightObservationProfile",
-"USCorePulseOximetryProfile",
-"USCoreRespiratoryRateProfile",
-"USCoreSmokingStatusProfile",
-"USCoreObservationOccupationProfile",
-"USCoreObservationPregnancyIntentProfile",
-"USCoreObservationPregnancyStatusProfile",
-"USCoreObservationSexualOrientationProfile">):
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "survey"
   )
@@ -372,25 +239,7 @@ define fluent function isExam(observation Choice<"SimpleObservation",
 "NonPatientObservation",
 "LaboratoryResultObservation",
 "ObservationClinicalResult",
-"ObservationScreeningAssessment",
-"USCoreVitalSignsProfile",
-"USCoreBloodPressureProfile",
-"USCoreBMIProfile",
-"USCoreBodyWeightProfile",
-"USCoreBodyHeightProfile",
-"USCoreBodyTemperatureProfile",
-"USCoreHeadCircumferenceProfile",
-"USCoreHeartRateProfile",
-"USCorePediatricBMIforAgeObservationProfile",
-"USCorePediatricHeadOccipitalFrontalCircumferencePercentileProfile",
-"USCorePediatricWeightForHeightObservationProfile",
-"USCorePulseOximetryProfile",
-"USCoreRespiratoryRateProfile",
-"USCoreSmokingStatusProfile",
-"USCoreObservationOccupationProfile",
-"USCoreObservationPregnancyIntentProfile",
-"USCoreObservationPregnancyStatusProfile",
-"USCoreObservationSexualOrientationProfile">):
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "exam"
   )
@@ -403,25 +252,7 @@ define fluent function isTherapy(observation Choice<"SimpleObservation",
 "NonPatientObservation",
 "LaboratoryResultObservation",
 "ObservationClinicalResult",
-"ObservationScreeningAssessment",
-"USCoreVitalSignsProfile",
-"USCoreBloodPressureProfile",
-"USCoreBMIProfile",
-"USCoreBodyWeightProfile",
-"USCoreBodyHeightProfile",
-"USCoreBodyTemperatureProfile",
-"USCoreHeadCircumferenceProfile",
-"USCoreHeartRateProfile",
-"USCorePediatricBMIforAgeObservationProfile",
-"USCorePediatricHeadOccipitalFrontalCircumferencePercentileProfile",
-"USCorePediatricWeightForHeightObservationProfile",
-"USCorePulseOximetryProfile",
-"USCoreRespiratoryRateProfile",
-"USCoreSmokingStatusProfile",
-"USCoreObservationOccupationProfile",
-"USCoreObservationPregnancyIntentProfile",
-"USCoreObservationPregnancyStatusProfile",
-"USCoreObservationSexualOrientationProfile">):
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "therapy"
   )
@@ -434,25 +265,7 @@ define fluent function isActivity(observation Choice<"SimpleObservation",
 "NonPatientObservation",
 "LaboratoryResultObservation",
 "ObservationClinicalResult",
-"ObservationScreeningAssessment",
-"USCoreVitalSignsProfile",
-"USCoreBloodPressureProfile",
-"USCoreBMIProfile",
-"USCoreBodyWeightProfile",
-"USCoreBodyHeightProfile",
-"USCoreBodyTemperatureProfile",
-"USCoreHeadCircumferenceProfile",
-"USCoreHeartRateProfile",
-"USCorePediatricBMIforAgeObservationProfile",
-"USCorePediatricHeadOccipitalFrontalCircumferencePercentileProfile",
-"USCorePediatricWeightForHeightObservationProfile",
-"USCorePulseOximetryProfile",
-"USCoreRespiratoryRateProfile",
-"USCoreSmokingStatusProfile",
-"USCoreObservationOccupationProfile",
-"USCoreObservationPregnancyIntentProfile",
-"USCoreObservationPregnancyStatusProfile",
-"USCoreObservationSexualOrientationProfile">):
+"ObservationScreeningAssessment">):
   exists (observation.category C
     where C ~ "activity"
   )
