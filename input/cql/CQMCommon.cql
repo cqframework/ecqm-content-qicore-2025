@@ -379,6 +379,7 @@ define fluent function getCondition(reference Reference):
 
 /*
 @description: Returns the claim diagnosis elements for the given encounter
+@comment: See the QICore 6 Authoring Patterns discussion on [Principal Diagnosis and Present on Admission](https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Authoring-Patterns-QICore-v6.0.0#conditions-present-on-admission-and-principal-diagnoses) for more information
 */
 define fluent function claimDiagnosis(encounter Encounter):
   encounter E
@@ -398,30 +399,27 @@ define function "PrincipalDiagnosis"(Encounter Encounter):
   )
 
 /*
-@description: Returns the condition that is specified as the principal diagnosis for the encounter
+@description: Returns the claim diagnosis element that is specified as the principal diagnosis for the encounter
+@comment: See the QICore 6 Authoring Patterns discussion on [Principal Diagnosis and Present on Admission](https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Authoring-Patterns-QICore-v6.0.0#conditions-present-on-admission-and-principal-diagnoses) for more information
 */
-/* REMOVE - This approach does not account for the possibility that the diagnosis is specified in the claim only (i.e. no reference to a condition at all)
-use hasPrincipalDiagnosisOf instead
 define fluent function principalDiagnosis(encounter Encounter):
-  encounter E1
-	let 
-	  PD: singleton from ((E1.claimDiagnosis()) D where D.type.includesCode("Principal Diagnosis"))
-	return singleton from (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where PD.diagnosis.references(C.id))
-*/
+  singleton from (
+    (encounter.claimDiagnosis()) CD
+      where CD.type.includesCode("Principal Diagnosis")
+  )
 
 /*
 @description: Returns the condition that is specified as the principal diagnosis for the encounter and has a code in the given valueSet.
+@comment: See the QICore 6 Authoring Patterns discussion on [Principal Diagnosis and Present on Admission](https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Authoring-Patterns-QICore-v6.0.0#conditions-present-on-admission-and-principal-diagnoses) for more information
 */
 define fluent function hasPrincipalDiagnosisOf(encounter Encounter, valueSet ValueSet):
-  encounter E
-    let
-      PD: singleton from ((E.claimDiagnosis()) D where D.type.includesCode("Principal Diagnosis")),
-      CD: singleton from (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where PD.diagnosis.references(C.id))
-	return PD.diagnosis in valueSet
-	  or CD.code in valueSet
+  (encounter.principalDiagnosis()) PD
+    return PD.diagnosis in valueSet
+      or PD.diagnosis.getCondition().code in valueSet
 
 /*
 @description: Returns true if the given diagnosis is present on admission, based on the given poaValueSet
+@comment: See the QICore 6 Authoring Patterns discussion on [Principal Diagnosis and Present on Admission](https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Authoring-Patterns-QICore-v6.0.0#conditions-present-on-admission-and-principal-diagnoses) for more information
 */
 define fluent function isDiagnosisPresentOnAdmission(encounter Encounter, diagnosisValueSet ValueSet, poaValueSet ValueSet):
   exists (
