@@ -1,4 +1,4 @@
-library CQMCommon version '4.0.000'
+library CQMCommon version '4.1.000'
 
 using QICore version '6.0.0'
 
@@ -378,27 +378,6 @@ define fluent function getCondition(reference Reference):
   singleton from (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where reference.references(C.id))
 
 /*
-@description: Returns the condition that is specified as the principal diagnosis for the encounter
-@deprecated: This function is deprecated. Use the fluent function `principalDiagnosis()` instead.
-*/
-define function "PrincipalDiagnosis"(Encounter Encounter):
-	singleton from (
-	(Encounter.diagnosis D where D.rank = 1 and D.use ~ "Billing") PD
-      return singleton from (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where PD.condition.references(C.id))
-	)
-
-/*
-@description: Returns the condition that is specified as the principal diagnosis for the encounter
-@deprecated: This function is deprecated. Use the claimDiagnosis function for principal diagnosis and present on admission use cases. See
-[ClaimDiagnoses](https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/blob/master/Source/Cooking%20With%20CQL/88/ClaimDiagnoses.md) 
-discussion for more information.
-*/
-define fluent function principalDiagnosis(encounter Encounter):
-  encounter E1
-	let 
-	  PD: E1.claimDiagnosis() where PD.type.includesCode("Principal Diagnosis")
-	return (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where exists (PD.diagnosis.reference R where R = C.id))
-/*
 @description: Returns the claim diagnosis elements for the given encounter
 */
 define fluent function claimDiagnosis(encounter Encounter):
@@ -407,6 +386,52 @@ define fluent function claimDiagnosis(encounter Encounter):
       claim: ([Claim] C where C.status = 'active' and C.use = 'claim' and exists (C.item I where I.encounter.references(E))),
       claimItem: (claim.item I where I.encounter.references(E))
     return claim.diagnosis D where D.sequence in claimItem.diagnosisSequence
+
+/*
+@description: Returns the condition that is specified as the principal diagnosis for the encounter
+@deprecated: This function is deprecated. Use the fluent function `principalDiagnosisOf()` instead.
+*/
+define function "PrincipalDiagnosis"(Encounter Encounter):
+  singleton from (
+    (Encounter.diagnosis D where D.rank = 1 and D.use ~ "Billing") PD
+      return singleton from (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where PD.condition.references(C.id))
+  )
+
+/*
+@description: Returns the condition that is specified as the principal diagnosis for the encounter
+*/
+/* REMOVE - This approach does not account for the possibility that the diagnosis is specified in the claim only (i.e. no reference to a condition at all)
+use hasPrincipalDiagnosisOf instead
+define fluent function principalDiagnosis(encounter Encounter):
+  encounter E1
+	let 
+	  PD: singleton from ((E1.claimDiagnosis()) D where D.type.includesCode("Principal Diagnosis"))
+	return singleton from (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where PD.diagnosis.references(C.id))
+*/
+
+/*
+@description: Returns the condition that is specified as the principal diagnosis for the encounter and has a code in the given valueSet.
+*/
+define fluent function hasPrincipalDiagnosisOf(encounter Encounter, valueSet ValueSet):
+  encounter E
+    let
+      PD: singleton from ((E.claimDiagnosis()) D where D.type.includesCode("Principal Diagnosis")),
+      CD: singleton from (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where PD.diagnosis.references(C.id))
+	return PD.diagnosis in valueSet
+	  or CD.code in valueSet
+
+/*
+@description: Returns true if the given diagnosis is present on admission, based on the given poaValueSet
+*/
+define fluent function isDiagnosisPresentOnAdmission(encounter Encounter, diagnosisValueSet ValueSet, poaValueSet ValueSet):
+  exists (
+    (encounter.claimDiagnosis()) CD
+      where CD.onAdmission in poaValueSet
+        and (
+          CD.diagnosis in diagnosisValueSet
+            or CD.diagnosis.getCondition().code in diagnosisValueSet
+        )
+  )
 
 /*
 @description: Returns the Location resource specified by the given reference
@@ -448,9 +473,9 @@ define fluent function getMedicationCode(request MedicationRequest):
 @description: Returns the claim procedure elements for the given encounter
 */
 define fluent function principalProcedure(encounter Encounter):  	  
-  	 encounter E
-  	 let 
-        claim: [Claim] C where C.status = 'active' and C.use = 'claim' and exists (C.item I where I.encounter.references(E)),
-        claimItem: claim.item I where I.encounter.references(E),
-        claimProcedure: claim.procedure P where P.sequence in claimItem.procedureSequence
-      where claimProcedure.type.includesCode("Primary procedure")
+  encounter E
+    let 
+      claim: ([Claim] C where C.status = 'active' and C.use = 'claim'),
+      claimItem: claim.item I where I.encounter.references(E),
+      claimProcedure: singleton from (claim.procedure P where P.sequence in claimItem.procedureSequence and P.type.includesCode("Primary procedure"))
+    return claimProcedure
