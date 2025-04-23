@@ -6,7 +6,7 @@ library PalliativeCare version '2.0.000'
 using QICore version '6.0.0'
 
 include FHIRHelpers version '4.4.000' called FHIRHelpers
-include QICoreCommon version '3.0.000' called QICoreCommon
+include QICoreCommon version '4.0.000' called QICoreCommon
 include Status version '2.0.000' called Status
 
 codesystem "LOINC": 'http://loinc.org'

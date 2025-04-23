@@ -6,9 +6,9 @@ library HIVScreeningFHIR version '0.2.000'
 using QICore version '6.0.0'
 
 include FHIRHelpers version '4.4.000' called FHIRHelpers
-include SupplementalDataElements version '4.0.000' called SDE
-include CQMCommon version '3.0.000' called CQMCommon
-include QICoreCommon version '3.0.000' called QICoreCommon
+include SupplementalDataElements version '5.1.000' called SDE
+include CQMCommon version '4.0.000' called CQMCommon
+include QICoreCommon version '4.0.000' called QICoreCommon
 
 codesystem "LOINC": 'http://loinc.org'
 codesystem "ActCode": 'http://terminology.hl7.org/CodeSystem/v3-ActCode'

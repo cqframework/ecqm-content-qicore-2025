@@ -9,7 +9,7 @@ library CumulativeMedicationDuration version '5.0.000'
 using QICore version '6.0.0'
 
 include FHIRHelpers version '4.4.000'
-include QICoreCommon version '3.0.000'
+include QICoreCommon version '4.0.000'
 
 // These code systems are not known to the MAT environment yet, request to have them added submitted
 codesystem "V3TimingEvent": 'http://terminology.hl7.org/CodeSystem/v3-TimingEvent'
