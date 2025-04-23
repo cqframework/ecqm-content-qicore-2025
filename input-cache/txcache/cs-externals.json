@@ -1,0 +1,6 @@
+{
+  "urn:ietf:bcp:13|null" : null,
+  "http://hl7.org/fhir/fhir-types|null" : null,
+  "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/identifier-type|null" : null,
+  "http://hl7.org/fhir/us/core/CodeSystem/condition-category|null" : null
+}

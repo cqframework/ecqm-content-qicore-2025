@@ -16,6 +16,33 @@ v: {
   "system" : "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
   "version" : "6.1.0",
   "server" : "http://tx-dev.fhir.org/r4",
+  "issues" : {
+  "resourceType" : "OperationOutcome"
+}
+
+}
+-------------------------------------------------------------------------------------
+{"code" : {
+  "system" : "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+  "code" : "health-concern",
+  "display" : "Health Concern"
+}, "valueSet" :null, "langs":"en-US", "useServer":"true", "useClient":"true", "guessSystem":"false", "activeOnly":"false", "membershipOnly":"false", "displayWarningMode":"false", "versionFlexible":"true", "profile": {
+  "resourceType" : "Parameters",
+  "parameter" : [{
+    "name" : "x-system-cache-id",
+    "valueString" : "dc8fd4bc-091a-424a-8a3b-6198ef146891"
+  },
+  {
+    "name" : "displayLanguage",
+    "valueCode" : "en-US"
+  }]
+}}####
+v: {
+  "display" : "Health Concern",
+  "code" : "health-concern",
+  "system" : "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+  "version" : "6.1.0",
+  "server" : "http://tx.fhir.org/r4",
   "unknown-systems" : "",
   "issues" : {
   "resourceType" : "OperationOutcome"

@@ -4,3 +4,5 @@
 /input-cache/publisher.jar
 /input/vocabulary/.DS_Store
 .DS_Store
+/input-cache/tooling-cli-3.4.0.jar
+/input-cache/validator_cli.jar
