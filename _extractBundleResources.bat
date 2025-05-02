@@ -6,11 +6,11 @@ SET mat_bundle=input\tests\measure\CMS2FHIRPCSDepressionScreenAndFollowUp
 SET JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
 IF EXIST "%input_cache_path%\%tooling_jar%" (
-	ECHO running: JAVA -jar "%input_cache_path%\%tooling_jar%" -BundleToResources -p=%mat_bundle% -v=r4
-	JAVA -jar "%input_cache_path%\%tooling_jar%" -BundleToResources -p=%mat_bundle% -v=r4
+	ECHO running: JAVA -jar "%input_cache_path%\%tooling_jar%" -BundleToResources -p=%mat_bundle% -v=r4 -op=%mat_bundle%
+	JAVA -jar "%input_cache_path%\%tooling_jar%" -BundleToResources -p=%mat_bundle% -v=r4 -op=%mat_bundle%
 ) ELSE If exist "..\%tooling_jar%" (
-	ECHO running: JAVA -jar "..\%tooling_jar%" -BundleToResources -p=%mat_bundle% -v=r4
-	JAVA -jar "..\%tooling_jar%" -BundleToResources -p=%mat_bundle% -v=r4
+	ECHO running: JAVA -jar "..\%tooling_jar%" -BundleToResources -p=%mat_bundle% -v=r4 -op=%mat_bundle%
+	JAVA -jar "..\%tooling_jar%" -BundleToResources -p=%mat_bundle% -v=r4 -op=%mat_bundle%
 ) ELSE (
 	ECHO Tooling JAR NOT FOUND in input-cache or parent folder.  Please run _updateCQFTooling.  Aborting...
 )
