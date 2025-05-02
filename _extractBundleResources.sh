@@ -2,7 +2,7 @@
 #DO NOT EDIT WITH WINDOWS
 tooling_jar=tooling-cli-3.7.0.jar
 input_cache_path=./input-cache
-mat_bundle=input/tests/measure/CMS2FHIRPCSDepressionScreenAndFollowUp
+mat_bundle=input/tests/measure/CMS22FHIRPCSBPScreeningFollowUp
 
 
 set -e
