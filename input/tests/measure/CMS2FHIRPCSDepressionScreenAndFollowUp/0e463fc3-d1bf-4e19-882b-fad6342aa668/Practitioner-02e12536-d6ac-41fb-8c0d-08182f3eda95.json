@@ -1,15 +1,13 @@
 {
-  "resourceType": "Practitioner",
-  "id": "02e12536-d6ac-41fb-8c0d-08182f3eda95",
-  "meta": {
-    "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner" ]
-  },
-  "identifier": [ {
-    "system": "http://hl7.org/fhir/sid/us-npi",
-    "value": "123456"
-  } ],
-  "name": [ {
-    "family": "Evil",
-    "prefix": [ "Dr" ]
-  } ]
+    "identifier": [{
+        "system": "http://hl7.org/fhir/sid/us-npi",
+        "value": "123456"
+    }],
+    "meta": {"profile": ["http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-practitioner"]},
+    "name": [{
+        "prefix": ["Dr"],
+        "family": "Evil"
+    }],
+    "id": "02e12536-d6ac-41fb-8c0d-08182f3eda95",
+    "resourceType": "Practitioner"
 }

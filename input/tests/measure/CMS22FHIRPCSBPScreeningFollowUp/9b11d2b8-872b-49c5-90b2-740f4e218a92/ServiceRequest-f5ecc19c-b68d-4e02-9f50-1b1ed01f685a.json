@@ -1,42 +1,32 @@
 {
-  "resourceType": "ServiceRequest",
-  "id": "f5ecc19c-b68d-4e02-9f50-1b1ed01f685a",
-  "meta": {
-    "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicenotrequested" ]
-  },
-  "extension": [ {
-    "url": "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-doNotPerformReason",
-    "valueCodeableConcept": {
-      "coding": [ {
+    "extension": [{
+        "valueCodeableConcept": {"coding": [{
+            "system": "http://snomed.info/sct",
+            "code": "1296859006",
+            "userSelected": true,
+            "display": "Procedure declined by patient (situation)"
+        }]},
+        "url": "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-doNotPerformReason"
+    }],
+    "code": {"coding": [{
+        "system": "http://snomed.info/sct",
+        "code": "313204009",
+        "userSelected": true,
+        "display": "Lifestyle education (procedure)",
+        "version": "2022-03"
+    }]},
+    "authoredOn": "2026-12-31T08:02:00.000+00:00",
+    "meta": {"profile": ["http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicenotrequested"]},
+    "subject": {"reference": "Patient/9b11d2b8-872b-49c5-90b2-740f4e218a92"},
+    "id": "f5ecc19c-b68d-4e02-9f50-1b1ed01f685a",
+    "reasonCode": [{"coding": [{
         "system": "http://snomed.info/sct",
         "code": "1296859006",
-        "display": "Procedure declined by patient (situation)",
-        "userSelected": true
-      } ]
-    }
-  } ],
-  "status": "completed",
-  "intent": "order",
-  "doNotPerform": true,
-  "code": {
-    "coding": [ {
-      "system": "http://snomed.info/sct",
-      "version": "2022-03",
-      "code": "313204009",
-      "display": "Lifestyle education (procedure)",
-      "userSelected": true
-    } ]
-  },
-  "subject": {
-    "reference": "Patient/9b11d2b8-872b-49c5-90b2-740f4e218a92"
-  },
-  "authoredOn": "2026-12-31T08:02:00.000+00:00",
-  "reasonCode": [ {
-    "coding": [ {
-      "system": "http://snomed.info/sct",
-      "code": "1296859006",
-      "display": "Procedure declined by patient (situation)",
-      "userSelected": true
-    } ]
-  } ]
+        "userSelected": true,
+        "display": "Procedure declined by patient (situation)"
+    }]}],
+    "doNotPerform": true,
+    "intent": "order",
+    "resourceType": "ServiceRequest",
+    "status": "completed"
 }

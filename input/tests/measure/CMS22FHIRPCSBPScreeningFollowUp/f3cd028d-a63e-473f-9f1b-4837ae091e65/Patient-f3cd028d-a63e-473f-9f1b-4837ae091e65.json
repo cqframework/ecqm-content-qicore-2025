@@ -1,56 +1,61 @@
 {
-  "resourceType": "Patient",
-  "id": "f3cd028d-a63e-473f-9f1b-4837ae091e65",
-  "meta": {
-    "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
-  },
-  "text": {
-    "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">do not know</div>"
-  },
-  "extension": [ {
-    "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
-    "extension": [ {
-      "url": "ombCategory",
-      "valueCoding": {
-        "system": "urn:oid:2.16.840.1.113883.6.238",
-        "code": "2028-9",
-        "display": "Asian",
-        "userSelected": true
-      }
-    }, {
-      "url": "text",
-      "valueString": "Asian"
-    } ]
-  }, {
-    "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
-    "extension": [ {
-      "url": "ombCategory",
-      "valueCoding": {
-        "system": "urn:oid:2.16.840.1.113883.6.238",
-        "code": "2186-5",
-        "display": "Not Hispanic or Latino",
-        "userSelected": true
-      }
-    }, {
-      "url": "text",
-      "valueString": "Not Hispanic or Latino"
-    } ]
-  } ],
-  "identifier": [ {
-    "type": {
-      "coding": [ {
-        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
-        "code": "MR"
-      } ]
+    "identifier": [{
+        "system": "https://bonnie-fhir.healthit.gov/",
+        "type": {"coding": [{
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code": "MR"
+        }]},
+        "value": "628d4f48786e3aa8c68d3cd3"
+    }],
+    "extension": [
+        {
+            "extension": [
+                {
+                    "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.6.238",
+                        "code": "2028-9",
+                        "userSelected": true,
+                        "display": "Asian"
+                    },
+                    "url": "ombCategory"
+                },
+                {
+                    "valueString": "Asian",
+                    "url": "text"
+                }
+            ],
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
+        },
+        {
+            "extension": [
+                {
+                    "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.6.238",
+                        "code": "2186-5",
+                        "userSelected": true,
+                        "display": "Not Hispanic or Latino"
+                    },
+                    "url": "ombCategory"
+                },
+                {
+                    "valueString": "Not Hispanic or Latino",
+                    "url": "text"
+                }
+            ],
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
+        }
+    ],
+    "gender": "female",
+    "meta": {"profile": ["http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient"]},
+    "name": [{
+        "given": ["NoEncounter"],
+        "family": "IPPFail"
+    }],
+    "id": "f3cd028d-a63e-473f-9f1b-4837ae091e65",
+    "text": {
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">do not know<\/div>",
+        "status": "generated"
     },
-    "system": "https://bonnie-fhir.healthit.gov/",
-    "value": "628d4f48786e3aa8c68d3cd3"
-  } ],
-  "name": [ {
-    "family": "IPPFail",
-    "given": [ "NoEncounter" ]
-  } ],
-  "gender": "female",
-  "birthDate": "2006-12-31"
+    "birthDate": "2006-12-31",
+    "resourceType": "Patient"
 }

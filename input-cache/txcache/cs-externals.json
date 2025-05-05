@@ -1,14 +1,14 @@
 {
-  "urn:ietf:bcp:13|null" : null,
-  "http://hl7.org/fhir/fhir-types|null" : null,
-  "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/identifier-type|null" : null,
-  "https://madie.cms.gov/login" : null,
-  "http://hl7.org/fhir/us/core/CodeSystem/condition-category" : {
-    "server" : "http://tx.fhir.org/r4",
-    "filename" : "cs-1945786e-b585-4daf-b8dd-15c6459a2646.json"
-  },
-  "https://madie.cms.gov/measure/shortName" : null,
-  "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/identifier-type" : null,
-  "https://madie.cms.gov/measure/cmsId" : null,
-  "http://hl7.org/fhir/us/core/CodeSystem/condition-category|null" : null
+    "urn:ietf:bcp:13|null": null,
+    "http://hl7.org/fhir/fhir-types|null": null,
+    "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/identifier-type|null": null,
+    "https://madie.cms.gov/login": null,
+    "http://hl7.org/fhir/us/core/CodeSystem/condition-category": {
+        "server": "http://tx.fhir.org/r4",
+        "filename": "cs-1945786e-b585-4daf-b8dd-15c6459a2646.json"
+    },
+    "https://madie.cms.gov/measure/shortName": null,
+    "http://hl7.org/fhir/us/cqfmeasures/CodeSystem/identifier-type": null,
+    "https://madie.cms.gov/measure/cmsId": null,
+    "http://hl7.org/fhir/us/core/CodeSystem/condition-category|null": null
 }

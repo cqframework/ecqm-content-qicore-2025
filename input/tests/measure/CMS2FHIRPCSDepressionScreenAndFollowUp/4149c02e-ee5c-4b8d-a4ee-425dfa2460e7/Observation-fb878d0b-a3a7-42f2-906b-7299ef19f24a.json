@@ -1,35 +1,25 @@
 {
-  "resourceType": "Observation",
-  "id": "fb878d0b-a3a7-42f2-906b-7299ef19f24a",
-  "meta": {
-    "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-screening-assessment" ]
-  },
-  "status": "final",
-  "category": [ {
-    "coding": [ {
-      "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-      "code": "procedure",
-      "display": "Procedure"
-    } ]
-  } ],
-  "code": {
-    "coding": [ {
-      "system": "http://loinc.org",
-      "code": "73831-0",
-      "display": "Adolescent depression screening assessment",
-      "userSelected": true
-    } ]
-  },
-  "subject": {
-    "reference": "Patient/4149c02e-ee5c-4b8d-a4ee-425dfa2460e7"
-  },
-  "effectiveDateTime": "2026-06-15T08:00:00.000+00:00",
-  "valueCodeableConcept": {
-    "coding": [ {
-      "system": "http://snomed.info/sct",
-      "code": "428181000124104",
-      "display": "Depression screening positive (finding)",
-      "userSelected": true
-    } ]
-  }
+    "valueCodeableConcept": {"coding": [{
+        "system": "http://snomed.info/sct",
+        "code": "428181000124104",
+        "userSelected": true,
+        "display": "Depression screening positive (finding)"
+    }]},
+    "code": {"coding": [{
+        "system": "http://loinc.org",
+        "code": "73831-0",
+        "userSelected": true,
+        "display": "Adolescent depression screening assessment"
+    }]},
+    "effectiveDateTime": "2026-06-15T08:00:00.000+00:00",
+    "meta": {"profile": ["http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-screening-assessment"]},
+    "subject": {"reference": "Patient/4149c02e-ee5c-4b8d-a4ee-425dfa2460e7"},
+    "id": "fb878d0b-a3a7-42f2-906b-7299ef19f24a",
+    "category": [{"coding": [{
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "procedure",
+        "display": "Procedure"
+    }]}],
+    "resourceType": "Observation",
+    "status": "final"
 }

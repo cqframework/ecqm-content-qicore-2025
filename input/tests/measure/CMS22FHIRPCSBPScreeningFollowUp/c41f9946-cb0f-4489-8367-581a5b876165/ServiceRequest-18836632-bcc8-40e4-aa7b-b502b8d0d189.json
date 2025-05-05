@@ -1,34 +1,26 @@
 {
-  "resourceType": "ServiceRequest",
-  "id": "18836632-bcc8-40e4-aa7b-b502b8d0d189",
-  "meta": {
-    "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicenotrequested" ]
-  },
-  "extension": [ {
-    "url": "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-doNotPerformReason",
-    "valueCodeableConcept": {
-      "coding": [ {
+    "extension": [{
+        "valueCodeableConcept": {"coding": [{
+            "system": "http://snomed.info/sct",
+            "code": "413311005",
+            "userSelected": true,
+            "display": "Patient non-compliant - declined intervention / support (situation)",
+            "version": "2022-03"
+        }]},
+        "url": "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-doNotPerformReason"
+    }],
+    "code": {"coding": [{
         "system": "http://snomed.info/sct",
-        "version": "2022-03",
-        "code": "413311005",
-        "display": "Patient non-compliant - declined intervention / support (situation)",
-        "userSelected": true
-      } ]
-    }
-  } ],
-  "status": "completed",
-  "intent": "order",
-  "doNotPerform": true,
-  "code": {
-    "coding": [ {
-      "system": "http://snomed.info/sct",
-      "code": "183625007",
-      "display": "Follow-up 4-6 months (finding)",
-      "userSelected": true
-    } ]
-  },
-  "subject": {
-    "reference": "Patient/c41f9946-cb0f-4489-8367-581a5b876165"
-  },
-  "authoredOn": "2026-12-31T10:20:00.000+00:00"
+        "code": "183625007",
+        "userSelected": true,
+        "display": "Follow-up 4-6 months (finding)"
+    }]},
+    "authoredOn": "2026-12-31T10:20:00.000+00:00",
+    "meta": {"profile": ["http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicenotrequested"]},
+    "subject": {"reference": "Patient/c41f9946-cb0f-4489-8367-581a5b876165"},
+    "id": "18836632-bcc8-40e4-aa7b-b502b8d0d189",
+    "doNotPerform": true,
+    "intent": "order",
+    "resourceType": "ServiceRequest",
+    "status": "completed"
 }

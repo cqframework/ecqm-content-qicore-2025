@@ -1,29 +1,23 @@
 {
-  "resourceType": "Encounter",
-  "id": "8ee0fcc9-7b3c-4b02-b890-61f191819cee",
-  "meta": {
-    "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ]
-  },
-  "status": "finished",
-  "class": {
-    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-    "code": "IMP",
-    "display": "inpatient encounter"
-  },
-  "type": [ {
-    "coding": [ {
-      "system": "http://snomed.info/sct",
-      "version": "2021-09",
-      "code": "183326003",
-      "display": "Combined physical therapy (regime/therapy)",
-      "userSelected": true
-    } ]
-  } ],
-  "subject": {
-    "reference": "Patient/4a1f1d8c-0de8-4819-a0a3-28f6caaf6265"
-  },
-  "period": {
-    "start": "2026-08-12T08:00:00.000+00:00",
-    "end": "2026-08-12T08:15:00.000+00:00"
-  }
+    "period": {
+        "start": "2026-08-12T08:00:00.000+00:00",
+        "end": "2026-08-12T08:15:00.000+00:00"
+    },
+    "meta": {"profile": ["http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"]},
+    "subject": {"reference": "Patient/4a1f1d8c-0de8-4819-a0a3-28f6caaf6265"},
+    "id": "8ee0fcc9-7b3c-4b02-b890-61f191819cee",
+    "type": [{"coding": [{
+        "system": "http://snomed.info/sct",
+        "code": "183326003",
+        "userSelected": true,
+        "display": "Combined physical therapy (regime/therapy)",
+        "version": "2021-09"
+    }]}],
+    "class": {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "code": "IMP",
+        "display": "inpatient encounter"
+    },
+    "resourceType": "Encounter",
+    "status": "finished"
 }

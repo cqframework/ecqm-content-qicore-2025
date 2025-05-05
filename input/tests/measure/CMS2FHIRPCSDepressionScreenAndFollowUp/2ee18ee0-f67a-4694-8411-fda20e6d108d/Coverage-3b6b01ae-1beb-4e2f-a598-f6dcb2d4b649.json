@@ -1,14 +1,8 @@
 {
-  "resourceType": "Coverage",
-  "id": "3b6b01ae-1beb-4e2f-a598-f6dcb2d4b649",
-  "meta": {
-    "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ]
-  },
-  "status": "active",
-  "beneficiary": {
-    "reference": "Patient/2ee18ee0-f67a-4694-8411-fda20e6d108d"
-  },
-  "payor": [ {
-    "reference": "Organization/236b2046-1e77-4ab8-948d-1569bc595244"
-  } ]
+    "payor": [{"reference": "Organization/236b2046-1e77-4ab8-948d-1569bc595244"}],
+    "beneficiary": {"reference": "Patient/2ee18ee0-f67a-4694-8411-fda20e6d108d"},
+    "meta": {"profile": ["http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage"]},
+    "id": "3b6b01ae-1beb-4e2f-a598-f6dcb2d4b649",
+    "resourceType": "Coverage",
+    "status": "active"
 }
