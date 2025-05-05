@@ -1,25 +1,17 @@
 {
-  "resourceType": "MedicationRequest",
-  "id": "7d508313-18f9-4634-9307-78db60f0bcce",
-  "meta": {
-    "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest" ]
-  },
-  "status": "active",
-  "intent": "order",
-  "doNotPerform": false,
-  "medicationCodeableConcept": {
-    "coding": [ {
-      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-      "code": "1190110",
-      "display": "fluoxetine 60 MG Oral Tablet",
-      "userSelected": true
-    } ]
-  },
-  "subject": {
-    "reference": "Patient/328248a7-33d6-4923-a99a-a56ec88c515e"
-  },
-  "authoredOn": "2026-06-22T08:00:00.000+00:00",
-  "requester": {
-    "reference": "Practitioner/123456"
-  }
+    "requester": {"reference": "Practitioner/Practitioner-123456"},
+    "authoredOn": "2026-06-22T08:00:00.000+00:00",
+    "meta": {"profile": ["http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest"]},
+    "subject": {"reference": "Patient/328248a7-33d6-4923-a99a-a56ec88c515e"},
+    "id": "7d508313-18f9-4634-9307-78db60f0bcce",
+    "doNotPerform": false,
+    "medicationCodeableConcept": {"coding": [{
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "1190110",
+        "userSelected": true,
+        "display": "fluoxetine 60 MG Oral Tablet"
+    }]},
+    "intent": "order",
+    "resourceType": "MedicationRequest",
+    "status": "active"
 }

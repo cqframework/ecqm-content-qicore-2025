@@ -1500,11 +1500,6 @@
     "valueReference": {
       "reference": "#effective-data-requirements"
     }
-  }, {
-    "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem",
-    "valueReference": {
-      "reference": "Device/cqf-tooling"
-    }
   } ],
   "url": "https://madie.cms.gov/Measure/CMS69FHIRPCSBMIScreenAndFollowUp",
   "identifier": [ {
@@ -1560,7 +1555,7 @@
   "title": "Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up PlanFHIR",
   "status": "active",
   "experimental": false,
-  "date": "2025-05-05T18:23:49+00:00",
+  "date": "2025-05-05T19:54:04+00:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {

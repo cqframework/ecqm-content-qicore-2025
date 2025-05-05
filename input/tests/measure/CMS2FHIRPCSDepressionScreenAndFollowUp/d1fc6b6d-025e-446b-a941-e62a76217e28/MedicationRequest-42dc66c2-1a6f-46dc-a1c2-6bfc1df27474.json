@@ -1,25 +1,17 @@
 {
-  "resourceType": "MedicationRequest",
-  "id": "42dc66c2-1a6f-46dc-a1c2-6bfc1df27474",
-  "meta": {
-    "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest" ]
-  },
-  "status": "active",
-  "intent": "order",
-  "doNotPerform": false,
-  "medicationCodeableConcept": {
-    "coding": [ {
-      "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-      "code": "1000048",
-      "display": "doxepin hydrochloride 10 MG Oral Capsule",
-      "userSelected": true
-    } ]
-  },
-  "subject": {
-    "reference": "Patient/d1fc6b6d-025e-446b-a941-e62a76217e28"
-  },
-  "authoredOn": "2025-06-24T08:00:00.000+00:00",
-  "requester": {
-    "reference": "Practitioner/123456"
-  }
+    "requester": {"reference": "Practitioner/Practitioner-123456"},
+    "authoredOn": "2025-06-24T08:00:00.000+00:00",
+    "meta": {"profile": ["http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest"]},
+    "subject": {"reference": "Patient/d1fc6b6d-025e-446b-a941-e62a76217e28"},
+    "id": "42dc66c2-1a6f-46dc-a1c2-6bfc1df27474",
+    "doNotPerform": false,
+    "medicationCodeableConcept": {"coding": [{
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "1000048",
+        "userSelected": true,
+        "display": "doxepin hydrochloride 10 MG Oral Capsule"
+    }]},
+    "intent": "order",
+    "resourceType": "MedicationRequest",
+    "status": "active"
 }

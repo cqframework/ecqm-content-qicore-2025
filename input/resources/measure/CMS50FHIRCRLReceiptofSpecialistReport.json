@@ -764,11 +764,6 @@
     "valueReference": {
       "reference": "#effective-data-requirements"
     }
-  }, {
-    "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem",
-    "valueReference": {
-      "reference": "Device/cqf-tooling"
-    }
   } ],
   "url": "https://madie.cms.gov/Measure/CMS50FHIRCRLReceiptofSpecialistReport",
   "identifier": [ {
@@ -824,7 +819,7 @@
   "title": "Closing the Referral Loop: Receipt of Specialist ReportFHIR",
   "status": "active",
   "experimental": false,
-  "date": "2025-05-02T21:33:47+00:00",
+  "date": "2025-05-05T19:54:03+00:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {

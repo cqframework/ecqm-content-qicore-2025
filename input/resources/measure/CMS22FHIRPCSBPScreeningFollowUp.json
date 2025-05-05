@@ -1616,11 +1616,6 @@
     "valueReference": {
       "reference": "#effective-data-requirements"
     }
-  }, {
-    "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem",
-    "valueReference": {
-      "reference": "Device/cqf-tooling"
-    }
   } ],
   "url": "https://madie.cms.gov/Measure/CMS22FHIRPCSBPScreeningFollowUp",
   "identifier": [ {
@@ -1676,7 +1671,7 @@
   "title": "Preventive Care and Screening: Screening for High Blood Pressure and Follow-Up DocumentedFHIR",
   "status": "active",
   "experimental": false,
-  "date": "2025-05-02T21:04:40+00:00",
+  "date": "2025-05-05T19:54:03+00:00",
   "publisher": "American Institutes for Research (AIR)",
   "contact": [ {
     "telecom": [ {
