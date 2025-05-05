@@ -1,29 +1,21 @@
 {
-  "resourceType": "Observation",
-  "id": "e4188a33-e6e4-48f3-91aa-c28f16580a9b",
-  "meta": {
-    "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-screening-assessment" ]
-  },
-  "status": "final",
-  "category": [ {
-    "coding": [ {
-      "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-      "code": "procedure",
-      "display": "Procedure"
-    } ]
-  } ],
-  "code": {
-    "coding": [ {
-      "system": "http://loinc.org",
-      "code": "73832-8",
-      "display": "Adult depression screening assessment",
-      "userSelected": true
-    } ]
-  },
-  "subject": {
-    "reference": "Patient/6f17c306-5df4-431a-8364-d44ab5bad34a"
-  },
-  "effectiveDateTime": "2026-06-21T08:00:00.000+00:00",
-  "issued": "2026-06-20T08:00:00.000+00:00",
-  "valueBoolean": true
+    "valueBoolean": true,
+    "code": {"coding": [{
+        "system": "http://loinc.org",
+        "code": "73832-8",
+        "userSelected": true,
+        "display": "Adult depression screening assessment"
+    }]},
+    "effectiveDateTime": "2026-06-21T08:00:00.000+00:00",
+    "meta": {"profile": ["http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-screening-assessment"]},
+    "subject": {"reference": "Patient/6f17c306-5df4-431a-8364-d44ab5bad34a"},
+    "id": "e4188a33-e6e4-48f3-91aa-c28f16580a9b",
+    "category": [{"coding": [{
+        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code": "procedure",
+        "display": "Procedure"
+    }]}],
+    "issued": "2026-06-20T08:00:00.000+00:00",
+    "resourceType": "Observation",
+    "status": "final"
 }

@@ -1,109 +1,95 @@
 {
-  "resourceType": "MeasureReport",
-  "id": "88429b00-d70e-4da6-ada2-cd32140e16c1",
-  "meta": {
-    "profile": [ "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/test-case-cqfm" ]
-  },
-  "contained": [ {
-    "resourceType": "Parameters",
-    "id": "aefe2c3b-c38a-458d-9dc7-9ccf1ccee515-parameters",
-    "parameter": [ {
-      "name": "subject",
-      "valueString": "82134291-214a-4e6e-9969-9ccb6df412f0"
-    } ]
-  } ],
-  "extension": [ {
-    "url": "http://hl7.org/fhir/StructureDefinition/cqf-inputParameters",
-    "valueReference": {
-      "reference": "#aefe2c3b-c38a-458d-9dc7-9ccf1ccee515-parameters"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-testCaseDescription",
-    "valueMarkdown": "Adult with previous positive adult depression screening and medication request follow up and counseling"
-  } ],
-  "modifierExtension": [ {
-    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-isTestCase",
-    "valueBoolean": true
-  } ],
-  "status": "complete",
-  "type": "individual",
-  "measure": "https://madie.cms.gov/Measure/CMS2FHIRPCSDepressionScreenAndFollowUp",
-  "period": {
-    "start": "2026-01-01",
-    "end": "2026-12-31"
-  },
-  "group": [ {
-    "id": "Group_1",
-    "population": [ {
-      "id": "InitialPopulation_1",
-      "code": {
-        "coding": [ {
-          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-          "code": "initial-population",
-          "display": "Initial Population"
-        } ]
-      },
-      "count": 1
-    }, {
-      "id": "Denominator_1",
-      "code": {
-        "coding": [ {
-          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-          "code": "denominator",
-          "display": "Denominator"
-        } ]
-      },
-      "count": 1
-    }, {
-      "id": "DenominatorExclusion_1",
-      "code": {
-        "coding": [ {
-          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-          "code": "denominator-exclusion",
-          "display": "Denominator Exclusion"
-        } ]
-      },
-      "count": 0
-    }, {
-      "id": "Numerator_1",
-      "code": {
-        "coding": [ {
-          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-          "code": "numerator",
-          "display": "Numerator"
-        } ]
-      },
-      "count": 1
-    }, {
-      "id": "DenominatorException_1",
-      "code": {
-        "coding": [ {
-          "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-          "code": "denominator-exception",
-          "display": "Denominator Exception"
-        } ]
-      },
-      "count": 0
-    } ],
-    "measureScore": {
-      "value": 1.0
-    }
-  } ],
-  "evaluatedResource": [ {
-    "reference": "Patient/82134291-214a-4e6e-9969-9ccb6df412f0"
-  }, {
-    "reference": "Encounter/8c224480-c059-4639-863b-bf4b98fd6b9d"
-  }, {
-    "reference": "Observation/6f49833b-0084-4f28-9862-3e48f2f1a6a8"
-  }, {
-    "reference": "MedicationRequest/9f4ed9bd-0044-4358-add8-f59cc992a39c"
-  }, {
-    "reference": "Procedure/704feae7-3ff2-4dd3-a23d-9497d0d800ea"
-  }, {
-    "reference": "Coverage/4c2a0536-4290-4b7c-bcd2-37c745148e9d"
-  }, {
-    "reference": "Organization/0209decf-8402-416d-8328-13d940136ebd"
-  }, {
-    "reference": "Practitioner/b0c377b8-e770-4643-a0bb-ed2861cfc480"
-  } ]
+    "contained": [{
+        "parameter": [{
+            "valueString": "82134291-214a-4e6e-9969-9ccb6df412f0",
+            "name": "subject"
+        }],
+        "id": "aefe2c3b-c38a-458d-9dc7-9ccf1ccee515-parameters",
+        "resourceType": "Parameters"
+    }],
+    "extension": [
+        {
+            "valueReference": {"reference": "#aefe2c3b-c38a-458d-9dc7-9ccf1ccee515-parameters"},
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-inputParameters"
+        },
+        {
+            "valueMarkdown": "Adult with previous positive adult depression screening and medication request follow up and counseling",
+            "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-testCaseDescription"
+        }
+    ],
+    "period": {
+        "start": "2026-01-01",
+        "end": "2026-12-31"
+    },
+    "measure": "https://madie.cms.gov/Measure/CMS2FHIRPCSDepressionScreenAndFollowUp",
+    "meta": {"profile": ["http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/test-case-cqfm"]},
+    "modifierExtension": [{
+        "valueBoolean": true,
+        "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-isTestCase"
+    }],
+    "id": "88429b00-d70e-4da6-ada2-cd32140e16c1",
+    "evaluatedResource": [
+        {"reference": "Patient/82134291-214a-4e6e-9969-9ccb6df412f0"},
+        {"reference": "Encounter/8c224480-c059-4639-863b-bf4b98fd6b9d"},
+        {"reference": "Observation/6f49833b-0084-4f28-9862-3e48f2f1a6a8"},
+        {"reference": "MedicationRequest/9f4ed9bd-0044-4358-add8-f59cc992a39c"},
+        {"reference": "Procedure/704feae7-3ff2-4dd3-a23d-9497d0d800ea"},
+        {"reference": "Coverage/4c2a0536-4290-4b7c-bcd2-37c745148e9d"},
+        {"reference": "Organization/0209decf-8402-416d-8328-13d940136ebd"},
+        {"reference": "Practitioner/b0c377b8-e770-4643-a0bb-ed2861cfc480"}
+    ],
+    "type": "individual",
+    "resourceType": "MeasureReport",
+    "status": "complete",
+    "group": [{
+        "id": "Group_1",
+        "measureScore": {"value": 1},
+        "population": [
+            {
+                "code": {"coding": [{
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                    "code": "initial-population",
+                    "display": "Initial Population"
+                }]},
+                "count": 1,
+                "id": "InitialPopulation_1"
+            },
+            {
+                "code": {"coding": [{
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                    "code": "denominator",
+                    "display": "Denominator"
+                }]},
+                "count": 1,
+                "id": "Denominator_1"
+            },
+            {
+                "code": {"coding": [{
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                    "code": "denominator-exclusion",
+                    "display": "Denominator Exclusion"
+                }]},
+                "count": 0,
+                "id": "DenominatorExclusion_1"
+            },
+            {
+                "code": {"coding": [{
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                    "code": "numerator",
+                    "display": "Numerator"
+                }]},
+                "count": 1,
+                "id": "Numerator_1"
+            },
+            {
+                "code": {"coding": [{
+                    "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                    "code": "denominator-exception",
+                    "display": "Denominator Exception"
+                }]},
+                "count": 0,
+                "id": "DenominatorException_1"
+            }
+        ]
+    }]
 }

@@ -573,11 +573,6 @@
     "valueReference": {
       "reference": "#effective-data-requirements"
     }
-  }, {
-    "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem",
-    "valueReference": {
-      "reference": "Device/cqf-tooling"
-    }
   } ],
   "url": "https://madie.cms.gov/Measure/CMS68FHIRDocumentationofCurrentMedications",
   "identifier": [ {
@@ -633,7 +628,7 @@
   "title": "Documentation of Current Medications in the Medical RecordFHIR",
   "status": "active",
   "experimental": false,
-  "date": "2025-05-05T18:03:29+00:00",
+  "date": "2025-05-05T18:58:06+00:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {

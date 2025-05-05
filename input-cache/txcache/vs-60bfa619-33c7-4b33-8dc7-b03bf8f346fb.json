@@ -1,1 +1,109 @@
-{"resourceType":"ValueSet","id":"2.16.840.1.113762.1.4.1047.102","meta":{"versionId":"3","lastUpdated":"2024-08-09T13:20:02.000-04:00","profile":["http://hl7.org/fhir/StructureDefinition/shareablevalueset","http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-valueset-cqfm","http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-valueset-cqfm"]},"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/valueset-author","valueContactDetail":{"name":"American Institutes for Research Author"}},{"url":"http://hl7.org/fhir/StructureDefinition/resource-lastReviewDate","valueDate":"2024-03-21"},{"url":"http://hl7.org/fhir/StructureDefinition/valueset-effectiveDate","valueDate":"2017-05-04"}],"url":"http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.102","identifier":[{"system":"urn:ietf:rfc:3986","value":"urn:oid:2.16.840.1.113762.1.4.1047.102"}],"version":"20170504","name":"Rhabdomyolysis","title":"Rhabdomyolysis","status":"active","experimental":false,"date":"2017-05-04T01:00:13-04:00","publisher":"American Institutes for Research Steward","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"US"}]}],"purpose":"(Clinical Focus: The purpose of this value set is to represent concepts for diagnoses of rhabdomyolysis.),(Data Element Scope: This value set may use a model element related to Diagnosis.),(Inclusion Criteria: Includes concepts that represent a diagnosis of rhabdomyolysis.),(Exclusion Criteria: No exclusions.)","compose":{"include":[{"valueSet":["http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.13"]},{"valueSet":["http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.89"]}]},"expansion":{"identifier":"urn:uuid:4775d83e-d3cc-4a67-9c17-d9804e5b9848","timestamp":"2024-12-10T05:31:36-05:00","total":9,"contains":[{"system":"http://snomed.info/sct","version":"http://snomed.info/sct/731000124108/version/20240901","code":"23697004","display":"Crush syndrome (disorder)"},{"system":"http://snomed.info/sct","version":"http://snomed.info/sct/731000124108/version/20240901","code":"240125008","display":"Muscle crush syndrome (disorder)"},{"system":"http://snomed.info/sct","version":"http://snomed.info/sct/731000124108/version/20240901","code":"240131006","display":"Rhabdomyolysis (disorder)"},{"system":"http://snomed.info/sct","version":"http://snomed.info/sct/731000124108/version/20240901","code":"240132004","display":"Non-traumatic rhabdomyolysis (disorder)"},{"system":"http://snomed.info/sct","version":"http://snomed.info/sct/731000124108/version/20240901","code":"72960004","display":"Exertional rhabdomyolysis (disorder)"},{"system":"http://hl7.org/fhir/sid/icd-10-cm","version":"2025","code":"M62.82","display":"Rhabdomyolysis"},{"system":"http://hl7.org/fhir/sid/icd-10-cm","version":"2025","code":"T79.6XXA","display":"Traumatic ischemia of muscle, initial encounter"},{"system":"http://hl7.org/fhir/sid/icd-10-cm","version":"2025","code":"T79.6XXD","display":"Traumatic ischemia of muscle, subsequent encounter"},{"system":"http://hl7.org/fhir/sid/icd-10-cm","version":"2025","code":"T79.6XXS","display":"Traumatic ischemia of muscle, sequela"}]}}
+{
+    "date": "2017-05-04T01:00:13-04:00",
+    "identifier": [{
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:oid:2.16.840.1.113762.1.4.1047.102"
+    }],
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
+            "valueContactDetail": {"name": "American Institutes for Research Author"}
+        },
+        {
+            "valueDate": "2024-03-21",
+            "url": "http://hl7.org/fhir/StructureDefinition/resource-lastReviewDate"
+        },
+        {
+            "valueDate": "2017-05-04",
+            "url": "http://hl7.org/fhir/StructureDefinition/valueset-effectiveDate"
+        }
+    ],
+    "purpose": "(Clinical Focus: The purpose of this value set is to represent concepts for diagnoses of rhabdomyolysis.),(Data Element Scope: This value set may use a model element related to Diagnosis.),(Inclusion Criteria: Includes concepts that represent a diagnosis of rhabdomyolysis.),(Exclusion Criteria: No exclusions.)",
+    "jurisdiction": [{"coding": [{
+        "system": "urn:iso:std:iso:3166",
+        "code": "US"
+    }]}],
+    "experimental": false,
+    "title": "Rhabdomyolysis",
+    "version": "20170504",
+    "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.102",
+    "expansion": {
+        "identifier": "urn:uuid:4775d83e-d3cc-4a67-9c17-d9804e5b9848",
+        "total": 9,
+        "contains": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "23697004",
+                "display": "Crush syndrome (disorder)",
+                "version": "http://snomed.info/sct/731000124108/version/20240901"
+            },
+            {
+                "system": "http://snomed.info/sct",
+                "code": "240125008",
+                "display": "Muscle crush syndrome (disorder)",
+                "version": "http://snomed.info/sct/731000124108/version/20240901"
+            },
+            {
+                "system": "http://snomed.info/sct",
+                "code": "240131006",
+                "display": "Rhabdomyolysis (disorder)",
+                "version": "http://snomed.info/sct/731000124108/version/20240901"
+            },
+            {
+                "system": "http://snomed.info/sct",
+                "code": "240132004",
+                "display": "Non-traumatic rhabdomyolysis (disorder)",
+                "version": "http://snomed.info/sct/731000124108/version/20240901"
+            },
+            {
+                "system": "http://snomed.info/sct",
+                "code": "72960004",
+                "display": "Exertional rhabdomyolysis (disorder)",
+                "version": "http://snomed.info/sct/731000124108/version/20240901"
+            },
+            {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "M62.82",
+                "display": "Rhabdomyolysis",
+                "version": "2025"
+            },
+            {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "T79.6XXA",
+                "display": "Traumatic ischemia of muscle, initial encounter",
+                "version": "2025"
+            },
+            {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "T79.6XXD",
+                "display": "Traumatic ischemia of muscle, subsequent encounter",
+                "version": "2025"
+            },
+            {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "T79.6XXS",
+                "display": "Traumatic ischemia of muscle, sequela",
+                "version": "2025"
+            }
+        ],
+        "timestamp": "2024-12-10T05:31:36-05:00"
+    },
+    "compose": {"include": [
+        {"valueSet": ["http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.13"]},
+        {"valueSet": ["http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1047.89"]}
+    ]},
+    "meta": {
+        "lastUpdated": "2024-08-09T13:20:02.000-04:00",
+        "versionId": "3",
+        "profile": [
+            "http://hl7.org/fhir/StructureDefinition/shareablevalueset",
+            "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-valueset-cqfm",
+            "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-valueset-cqfm"
+        ]
+    },
+    "name": "Rhabdomyolysis",
+    "publisher": "American Institutes for Research Steward",
+    "id": "2.16.840.1.113762.1.4.1047.102",
+    "resourceType": "ValueSet",
+    "status": "active"
+}
