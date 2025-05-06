@@ -29,10 +29,10 @@
       "valueString": "DisableListPromotion"
     }, {
       "name": "format",
-      "valueString": "JSON"
+      "valueString": "XML"
     }, {
       "name": "format",
-      "valueString": "XML"
+      "valueString": "JSON"
     }, {
       "name": "analyzeDataRequirements",
       "valueBoolean": false
@@ -196,11 +196,6 @@
     "url": "http://hl7.org/fhir/StructureDefinition/cqf-cqlOptions",
     "valueReference": {
       "reference": "#options"
-    }
-  }, {
-    "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem",
-    "valueReference": {
-      "reference": "Device/cqf-tooling"
     }
   } ],
   "url": "https://madie.cms.gov/Library/CQMCommon",
