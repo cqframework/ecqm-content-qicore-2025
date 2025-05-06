@@ -2,7 +2,7 @@
 #DO NOT EDIT WITH WINDOWS
 tooling_jar=tooling-cli-3.7.0.jar
 input_cache_path=./input-cache
-mat_bundle=./bundles/mat/CMS133/CMS133FHIR-R1-MeasureExport/CMS133FHIR-v0.2.000-FHIR.json
+mat_bundle=./bundles/mat/CMS135/CMS135FHIR-R1-MeasureExport/CMS135FHIR-v0.4.000-FHIR.json
 
 set -e
 
