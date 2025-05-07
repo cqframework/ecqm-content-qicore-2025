@@ -122,11 +122,11 @@ To continue verifying terminology service capabilities as described by the Measu
 2. The service supports hosted as well as authored content for ValueSet resources
 3. The service returns resources that conform to the Shareable/Publishable/Computable/Executable profiles for ValueSet resources
 4. The service supports the use of manifest libraries to provide expansion parameters
-5. The service supports the $expand operation with manfiest libraries
+5. The service supports the $expand operation with manifest libraries
 
 The current set of tests is available here:
 
-https://github.com/HL7/cqf-measures/tree/master/thunder-tests
+[https://github.com/HL7/fhir-cqm/tree/main/postman-tests](https://github.com/HL7/fhir-cqm/tree/main/postman-tests)
 
 In particular, we are testing the expansion of a grouping value set that requires versions of the component value sets:
 
@@ -306,9 +306,9 @@ Github Codespaces can also be used in this repository.
 
 ## Content Indexes
 
-* [Libraries](https://build.fhir.org/ig/cqframework/ecqm-content-qicore-2024/libraries.html)
-* [Measures](https://build.fhir.org/ig/cqframework/ecqm-content-qicore-2024/measures.html)
-* [Artifact Summary](https://build.fhir.org/ig/cqframework/ecqm-content-qicore-2024/artifacts.html)
+* [Libraries](https://build.fhir.org/ig/cqframework/ecqm-content-qicore-2025/libraries.html)
+* [Measures](https://build.fhir.org/ig/cqframework/ecqm-content-qicore-2025/measures.html)
+* [Artifact Summary](https://build.fhir.org/ig/cqframework/ecqm-content-qicore-2025/artifacts.html)
 
 ## Repository Structure
 
@@ -330,7 +330,7 @@ This repository is setup like any HL7 FHIR IG project but also includes the CQL 
        |-- measure
            |-- <bundles>
    |-- input
-       |-- ecqm-content-qicore-2024.xml
+       |-- ecqm-content-qicore-2025.xml
        |-- cql
            |-- <library name>.cql
        |-- pagecontent
@@ -364,7 +364,7 @@ command:
 For example:
 
 ```
-input-cache\tooling-cli-3.0.0.jar -ExtractMATBundle bundles\mat\CLONE124_v6_03-Artifacts\measure-json-bundle.json
+input-cache\tooling-cli-3.7.0.jar -ExtractMATBundle bundles\mat\CLONE124_v6_03-Artifacts\measure-json-bundle.json
 ```
 
 ## Refresh IG Processing
