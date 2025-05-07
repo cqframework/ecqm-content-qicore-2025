@@ -376,3 +376,17 @@ The CQF Tooling provides "refresh" tooling that performs the following functions
 * Refreshes generated content for each knowledge artifact (Library, Measure, PlanDefinition, ActivityDefinition) including parameters, dependencies, and effective data requirements
 
 Whenever changes are made to the CQL, Library, or Measure resources, run the `_refresh` command to refresh the implementation guide content with the new content, and then run `_genonce` to run the publication tooling on the implementation guide (the same process that the continuous integration build uses to publish the implementation guide when commits are made to this repository).
+
+
+## Measure Package Prep Process
+
+1. Download Measure Zip folder to `bundles\mat` directory.
+2. Unzip the folder, then unzip the MeasureExport and TestCaseExport folders within it.
+3. Run `_updateCQFTooling.sh` script to ensure CQF tooling jar is present.
+4. Update `_extractMATBundle.sh` so that `mat_bundle` points to the JSON file within the MeasureExport directory.
+5. Run `_extractMATBundle.sh` to load Measure Resources.
+6. Create a directory under `input\tests\measure` with the Measure ID.
+7. Copy all files from the TestCaseExport directory to this newly created directory.
+8. Update `_extractBundleResources.sh` so that `mat_bundle` points to this newly created directory.
+9. Run `_extractBundleResources.sh` to populate test case resources.
+10. Run `_refresh.sh` to refresh IG content.
