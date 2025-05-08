@@ -1,10 +1,10 @@
 {
     "resourceType": "Library",
-    "id": "Manifest-Release-2025",
+    "id": "Manifest-FinalDraft-2025",
     "meta": {
         "versionId": "2",
-        "lastUpdated": "2025-05-06T11:35:11.402-06:00",
-        "source": "#pBNzD63szI9GsCTT",
+        "lastUpdated": "2025-05-07T20:00:51.283-06:00",
+        "source": "#Ch1aOZCnf2CbrQhv",
         "profile": [
             "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary"
         ]
@@ -172,7 +172,7 @@
             }
         ]
     },
-    "date": "2025-05-06T11:28:52-06:00",
+    "date": "2025-05-07T19:55:00-06:00",
     "publisher": "Clinical Quality Information WG",
     "contact": [
         {
@@ -417,7 +417,7 @@
         },
         {
             "type": "depends-on",
-            "resource": "http://www.nlm.nih.gov/research/umls/rxnorm|3.0.1"
+            "resource": "http://www.nlm.nih.gov/research/umls/rxnorm|01022024"
         },
         {
             "type": "depends-on",
@@ -441,7 +441,7 @@
         },
         {
             "type": "depends-on",
-            "resource": "http://hl7.org/fhir/sid/icd-10-cm|2.0.1"
+            "resource": "http://hl7.org/fhir/sid/icd-10-cm|2024"
         },
         {
             "type": "depends-on",
@@ -460,7 +460,7 @@
         },
         {
             "type": "depends-on",
-            "resource": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets|1.0.2"
+            "resource": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets|2024"
         },
         {
             "type": "depends-on",
@@ -469,7 +469,7 @@
         },
         {
             "type": "depends-on",
-            "resource": "http://www.ama-assn.org/go/cpt|3.0.1"
+            "resource": "http://www.ama-assn.org/go/cpt|2024"
         },
         {
             "type": "depends-on",
@@ -578,7 +578,7 @@
         },
         {
             "type": "depends-on",
-            "resource": "https://nahdo.org/sopt|1.0.1"
+            "resource": "https://nahdo.org/sopt|9.2"
         },
         {
             "type": "depends-on",
@@ -1070,7 +1070,7 @@
         },
         {
             "type": "depends-on",
-            "resource": "http://www.cms.gov/Medicare/Coding/ICD10|2.0.1"
+            "resource": "http://www.cms.gov/Medicare/Coding/ICD10|2024"
         },
         {
             "type": "depends-on",
@@ -1557,7 +1557,7 @@
         },
         {
             "type": "depends-on",
-            "resource": "http://hl7.org/fhir/sid/cvx|4.0.0"
+            "resource": "http://hl7.org/fhir/sid/cvx|20231102"
         },
         {
             "type": "depends-on",
