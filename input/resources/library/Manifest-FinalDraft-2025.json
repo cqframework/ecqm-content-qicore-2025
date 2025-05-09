@@ -53,14 +53,6 @@
                 },
                 {
                     "name": "system-version",
-                    "valueUri": "http://terminology.hl7.org/CodeSystem/icd9cm|2013"
-                },
-                {
-                    "name": "system-version",
-                    "valueUri": "http://terminology.hl7.org/CodeSystem/v2-0895|2021"
-                },
-                {
-                    "name": "system-version",
                     "valueUri": "http://www.nlm.nih.gov/research/umls/rxnorm|01022024"
                 },
                 {
