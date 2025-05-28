@@ -4,7 +4,7 @@ using QICore version '6.0.0'
 using USCore version '6.1.0'
 
 include FHIRHelpers version '4.4.000' called FHIRHelpers
-include QICoreCommon version '3.0.000' called QICoreCommon
+include QICoreCommon version '4.0.000' called QICoreCommon
 
 codesystem "SNOMEDCT": 'http://snomed.info/sct' 
 
