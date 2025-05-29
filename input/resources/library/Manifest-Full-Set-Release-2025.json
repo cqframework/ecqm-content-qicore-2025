@@ -1,8 +1,3 @@
-// manually completed - 26 component version done via $release, then oncology VSs added manually
-
-// All components except the last one - oncology...
-// 701 dependencies
-// $released in 4m 10s
 {
     "resourceType": "Library",
     "id": "Manifest-FinalDraft-2025",
@@ -14,6 +9,21 @@
             "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary"
         ]
     },
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-artifactComment",
+            "extension": [
+                {
+                    "url": "type",
+                    "valueCode": "documentation"
+                },
+                {
+                    "url": "text",
+                    "valueMarkdown": "Completed with 26 component version done via $release, then oncology VSs added manually\n\"OncologyPainIntensityQuantifiedFHIR\" - valueset \"Cancer\": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010'\nIt is a grouper that references:\n2.16.840.1.113883.3.526.2.1078\n2.16.840.1.113883.3.526.2.1079\n\nThe read for this value set works fine with Postman as the client, but fails everytime when done from the $release operation\nSo manually added this last dependency for now\n701 dependencies\n$released in 4m 10s"
+                }
+            ]
+        }
+    ],
     "contained": [
         {
             "resourceType": "Parameters",
