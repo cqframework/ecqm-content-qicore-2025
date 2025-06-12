@@ -1,29 +1,14 @@
 {
     "resourceType": "Library",
-    "id": "Manifest-Full-Set-Release-2025",
+    "id": "Manifest-Full-Set-FinalDraft-2025",
     "meta": {
-        "versionId": "20",
-        "lastUpdated": "2025-05-29T13:58:52.020-06:00",
-        "source": "#FNgI304ydaKaXgPh",
+        "versionId": "2",
+        "lastUpdated": "2025-06-12T17:11:05.080-06:00",
+        "source": "#TBapum8gNbnS40Im",
         "profile": [
             "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary"
         ]
     },
-    "extension": [
-        {
-            "url": "http://hl7.org/fhir/StructureDefinition/cqf-artifactComment",
-            "extension": [
-                {
-                    "url": "type",
-                    "valueCode": "documentation"
-                },
-                {
-                    "url": "text",
-                    "valueMarkdown": "Completed with 26 component version done via $release, then oncology VSs added manually\n\"OncologyPainIntensityQuantifiedFHIR\" - valueset \"Cancer\": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010'\nIt is a grouper that references:\n2.16.840.1.113883.3.526.2.1078\n2.16.840.1.113883.3.526.2.1079\n\nThe read for this value set works fine with Postman as the client, but fails everytime when done from the $release operation\nSo manually added this last dependency for now\n701 dependencies\n$released in 4m 10s"
-                }
-            ]
-        }
-    ],
     "contained": [
         {
             "resourceType": "Parameters",
@@ -156,6 +141,502 @@
             "valueReference": {
                 "reference": "Device/cqf-tooling"
             }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "248153007",
+                "display": "Male (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "248152002",
+                "display": "Female (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "73831-0",
+                "display": "Adolescent depression screening assessment"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "428171000124102",
+                "display": "Depression screening negative (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "428181000124104",
+                "display": "Depression screening positive (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "73832-8",
+                "display": "Adult depression screening assessment"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "720834000",
+                "display": "Depression screening declined (situation)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "248153007",
+                "display": "Male (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "248152002",
+                "display": "Female (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "VR",
+                "display": "virtual"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "8480-6",
+                "display": "Systolic blood pressure"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "8462-4",
+                "display": "Diastolic blood pressure"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "34534-8",
+                "display": "EKG 12 channel panel"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "11524-6",
+                "display": "EKG study"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+                "code": "health-concern",
+                "display": "Health Concern"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "85354-9",
+                "display": "Blood pressure panel with all children optional"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "248153007",
+                "display": "Male (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "248152002",
+                "display": "Female (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "96156",
+                "display": "Health behavior assessment, or re-assessment (ie, health-focused clinical interview, behavioral observations, clinical decision making)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "96136",
+                "display": "Psychological or neuropsychological test administration and scoring by physician or other qualified health care professional, two or more tests, any method; first 30 minutes"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "96138",
+                "display": "Psychological or neuropsychological test administration and scoring by technician, two or more tests, any method; first 30 minutes"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "90839",
+                "display": "Psychotherapy for crisis; first 60 minutes"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "96112",
+                "display": "Developmental test administration (including assessment of fine and/or gross motor, language, cognitive level, social, memory and/or executive functions by standardized developmental instruments when performed), by physician or other qualified health care professional, with interpretation and report; first hour"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "248153007",
+                "display": "Male (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "248152002",
+                "display": "Female (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "72093-8",
+                "display": "Quality of life score [HOOS]"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "72094-6",
+                "display": "Sport-recreation score [HOOS]"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "72095-3",
+                "display": "Activities of daily living score [HOOS]"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "72096-1",
+                "display": "Symptoms score [HOOS]"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "72097-9",
+                "display": "Pain score [HOOS]"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "82323-7",
+                "display": "Total interval score [HOOSJR]"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "71969-0",
+                "display": "PROMIS-10 Global Mental Health (GMH) score T-score"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "71971-6",
+                "display": "PROMIS-10 Global Physical Health (GPH) score T-score"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "72026-8",
+                "display": "VR-12 Mental component summary (MCS) score - oblique method T-score"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "72025-0",
+                "display": "VR-12 Physical component summary (PCS) score - oblique method T-score"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "72028-4",
+                "display": "VR-12 Mental component summary (MCS) score - orthogonal method T-score"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "72027-6",
+                "display": "VR-12 Physical component summary (PCS) score - orthogonal method T-score"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "99024",
+                "display": "Postoperative follow-up visit, normally included in the surgical package, to indicate that an evaluation and management service was performed during a postoperative period for a reason(s) related to the original procedure"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "428361000124107",
+                "display": "Discharge to home for hospice care (procedure)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "428371000124100",
+                "display": "Discharge to healthcare facility for hospice care (procedure)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "45755-6",
+                "display": "Hospice care [Minimum Data Set]"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "373066001",
+                "display": "Yes (qualifier value)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "702956004",
+                "display": "Severe cognitive impairment (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "248153007",
+                "display": "Male (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "248152002",
+                "display": "Female (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "428191000124101",
+                "display": "Documentation of current medications (procedure)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "705016005",
+                "display": "Acute health crisis (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "248153007",
+                "display": "Male (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "248152002",
+                "display": "Female (finding)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://hl7.org/fhir/us/core/CodeSystem/condition-category",
+                "code": "health-concern",
+                "display": "Health Concern"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active",
+                "display": "Active"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "recurrence",
+                "display": "Recurrence"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "relapse",
+                "display": "Relapse"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                "code": "VR",
+                "display": "virtual"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "428361000124107",
+                "display": "Discharge to home for hospice care (procedure)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "428371000124100",
+                "display": "Discharge to healthcare facility for hospice care (procedure)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "45755-6",
+                "display": "Hospice care [Minimum Data Set]"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://snomed.info/sct",
+                "code": "373066001",
+                "display": "Yes (qualifier value)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "71007-9",
+                "display": "Functional Assessment of Chronic Illness Therapy - Palliative Care Questionnaire (FACIT-Pal)"
+            }
+        },
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+            "valueCoding": {
+                "system": "http://loinc.org",
+                "code": "39156-5",
+                "display": "Body mass index (BMI) [Ratio]"
+            }
         }
     ],
     "url": "http://hl7.org/fhir/us/cqfmeasures/Library/ecqm-update-qi-core-2025",
@@ -179,7 +660,7 @@
             }
         ]
     },
-    "date": "2025-05-29T13:54:42-06:00",
+    "date": "2025-06-12T17:00:03-06:00",
     "publisher": "Clinical Quality Information WG",
     "contact": [
         {
@@ -338,7 +819,7 @@
         },
         {
             "type": "composed-of",
-            "display": "Oncology: Medical and Radiation Pain Intensity QuantifiedFHIR, 0.3.000",
+            "display": "Measure Oncology: Medical and Radiation Pain Intensity QuantifiedFHIR, 0.3.000",
             "resource": "https://madie.cms.gov/Measure/OncologyPainIntensityQuantifiedFHIR|0.3.000"
         },
         {
@@ -467,6 +948,11 @@
             "type": "depends-on",
             "display": "Measure Excessive Radiation Dose or Inadequate Image Quality for Diagnostic Computed Tomography in Adults - Clinician FHIR, 0.6.000",
             "resource": "https://madie.cms.gov/Measure/CMS1056CTClinicalFHIR|0.6.000"
+        },
+        {
+            "type": "depends-on",
+            "display": "Measure Oncology: Medical and Radiation Pain Intensity QuantifiedFHIR, 0.3.000",
+            "resource": "https://madie.cms.gov/Measure/OncologyPainIntensityQuantifiedFHIR|0.3.000"
         },
         {
             "type": "depends-on",
@@ -2130,6 +2616,16 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Home Healthcare Services, 20210220",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1265|20210220"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Home Healthcare Services, 20240210",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1080|20240210"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Home Healthcare Services, 20240110",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1016|20240110"
         },
@@ -2162,6 +2658,26 @@
             "type": "depends-on",
             "display": "ValueSet Disorders of the Immune System, 20170504",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.120.12.1001|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet HIV 1, 20241106",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.120.11.1007|20241106"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet HIV 2, 20230214",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.120.11.1008|20230214"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet HIV 2, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.120.11.1010|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet HIV 1, 20240207",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.120.11.1005|20240207"
         },
         {
             "type": "depends-on",
@@ -2306,13 +2822,43 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Annual Wellness Visit, 20231221",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1363|20231221"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Annual Wellness Visit, 20240206",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1772|20240206"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Annual Wellness Visit, 20190315",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1240|20190315"
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Nursing Facility Visit, 20180310",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1261|20180310"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Nursing Facility Visit, 20240203",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1060|20240203"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Nursing Facility Visit, 20240110",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1012|20240110"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Psych Visit Psychotherapy, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1927|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Psych Visit Psychotherapy, 20190315",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1777|20190315"
         },
         {
             "type": "depends-on",
@@ -2642,6 +3188,16 @@
             "type": "depends-on",
             "display": "ValueSet Diabetic Macular Edema, 20210214",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1455|20210214"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Diabetic Retinopathy, 20210218",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.76|20210218"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Diabetic Retinopathy, 20250125",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.80|20250125"
         },
         {
             "type": "depends-on",
@@ -3314,6 +3870,11 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Patient Reason, 20250208",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.311|20250208"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Patient Reason, 20170504",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1008|20170504"
         },
@@ -3359,6 +3920,16 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Pregnancy, 20250128",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.532|20250128"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Pregnancy, 20240202",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.242|20240202"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Pregnancy, 20210218",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.378|20210218"
         },
@@ -3380,6 +3951,11 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Level of Severity of Retinopathy Findings, 20250208",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1377|20250208"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Level of Severity of Retinopathy Findings, 20210209",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1283|20210209"
         },
@@ -3390,8 +3966,18 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Macular Edema Findings Present, 20250125",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1381|20250125"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Macular Edema Findings Present, 20210209",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1320|20210209"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Macular Exam, 20210209",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1364|20210209"
         },
         {
             "type": "depends-on",
@@ -3409,12 +3995,32 @@
         {
             "type": "depends-on",
             "display": "ValueSet Cup to Disc Ratio, 20210209",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1402|20210209"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Cup to Disc Ratio, 20210209",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1333|20210209"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Primary Open Angle Glaucoma, 20250125",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.74|20250125"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Primary Open Angle Glaucoma, 20210209",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.73|20210209"
         },
         {
             "type": "depends-on",
             "display": "ValueSet Primary Open Angle Glaucoma, 20210209",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.326|20210209"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Optic Disc Exam for Structural Abnormalities, 20210209",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1403|20210209"
         },
         {
             "type": "depends-on",
@@ -3427,8 +4033,23 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Beta Blocker Therapy for LVSD, 20220216",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1342|20220216"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Beta Blocker Therapy for LVSD, 20170504",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1184|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Arrhythmia, 20250128",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.186|20250128"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Arrhythmia, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.181|20170504"
         },
         {
             "type": "depends-on",
@@ -3437,8 +4058,28 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Hypotension, 20230316",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.180|20230316"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Hypotension, 20250128",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.185|20250128"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Hypotension, 20200306",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.370|20200306"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Asthma, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.60|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Asthma, 20250128",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.61|20250128"
         },
         {
             "type": "depends-on",
@@ -3447,8 +4088,18 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Allergy to Beta Blocker Therapy, 20190315",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1333|20190315"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Allergy to Beta Blocker Therapy, 20170504",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1177|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Intolerance to Beta Blocker Therapy, 20250128",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1334|20250128"
         },
         {
             "type": "depends-on",
@@ -3457,13 +4108,38 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Bradycardia, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.411|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Bradycardia, 20240202",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.408|20240202"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Bradycardia, 20200306",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.412|20200306"
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Beta Blocker Therapy Ingredient, 20240202",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1921|20240202"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Beta Blocker Therapy Ingredient, 20170504",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1493|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Atrioventricular Block, 20250128",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.187|20250128"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Atrioventricular Block, 20210218",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.264|20210218"
         },
         {
             "type": "depends-on",
@@ -3473,7 +4149,27 @@
         {
             "type": "depends-on",
             "display": "ValueSet Cardiac Pacer in Situ, 20210218",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.183|20210218"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Cardiac Pacer in Situ, 20230210",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1924|20230210"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Cardiac Pacer in Situ, 20210218",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.368|20210218"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Cardiac Pacer, 20250128",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1178.52|20250128"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Cardiac Pacer, 20221105",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1178.65|20221105"
         },
         {
             "type": "depends-on",
@@ -3486,8 +4182,28 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Coronary Artery Disease No MI, 20250205",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.120|20250205"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Coronary Artery Disease No MI, 20240202",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.57|20240202"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Coronary Artery Disease No MI, 20200306",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.369|20200306"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Cardiac Surgery, 20250205",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.168|20250205"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Cardiac Surgery, 20250128",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.169|20250128"
         },
         {
             "type": "depends-on",
@@ -3496,8 +4212,23 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Initial Myocardial Infarction, 20240202",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.58|20240202"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Initial Myocardial Infarction, 20240202",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.119|20240202"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Initial Myocardial Infarction, 20240125",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.403|20240125"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Beta Blocker Therapy, 20230217",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.133|20230217"
         },
         {
             "type": "depends-on",
@@ -3522,13 +4253,28 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Group A Streptococcus Test, 20241106",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.11.1023|20241106"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Group A Streptococcus Test, 20170504",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.198.12.1012|20170504"
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Emergency Department Evaluation and Management Visit, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1050|20170504"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Emergency Department Evaluation and Management Visit, 20210928",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010|20210928"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Medical Disability Exam, 20190327",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1233|20190327"
         },
         {
             "type": "depends-on",
@@ -3538,12 +4284,27 @@
         {
             "type": "depends-on",
             "display": "ValueSet Preventive Care Services Group Counseling, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1135|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Preventive Care Services Group Counseling, 20170504",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1027|20170504"
         },
         {
             "type": "depends-on",
             "display": "ValueSet Preventive Care Services Individual Counseling, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1130|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Preventive Care Services Individual Counseling, 20170504",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1026|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Antibiotic Medications for Pharyngitis, 20250114",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.11.1001|20250114"
         },
         {
             "type": "depends-on",
@@ -3553,7 +4314,27 @@
         {
             "type": "depends-on",
             "display": "ValueSet Acute Pharyngitis, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.102.11.1031|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Acute Pharyngitis, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.102.11.1033|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Acute Pharyngitis, 20170504",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.102.12.1011|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Acute Tonsillitis, 20190315",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.102.11.1034|20190315"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Acute Tonsillitis, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.102.11.1036|20170504"
         },
         {
             "type": "depends-on",
@@ -3562,8 +4343,38 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Comorbid Conditions for Respiratory Conditions, 20220203",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.102.11.1066|20220203"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Comorbid Conditions for Respiratory Conditions, 20210220",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.102.11.1067|20210220"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Malignant Neoplasms, 20220927",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1194|20220927"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Malignant Neoplasms, 20220927",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1193|20220927"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Comorbid Conditions for Respiratory Conditions, 20220928",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.102.12.1025|20220928"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Competing Conditions for Respiratory Conditions, 20240206",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.11.1158|20240206"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Competing Conditions for Respiratory Conditions, 20230216",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.11.1159|20230216"
         },
         {
             "type": "depends-on",
@@ -3576,8 +4387,18 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Standardized Tools for Assessment of Cognition, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1069|20170504"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Standardized Tools Score for Assessment of Cognition, 20170504",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1006|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Cognitive Assessment, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1401|20170504"
         },
         {
             "type": "depends-on",
@@ -3586,8 +4407,28 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Occupational Therapy Evaluation, 20170823",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1063|20170823"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Occupational Therapy Evaluation, 20210909",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1774|20210909"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Occupational Therapy Evaluation, 20190315",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1011|20190315"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Dementia and Mental Degenerations, 20250208",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1068|20250208"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Dementia and Mental Degenerations, 20240202",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1067|20240202"
         },
         {
             "type": "depends-on",
@@ -3596,8 +4437,23 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Counseling for Physical Activity, 20190315",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.11.1042|20190315"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Counseling for Physical Activity, 20170504",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.12.1035|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Counseling for Nutrition, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.195.11.1003|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Counseling for Nutrition, 20230211",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.195.11.1004|20230211"
         },
         {
             "type": "depends-on",
@@ -3626,8 +4482,28 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Essential Hypertension, 20240207",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.104.11.1029|20240207"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Essential Hypertension, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.104.11.1031|20170504"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Essential Hypertension, 20240106",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.104.12.1011|20240106"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet End Stage Renal Disease, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.590|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet End Stage Renal Disease, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.589|20170504"
         },
         {
             "type": "depends-on",
@@ -3636,13 +4512,48 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Kidney Transplant Recipient, 20190315",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.109.11.1060|20190315"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Kidney Transplant Recipient, 20240112",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.109.12.1029|20240112"
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Chronic Kidney Disease, Stage 5, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1036|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Chronic Kidney Disease, Stage 5, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1037|20170504"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Chronic Kidney Disease, Stage 5, 20200307",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1002|20200307"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Kidney Transplant, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.109.11.1052|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Kidney Transplant, 20210220",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.109.11.1024|20210220"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Kidney Transplant, 20210220",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.109.11.1025|20210220"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Kidney Transplant, 20190315",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.109.11.1067|20190315"
         },
         {
             "type": "depends-on",
@@ -3652,7 +4563,27 @@
         {
             "type": "depends-on",
             "display": "ValueSet Dialysis Services, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.109.11.1028|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Dialysis Services, 20210220",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.109.11.1027|20210220"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Dialysis Services, 20210220",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.109.11.1026|20210220"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Dialysis Services, 20170504",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.109.12.1013|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet ESRD Monthly Outpatient Services, 20170826",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.109.11.1029|20170826"
         },
         {
             "type": "depends-on",
@@ -3661,8 +4592,23 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Frailty Device SNOMED, 20240207",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.11.1220|20240207"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Frailty Device, 20200310",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.118.12.1300|20200310"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Frailty Diagnosis, 20250205",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.11.1309|20250205"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Frailty Diagnosis, 20241106",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.11.1308|20241106"
         },
         {
             "type": "depends-on",
@@ -3671,8 +4617,28 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Frailty Encounter, 20190315",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1279|20190315"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Frailty Encounter, 20190315",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1276|20190315"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Frailty Encounter, 20210224",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1088|20210224"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Frailty Symptom, 20231116",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.11.1311|20231116"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Frailty Symptom, 20230207",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.113.11.1310|20230207"
         },
         {
             "type": "depends-on",
@@ -3681,8 +4647,23 @@
         },
         {
             "type": "depends-on",
+            "display": "ValueSet Advanced Illness, 20250205",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.11.1151|20250205"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Advanced Illness, 20250205",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.11.1150|20250205"
+        },
+        {
+            "type": "depends-on",
             "display": "ValueSet Advanced Illness, 20190315",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.12.1082|20190315"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Dementia Medications, 20250111",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.196.11.1517|20250111"
         },
         {
             "type": "depends-on",
@@ -3743,8 +4724,18 @@
         },
         {
             "type": "depends-on",
-            "display": "ValueSet Cancer, 20200306",
-            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010|20200306"
+            "display": "ValueSet Radiation Treatment Management, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1072|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Radiation Treatment Management, 20170826",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1071|20170826"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Radiation Treatment Management, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1026|20170504"
         },
         {
             "type": "depends-on",
@@ -3755,6 +4746,56 @@
             "type": "depends-on",
             "display": "ValueSet Cancer, 20250131",
             "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1079|20250131"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Cancer, 20200306",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1010|20200306"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Audio Visual Telehealth Encounter, 20201028",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1444.3.111|20201028"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Audio Visual Telehealth Encounter, 20250131",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1444.3.241|20250131"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Audio Visual Telehealth Encounter, 20250201",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1444.5.215|20250201"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Chemotherapy Administration, 20250131",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1081|20250131"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Chemotherapy Administration, 20240130",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1080|20240130"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Chemotherapy Administration, 20240131",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.1444.3.233|20240131"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Chemotherapy Administration, 20240131",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1027|20240131"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Standardized Pain Assessment Tool, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.2.1073|20170504"
+        },
+        {
+            "type": "depends-on",
+            "display": "ValueSet Standardized Pain Assessment Tool, 20170504",
+            "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1028|20170504"
         }
     ]
 }
