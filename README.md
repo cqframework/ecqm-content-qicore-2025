@@ -122,11 +122,11 @@ To continue verifying terminology service capabilities as described by the Measu
 2. The service supports hosted as well as authored content for ValueSet resources
 3. The service returns resources that conform to the Shareable/Publishable/Computable/Executable profiles for ValueSet resources
 4. The service supports the use of manifest libraries to provide expansion parameters
-5. The service supports the $expand operation with manfiest libraries
+5. The service supports the $expand operation with manifest libraries
 
 The current set of tests is available here:
 
-https://github.com/HL7/cqf-measures/tree/master/thunder-tests
+[https://github.com/HL7/fhir-cqm/tree/main/postman-tests](https://github.com/HL7/fhir-cqm/tree/main/postman-tests)
 
 In particular, we are testing the expansion of a grouping value set that requires versions of the component value sets:
 
@@ -306,9 +306,9 @@ Github Codespaces can also be used in this repository.
 
 ## Content Indexes
 
-* [Libraries](https://build.fhir.org/ig/cqframework/ecqm-content-qicore-2024/libraries.html)
-* [Measures](https://build.fhir.org/ig/cqframework/ecqm-content-qicore-2024/measures.html)
-* [Artifact Summary](https://build.fhir.org/ig/cqframework/ecqm-content-qicore-2024/artifacts.html)
+* [Libraries](https://build.fhir.org/ig/cqframework/ecqm-content-qicore-2025/libraries.html)
+* [Measures](https://build.fhir.org/ig/cqframework/ecqm-content-qicore-2025/measures.html)
+* [Artifact Summary](https://build.fhir.org/ig/cqframework/ecqm-content-qicore-2025/artifacts.html)
 
 ## Repository Structure
 
@@ -330,7 +330,7 @@ This repository is setup like any HL7 FHIR IG project but also includes the CQL 
        |-- measure
            |-- <bundles>
    |-- input
-       |-- ecqm-content-qicore-2024.xml
+       |-- ecqm-content-qicore-2025.xml
        |-- cql
            |-- <library name>.cql
        |-- pagecontent
@@ -364,7 +364,7 @@ command:
 For example:
 
 ```
-input-cache\tooling-cli-3.0.0.jar -ExtractMATBundle bundles\mat\CLONE124_v6_03-Artifacts\measure-json-bundle.json
+input-cache\tooling-cli-3.7.0.jar -ExtractMATBundle bundles\mat\CLONE124_v6_03-Artifacts\measure-json-bundle.json
 ```
 
 ## Refresh IG Processing
@@ -376,3 +376,17 @@ The CQF Tooling provides "refresh" tooling that performs the following functions
 * Refreshes generated content for each knowledge artifact (Library, Measure, PlanDefinition, ActivityDefinition) including parameters, dependencies, and effective data requirements
 
 Whenever changes are made to the CQL, Library, or Measure resources, run the `_refresh` command to refresh the implementation guide content with the new content, and then run `_genonce` to run the publication tooling on the implementation guide (the same process that the continuous integration build uses to publish the implementation guide when commits are made to this repository).
+
+
+## Measure Package Prep Process
+
+1. Download Measure Zip folder to `bundles\mat` directory.
+2. Unzip the folder, then unzip the MeasureExport and TestCaseExport folders within it.
+3. Run `_updateCQFTooling.sh` script to ensure CQF tooling jar is present.
+4. Update `_extractMATBundle.sh` so that `mat_bundle` points to the JSON file within the MeasureExport directory.
+5. Run `_extractMATBundle.sh` to load Measure Resources.
+6. Create a directory under `input\tests\measure` with the Measure ID.
+7. Copy all files from the TestCaseExport directory to this newly created directory.
+8. Update `_extractBundleResources.sh` so that `mat_bundle` points to this newly created directory.
+9. Run `_extractBundleResources.sh` to populate test case resources.
+10. Run `_refresh.sh` to refresh IG content.
