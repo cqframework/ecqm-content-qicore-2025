@@ -1,6 +1,6 @@
 {
     "resourceType": "Library",
-    "id": "Manifest-Full-Set-FinalDraft-2025",
+    "id": "Manifest-Full-Set-Release-2025",
     "meta": {
         "versionId": "2",
         "lastUpdated": "2025-06-13T15:15:05.749-06:00",
@@ -1000,7 +1000,7 @@
             ]
         }
     ],
-    "description": "This library is an example final draft of a version manifest (also referred to as an expansion profile) that specifies expansion rules for a set of value sets used for an example set of EP/EC measures.",
+    "description": "This library is an example of a release version manifest (also referred to as an expansion profile) that specifies expansion rules for a set of value sets used for an example set of EP/EC measures.",
     "jurisdiction": [
         {
             "coding": [
@@ -1011,7 +1011,7 @@
             ]
         }
     ],
-    "purpose": "This library is defined to illustrate a Version Manifest in final draft status, as it would look at the end of an eCQM Annual Update cycle, approved on April 23rd, 2024. The latest available version of code systems used at that time is specified to provide stability for value set expansion during the testing and implementation phase. Terminology.HL7.org, in particular, was version 5.5.0 at the time, and FHIR code system versions are chosen from that release.",
+    "purpose": "This library is defined to illustrate a release Version Manifest, as it would look as part of release publication of an eCQM Annual Update cycle, approved on April 23rd, 2024. The latest available version of code systems used at that time is specified to provide stability for value set expansion during the testing and implementation phase. Terminology.HL7.org, in particular, was version 5.5.0 at the time, and FHIR code system versions are chosen from that release.",
     "approvalDate": "2025-05-06",
     "lastReviewDate": "2025-05-06",
     "relatedArtifact": [
