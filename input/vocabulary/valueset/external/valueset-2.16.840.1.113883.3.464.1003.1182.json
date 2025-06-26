@@ -1,21 +1,216 @@
 {
   "resourceType": "ValueSet",
-  "id": "2.16.840.1.113883.3.464.1003.1182",
+  "id": "2.16.840.1.113883.3.464.1003.1182-20230722",
+  "meta": {
+    "versionId": "9",
+    "lastUpdated": "2024-08-12T12:28:03.000-04:00",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/shareablevalueset", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-valueset-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-valueset-cqfm" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
+    "valueContactDetail": {
+      "name": "American Institutes for Research Author"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/resource-lastReviewDate",
+    "valueDate": "2025-03-07"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-effectiveDate",
+    "valueDate": "2023-07-22"
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1182",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
-    "value": "2.16.840.1.113883.3.464.1003.1182"
+    "value": "urn:oid:2.16.840.1.113883.3.464.1003.1182"
   } ],
   "version": "20230722",
   "name": "MechanicalComplicationsExcludingUpperBody",
   "title": "Mechanical Complications Excluding Upper Body",
   "status": "active",
-  "experimental": false,
-  "publisher": "NLM",
+  "date": "2023-07-22T01:12:36-04:00",
+  "publisher": "American Institutes for Research Steward",
+  "jurisdiction": [ {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+      "valueCode": "unknown"
+    } ]
+  } ],
+  "purpose": "(Clinical Focus: The purpose of this value set is to represent concepts for a diagnosis of mechanical complications (excluding those specific to the upper body).),(Data Element Scope: This value set may use a model element related to Diagnosis.),(Inclusion Criteria: Includes concepts that represent a diagnosis of mechanical complications (excluding those specific to the upper body).),(Exclusion Criteria: Excludes mechanical complications specific to the upper body.)",
+  "compose": {
+    "include": [ {
+      "valueSet": [ "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1181" ]
+    }, {
+      "valueSet": [ "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1232" ]
+    } ]
+  },
   "expansion": {
-    "identifier": "20240502",
-    "timestamp": "2025-01-10T13:55:21-07:00",
+    "identifier": "urn:uuid:e54383f4-60a9-4ff2-a715-d2619fcce5bc",
+    "timestamp": "2025-06-20T16:54:52-04:00",
+    "total": 195,
+    "offset": 0,
+    "parameter": [ {
+      "name": "count",
+      "valueInteger": 1000
+    }, {
+      "name": "offset",
+      "valueInteger": 0
+    } ],
     "contains": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "12077001000119100",
+      "display": "Dislocation of prosthesis of left hip joint (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "12199521000119109",
+      "display": "Mechanical failure of left knee prosthetic joint (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "12199641000119102",
+      "display": "Loosening of prosthesis of left knee joint (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "12200001000119100",
+      "display": "Malposition of prosthetic joint of left hip (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "12200041000119103",
+      "display": "Loosening of prosthesis of left hip joint (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "12202141000119103",
+      "display": "Recurrent dislocation of prosthesis of left hip joint (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "12202181000119108",
+      "display": "Recurrent dislocation of prosthesis of right hip joint (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "12206701000119100",
+      "display": "Dislocation of prosthesis of right hip joint (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "12207101000119102",
+      "display": "Mechanical failure of right knee prosthetic joint (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "12207221000119102",
+      "display": "Malposition of prosthetic joint of right hip (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "12207381000119107",
+      "display": "Loosening of prosthesis of right knee joint (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "12207421000119103",
+      "display": "Loosening of prosthesis of right hip joint (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "12403221000119108",
+      "display": "Instability of prosthesis of joint of left hip (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "12403341000119108",
+      "display": "Instability of prosthesis of joint of right hip (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "1254821007",
+      "display": "Instability of prosthesis of joint of hip (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "1255235009",
+      "display": "Malposition of prosthetic joint of hip (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "240267008",
+      "display": "Loosening of hip joint prosthesis (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "281443007",
+      "display": "Loosening of hip joint hemiarthroplasty (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "281445000",
+      "display": "Loosening of total hip replacement (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "281446004",
+      "display": "Loosening of acetabular cup of total hip replacement (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "281447008",
+      "display": "Loosening of femoral stem of total hip replacement (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "281448003",
+      "display": "Loosening of knee joint prosthesis (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "281449006",
+      "display": "Loosening of unicondylar knee replacement (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "281450006",
+      "display": "Loosening of total knee replacement (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "281451005",
+      "display": "Loosening of femoral component of total knee replacement (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "281452003",
+      "display": "Loosening of tibial component of total knee replacement (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "314201008",
+      "display": "Dislocation of hip joint prosthesis (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "429757000",
+      "display": "Recurrent dislocation of hip joint prosthesis (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "441565006",
+      "display": "Wear of articular bearing surface of prosthetic joint (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "735602002",
+      "display": "Wear of articular bearing surface of joint prosthesis of hip (disorder)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "735603007",
+      "display": "Wear of articular bearing surface of joint prosthesis of knee (disorder)"
+    }, {
       "system": "http://hl7.org/fhir/sid/icd-10-cm",
       "version": "2024",
       "code": "T84.010D",
@@ -835,161 +1030,6 @@
       "version": "2024",
       "code": "T84.9XXA",
       "display": "Unspecified complication of internal orthopedic prosthetic device, implant and graft, initial encounter"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "12077001000119100",
-      "display": "Dislocation of prosthesis of left hip joint (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "12199521000119109",
-      "display": "Mechanical failure of left knee prosthetic joint (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "12199641000119102",
-      "display": "Loosening of prosthesis of left knee joint (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "12200001000119100",
-      "display": "Malposition of prosthetic joint of left hip (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "12200041000119103",
-      "display": "Loosening of prosthesis of left hip joint (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "12202141000119103",
-      "display": "Recurrent dislocation of prosthesis of left hip joint (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "12202181000119108",
-      "display": "Recurrent dislocation of prosthesis of right hip joint (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "12206701000119100",
-      "display": "Dislocation of prosthesis of right hip joint (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "12207101000119102",
-      "display": "Mechanical failure of right knee prosthetic joint (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "12207221000119102",
-      "display": "Malposition of prosthetic joint of right hip (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "12207381000119107",
-      "display": "Loosening of prosthesis of right knee joint (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "12207421000119103",
-      "display": "Loosening of prosthesis of right hip joint (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "12403221000119108",
-      "display": "Instability of prosthesis of joint of left hip (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "12403341000119108",
-      "display": "Instability of prosthesis of joint of right hip (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "1254821007",
-      "display": "Instability of prosthesis of joint of hip (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "1255235009",
-      "display": "Malposition of prosthetic joint of hip (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "240267008",
-      "display": "Loosening of hip joint prosthesis (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "281443007",
-      "display": "Loosening of hip joint hemiarthroplasty (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "281445000",
-      "display": "Loosening of total hip replacement (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "281446004",
-      "display": "Loosening of acetabular cup of total hip replacement (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "281447008",
-      "display": "Loosening of femoral stem of total hip replacement (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "281448003",
-      "display": "Loosening of knee joint prosthesis (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "281449006",
-      "display": "Loosening of unicondylar knee replacement (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "281450006",
-      "display": "Loosening of total knee replacement (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "281451005",
-      "display": "Loosening of femoral component of total knee replacement (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "281452003",
-      "display": "Loosening of tibial component of total knee replacement (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "314201008",
-      "display": "Dislocation of hip joint prosthesis (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "429757000",
-      "display": "Recurrent dislocation of hip joint prosthesis (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "441565006",
-      "display": "Wear of articular bearing surface of prosthetic joint (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "735602002",
-      "display": "Wear of articular bearing surface of joint prosthesis of hip (disorder)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "735603007",
-      "display": "Wear of articular bearing surface of joint prosthesis of knee (disorder)"
     } ]
   }
 }

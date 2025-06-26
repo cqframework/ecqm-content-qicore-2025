@@ -1,6 +1,10 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113883.3.464.1003.101.12.1073",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2025-06-20T14:30:07.921-06:00"
+  },
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1073",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -13,8 +17,17 @@
   "experimental": false,
   "publisher": "NLM",
   "expansion": {
-    "identifier": "20240502",
-    "timestamp": "2025-01-10T13:55:21-07:00",
+    "identifier": "urn:uuid:dc758e64-e27c-4748-aff7-f914db808784",
+    "timestamp": "2025-06-20T16:59:25-04:00",
+    "total": 2,
+    "offset": 0,
+    "parameter": [ {
+      "name": "count",
+      "valueInteger": 1000
+    }, {
+      "name": "offset",
+      "valueInteger": 0
+    } ],
     "contains": [ {
       "system": "http://www.ama-assn.org/go/cpt",
       "version": "2024",
