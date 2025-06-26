@@ -1,5 +1,5 @@
 @ECHO OFF
-SET tooling_jar=tooling-cli-3.7.0.jar
+SET tooling_jar=tooling-cli-3.8.0.jar
 SET input_cache_path=%~dp0input-cache
 SET mat_bundle=bundles\mat\CMS2\CMS2FHIR-R1-MeasureExport\CMS2FHIR-v0.4.000-FHIR.json
 

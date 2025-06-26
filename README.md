@@ -364,7 +364,7 @@ command:
 For example:
 
 ```
-input-cache\tooling-cli-3.7.0.jar -ExtractMATBundle bundles\mat\CLONE124_v6_03-Artifacts\measure-json-bundle.json
+input-cache\tooling-cli-3.8.0.jar -ExtractMATBundle bundles\mat\CLONE124_v6_03-Artifacts\measure-json-bundle.json
 ```
 
 ## Refresh IG Processing
