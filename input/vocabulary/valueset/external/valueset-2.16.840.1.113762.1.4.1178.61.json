@@ -1,6 +1,10 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113762.1.4.1178.61",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2025-06-20T14:30:04.238-06:00"
+  },
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1178.61",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
@@ -13,9 +17,28 @@
   "experimental": false,
   "publisher": "NLM",
   "expansion": {
-    "identifier": "20240502",
-    "timestamp": "2025-01-10T13:55:18-07:00",
+    "identifier": "urn:uuid:2f2bfde3-8159-4747-9fb4-a7da88f77c44",
+    "timestamp": "2025-06-20T16:57:19-04:00",
+    "total": 8,
+    "offset": 0,
+    "parameter": [ {
+      "name": "count",
+      "valueInteger": 1000
+    }, {
+      "name": "offset",
+      "valueInteger": 0
+    } ],
     "contains": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "232967006",
+      "display": "Implantation of left cardiac ventricular assist device (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "232968001",
+      "display": "Implantation of cardiac biventricular assist device (procedure)"
+    }, {
       "system": "http://www.ama-assn.org/go/cpt",
       "version": "2024",
       "code": "33976",
@@ -42,17 +65,7 @@
       "display": "Repositioning of percutaneous right or left heart ventricular assist device with imaging guidance at separate and distinct session from insertion"
     }, {
       "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "232967006",
-      "display": "Implantation of left cardiac ventricular assist device (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "232968001",
-      "display": "Implantation of cardiac biventricular assist device (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
       "code": "700151002",
       "display": "Temporary implantation of left cardiac ventricular assist device (procedure)"
     } ]

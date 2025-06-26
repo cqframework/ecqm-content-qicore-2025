@@ -1,25 +1,212 @@
 {
   "resourceType": "ValueSet",
-  "id": "2.16.840.1.113883.3.600.1916",
+  "id": "2.16.840.1.113883.3.600.1916-20210220",
+  "meta": {
+    "versionId": "33",
+    "lastUpdated": "2024-08-09T13:43:57.000-04:00",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/shareablevalueset", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-valueset-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-valueset-cqfm" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
+    "valueContactDetail": {
+      "name": "American Institutes for Research Author"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/resource-lastReviewDate",
+    "valueDate": "2025-01-31"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-effectiveDate",
+    "valueDate": "2021-02-20"
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1916",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
-    "value": "2.16.840.1.113883.3.600.1916"
+    "value": "urn:oid:2.16.840.1.113883.3.600.1916"
   } ],
   "version": "20210220",
-  "name": "EncountertoScreenforDepression",
+  "name": "EncounterToScreenForDepression",
   "title": "Encounter to Screen for Depression",
   "status": "active",
   "experimental": false,
-  "publisher": "NLM",
+  "date": "2022-03-03T18:46:01-05:00",
+  "publisher": "American Institutes for Research Steward",
+  "jurisdiction": [ {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+      "valueCode": "unknown"
+    } ]
+  } ],
+  "purpose": "(Clinical Focus: The purpose of this value set is to represent concepts of encounters for depression screening.),(Data Element Scope: This value set may use a model element related to Encounter.),(Inclusion Criteria: Includes concepts that represent wellness visits, annual visits, therapy evaluations, or primary or specialist physician office visits where a depression screen could be conducted.),(Exclusion Criteria: No exclusions.)",
+  "compose": {
+    "include": [ {
+      "valueSet": [ "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1915" ]
+    }, {
+      "valueSet": [ "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1125" ]
+    }, {
+      "valueSet": [ "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1538" ]
+    }, {
+      "valueSet": [ "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.600.1914" ]
+    }, {
+      "valueSet": [ "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.11.1115" ]
+    } ]
+  },
   "expansion": {
-    "identifier": "20240502",
-    "timestamp": "2025-01-10T13:55:16-07:00",
+    "identifier": "urn:uuid:cb11221e-9d1b-40af-acb8-c635602ef2a4",
+    "timestamp": "2025-06-20T16:55:52-04:00",
+    "total": 116,
+    "offset": 0,
+    "parameter": [ {
+      "name": "count",
+      "valueInteger": 1000
+    }, {
+      "name": "offset",
+      "valueInteger": 0
+    } ],
     "contains": [ {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "10197000",
+      "display": "Psychiatric interview and evaluation (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "108220007",
+      "display": "Evaluation AND/OR management - new patient (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "108221006",
+      "display": "Evaluation AND/OR management - established patient (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "108224003",
+      "display": "Preventive patient evaluation (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "108311000",
+      "display": "Psychiatric procedure, interview AND/OR consultation (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "13607009",
+      "display": "Manual examination of breast (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "14736009",
+      "display": "History and physical examination with evaluation and management of patient (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "165171009",
+      "display": "Initial psychiatric evaluation (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "171207006",
+      "display": "Depression screening (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "18512000",
+      "display": "Individual psychotherapy (regime/therapy)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "185349003",
+      "display": "Encounter for check up (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "185463005",
+      "display": "Visit out of hours (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "185465003",
+      "display": "Weekend visit (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "252603000",
+      "display": "Tinnitus assessment (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "270427003",
+      "display": "Patient-initiated encounter (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "270430005",
+      "display": "Provider-initiated encounter (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "302440009",
+      "display": "Psychiatric pharmacologic management (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "308335008",
+      "display": "Patient encounter procedure (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "35025007",
+      "display": "Manual pelvic examination (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "370803007",
+      "display": "Evaluation of psychosocial impact on plan of care (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "390906007",
+      "display": "Follow-up encounter (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "406547006",
+      "display": "Urgent follow-up (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "410155007",
+      "display": "Occupational therapy assessment (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "410157004",
+      "display": "Occupational therapy management (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "46662001",
+      "display": "Examination of breast (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "53555003",
+      "display": "Basic comprehensive audiometry testing (procedure)"
+    }, {
       "system": "http://www.ama-assn.org/go/cpt",
       "version": "2024",
       "code": "59400",
       "display": "Routine obstetric care including antepartum care, vaginal delivery (with or without episiotomy, and/or forceps) and postpartum care"
+    }, {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2024",
+      "code": "59425",
+      "display": "Antepartum care only; 4-6 visits"
+    }, {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2024",
+      "code": "59426",
+      "display": "Antepartum care only; 7 or more visits"
     }, {
       "system": "http://www.ama-assn.org/go/cpt",
       "version": "2024",
@@ -35,6 +222,31 @@
       "version": "2024",
       "code": "59618",
       "display": "Routine obstetric care including antepartum care, cesarean delivery, and postpartum care, following attempted vaginal delivery after previous cesarean delivery"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "78318003",
+      "display": "History and physical examination, annual for health maintenance (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "83607001",
+      "display": "Gynecologic examination (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "8411005",
+      "display": "Interactive individual medical psychotherapy (regime/therapy)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "86013001",
+      "display": "Periodic reevaluation and management of healthy individual (procedure)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "90526000",
+      "display": "Initial evaluation and management of healthy individual (procedure)"
     }, {
       "system": "http://www.ama-assn.org/go/cpt",
       "version": "2024",
@@ -118,6 +330,26 @@
     }, {
       "system": "http://www.ama-assn.org/go/cpt",
       "version": "2024",
+      "code": "97161",
+      "display": "Physical therapy evaluation: low complexity, requiring these components: A history with no personal factors and/or comorbidities that impact the plan of care; An examination of body system(s) using standardized tests and measures addressing 1-2 elements from any of the following: body structures and functions, activity limitations, and/or participation restrictions; A clinical presentation with stable and/or uncomplicated characteristics; and Clinical decision making of low complexity using standardized patient assessment instrument and/or measurable assessment of functional outcome. Typically, 20 minutes are spent face-to-face with the patient and/or family."
+    }, {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2024",
+      "code": "97162",
+      "display": "Physical therapy evaluation: moderate complexity, requiring these components: A history of present problem with 1-2 personal factors and/or comorbidities that impact the plan of care; An examination of body systems using standardized tests and measures in addressing a total of 3 or more elements from any of the following: body structures and functions, activity limitations, and/or participation restrictions; An evolving clinical presentation with changing characteristics; and Clinical decision making of moderate complexity using standardized patient assessment instrument and/or measurable assessment of functional outcome. Typically, 30 minutes are spent face-to-face with the patient and/or family."
+    }, {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2024",
+      "code": "97163",
+      "display": "Physical therapy evaluation: high complexity, requiring these components: A history of present problem with 3 or more personal factors and/or comorbidities that impact the plan of care; An examination of body systems using standardized tests and measures addressing a total of 4 or more elements from any of the following: body structures and functions, activity limitations, and/or participation restrictions; A clinical presentation with unstable and unpredictable characteristics; and Clinical decision making of high complexity using standardized patient assessment instrument and/or measurable assessment of functional outcome. Typically, 45 minutes are spent face-to-face with the patient and/or family."
+    }, {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2024",
+      "code": "97164",
+      "display": "Re-evaluation of physical therapy established plan of care, requiring these components: An examination including a review of history and use of standardized tests and measures is required; and Revised plan of care using a standardized patient assessment instrument and/or measurable assessment of functional outcome Typically, 20 minutes are spent face-to-face with the patient and/or family."
+    }, {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2024",
       "code": "97165",
       "display": "Occupational therapy evaluation, low complexity, requiring these components: An occupational profile and medical and therapy history, which includes a brief history including review of medical and/or therapy records relating to the presenting problem; An assessment(s) that identifies 1-3 performance deficits (ie, relating to physical, cognitive, or psychosocial skills) that result in activity limitations and/or participation restrictions; and Clinical decision making of low complexity, which includes an analysis of the occupational profile, analysis of data from problem-focused assessment(s), and consideration of a limited number of treatment options. Patient presents with no comorbidities that affect occupational performance. Modification of tasks or assistance (eg, physical or verbal) with assessment(s) is not necessary to enable completion of evaluation component. Typically, 30 minutes are spent face-to-face with the patient and/or family."
     }, {
@@ -140,6 +372,21 @@
       "version": "2024",
       "code": "97803",
       "display": "Medical nutrition therapy; re-assessment and intervention, individual, face-to-face with the patient, each 15 minutes"
+    }, {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2024",
+      "code": "98966",
+      "display": "Telephone assessment and management service provided by a qualified nonphysician health care professional to an established patient, parent, or guardian not originating from a related assessment and management service provided within the previous 7 days nor leading to an assessment and management service or procedure within the next 24 hours or soonest available appointment; 5-10 minutes of medical discussion"
+    }, {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2024",
+      "code": "98967",
+      "display": "Telephone assessment and management service provided by a qualified nonphysician health care professional to an established patient, parent, or guardian not originating from a related assessment and management service provided within the previous 7 days nor leading to an assessment and management service or procedure within the next 24 hours or soonest available appointment; 11-20 minutes of medical discussion"
+    }, {
+      "system": "http://www.ama-assn.org/go/cpt",
+      "version": "2024",
+      "code": "98968",
+      "display": "Telephone assessment and management service provided by a qualified nonphysician health care professional to an established patient, parent, or guardian not originating from a related assessment and management service provided within the previous 7 days nor leading to an assessment and management service or procedure within the next 24 hours or soonest available appointment; 21-30 minutes of medical discussion"
     }, {
       "system": "http://www.ama-assn.org/go/cpt",
       "version": "2024",
@@ -361,195 +608,40 @@
       "code": "99493",
       "display": "Subsequent psychiatric collaborative care management, first 60 minutes in a subsequent month of behavioral health care manager activities, in consultation with a psychiatric consultant, and directed by the treating physician or other qualified health care professional, with the following required elements: tracking patient follow-up and progress using the registry, with appropriate documentation, participation in weekly caseload consultation with the psychiatric consultant, ongoing collaboration with and coordination of the patient's mental health care with the treating physician or other qualified health care professional and any other treating mental health providers, additional review of progress and recommendations for changes in treatment, as indicated, including medications, based on recommendations provided by the psychiatric consultant, provision of brief interventions using evidence-based techniques such as behavioral activation, motivational interviewing, and other focused treatment strategies, monitoring of patient outcomes using validated rating scales, and relapse prevention planning with patients as they achieve remission of symptoms and/or other treatment goals and are prepared for discharge from active treatment."
     }, {
-      "system": "http://www.nlm.nih.gov/research/umls/hcpcs",
+      "system": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
       "version": "2024",
       "code": "G0101",
       "display": "Cervical or vaginal cancer screening; pelvic and clinical breast examination"
     }, {
-      "system": "http://www.nlm.nih.gov/research/umls/hcpcs",
+      "system": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
       "version": "2024",
       "code": "G0270",
       "display": "Medical nutrition therapy; reassessment and subsequent intervention(s) following second referral in same year for change in diagnosis, medical condition or treatment regimen (including additional hours needed for renal disease), individual, face to face with the patient, each 15 minutes"
     }, {
-      "system": "http://www.nlm.nih.gov/research/umls/hcpcs",
+      "system": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
       "version": "2024",
       "code": "G0271",
       "display": "Medical nutrition therapy, reassessment and subsequent intervention(s) following second referral in same year for change in diagnosis, medical condition, or treatment regimen (including additional hours needed for renal disease), group (2 or more individuals), each 30 minutes"
     }, {
-      "system": "http://www.nlm.nih.gov/research/umls/hcpcs",
+      "system": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
       "version": "2024",
       "code": "G0402",
       "display": "Initial preventive physical examination; face-to-face visit, services limited to new beneficiary during the first 12 months of medicare enrollment"
     }, {
-      "system": "http://www.nlm.nih.gov/research/umls/hcpcs",
+      "system": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
       "version": "2024",
       "code": "G0438",
       "display": "Annual wellness visit; includes a personalized prevention plan of service (pps), initial visit"
     }, {
-      "system": "http://www.nlm.nih.gov/research/umls/hcpcs",
+      "system": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
       "version": "2024",
       "code": "G0439",
       "display": "Annual wellness visit, includes a personalized prevention plan of service (pps), subsequent visit"
     }, {
-      "system": "http://www.nlm.nih.gov/research/umls/hcpcs",
+      "system": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
       "version": "2024",
       "code": "G0444",
       "display": "Annual depression screening, 5 to 15 minutes"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "10197000",
-      "display": "Psychiatric interview and evaluation (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "108220007",
-      "display": "Evaluation AND/OR management - new patient (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "108221006",
-      "display": "Evaluation AND/OR management - established patient (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "108224003",
-      "display": "Preventive patient evaluation (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "108311000",
-      "display": "Psychiatric procedure, interview AND/OR consultation (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "13607009",
-      "display": "Manual examination of breast (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "14736009",
-      "display": "History and physical examination with evaluation and management of patient (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "165171009",
-      "display": "Initial psychiatric evaluation (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "171207006",
-      "display": "Depression screening (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "18512000",
-      "display": "Individual psychotherapy (regime/therapy)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "185349003",
-      "display": "Encounter for check up (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "185463005",
-      "display": "Visit out of hours (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "185465003",
-      "display": "Weekend visit (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "252603000",
-      "display": "Tinnitus assessment (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "270427003",
-      "display": "Patient-initiated encounter (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "270430005",
-      "display": "Provider-initiated encounter (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "302440009",
-      "display": "Psychiatric pharmacologic management (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "308335008",
-      "display": "Patient encounter procedure (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "35025007",
-      "display": "Manual pelvic examination (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "370803007",
-      "display": "Evaluation of psychosocial impact on plan of care (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "390906007",
-      "display": "Follow-up encounter (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "406547006",
-      "display": "Urgent follow-up (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "410155007",
-      "display": "Occupational therapy assessment (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "410157004",
-      "display": "Occupational therapy management (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "46662001",
-      "display": "Examination of breast (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "53555003",
-      "display": "Basic comprehensive audiometry testing (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "78318003",
-      "display": "History and physical examination, annual for health maintenance (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "83607001",
-      "display": "Gynecologic examination (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "8411005",
-      "display": "Interactive individual medical psychotherapy (regime/therapy)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "86013001",
-      "display": "Periodic reevaluation and management of healthy individual (procedure)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "90526000",
-      "display": "Initial evaluation and management of healthy individual (procedure)"
     } ]
   }
 }

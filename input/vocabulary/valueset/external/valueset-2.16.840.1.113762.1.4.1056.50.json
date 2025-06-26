@@ -1,6 +1,10 @@
 {
   "resourceType": "ValueSet",
   "id": "2.16.840.1.113762.1.4.1056.50",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2025-06-20T14:30:16.149-06:00"
+  },
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1056.50",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",

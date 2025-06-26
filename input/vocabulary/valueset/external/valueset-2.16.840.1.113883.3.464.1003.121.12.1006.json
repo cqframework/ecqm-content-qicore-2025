@@ -1,21 +1,117 @@
 {
   "resourceType": "ValueSet",
-  "id": "2.16.840.1.113883.3.464.1003.121.12.1006",
+  "id": "2.16.840.1.113883.3.464.1003.121.12.1006-20190315",
+  "meta": {
+    "versionId": "27",
+    "lastUpdated": "2024-09-18T08:20:58.000-04:00",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/shareablevalueset", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-valueset-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-valueset-cqfm" ]
+  },
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
+    "valueContactDetail": {
+      "name": "American Institutes for Research Author"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/resource-lastReviewDate",
+    "valueDate": "2025-01-31"
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-effectiveDate",
+    "valueDate": "2019-03-15"
+  } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.121.12.1006",
   "identifier": [ {
     "system": "urn:ietf:rfc:3986",
-    "value": "2.16.840.1.113883.3.464.1003.121.12.1006"
+    "value": "urn:oid:2.16.840.1.113883.3.464.1003.121.12.1006"
   } ],
   "version": "20190315",
   "name": "ConsultantReport",
   "title": "Consultant Report",
   "status": "active",
   "experimental": false,
-  "publisher": "NLM",
+  "date": "2024-09-18T08:20:59-04:00",
+  "publisher": "American Institutes for Research Steward",
+  "jurisdiction": [ {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+      "valueCode": "unknown"
+    } ]
+  } ],
+  "purpose": "(Clinical Focus: The purpose of this value set is to represent concepts for consultant reports.),(Data Element Scope: This value set may use a model element related to Assessment.),(Inclusion Criteria: Includes concepts that represent various consultant reports and notes.),(Exclusion Criteria: No exclusions.)",
+  "compose": {
+    "include": [ {
+      "valueSet": [ "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.121.11.1011" ]
+    }, {
+      "valueSet": [ "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.11.20.9.31" ]
+    } ]
+  },
   "expansion": {
-    "identifier": "20240502",
-    "timestamp": "2025-01-10T13:55:15-07:00",
+    "identifier": "urn:uuid:b3b54d8c-db08-459a-8d80-b3843a7e8171",
+    "timestamp": "2025-06-20T16:56:03-04:00",
+    "total": 251,
+    "offset": 0,
+    "parameter": [ {
+      "name": "count",
+      "valueInteger": 1000
+    }, {
+      "name": "offset",
+      "valueInteger": 0
+    } ],
     "contains": [ {
+      "system": "http://loinc.org",
+      "version": "2.76",
+      "code": "101031-3",
+      "display": "Chiropody Consult note"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.76",
+      "code": "101032-1",
+      "display": "Physician assistant Consult note"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.76",
+      "code": "101038-8",
+      "display": "Aerospace medicine Consult note"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.76",
+      "code": "101043-8",
+      "display": "Urgent care center Consult note"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.76",
+      "code": "101047-9",
+      "display": "Undersea and hyperbaric medicine Consult note"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.76",
+      "code": "101048-7",
+      "display": "Hospitalist Consult note"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.76",
+      "code": "101052-9",
+      "display": "Osteopathic medicine Consult note"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.76",
+      "code": "101350-7",
+      "display": "Orthopaedic and Trauma Surgery Consult note"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.76",
+      "code": "101886-0",
+      "display": "General medicine Telephone encounter Consult note"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.76",
+      "code": "101887-8",
+      "display": "Surgery Telephone encounter Consult note"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.76",
+      "code": "101888-6",
+      "display": "Palliative care Telephone encounter Consult note"
+    }, {
       "system": "http://loinc.org",
       "version": "2.76",
       "code": "11488-4",
@@ -261,6 +357,21 @@
       "code": "34879-7",
       "display": "Endocrinology Consult note"
     }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "371530004",
+      "display": "Clinical consultation report (record artifact)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "371531000",
+      "display": "Report of clinical encounter (record artifact)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "371545006",
+      "display": "Confirmatory consultation report (record artifact)"
+    }, {
       "system": "http://loinc.org",
       "version": "2.76",
       "code": "51845-6",
@@ -275,6 +386,11 @@
       "version": "2.76",
       "code": "51854-8",
       "display": "Long term care facility Consult note"
+    }, {
+      "system": "http://loinc.org",
+      "version": "2.76",
+      "code": "60570-9",
+      "display": "Pathology Consult note"
     }, {
       "system": "http://loinc.org",
       "version": "2.76",
@@ -490,6 +606,16 @@
       "version": "2.76",
       "code": "68897-8",
       "display": "Pediatric endocrinology Hospital Consult note"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "721916007",
+      "display": "Physician consulting initial evaluation note (record artifact)"
+    }, {
+      "system": "http://snomed.info/sct",
+      "version": "http://snomed.info/sct/731000124108/version/20230901",
+      "code": "721927009",
+      "display": "Referral note (record artifact)"
     }, {
       "system": "http://loinc.org",
       "version": "2.76",
@@ -1185,31 +1311,6 @@
       "version": "2.76",
       "code": "96737-2",
       "display": "COVID-19 Consultation note"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "371530004",
-      "display": "Clinical consultation report (record artifact)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "371531000",
-      "display": "Report of clinical encounter (record artifact)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "371545006",
-      "display": "Confirmatory consultation report (record artifact)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "721916007",
-      "display": "Physician consulting initial evaluation note (record artifact)"
-    }, {
-      "system": "http://snomed.info/sct",
-      "version": "2023-09",
-      "code": "721927009",
-      "display": "Referral note (record artifact)"
     } ]
   }
 }

@@ -1,14 +1,22 @@
 {
   "resourceType": "ValueSet",
-  "id": "2.16.840.1.113883.3.464.1003.110.12.1025",
+  "id": "2.16.840.1.113883.3.464.1003.110.12.1025-20170504",
   "meta": {
     "versionId": "17",
-    "lastUpdated": "2021-01-13T13:38:55.000-05:00",
-    "profile": [ "http://hl7.org/fhir/StructureDefinition/shareablevalueset", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-valueset-cqfm" ]
+    "lastUpdated": "2023-12-21T17:43:03.000-05:00",
+    "profile": [ "http://hl7.org/fhir/StructureDefinition/shareablevalueset", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/computable-valueset-cqfm", "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-valueset-cqfm" ]
   },
   "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/valueset-author",
+    "valueContactDetail": {
+      "name": "NCQA PHEMUR Author"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/resource-lastReviewDate",
+    "valueDate": "2024-06-03"
+  }, {
     "url": "http://hl7.org/fhir/StructureDefinition/valueset-effectiveDate",
-    "valueDate": "2021-01-13"
+    "valueDate": "2017-05-04"
   } ],
   "url": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.12.1025",
   "identifier": [ {
@@ -16,15 +24,29 @@
     "value": "urn:oid:2.16.840.1.113883.3.464.1003.110.12.1025"
   } ],
   "version": "20170504",
-  "name": "Hepatitis B",
+  "name": "HepatitisB",
   "title": "Hepatitis B",
-  "status": "active",
+  "status": "retired",
   "experimental": false,
   "date": "2017-05-04T01:00:13-04:00",
   "publisher": "NCQA PHEMUR",
+  "jurisdiction": [ {
+    "extension": [ {
+      "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+      "valueCode": "unknown"
+    } ]
+  } ],
+  "purpose": "(Clinical Focus: The purpose of this value set is to represent concepts for a diagnosis of Hepatitis B infection.),(Data Element Scope: This value set may use a model element related to Diagnosis.),(Inclusion Criteria: Includes concepts that represent a diagnosis of Hepatitis B.),(Exclusion Criteria: No exclusions.)",
+  "compose": {
+    "include": [ {
+      "valueSet": [ "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.11.1073" ]
+    }, {
+      "valueSet": [ "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.110.11.1071" ]
+    } ]
+  },
   "expansion": {
-    "identifier": "urn:uuid:912fed35-3f1c-4f41-a3ce-62e746f956a9",
-    "timestamp": "2023-12-21T13:51:21-05:00",
+    "identifier": "urn:uuid:3767fe0f-aae9-4054-ab26-4c15dea2c157",
+    "timestamp": "2025-06-20T16:59:46-04:00",
     "total": 38,
     "offset": 0,
     "parameter": [ {
