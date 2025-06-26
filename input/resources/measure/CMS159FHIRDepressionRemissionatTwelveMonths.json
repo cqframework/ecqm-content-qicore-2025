@@ -1017,9 +1017,10 @@
     "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
     "valueCanonical": "#effective-data-requirements"
   }, {
-    "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem",
+    "id": "effective-data-requirements",
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
     "valueReference": {
-      "reference": "Device/cqf-tooling"
+      "reference": "#effective-data-requirements"
     }
   } ],
   "url": "https://madie.cms.gov/Measure/CMS159FHIRDepressionRemissionatTwelveMonths",
@@ -1090,7 +1091,7 @@
   "title": "Depression Remission at Twelve MonthsFHIR",
   "status": "active",
   "experimental": false,
-  "date": "2025-05-06T18:52:15+00:00",
+  "date": "2025-06-26T19:30:10+00:00",
   "publisher": "MN Community Measurement",
   "contact": [ {
     "telecom": [ {

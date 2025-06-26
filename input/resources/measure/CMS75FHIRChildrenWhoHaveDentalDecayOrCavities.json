@@ -427,9 +427,10 @@
     "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
     "valueCanonical": "#effective-data-requirements"
   }, {
-    "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem",
+    "id": "effective-data-requirements",
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
     "valueReference": {
-      "reference": "Device/cqf-tooling"
+      "reference": "#effective-data-requirements"
     }
   } ],
   "url": "https://madie.cms.gov/Measure/CMS75FHIRChildrenWhoHaveDentalDecayOrCavities",
@@ -486,7 +487,7 @@
   "title": "Children Who Have Dental Decay or CavitiesFHIR",
   "status": "active",
   "experimental": false,
-  "date": "2025-05-05T19:44:11+00:00",
+  "date": "2025-06-26T19:30:09+00:00",
   "publisher": "Centers for Medicare &amp; Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {

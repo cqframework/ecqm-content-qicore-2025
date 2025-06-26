@@ -758,9 +758,10 @@
     "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
     "valueCanonical": "#effective-data-requirements"
   }, {
-    "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem",
+    "id": "effective-data-requirements",
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
     "valueReference": {
-      "reference": "Device/cqf-tooling"
+      "reference": "#effective-data-requirements"
     }
   } ],
   "url": "https://madie.cms.gov/Measure/CMS142FHIRDRCommunicationWithPhysicianManagingDiabetes",
@@ -817,7 +818,7 @@
   "title": "Diabetic Retinopathy: Communication with the Physician Managing Ongoing Diabetes CareFHIR",
   "status": "active",
   "experimental": false,
-  "date": "2025-05-06T15:49:12+00:00",
+  "date": "2025-06-26T19:30:09+00:00",
   "publisher": "American Academy of Ophthalmology",
   "contact": [ {
     "telecom": [ {

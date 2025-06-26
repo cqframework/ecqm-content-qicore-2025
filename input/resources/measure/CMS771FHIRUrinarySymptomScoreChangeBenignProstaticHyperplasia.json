@@ -532,6 +532,21 @@
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
+        "valueString": "QICoreCommon"
+      }, {
+        "url": "name",
+        "valueString": "hasStart"
+      }, {
+        "url": "statement",
+        "valueString": "/*\n@description: Given an interval, return true if the interval has a starting boundary specified\n(i.e. the start of the interval is not null and not the minimum DateTime value)\n*/\ndefine fluent function hasStart(period Interval<DateTime> ):\n  not ( start of period is null\n      or start of period = minimum DateTime\n  )"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 31
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
         "valueString": "CMS771FHIRUrinarySymptomScoreChangeBenignProstaticHyperplasia"
       }, {
         "url": "name",
@@ -541,7 +556,7 @@
         "valueString": "define fluent function isConfirmedActiveDiagnosis(condition Choice<ConditionProblemsHealthConcerns, ConditionEncounterDiagnosis>):\n  condition.isActive ( )\n    and condition.verificationStatus ~ QICoreCommon.\"confirmed\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 31
+        "valueInteger": 32
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -556,7 +571,7 @@
         "valueString": "/*\n@description: Converts the given [Period](https://hl7.org/fhir/datatypes.html#Period)\nvalue to a CQL DateTime Interval\n@comment: If the start value of the given period is unspecified, the starting\nboundary of the resulting interval will be open (meaning the start of the interval\nis unknown, as opposed to interpreted as the beginning of time).\n*/\ndefine function ToInterval(period FHIR.Period):\n    if period is null then\n        null\n    else\n        if period.\"start\" is null then\n            Interval(period.\"start\".value, period.\"end\".value]\n        else\n            Interval[period.\"start\".value, period.\"end\".value]"
       }, {
         "url": "displaySequence",
-        "valueInteger": 32
+        "valueInteger": 33
       } ]
     }, {
       "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
@@ -571,7 +586,7 @@
         "valueString": "/*\n@description: Converts the given FHIR [Coding](https://hl7.org/fhir/datatypes.html#Coding) value to a CQL Code.\n*/\ndefine function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }"
       }, {
         "url": "displaySequence",
-        "valueInteger": 33
+        "valueInteger": 34
       } ]
     } ],
     "name": "EffectiveDataRequirements",
@@ -924,9 +939,10 @@
     "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
     "valueCanonical": "#effective-data-requirements"
   }, {
-    "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem",
+    "id": "effective-data-requirements",
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
     "valueReference": {
-      "reference": "Device/cqf-tooling"
+      "reference": "#effective-data-requirements"
     }
   } ],
   "url": "https://madie.cms.gov/Measure/CMS771FHIRUrinarySymptomScoreChangeBenignProstaticHyperplasia",
@@ -983,7 +999,7 @@
   "title": "Urinary Symptom Score Change 6-12 Months After Diagnosis of Benign Prostatic HyperplasiaFHIR",
   "status": "active",
   "experimental": false,
-  "date": "2025-05-06T21:46:36+00:00",
+  "date": "2025-06-26T19:30:10+00:00",
   "publisher": "Large Urology Group Practice Association (LUGPA)",
   "contact": [ {
     "telecom": [ {
