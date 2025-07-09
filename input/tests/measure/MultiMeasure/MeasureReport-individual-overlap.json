@@ -1,0 +1,693 @@
+{
+  "resourceType": "Bundle",
+  "id": "f2475665-ca01-4c2e-a156-508d655d9e87",
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:fd482877-b76b-491f-bbcc-e2301316049e"
+  },
+  "type": "searchset",
+  "timestamp": "2025-07-09T10:12:11.105-06:00",
+  "entry": [
+    {
+      "fullUrl": "http://localhost:8080/fhir/MeasureReport/79f349e6-35a4-4bbc-861f-8450c2078bb2",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "79f349e6-35a4-4bbc-861f-8450c2078bb2",
+        "contained": [
+          {
+            "resourceType": "Observation",
+            "id": "c3e0e7da-39ad-4020-b671-c8ddd09616da",
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/cqf-measureInfo",
+                "extension": [
+                  {
+                    "url": "measure",
+                    "valueCanonical": "https://madie.cms.gov/Measure/CMS143FHIRPOAGOpticNerveEvaluation"
+                  }
+                ]
+              }
+            ],
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+                  "code": "supplemental-data"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "Tuple {\n  codes: [Code { code: 2186-5, system: urn:oid:2.16.840.1.113883.6.238, version: null, display: Not Hispanic or Latino }]\n  display: Not Hispanic or Latino\n}"
+                }
+              ]
+            }
+          },
+          {
+            "resourceType": "Observation",
+            "id": "30d51d54-0467-4640-9ea9-02fa2a1a4c45",
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/cqf-measureInfo",
+                "extension": [
+                  {
+                    "url": "measure",
+                    "valueCanonical": "https://madie.cms.gov/Measure/CMS143FHIRPOAGOpticNerveEvaluation"
+                  }
+                ]
+              }
+            ],
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+                  "code": "supplemental-data"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "Tuple {\n  codes: [Code { code: 2106-3, system: urn:oid:2.16.840.1.113883.6.238, version: null, display: White }]\n  display: White\n}"
+                }
+              ]
+            }
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.population.description",
+            "valueString": "Percentage of patients aged 18 years and older with a diagnosis of primary open-angle glaucoma (POAG) who have an optic nerve head evaluation during one or more visits within during the measurement period"
+          },
+          {
+            "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.supplementalDataElement.reference",
+            "valueReference": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                  "valueString": "sde-race"
+                }
+              ],
+              "reference": "#30d51d54-0467-4640-9ea9-02fa2a1a4c45"
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.supplementalDataElement.reference",
+            "valueReference": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                  "valueString": "sde-ethnicity"
+                }
+              ],
+              "reference": "#c3e0e7da-39ad-4020-b671-c8ddd09616da"
+            }
+          }
+        ],
+        "status": "complete",
+        "type": "individual",
+        "measure": "https://madie.cms.gov/Measure/CMS143FHIRPOAGOpticNerveEvaluation|0.2.000",
+        "subject": {
+          "reference": "Patient/1ea6ee4a-bfb0-44ec-8a94-5f0035c81c9e"
+        },
+        "date": "2025-07-09T10:12:11-06:00",
+        "period": {
+          "start": "2025-12-31T17:00:00-07:00",
+          "end": "2026-12-31T16:59:59-07:00"
+        },
+        "group": [
+          {
+            "id": "Group_1",
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+                      "code": "decrease",
+                      "display": "Decrease"
+                    }
+                  ]
+                }
+              }
+            ],
+            "population": [
+              {
+                "id": "InitialPopulation_1",
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.population.description",
+                    "valueString": "All patients aged 18 years and older with a diagnosis of primary open-angle glaucoma"
+                  }
+                ],
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 1
+              },
+              {
+                "id": "Denominator_1",
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.population.description",
+                    "valueString": "Equals Initial Population"
+                  }
+                ],
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 1
+              },
+              {
+                "id": "Numerator_1",
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.population.description",
+                    "valueString": "Patients who have an optic nerve head evaluation during one or more visits during the measurement period"
+                  }
+                ],
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 0
+              },
+              {
+                "id": "DenominatorException_1",
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.population.description",
+                    "valueString": "Documentation of medical reason(s) for not performing an optic nerve head evaluation"
+                  }
+                ],
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator-exception",
+                      "display": "Denominator Exception"
+                    }
+                  ]
+                },
+                "count": 0
+              }
+            ],
+            "measureScore": {
+              "value": 1.0
+            }
+          }
+        ],
+        "evaluatedResource": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "InitialPopulation_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "Denominator_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "Numerator_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "DenominatorException_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-ethnicity"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-payer"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-race"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-sex"
+              }
+            ],
+            "reference": "Encounter/146adddc-2929-4862-82f2-8e975ff4f61f"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "InitialPopulation_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "Denominator_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "Numerator_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "DenominatorException_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-ethnicity"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-payer"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-race"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-sex"
+              }
+            ],
+            "reference": "Condition/47c4bbe0-4066-4bb1-a5ce-0ee44fb5fae7"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "InitialPopulation_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "Denominator_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "Numerator_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "DenominatorException_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-ethnicity"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-payer"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-race"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-sex"
+              }
+            ],
+            "reference": "Patient/1ea6ee4a-bfb0-44ec-8a94-5f0035c81c9e"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://localhost:8080/fhir/MeasureReport/228e3847-d7d7-4f45-9fc8-0b0479558448",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "228e3847-d7d7-4f45-9fc8-0b0479558448",
+        "contained": [
+          {
+            "resourceType": "Observation",
+            "id": "25e4733e-eed6-49dd-9c4c-a389e96936fc",
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/cqf-measureInfo",
+                "extension": [
+                  {
+                    "url": "measure",
+                    "valueCanonical": "https://madie.cms.gov/Measure/CMS349FHIRHIVScreening"
+                  }
+                ]
+              }
+            ],
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+                  "code": "supplemental-data"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "Tuple {\n  codes: [Code { code: 2106-3, system: urn:oid:2.16.840.1.113883.6.238, version: null, display: White }]\n  display: White\n}"
+                }
+              ]
+            }
+          },
+          {
+            "resourceType": "Observation",
+            "id": "a5ea07c2-fed8-49f1-86d9-daa41b13d401",
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/cqf-measureInfo",
+                "extension": [
+                  {
+                    "url": "measure",
+                    "valueCanonical": "https://madie.cms.gov/Measure/CMS349FHIRHIVScreening"
+                  }
+                ]
+              }
+            ],
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+                  "code": "supplemental-data"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "Tuple {\n  codes: [Code { code: 2186-5, system: urn:oid:2.16.840.1.113883.6.238, version: null, display: Not Hispanic or Latino }]\n  display: Not Hispanic or Latino\n}"
+                }
+              ]
+            }
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.population.description",
+            "valueString": "Percentage of patients aged 15-65 at the start of the measurement period who were between 15-65 years old when tested for human immunodeficiency virus (HIV)."
+          },
+          {
+            "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.supplementalDataElement.reference",
+            "valueReference": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                  "valueString": "sde-race"
+                }
+              ],
+              "reference": "#25e4733e-eed6-49dd-9c4c-a389e96936fc"
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.supplementalDataElement.reference",
+            "valueReference": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                  "valueString": "sde-ethnicity"
+                }
+              ],
+              "reference": "#a5ea07c2-fed8-49f1-86d9-daa41b13d401"
+            }
+          }
+        ],
+        "status": "complete",
+        "type": "individual",
+        "measure": "https://madie.cms.gov/Measure/CMS349FHIRHIVScreening|0.3.000",
+        "subject": {
+          "reference": "Patient/1ea6ee4a-bfb0-44ec-8a94-5f0035c81c9e"
+        },
+        "date": "2025-07-09T10:12:11-06:00",
+        "period": {
+          "start": "2025-12-31T17:00:00-07:00",
+          "end": "2026-12-31T16:59:59-07:00"
+        },
+        "group": [
+          {
+            "id": "Group_1",
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-improvementNotation",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-improvement-notation",
+                      "code": "decrease",
+                      "display": "Decrease"
+                    }
+                  ]
+                }
+              }
+            ],
+            "population": [
+              {
+                "id": "InitialPopulation_1",
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.population.description",
+                    "valueString": "Patients 15 to 65 years of age at the start of the measurement period without an HIV diagnosis prior to the start of the measurement period AND who had at least one outpatient visit during the day of the measurement period"
+                  }
+                ],
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "count": 1
+              },
+              {
+                "id": "Denominator_1",
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.population.description",
+                    "valueString": "Equals Initial Population"
+                  }
+                ],
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "count": 1
+              },
+              {
+                "id": "DenominatorExclusion_1",
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.population.description",
+                    "valueString": "Patients diagnosed with HIV prior to the start of the day of the measurement period"
+                  }
+                ],
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator-exclusion",
+                      "display": "Denominator Exclusion"
+                    }
+                  ]
+                },
+                "count": 0
+              },
+              {
+                "id": "Numerator_1",
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.population.description",
+                    "valueString": "Patients with documentation of an HIV test performed on or after their 15th birthday and before their 66th birthday"
+                  }
+                ],
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "count": 0
+              },
+              {
+                "id": "DenominatorException_1",
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MeasureReport.population.description",
+                    "valueString": "Patients who die on or before the end of the day of the measurement period"
+                  }
+                ],
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator-exception",
+                      "display": "Denominator Exception"
+                    }
+                  ]
+                },
+                "count": 0
+              }
+            ],
+            "measureScore": {
+              "value": 1.0
+            }
+          }
+        ],
+        "evaluatedResource": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "InitialPopulation_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "Denominator_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "DenominatorExclusion_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "Numerator_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "DenominatorException_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-ethnicity"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-payer"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-race"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-sex"
+              }
+            ],
+            "reference": "Encounter/146adddc-2929-4862-82f2-8e975ff4f61f"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "InitialPopulation_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "Denominator_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "DenominatorExclusion_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "Numerator_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "DenominatorException_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-ethnicity"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-payer"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-race"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-sex"
+              }
+            ],
+            "reference": "Encounter/CMS349"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "InitialPopulation_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "Denominator_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "DenominatorExclusion_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "Numerator_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "DenominatorException_1"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-ethnicity"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-payer"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-race"
+              },
+              {
+                "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
+                "valueString": "sde-sex"
+              }
+            ],
+            "reference": "Patient/1ea6ee4a-bfb0-44ec-8a94-5f0035c81c9e"
+          }
+        ]
+      }
+    }
+  ]
+}
