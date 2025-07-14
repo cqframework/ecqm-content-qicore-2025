@@ -1,0 +1,106 @@
+{
+  "resourceType": "Library",
+  "id": "PCMaternal",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary", "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-computablelibrary", "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary", "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-executablelibrary", "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library", "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library", "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library" ]
+  },
+  "language": "en",
+  "text": {
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" class=\"col-12\">\n  <table class=\"narrative-table\">\n    <tbody>\n<tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Knowledge Artifact Metadata</th>\n\n</tr>\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Name (machine-readable)</th>\n\n<td class=\"content-container\">PCMaternal</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Title (human-readable)</th>\n\n<td class=\"content-container\">PCMaternal</td>\n</tr>\n\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Status</th>\n\n<td class=\"content-container\">active</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Experimental</th>\n\n<td class=\"content-container\">false</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Description</th>\n\n<td class=\"content-container\">This library specifies common data elements used by PC01, PC02, PC07.</td>\n</tr>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Library Steward</th>\n\n<td class=\"content-container\">The Joint Commission</td>\n</tr>\n\n\n\n\n\n\n\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library CQMCommon\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: https://madie.cms.gov/Library/CQMCommon|4.1.000\n    <br/>\n    <em>Canonical URL</em>: <tt>https://madie.cms.gov/Library/CQMCommon|4.1.000</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Library QICoreCommon\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: https://madie.cms.gov/Library/QICoreCommon|4.0.000\n    <br/>\n    <em>Canonical URL</em>: <tt>https://madie.cms.gov/Library/QICoreCommon|4.0.000</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Code system LOINC\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: http://loinc.org\n    <br/>\n    <em>Canonical URL</em>: <tt>http://loinc.org</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Value set Delivery Procedures\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.59\n    <br/>\n    <em>Canonical URL</em>: <tt>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.59</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Value set Observation Services\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143\n    <br/>\n    <em>Canonical URL</em>: <tt>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143</tt>\n    \n  </td>\n</tr>\n\n<tr>\n  \n  \n  \n  \n  \n<th scope=\"row\" class=\"row-header\">Dependency</th>\n\n  \n  <td class=\"content-container\">\n    \n    <em>Description</em>: Value set ED Visit and OB Triage\n    \n    <br/>\n    \n    \n    \n    \n    \n    \n    <em>Resource</em>: http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.369\n    <br/>\n    <em>Canonical URL</em>: <tt>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.369</tt>\n    \n  </td>\n</tr>\n\n\n\n\n\n\n\n\n\n\n<tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Library Metadata</th>\n\n</tr>\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Identifier</th>\n\n<td class=\"content-container\">org.hl7.fhir.r5.model.Identifier@4eb620b9</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Version Number</th>\n\n<td class=\"content-container\">5.25.000</td>\n</tr>\n\n\n<tr>\n\n<th scope=\"row\" class=\"row-header\">Library Type</th>\n\n<td class=\"content-container\">[http://terminology.hl7.org/CodeSystem/library-type#logic-library]</td>\n</tr>\n\n\n\n\n<tr>\n  <th scope=\"row\" class=\"row-header\">Data Requirement</th>\n  <td class=\"content-container\">\n    <em>Type</em>: Procedure\n    <br/>\n  \n    <em>Profile(s)</em>: \n  \n    http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure\n    <br/>        \n  \n   \n   \n    <em>Must Support Elements</em>: code, status, status.value, performed\n    <br/>\n   \n  \n    <em>Code Filter(s)</em>: \n    <br/>\n  \n  \n    <span class=\"tab-one\"><em>Path</em>: code</span>\n    <br/>\n  \n  \n  \n    <span class=\"tab-one\"><em>ValueSet</em>:</span> http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.59\n    <br/> \n  \n  \n  \n   \n  </td>\n</tr>\n\n\n\n  <tr>\n\n<th colspan=\"2\" scope=\"row\" class=\"row-header\">Library Content</th>\n\n</tr>\n  \n    \n    <tr>\n      <th scope=\"row\" class=\"row-header\">CQL Content</th>\n      <td>\n        <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">library PCMaternal version '5.25.000'\n\nusing QICore version '6.0.0'\n\ninclude FHIRHelpers version '4.4.000' called FHIRHelpers\ninclude CQMCommon version '4.1.000' called CQMCommon\ninclude QICoreCommon version '4.0.000' called QICoreCommon \n\ncodesystem &quot;LOINC&quot;: 'http://loinc.org' \n\nvalueset &quot;Delivery Procedures&quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.59' \nvalueset &quot;ED Visit and OB Triage&quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.369' \nvalueset &quot;Encounter Inpatient&quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307' \nvalueset &quot;Estimated Gestational Age at Delivery&quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.26' \nvalueset &quot;Observation Services&quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143' \n\ncode &quot;Date and time of obstetric delivery&quot;: '93857-1' from &quot;LOINC&quot; display 'Date and time of obstetric delivery'\ncode &quot;Delivery date Estimated&quot;: '11778-8' from &quot;LOINC&quot; display 'Delivery date Estimated'\n\nparameter &quot;Measurement Period&quot; Interval&lt;DateTime&gt;\n\ncontext Patient\n\ndefine &quot;Delivery Encounter With Age Range&quot;:\n  &quot;Encounter With Age Range&quot; EncounterWithAge\n                with [&quot;Procedure&quot;: &quot;Delivery Procedures&quot;] DeliveryProcedure\n                such that DeliveryProcedure.status = 'completed'\n                and DeliveryProcedure.performed.toInterval  ( ) starts during EncounterWithAge.hospitalizationWithEDOBTriageObservation ()\n\ndefine &quot;Encounter With Age Range&quot;:\n CQMCommon.&quot;Inpatient Encounter&quot; InpatientEncounter\n                      where AgeInYearsAt(date from start of InpatientEncounter.period) in Interval[ 8, 65 )\n                  \n\ndefine &quot;Variable Calculated Gestational Age&quot;:\n &quot;Delivery Encounter With Age Range&quot; DeliveryEncounter\n    let CGA: DeliveryEncounter.calculatedGestationalAge()\n    return {\n      EncounterID: DeliveryEncounter.id,\n      CalculatedCGA: CGA\n    }\n\ndefine fluent function calculatedGestationalAge (TheEncounter Encounter ):\n  //Gestational Age = (280 -(Estimated Delivery Date minus Reference Date/Delivery Date))/7\n ( 280 - ( difference in days between TheEncounter.lastTimeOfDelivery () and TheEncounter.lastEstimatedDeliveryDate( )) ) div 7\n\n    \n    \ndefine fluent function hospitalizationWithEDOBTriageObservation (TheEncounter Encounter ):\n  /*hospitalizationWithEDOBTriageObservation returns the total interval from the start of any immediately prior emergency department visit or OB Triage visit through the observation visit to the discharge of the given encounter*/\n  TheEncounter Visit\n    let ObsVisit: Last([&quot;Encounter&quot;: &quot;Observation Services&quot;] LastObs\n        where LastObs.period ends 1 hour or less on or before start of Visit.period\n          and LastObs.status = 'finished'\n        sort by \n        end of period\n    ),\n    VisitStart: Coalesce(start of ObsVisit.period, start of Visit.period),\n    EDOBTriageVisit: Last([&quot;Encounter&quot;: &quot;ED Visit and OB Triage&quot;] LastEDOBTriage\n        where LastEDOBTriage.period ends 1 hour or less on or before VisitStart\n          and LastEDOBTriage.status = 'finished'\n        sort by \n        end of period\n    )\n    return Interval[Coalesce(start of EDOBTriageVisit.period, VisitStart), \n    end of Visit.period]\n  \n\ndefine fluent function lastEstimatedDeliveryDate (TheEncounter Encounter ):\n  /*This function identifies the last time the EDD was assessed 42 weeks or less prior to or on delivery and stores the result of that assessment.*/\n  Last([&quot;SimpleObservation&quot;: &quot;Delivery date Estimated&quot;] EstimatedDateOfDelivery\n      where EstimatedDateOfDelivery.value as DateTime is not null\n        and EstimatedDateOfDelivery.status in { 'final', 'amended', 'corrected' }\n        and EstimatedDateOfDelivery.effective.earliest ( ) 42 weeks or less before or on TheEncounter.lastTimeOfDelivery ()\n      sort by effective.earliest ( )\n  ).value as DateTime\n\n\n  define fluent function lastEstimatedGestationalAge (TheEncounter Encounter ):\n  Last([&quot;SimpleObservation&quot;: &quot;Estimated Gestational Age at Delivery&quot;] EstimatedGestationalAge\n  let EGATiming:  EstimatedGestationalAge.effective.earliest() where \n  (EGATiming 24 hours or less before or on TheEncounter.lastTimeOfDelivery () \n  and EstimatedGestationalAge.value is not null \n  and EstimatedGestationalAge.status in { 'final', 'amended', 'corrected' }) or \n      (EGATiming same day as TheEncounter.lastTimeOfDelivery () \n      and EGATiming during TheEncounter.hospitalizationWithEDOBTriageObservation() \n      and EstimatedGestationalAge.value is not null)\n sort by effective.earliest ())\n         .value as Quantity\n\ndefine fluent function lastTimeOfDelivery (TheEncounter Encounter ):\n  Last([&quot;SimpleObservation&quot;: &quot;Date and time of obstetric delivery&quot;] TimeOfDelivery\n      where TimeOfDelivery.value as DateTime is not null\n        and TimeOfDelivery.status in { 'final', 'amended', 'corrected' }\n        and TimeOfDelivery.effective.earliest () during TheEncounter.hospitalizationWithEDOBTriageObservation ()\n        and TimeOfDelivery.value as DateTime during TheEncounter.hospitalizationWithEDOBTriageObservation()\n      sort by effective.earliest()\n  ).value as DateTime</code></pre>\n      </td>\n    </tr>\n    \n    \n    \n  \n\n<tr>\n  <th colspan=\"2\" scope=\"row\" class=\"row-header\">Generated using version 0.4.7 of the sample-content-ig Liquid templates</th>\n</tr>\n\n    </tbody>\n  </table>\n</div>"
+  },
+  "contained": [ {
+    "resourceType": "Parameters",
+    "id": "options",
+    "parameter": [ {
+      "name": "translatorVersion",
+      "valueString": "3.25.0"
+    }, {
+      "name": "option",
+      "valueString": "EnableAnnotations"
+    }, {
+      "name": "option",
+      "valueString": "EnableLocators"
+    }, {
+      "name": "option",
+      "valueString": "DisableListDemotion"
+    }, {
+      "name": "option",
+      "valueString": "DisableListPromotion"
+    }, {
+      "name": "format",
+      "valueString": "XML"
+    }, {
+      "name": "format",
+      "valueString": "JSON"
+    }, {
+      "name": "analyzeDataRequirements",
+      "valueBoolean": false
+    }, {
+      "name": "collapseDataRequirements",
+      "valueBoolean": false
+    }, {
+      "name": "compatibilityLevel",
+      "valueString": "1.5"
+    }, {
+      "name": "enableCqlOnly",
+      "valueBoolean": false
+    }, {
+      "name": "errorLevel",
+      "valueString": "Info"
+    }, {
+      "name": "signatureLevel",
+      "valueString": "Overloads"
+    }, {
+      "name": "validateUnits",
+      "valueBoolean": true
+    }, {
+      "name": "verifyOnly",
+      "valueBoolean": false
+    } ]
+  } ],
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+    "valueCoding": {
+      "system": "http://loinc.org",
+      "code": "93857-1",
+      "display": "Date and time of obstetric delivery"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
+    "valueCoding": {
+      "system": "http://loinc.org",
+      "code": "11778-8",
+      "display": "Delivery date Estimated"
+    }
+  }, {
+    "url": "http://hl7.org/fhir/StructureDefinition/cqf-cqlOptions",
+    "valueReference": {
+      "reference": "#options"
+    }
+  } ],
+  "url": "https://madie.cms.gov/Library/PCMaternal",
+  "identifier": [ {
+    "use": "official",
+    "system": "https://madie.cms.gov/login",
+    "value": "68560e060d70b65363c69eea"
+  } ],
+  "version": "5.25.000",
+  "name": "PCMaternal",
+  "title": "PCMaternal",
+  "status": "active",
+  "experimental": false,
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/library-type",
+      "code": "logic-library"
+    } ]
+  },
+  "date": "2025-06-21T01:50:05+00:00",
+  "publisher": "The Joint Commission",
+  "description": "This library specifies common data elements used by PC01, PC02, PC07.",
+  "content": [ {
+    "contentType": "text/cql",
+    "data": "bGlicmFyeSBQQ01hdGVybmFsIHZlcnNpb24gJzUuMjUuMDAwJwoKdXNpbmcgUUlDb3JlIHZlcnNpb24gJzYuMC4wJwoKaW5jbHVkZSBGSElSSGVscGVycyB2ZXJzaW9uICc0LjQuMDAwJyBjYWxsZWQgRkhJUkhlbHBlcnMKaW5jbHVkZSBDUU1Db21tb24gdmVyc2lvbiAnNC4xLjAwMCcgY2FsbGVkIENRTUNvbW1vbgppbmNsdWRlIFFJQ29yZUNvbW1vbiB2ZXJzaW9uICc0LjAuMDAwJyBjYWxsZWQgUUlDb3JlQ29tbW9uIAoKY29kZXN5c3RlbSAiTE9JTkMiOiAnaHR0cDovL2xvaW5jLm9yZycgCgp2YWx1ZXNldCAiRGVsaXZlcnkgUHJvY2VkdXJlcyI6ICdodHRwOi8vY3RzLm5sbS5uaWguZ292L2ZoaXIvVmFsdWVTZXQvMi4xNi44NDAuMS4xMTM3NjIuMS40LjEwNDUuNTknIAp2YWx1ZXNldCAiRUQgVmlzaXQgYW5kIE9CIFRyaWFnZSI6ICdodHRwOi8vY3RzLm5sbS5uaWguZ292L2ZoaXIvVmFsdWVTZXQvMi4xNi44NDAuMS4xMTM3NjIuMS40LjEwMjkuMzY5JyAKdmFsdWVzZXQgIkVuY291bnRlciBJbnBhdGllbnQiOiAnaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzODgzLjMuNjY2LjUuMzA3JyAKdmFsdWVzZXQgIkVzdGltYXRlZCBHZXN0YXRpb25hbCBBZ2UgYXQgRGVsaXZlcnkiOiAnaHR0cDovL2N0cy5ubG0ubmloLmdvdi9maGlyL1ZhbHVlU2V0LzIuMTYuODQwLjEuMTEzNzYyLjEuNC4xMDQ1LjI2JyAKdmFsdWVzZXQgIk9ic2VydmF0aW9uIFNlcnZpY2VzIjogJ2h0dHA6Ly9jdHMubmxtLm5paC5nb3YvZmhpci9WYWx1ZVNldC8yLjE2Ljg0MC4xLjExMzc2Mi4xLjQuMTExMS4xNDMnIAoKY29kZSAiRGF0ZSBhbmQgdGltZSBvZiBvYnN0ZXRyaWMgZGVsaXZlcnkiOiAnOTM4NTctMScgZnJvbSAiTE9JTkMiIGRpc3BsYXkgJ0RhdGUgYW5kIHRpbWUgb2Ygb2JzdGV0cmljIGRlbGl2ZXJ5Jwpjb2RlICJEZWxpdmVyeSBkYXRlIEVzdGltYXRlZCI6ICcxMTc3OC04JyBmcm9tICJMT0lOQyIgZGlzcGxheSAnRGVsaXZlcnkgZGF0ZSBFc3RpbWF0ZWQnCgpwYXJhbWV0ZXIgIk1lYXN1cmVtZW50IFBlcmlvZCIgSW50ZXJ2YWw8RGF0ZVRpbWU+Cgpjb250ZXh0IFBhdGllbnQKCmRlZmluZSAiRGVsaXZlcnkgRW5jb3VudGVyIFdpdGggQWdlIFJhbmdlIjoKICAiRW5jb3VudGVyIFdpdGggQWdlIFJhbmdlIiBFbmNvdW50ZXJXaXRoQWdlCiAgICAgICAgICAgICAgICB3aXRoIFsiUHJvY2VkdXJlIjogIkRlbGl2ZXJ5IFByb2NlZHVyZXMiXSBEZWxpdmVyeVByb2NlZHVyZQogICAgICAgICAgICAgICAgc3VjaCB0aGF0IERlbGl2ZXJ5UHJvY2VkdXJlLnN0YXR1cyA9ICdjb21wbGV0ZWQnCiAgICAgICAgICAgICAgICBhbmQgRGVsaXZlcnlQcm9jZWR1cmUucGVyZm9ybWVkLnRvSW50ZXJ2YWwgICggKSBzdGFydHMgZHVyaW5nIEVuY291bnRlcldpdGhBZ2UuaG9zcGl0YWxpemF0aW9uV2l0aEVET0JUcmlhZ2VPYnNlcnZhdGlvbiAoKQoKZGVmaW5lICJFbmNvdW50ZXIgV2l0aCBBZ2UgUmFuZ2UiOgogQ1FNQ29tbW9uLiJJbnBhdGllbnQgRW5jb3VudGVyIiBJbnBhdGllbnRFbmNvdW50ZXIKICAgICAgICAgICAgICAgICAgICAgIHdoZXJlIEFnZUluWWVhcnNBdChkYXRlIGZyb20gc3RhcnQgb2YgSW5wYXRpZW50RW5jb3VudGVyLnBlcmlvZCkgaW4gSW50ZXJ2YWxbIDgsIDY1ICkKICAgICAgICAgICAgICAgICAgCgpkZWZpbmUgIlZhcmlhYmxlIENhbGN1bGF0ZWQgR2VzdGF0aW9uYWwgQWdlIjoKICJEZWxpdmVyeSBFbmNvdW50ZXIgV2l0aCBBZ2UgUmFuZ2UiIERlbGl2ZXJ5RW5jb3VudGVyCiAgICBsZXQgQ0dBOiBEZWxpdmVyeUVuY291bnRlci5jYWxjdWxhdGVkR2VzdGF0aW9uYWxBZ2UoKQogICAgcmV0dXJuIHsKICAgICAgRW5jb3VudGVySUQ6IERlbGl2ZXJ5RW5jb3VudGVyLmlkLAogICAgICBDYWxjdWxhdGVkQ0dBOiBDR0EKICAgIH0KCmRlZmluZSBmbHVlbnQgZnVuY3Rpb24gY2FsY3VsYXRlZEdlc3RhdGlvbmFsQWdlIChUaGVFbmNvdW50ZXIgRW5jb3VudGVyICk6CiAgLy9HZXN0YXRpb25hbCBBZ2UgPSAoMjgwIC0oRXN0aW1hdGVkIERlbGl2ZXJ5IERhdGUgbWludXMgUmVmZXJlbmNlIERhdGUvRGVsaXZlcnkgRGF0ZSkpLzcKICggMjgwIC0gKCBkaWZmZXJlbmNlIGluIGRheXMgYmV0d2VlbiBUaGVFbmNvdW50ZXIubGFzdFRpbWVPZkRlbGl2ZXJ5ICgpIGFuZCBUaGVFbmNvdW50ZXIubGFzdEVzdGltYXRlZERlbGl2ZXJ5RGF0ZSggKSkgKSBkaXYgNwoKICAgIAogICAgCmRlZmluZSBmbHVlbnQgZnVuY3Rpb24gaG9zcGl0YWxpemF0aW9uV2l0aEVET0JUcmlhZ2VPYnNlcnZhdGlvbiAoVGhlRW5jb3VudGVyIEVuY291bnRlciApOgogIC8qaG9zcGl0YWxpemF0aW9uV2l0aEVET0JUcmlhZ2VPYnNlcnZhdGlvbiByZXR1cm5zIHRoZSB0b3RhbCBpbnRlcnZhbCBmcm9tIHRoZSBzdGFydCBvZiBhbnkgaW1tZWRpYXRlbHkgcHJpb3IgZW1lcmdlbmN5IGRlcGFydG1lbnQgdmlzaXQgb3IgT0IgVHJpYWdlIHZpc2l0IHRocm91Z2ggdGhlIG9ic2VydmF0aW9uIHZpc2l0IHRvIHRoZSBkaXNjaGFyZ2Ugb2YgdGhlIGdpdmVuIGVuY291bnRlciovCiAgVGhlRW5jb3VudGVyIFZpc2l0CiAgICBsZXQgT2JzVmlzaXQ6IExhc3QoWyJFbmNvdW50ZXIiOiAiT2JzZXJ2YXRpb24gU2VydmljZXMiXSBMYXN0T2JzCiAgICAgICAgd2hlcmUgTGFzdE9icy5wZXJpb2QgZW5kcyAxIGhvdXIgb3IgbGVzcyBvbiBvciBiZWZvcmUgc3RhcnQgb2YgVmlzaXQucGVyaW9kCiAgICAgICAgICBhbmQgTGFzdE9icy5zdGF0dXMgPSAnZmluaXNoZWQnCiAgICAgICAgc29ydCBieSAKICAgICAgICBlbmQgb2YgcGVyaW9kCiAgICApLAogICAgVmlzaXRTdGFydDogQ29hbGVzY2Uoc3RhcnQgb2YgT2JzVmlzaXQucGVyaW9kLCBzdGFydCBvZiBWaXNpdC5wZXJpb2QpLAogICAgRURPQlRyaWFnZVZpc2l0OiBMYXN0KFsiRW5jb3VudGVyIjogIkVEIFZpc2l0IGFuZCBPQiBUcmlhZ2UiXSBMYXN0RURPQlRyaWFnZQogICAgICAgIHdoZXJlIExhc3RFRE9CVHJpYWdlLnBlcmlvZCBlbmRzIDEgaG91ciBvciBsZXNzIG9uIG9yIGJlZm9yZSBWaXNpdFN0YXJ0CiAgICAgICAgICBhbmQgTGFzdEVET0JUcmlhZ2Uuc3RhdHVzID0gJ2ZpbmlzaGVkJwogICAgICAgIHNvcnQgYnkgCiAgICAgICAgZW5kIG9mIHBlcmlvZAogICAgKQogICAgcmV0dXJuIEludGVydmFsW0NvYWxlc2NlKHN0YXJ0IG9mIEVET0JUcmlhZ2VWaXNpdC5wZXJpb2QsIFZpc2l0U3RhcnQpLCAKICAgIGVuZCBvZiBWaXNpdC5wZXJpb2RdCiAgCgpkZWZpbmUgZmx1ZW50IGZ1bmN0aW9uIGxhc3RFc3RpbWF0ZWREZWxpdmVyeURhdGUgKFRoZUVuY291bnRlciBFbmNvdW50ZXIgKToKICAvKlRoaXMgZnVuY3Rpb24gaWRlbnRpZmllcyB0aGUgbGFzdCB0aW1lIHRoZSBFREQgd2FzIGFzc2Vzc2VkIDQyIHdlZWtzIG9yIGxlc3MgcHJpb3IgdG8gb3Igb24gZGVsaXZlcnkgYW5kIHN0b3JlcyB0aGUgcmVzdWx0IG9mIHRoYXQgYXNzZXNzbWVudC4qLwogIExhc3QoWyJTaW1wbGVPYnNlcnZhdGlvbiI6ICJEZWxpdmVyeSBkYXRlIEVzdGltYXRlZCJdIEVzdGltYXRlZERhdGVPZkRlbGl2ZXJ5CiAgICAgIHdoZXJlIEVzdGltYXRlZERhdGVPZkRlbGl2ZXJ5LnZhbHVlIGFzIERhdGVUaW1lIGlzIG5vdCBudWxsCiAgICAgICAgYW5kIEVzdGltYXRlZERhdGVPZkRlbGl2ZXJ5LnN0YXR1cyBpbiB7ICdmaW5hbCcsICdhbWVuZGVkJywgJ2NvcnJlY3RlZCcgfQogICAgICAgIGFuZCBFc3RpbWF0ZWREYXRlT2ZEZWxpdmVyeS5lZmZlY3RpdmUuZWFybGllc3QgKCApIDQyIHdlZWtzIG9yIGxlc3MgYmVmb3JlIG9yIG9uIFRoZUVuY291bnRlci5sYXN0VGltZU9mRGVsaXZlcnkgKCkKICAgICAgc29ydCBieSBlZmZlY3RpdmUuZWFybGllc3QgKCApCiAgKS52YWx1ZSBhcyBEYXRlVGltZQoKCiAgZGVmaW5lIGZsdWVudCBmdW5jdGlvbiBsYXN0RXN0aW1hdGVkR2VzdGF0aW9uYWxBZ2UgKFRoZUVuY291bnRlciBFbmNvdW50ZXIgKToKICBMYXN0KFsiU2ltcGxlT2JzZXJ2YXRpb24iOiAiRXN0aW1hdGVkIEdlc3RhdGlvbmFsIEFnZSBhdCBEZWxpdmVyeSJdIEVzdGltYXRlZEdlc3RhdGlvbmFsQWdlCiAgbGV0IEVHQVRpbWluZzogIEVzdGltYXRlZEdlc3RhdGlvbmFsQWdlLmVmZmVjdGl2ZS5lYXJsaWVzdCgpIHdoZXJlIAogIChFR0FUaW1pbmcgMjQgaG91cnMgb3IgbGVzcyBiZWZvcmUgb3Igb24gVGhlRW5jb3VudGVyLmxhc3RUaW1lT2ZEZWxpdmVyeSAoKSAKICBhbmQgRXN0aW1hdGVkR2VzdGF0aW9uYWxBZ2UudmFsdWUgaXMgbm90IG51bGwgCiAgYW5kIEVzdGltYXRlZEdlc3RhdGlvbmFsQWdlLnN0YXR1cyBpbiB7ICdmaW5hbCcsICdhbWVuZGVkJywgJ2NvcnJlY3RlZCcgfSkgb3IgCiAgICAgIChFR0FUaW1pbmcgc2FtZSBkYXkgYXMgVGhlRW5jb3VudGVyLmxhc3RUaW1lT2ZEZWxpdmVyeSAoKSAKICAgICAgYW5kIEVHQVRpbWluZyBkdXJpbmcgVGhlRW5jb3VudGVyLmhvc3BpdGFsaXphdGlvbldpdGhFRE9CVHJpYWdlT2JzZXJ2YXRpb24oKSAKICAgICAgYW5kIEVzdGltYXRlZEdlc3RhdGlvbmFsQWdlLnZhbHVlIGlzIG5vdCBudWxsKQogc29ydCBieSBlZmZlY3RpdmUuZWFybGllc3QgKCkpCiAgICAgICAgIC52YWx1ZSBhcyBRdWFudGl0eQoKZGVmaW5lIGZsdWVudCBmdW5jdGlvbiBsYXN0VGltZU9mRGVsaXZlcnkgKFRoZUVuY291bnRlciBFbmNvdW50ZXIgKToKICBMYXN0KFsiU2ltcGxlT2JzZXJ2YXRpb24iOiAiRGF0ZSBhbmQgdGltZSBvZiBvYnN0ZXRyaWMgZGVsaXZlcnkiXSBUaW1lT2ZEZWxpdmVyeQogICAgICB3aGVyZSBUaW1lT2ZEZWxpdmVyeS52YWx1ZSBhcyBEYXRlVGltZSBpcyBub3QgbnVsbAogICAgICAgIGFuZCBUaW1lT2ZEZWxpdmVyeS5zdGF0dXMgaW4geyAnZmluYWwnLCAnYW1lbmRlZCcsICdjb3JyZWN0ZWQnIH0KICAgICAgICBhbmQgVGltZU9mRGVsaXZlcnkuZWZmZWN0aXZlLmVhcmxpZXN0ICgpIGR1cmluZyBUaGVFbmNvdW50ZXIuaG9zcGl0YWxpemF0aW9uV2l0aEVET0JUcmlhZ2VPYnNlcnZhdGlvbiAoKQogICAgICAgIGFuZCBUaW1lT2ZEZWxpdmVyeS52YWx1ZSBhcyBEYXRlVGltZSBkdXJpbmcgVGhlRW5jb3VudGVyLmhvc3BpdGFsaXphdGlvbldpdGhFRE9CVHJpYWdlT2JzZXJ2YXRpb24oKQogICAgICBzb3J0IGJ5IGVmZmVjdGl2ZS5lYXJsaWVzdCgpCiAgKS52YWx1ZSBhcyBEYXRlVGltZQ=="
+  } ]
+}

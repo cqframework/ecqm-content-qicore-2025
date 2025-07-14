@@ -1,0 +1,92 @@
+{
+  "resourceType": "Library",
+  "id": "VTE",
+  "meta": {
+    "profile": [ "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareablelibrary", "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-computablelibrary", "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary", "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-executablelibrary", "http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library", "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-json-library", "http://hl7.org/fhir/uv/cql/StructureDefinition/elm-xml-library" ]
+  },
+  "language": "en",
+  "text": {
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\" class=\"col-12\">  \n         <table xmlns=\"null\" class=\"narrative-table\"> \n            <tbody xmlns=\"http://www.w3.org/1999/xhtml\"> \n               <tr> \n                  <th colspan=\"2\" scope=\"row\" class=\"row-header\">Knowledge Artifact Metadata</th> \n               </tr> \n               <tr> \n                  <th scope=\"row\" class=\"row-header\">Name (machine-readable)</th> \n                  <td class=\"content-container\">VTE</td> \n               </tr> \n               <tr> \n                  <th scope=\"row\" class=\"row-header\">Title (human-readable)</th> \n                  <td class=\"content-container\">VTE</td> \n               </tr> \n               <tr> \n                  <th scope=\"row\" class=\"row-header\">Status</th> \n                  <td class=\"content-container\">active</td> \n               </tr> \n               <tr> \n                  <th scope=\"row\" class=\"row-header\">Experimental</th> \n                  <td class=\"content-container\">false</td> \n               </tr> \n               <tr> \n                  <th scope=\"row\" class=\"row-header\">Description</th> \n                  <td class=\"content-container\">Definitions and functions used for  VTE measures, including VTE Initial Population.</td> \n               </tr> \n               <tr> \n                  <th scope=\"row\" class=\"row-header\">Library Steward</th> \n                  <td class=\"content-container\">The Joint Commission</td> \n               </tr> \n               <tr> \n                  <th scope=\"row\" class=\"row-header\">Dependency</th> \n                  <td class=\"content-container\"> \n                     <em>Description</em>: Library CQMCommon \n                     <br/> \n                     <em>Resource</em>: https://madie.cms.gov/Library/CQMCommon|4.1.000 \n                     <br/> \n                     <em>Canonical URL</em>: \n                     <tt>https://madie.cms.gov/Library/CQMCommon|4.1.000</tt> \n                  </td> \n               </tr> \n               <tr> \n                  <th scope=\"row\" class=\"row-header\">Dependency</th> \n                  <td class=\"content-container\"> \n                     <em>Description</em>: Library FHIRHelpers \n                     <br/> \n                     <em>Resource</em>: https://madie.cms.gov/Library/FHIRHelpers|4.4.000 \n                     <br/> \n                     <em>Canonical URL</em>: \n                     <tt>https://madie.cms.gov/Library/FHIRHelpers|4.4.000</tt> \n                  </td> \n               </tr> \n               <tr> \n                  <th scope=\"row\" class=\"row-header\">Dependency</th> \n                  <td class=\"content-container\"> \n                     <em>Description</em>: Value set Obstetrical or Pregnancy Related Conditions \n                     <br/> \n                     <em>Resource</em>: http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.263 \n                     <br/> \n                     <em>Canonical URL</em>: \n                     <tt>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.263</tt> \n                  </td> \n               </tr> \n               <tr> \n                  <th scope=\"row\" class=\"row-header\">Dependency</th> \n                  <td class=\"content-container\"> \n                     <em>Description</em>: Value set Venous Thromboembolism \n                     <br/> \n                     <em>Resource</em>: http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.279 \n                     <br/> \n                     <em>Canonical URL</em>: \n                     <tt>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.279</tt> \n                  </td> \n               </tr> \n               <tr> \n                  <th scope=\"row\" class=\"row-header\">Dependency</th> \n                  <td class=\"content-container\"> \n                     <em>Description</em>: Value set Obstetrics VTE \n                     <br/> \n                     <em>Resource</em>: http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.264 \n                     <br/> \n                     <em>Canonical URL</em>: \n                     <tt>http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.264</tt> \n                  </td> \n               </tr> \n               <tr> \n                  <th colspan=\"2\" scope=\"row\" class=\"row-header\">Library Metadata</th> \n               </tr> \n               <tr> \n                  <th scope=\"row\" class=\"row-header\">Identifier</th> \n                  <td class=\"content-container\">org.hl7.fhir.r5.model.Identifier@5d020d28</td> \n               </tr> \n               <tr> \n                  <th scope=\"row\" class=\"row-header\">Version Number</th> \n                  <td class=\"content-container\">8.18.000</td> \n               </tr> \n               <tr> \n                  <th scope=\"row\" class=\"row-header\">Library Type</th> \n                  <td class=\"content-container\">[http://terminology.hl7.org/CodeSystem/library-type#logic-library]</td> \n               </tr> \n               <tr> \n                  <th colspan=\"2\" scope=\"row\" class=\"row-header\">Library Content</th> \n               </tr> \n               <tr> \n                  <th scope=\"row\" class=\"row-header\">CQL Content</th> \n                  <td> \n                     <pre style=\"border: none;\" class=\"content-container highlight language-cql\"><code class=\"language-cql\">library VTE version '8.18.000'\n\n\nusing QICore version '6.0.0'\n\ninclude FHIRHelpers version '4.4.000' called FHIRHelpers\ninclude QICoreCommon version '4.0.000' called QICoreCommon\ninclude CQMCommon version '4.1.000' called CQMCommon\n\nvalueset &quot;Obstetrical or Pregnancy Related Conditions&quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.263' \nvalueset &quot;Obstetrics VTE&quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.264'\nvalueset &quot;Venous Thromboembolism&quot;: 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.279' \n\nparameter &quot;Measurement Period&quot; Interval&lt;DateTime&gt;\n\ncontext Patient\n\n  \ndefine &quot;Initial Population&quot;:\n&quot;Encounter With Age Range And Without VTE Diagnosis Or Obstetrical Conditions&quot;\n\n\ndefine &quot;Admission Without VTE Or Obstetrical Conditions&quot;:\n  CQMCommon.&quot;Inpatient Encounter&quot; InpatientEncounter\n  where not (InpatientEncounter.hasEncDiagnosisOf(&quot;Obstetrical or Pregnancy Related Conditions&quot;)\n             or InpatientEncounter.hasEncDiagnosisOf(&quot;Venous Thromboembolism&quot;)\n             or InpatientEncounter.hasEncDiagnosisOf(&quot;Obstetrics VTE&quot;)\n            )\n\n\ndefine &quot;Encounter With Age Range And Without VTE Diagnosis Or Obstetrical Conditions&quot;:\n &quot;Admission Without VTE Or Obstetrical Conditions&quot; EncounterWithoutConditions\n     where AgeInYearsAt(date from start of EncounterWithoutConditions.period) &gt;= 18\n    \n    \ndefine fluent function fromDayOfStartOfHospitalizationToDayAfterAdmission(TheEncounter Encounter):\n\tInterval[ date from (start of TheEncounter.hospitalizationWithObservation()), date from (start of TheEncounter.period) + 1 days]\n\t\n\t\ndefine fluent function hasEncDiagnosisOf(TheEncounter Encounter, DiagnosisValueSet ValueSet):\n   TheEncounter E\n     return (E.encounterDiagnosis()).code in DiagnosisValueSet\n       or E.reasonCode in DiagnosisValueSet\n       \n       \ndefine fluent function hasPrincipalProcedureOf(TheEncounter Encounter, DiagnosisValueSet ValueSet):\n   TheEncounter E\n   let\n        PPx: E.principalProcedure(),\n        CPx: singleton from ([Procedure] P where PPx.procedure.references(P.id))\n     return PPx.procedure in DiagnosisValueSet\n       or CPx.code in DiagnosisValueSet</code></pre> \n                  </td> \n               </tr> \n               <tr> \n                  <th colspan=\"2\" scope=\"row\" class=\"row-header\">Generated using version 0.4.7 of the sample-content-ig Liquid templates</th> \n               </tr> \n            </tbody> \n         </table> \n      </div>"
+  },
+  "contained": [ {
+    "resourceType": "Parameters",
+    "id": "options",
+    "parameter": [ {
+      "name": "translatorVersion",
+      "valueString": "3.25.0"
+    }, {
+      "name": "option",
+      "valueString": "EnableAnnotations"
+    }, {
+      "name": "option",
+      "valueString": "EnableLocators"
+    }, {
+      "name": "option",
+      "valueString": "DisableListDemotion"
+    }, {
+      "name": "option",
+      "valueString": "DisableListPromotion"
+    }, {
+      "name": "format",
+      "valueString": "XML"
+    }, {
+      "name": "format",
+      "valueString": "JSON"
+    }, {
+      "name": "analyzeDataRequirements",
+      "valueBoolean": false
+    }, {
+      "name": "collapseDataRequirements",
+      "valueBoolean": false
+    }, {
+      "name": "compatibilityLevel",
+      "valueString": "1.5"
+    }, {
+      "name": "enableCqlOnly",
+      "valueBoolean": false
+    }, {
+      "name": "errorLevel",
+      "valueString": "Info"
+    }, {
+      "name": "signatureLevel",
+      "valueString": "Overloads"
+    }, {
+      "name": "validateUnits",
+      "valueBoolean": true
+    }, {
+      "name": "verifyOnly",
+      "valueBoolean": false
+    } ]
+  } ],
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/cqf-cqlOptions",
+    "valueReference": {
+      "reference": "#options"
+    }
+  } ],
+  "url": "https://madie.cms.gov/Library/VTE",
+  "identifier": [ {
+    "use": "official",
+    "system": "https://madie.cms.gov/login",
+    "value": "684335c804e54b190d315d72"
+  } ],
+  "version": "8.18.000",
+  "name": "VTE",
+  "title": "VTE",
+  "status": "active",
+  "experimental": false,
+  "type": {
+    "coding": [ {
+      "system": "http://terminology.hl7.org/CodeSystem/library-type",
+      "code": "logic-library"
+    } ]
+  },
+  "date": "2025-06-23T15:36:09+00:00",
+  "publisher": "The Joint Commission",
+  "description": "Definitions and functions used for  VTE measures, including VTE Initial Population.",
+  "content": [ {
+    "contentType": "text/cql",
+    "data": "bGlicmFyeSBWVEUgdmVyc2lvbiAnOC4xOC4wMDAnCgoKdXNpbmcgUUlDb3JlIHZlcnNpb24gJzYuMC4wJwoKaW5jbHVkZSBGSElSSGVscGVycyB2ZXJzaW9uICc0LjQuMDAwJyBjYWxsZWQgRkhJUkhlbHBlcnMKaW5jbHVkZSBRSUNvcmVDb21tb24gdmVyc2lvbiAnNC4wLjAwMCcgY2FsbGVkIFFJQ29yZUNvbW1vbgppbmNsdWRlIENRTUNvbW1vbiB2ZXJzaW9uICc0LjEuMDAwJyBjYWxsZWQgQ1FNQ29tbW9uCgp2YWx1ZXNldCAiT2JzdGV0cmljYWwgb3IgUHJlZ25hbmN5IFJlbGF0ZWQgQ29uZGl0aW9ucyI6ICdodHRwOi8vY3RzLm5sbS5uaWguZ292L2ZoaXIvVmFsdWVTZXQvMi4xNi44NDAuMS4xMTM4ODMuMy4xMTcuMS43LjEuMjYzJyAKdmFsdWVzZXQgIk9ic3RldHJpY3MgVlRFIjogJ2h0dHA6Ly9jdHMubmxtLm5paC5nb3YvZmhpci9WYWx1ZVNldC8yLjE2Ljg0MC4xLjExMzg4My4zLjExNy4xLjcuMS4yNjQnCnZhbHVlc2V0ICJWZW5vdXMgVGhyb21ib2VtYm9saXNtIjogJ2h0dHA6Ly9jdHMubmxtLm5paC5nb3YvZmhpci9WYWx1ZVNldC8yLjE2Ljg0MC4xLjExMzg4My4zLjExNy4xLjcuMS4yNzknIAoKcGFyYW1ldGVyICJNZWFzdXJlbWVudCBQZXJpb2QiIEludGVydmFsPERhdGVUaW1lPgoKY29udGV4dCBQYXRpZW50CgogIApkZWZpbmUgIkluaXRpYWwgUG9wdWxhdGlvbiI6CiJFbmNvdW50ZXIgV2l0aCBBZ2UgUmFuZ2UgQW5kIFdpdGhvdXQgVlRFIERpYWdub3NpcyBPciBPYnN0ZXRyaWNhbCBDb25kaXRpb25zIgoKCmRlZmluZSAiQWRtaXNzaW9uIFdpdGhvdXQgVlRFIE9yIE9ic3RldHJpY2FsIENvbmRpdGlvbnMiOgogIENRTUNvbW1vbi4iSW5wYXRpZW50IEVuY291bnRlciIgSW5wYXRpZW50RW5jb3VudGVyCiAgd2hlcmUgbm90IChJbnBhdGllbnRFbmNvdW50ZXIuaGFzRW5jRGlhZ25vc2lzT2YoIk9ic3RldHJpY2FsIG9yIFByZWduYW5jeSBSZWxhdGVkIENvbmRpdGlvbnMiKQogICAgICAgICAgICAgb3IgSW5wYXRpZW50RW5jb3VudGVyLmhhc0VuY0RpYWdub3Npc09mKCJWZW5vdXMgVGhyb21ib2VtYm9saXNtIikKICAgICAgICAgICAgIG9yIElucGF0aWVudEVuY291bnRlci5oYXNFbmNEaWFnbm9zaXNPZigiT2JzdGV0cmljcyBWVEUiKQogICAgICAgICAgICApCgoKZGVmaW5lICJFbmNvdW50ZXIgV2l0aCBBZ2UgUmFuZ2UgQW5kIFdpdGhvdXQgVlRFIERpYWdub3NpcyBPciBPYnN0ZXRyaWNhbCBDb25kaXRpb25zIjoKICJBZG1pc3Npb24gV2l0aG91dCBWVEUgT3IgT2JzdGV0cmljYWwgQ29uZGl0aW9ucyIgRW5jb3VudGVyV2l0aG91dENvbmRpdGlvbnMKICAgICB3aGVyZSBBZ2VJblllYXJzQXQoZGF0ZSBmcm9tIHN0YXJ0IG9mIEVuY291bnRlcldpdGhvdXRDb25kaXRpb25zLnBlcmlvZCkgPj0gMTgKICAgIAogICAgCmRlZmluZSBmbHVlbnQgZnVuY3Rpb24gZnJvbURheU9mU3RhcnRPZkhvc3BpdGFsaXphdGlvblRvRGF5QWZ0ZXJBZG1pc3Npb24oVGhlRW5jb3VudGVyIEVuY291bnRlcik6CglJbnRlcnZhbFsgZGF0ZSBmcm9tIChzdGFydCBvZiBUaGVFbmNvdW50ZXIuaG9zcGl0YWxpemF0aW9uV2l0aE9ic2VydmF0aW9uKCkpLCBkYXRlIGZyb20gKHN0YXJ0IG9mIFRoZUVuY291bnRlci5wZXJpb2QpICsgMSBkYXlzXQoJCgkKZGVmaW5lIGZsdWVudCBmdW5jdGlvbiBoYXNFbmNEaWFnbm9zaXNPZihUaGVFbmNvdW50ZXIgRW5jb3VudGVyLCBEaWFnbm9zaXNWYWx1ZVNldCBWYWx1ZVNldCk6CiAgIFRoZUVuY291bnRlciBFCiAgICAgcmV0dXJuIChFLmVuY291bnRlckRpYWdub3NpcygpKS5jb2RlIGluIERpYWdub3Npc1ZhbHVlU2V0CiAgICAgICBvciBFLnJlYXNvbkNvZGUgaW4gRGlhZ25vc2lzVmFsdWVTZXQKICAgICAgIAogICAgICAgCmRlZmluZSBmbHVlbnQgZnVuY3Rpb24gaGFzUHJpbmNpcGFsUHJvY2VkdXJlT2YoVGhlRW5jb3VudGVyIEVuY291bnRlciwgRGlhZ25vc2lzVmFsdWVTZXQgVmFsdWVTZXQpOgogICBUaGVFbmNvdW50ZXIgRQogICBsZXQKICAgICAgICBQUHg6IEUucHJpbmNpcGFsUHJvY2VkdXJlKCksCiAgICAgICAgQ1B4OiBzaW5nbGV0b24gZnJvbSAoW1Byb2NlZHVyZV0gUCB3aGVyZSBQUHgucHJvY2VkdXJlLnJlZmVyZW5jZXMoUC5pZCkpCiAgICAgcmV0dXJuIFBQeC5wcm9jZWR1cmUgaW4gRGlhZ25vc2lzVmFsdWVTZXQKICAgICAgIG9yIENQeC5jb2RlIGluIERpYWdub3Npc1ZhbHVlU2V0"
+  } ]
+}
