@@ -29,7 +29,7 @@
         "display": "Physical findings of Skin"
       }
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "SupplementalDataElements"
@@ -38,13 +38,13 @@
         "valueString": "SDE Sex"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Sex\":   case     when Patient.sex = '248153007' then \"Male (finding)\"     when Patient.sex = '248152002' then \"Female (finding)\"     else null   end"
+        "valueString": "define \"SDE Sex\":\n  case\n    when Patient.sex = '248153007' then \"Male (finding)\"\n    when Patient.sex = '248152002' then \"Female (finding)\"\n    else null\n  end"
       }, {
         "url": "displaySequence",
         "valueInteger": 0
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -53,13 +53,13 @@
         "valueString": "SDE Sex"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Sex\":   SDE.\"SDE Sex\""
+        "valueString": "define \"SDE Sex\":\n  SDE.\"SDE Sex\""
       }, {
         "url": "displaySequence",
         "valueInteger": 1
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -68,13 +68,13 @@
         "valueString": "Encounter with Age 18 and Older"
       }, {
         "url": "statement",
-        "valueString": "define \"Encounter with Age 18 and Older\":   [\"Encounter\": \"Encounter Inpatient\"] InpatientEncounter     where AgeInYearsAt(date from start of InpatientEncounter.period) >= 18       and InpatientEncounter.period ends during day of \"Measurement Period\"       and InpatientEncounter.status = 'finished'"
+        "valueString": "define \"Encounter with Age 18 and Older\":\n  [\"Encounter\": \"Encounter Inpatient\"] InpatientEncounter\n    where AgeInYearsAt(date from start of InpatientEncounter.period) >= 18\n      and InpatientEncounter.period ends during day of \"Measurement Period\"\n      and InpatientEncounter.status = 'finished'"
       }, {
         "url": "displaySequence",
         "valueInteger": 2
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -83,13 +83,13 @@
         "valueString": "Encounter with New Deep Tissue Pressure Injury Not POA by Indicator"
       }, {
         "url": "statement",
-        "valueString": "define \"Encounter with New Deep Tissue Pressure Injury Not POA by Indicator\":   \"Encounter with Age 18 and Older\" InpatientHospitalization     where InpatientHospitalization.isDiagnosisPresentOnAdmission ( \"Pressure Injury Deep Tissue Diagnoses\", \"Not Present On Admission or Documentation Insufficient to Determine\" )"
+        "valueString": "define \"Encounter with New Deep Tissue Pressure Injury Not POA by Indicator\":\n  \"Encounter with Age 18 and Older\" InpatientHospitalization\n    where InpatientHospitalization.isDiagnosisPresentOnAdmission ( \"Pressure Injury Deep Tissue Diagnoses\", \"Not Present On Admission or Documentation Insufficient to Determine\" )"
       }, {
         "url": "displaySequence",
         "valueInteger": 3
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -98,13 +98,13 @@
         "valueString": "Clinical SkinExams with Pressure Injury"
       }, {
         "url": "statement",
-        "valueString": "define \"Clinical SkinExams with Pressure Injury\":   [\"ObservationClinicalResult\": \"Physical findings of Skin\"] ClinicalSkinExam     where ClinicalSkinExam.isIn ( \"Pressure Injury Stage 2, 3, 4 or Unstageable\" )"
+        "valueString": "define \"Clinical SkinExams with Pressure Injury\":\n  [\"ObservationClinicalResult\": \"Physical findings of Skin\"] ClinicalSkinExam\n    where ClinicalSkinExam.isIn ( \"Pressure Injury Stage 2, 3, 4 or Unstageable\" )"
       }, {
         "url": "displaySequence",
         "valueInteger": 4
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -113,13 +113,13 @@
         "valueString": "Simple SkinExams with Pressure Injury"
       }, {
         "url": "statement",
-        "valueString": "define \"Simple SkinExams with Pressure Injury\":   [\"SimpleObservation\": \"Physical findings of Skin\"] ObsSkinExam     where ObsSkinExam.isIn ( \"Pressure Injury Stage 2, 3, 4 or Unstageable\" )"
+        "valueString": "define \"Simple SkinExams with Pressure Injury\":\n  [\"SimpleObservation\": \"Physical findings of Skin\"] ObsSkinExam\n    where ObsSkinExam.isIn ( \"Pressure Injury Stage 2, 3, 4 or Unstageable\" )"
       }, {
         "url": "displaySequence",
         "valueInteger": 5
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -128,13 +128,13 @@
         "valueString": "SkinExams with Pressure Injury"
       }, {
         "url": "statement",
-        "valueString": "// Skin exams may be either a SimpleObservation or an ObservationClinicalResult // The following union is used to combine the two types of skin exams    define \"SkinExams with Pressure Injury\":   \"Clinical SkinExams with Pressure Injury\"     union \"Simple SkinExams with Pressure Injury\""
+        "valueString": "// Skin exams may be either a SimpleObservation or an ObservationClinicalResult\n// The following union is used to combine the two types of skin exams\n\n\n\ndefine \"SkinExams with Pressure Injury\":\n  \"Clinical SkinExams with Pressure Injury\"\n    union \"Simple SkinExams with Pressure Injury\""
       }, {
         "url": "displaySequence",
         "valueInteger": 6
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -143,13 +143,13 @@
         "valueString": "Encounter with New Deep Tissue Pressure Injury by Skin Exam after First 72 Hours"
       }, {
         "url": "statement",
-        "valueString": "define \"Encounter with New Deep Tissue Pressure Injury by Skin Exam after First 72 Hours\":   \"Encounter with Age 18 and Older\" InpatientHospitalization     let hospitalizationPeriod: InpatientHospitalization.hospitalizationWithObservation ( )     with \"SkinExams with Pressure Injury\" SkinExam       such that SkinExam.effective.toInterval ( ) starts during Interval[start of hospitalizationPeriod + 72 hours, end of hospitalizationPeriod]"
+        "valueString": "define \"Encounter with New Deep Tissue Pressure Injury by Skin Exam after First 72 Hours\":\n  \"Encounter with Age 18 and Older\" InpatientHospitalization\n    let hospitalizationPeriod: InpatientHospitalization.hospitalizationWithObservation ( )\n    with \"SkinExams with Pressure Injury\" SkinExam\n      such that SkinExam.effective.toInterval ( ) starts during Interval[start of hospitalizationPeriod + 72 hours, end of hospitalizationPeriod]"
       }, {
         "url": "displaySequence",
         "valueInteger": 7
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -158,13 +158,13 @@
         "valueString": "Encounter with New Deep Tissue Pressure Injury"
       }, {
         "url": "statement",
-        "valueString": "define \"Encounter with New Deep Tissue Pressure Injury\":   \"Encounter with New Deep Tissue Pressure Injury Not POA by Indicator\"     union \"Encounter with New Deep Tissue Pressure Injury by Skin Exam after First 72 Hours\""
+        "valueString": "define \"Encounter with New Deep Tissue Pressure Injury\":\n  \"Encounter with New Deep Tissue Pressure Injury Not POA by Indicator\"\n    union \"Encounter with New Deep Tissue Pressure Injury by Skin Exam after First 72 Hours\""
       }, {
         "url": "displaySequence",
         "valueInteger": 8
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -173,13 +173,13 @@
         "valueString": "Encounter with New Stage 2, 3, 4 or Unstageable Pressure Injury Not POA by Indicator"
       }, {
         "url": "statement",
-        "valueString": "define \"Encounter with New Stage 2, 3, 4 or Unstageable Pressure Injury Not POA by Indicator\":   \"Encounter with Age 18 and Older\" InpatientHospitalization     where InpatientHospitalization.isDiagnosisPresentOnAdmission ( \"Pressure Injury Stage 2, 3, 4, or Unstageable Diagnoses\", \"Not Present On Admission or Documentation Insufficient to Determine\" )"
+        "valueString": "define \"Encounter with New Stage 2, 3, 4 or Unstageable Pressure Injury Not POA by Indicator\":\n  \"Encounter with Age 18 and Older\" InpatientHospitalization\n    where InpatientHospitalization.isDiagnosisPresentOnAdmission ( \"Pressure Injury Stage 2, 3, 4, or Unstageable Diagnoses\", \"Not Present On Admission or Documentation Insufficient to Determine\" )"
       }, {
         "url": "displaySequence",
         "valueInteger": 9
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -188,13 +188,13 @@
         "valueString": "Encounter with New Stage 2, 3, 4 or Unstageable Pressure Injury by Skin Exam after First 24 Hours"
       }, {
         "url": "statement",
-        "valueString": "define \"Encounter with New Stage 2, 3, 4 or Unstageable Pressure Injury by Skin Exam after First 24 Hours\":   \"Encounter with Age 18 and Older\" InpatientHospitalization     let hospitalizationPeriod: CQMCommon.\"HospitalizationWithObservation\" ( InpatientHospitalization )     with \"SkinExams with Pressure Injury\" SkinExam       such that SkinExam.effective.toInterval ( ) starts during Interval[start of hospitalizationPeriod + 24 hours, end of hospitalizationPeriod]"
+        "valueString": "define \"Encounter with New Stage 2, 3, 4 or Unstageable Pressure Injury by Skin Exam after First 24 Hours\":\n  \"Encounter with Age 18 and Older\" InpatientHospitalization\n    let hospitalizationPeriod: CQMCommon.\"HospitalizationWithObservation\" ( InpatientHospitalization )\n    with \"SkinExams with Pressure Injury\" SkinExam\n      such that SkinExam.effective.toInterval ( ) starts during Interval[start of hospitalizationPeriod + 24 hours, end of hospitalizationPeriod]"
       }, {
         "url": "displaySequence",
         "valueInteger": 10
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -203,13 +203,13 @@
         "valueString": "Encounter with New Stage 2, 3, 4 or Unstageable Pressure Injury"
       }, {
         "url": "statement",
-        "valueString": "define \"Encounter with New Stage 2, 3, 4 or Unstageable Pressure Injury\":   \"Encounter with New Stage 2, 3, 4 or Unstageable Pressure Injury Not POA by Indicator\"     union \"Encounter with New Stage 2, 3, 4 or Unstageable Pressure Injury by Skin Exam after First 24 Hours\""
+        "valueString": "define \"Encounter with New Stage 2, 3, 4 or Unstageable Pressure Injury\":\n  \"Encounter with New Stage 2, 3, 4 or Unstageable Pressure Injury Not POA by Indicator\"\n    union \"Encounter with New Stage 2, 3, 4 or Unstageable Pressure Injury by Skin Exam after First 24 Hours\""
       }, {
         "url": "displaySequence",
         "valueInteger": 11
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -218,13 +218,13 @@
         "valueString": "Numerator"
       }, {
         "url": "statement",
-        "valueString": "define \"Numerator\":   \"Encounter with New Deep Tissue Pressure Injury\"     union \"Encounter with New Stage 2, 3, 4 or Unstageable Pressure Injury\""
+        "valueString": "define \"Numerator\":\n  \"Encounter with New Deep Tissue Pressure Injury\"\n    union \"Encounter with New Stage 2, 3, 4 or Unstageable Pressure Injury\""
       }, {
         "url": "displaySequence",
         "valueInteger": 12
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -233,13 +233,13 @@
         "valueString": "Initial Population"
       }, {
         "url": "statement",
-        "valueString": "define \"Initial Population\":   \"Encounter with Age 18 and Older\""
+        "valueString": "define \"Initial Population\":\n  \"Encounter with Age 18 and Older\""
       }, {
         "url": "displaySequence",
         "valueInteger": 13
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -248,13 +248,13 @@
         "valueString": "Denominator"
       }, {
         "url": "statement",
-        "valueString": "define \"Denominator\":   \"Initial Population\""
+        "valueString": "define \"Denominator\":\n  \"Initial Population\""
       }, {
         "url": "displaySequence",
         "valueInteger": 14
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "SupplementalDataElements"
@@ -263,13 +263,13 @@
         "valueString": "SDE Payer"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Payer\":   [Coverage: type in \"Payer Type\"] Payer     return {       code: Payer.type,       period: Payer.period     }"
+        "valueString": "define \"SDE Payer\":\n  [Coverage: type in \"Payer Type\"] Payer\n    return {\n      code: Payer.type,\n      period: Payer.period\n    }"
       }, {
         "url": "displaySequence",
         "valueInteger": 15
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -278,13 +278,28 @@
         "valueString": "SDE Payer"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Payer\":   SDE.\"SDE Payer\""
+        "valueString": "define \"SDE Payer\":\n  SDE.\"SDE Payer\""
       }, {
         "url": "displaySequence",
         "valueInteger": 16
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "CMS826FHIRHHPI"
+      }, {
+        "url": "name",
+        "valueString": "Initial Population"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Initial Population\":\n  \"Encounter with Age 18 and Older\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 17
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "SupplementalDataElements"
@@ -293,13 +308,13 @@
         "valueString": "SDE Ethnicity"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Ethnicity\":   Patient.ethnicity E     return Tuple {       codes: { E.ombCategory } union E.detailed,       display: E.text     }"
+        "valueString": "define \"SDE Ethnicity\":\n  Patient.ethnicity E\n    return Tuple {\n      codes: { E.ombCategory } union E.detailed,\n      display: E.text\n    }"
       }, {
         "url": "displaySequence",
-        "valueInteger": 17
+        "valueInteger": 18
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -308,13 +323,13 @@
         "valueString": "SDE Ethnicity"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Ethnicity\":   SDE.\"SDE Ethnicity\""
+        "valueString": "define \"SDE Ethnicity\":\n  SDE.\"SDE Ethnicity\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 18
+        "valueInteger": 19
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -323,13 +338,13 @@
         "valueString": "Encounter with Deep Tissue Pressure Injury POA by Indicator"
       }, {
         "url": "statement",
-        "valueString": "define \"Encounter with Deep Tissue Pressure Injury POA by Indicator\":   \"Encounter with Age 18 and Older\" InpatientHospitalization     where InpatientHospitalization.isDiagnosisPresentOnAdmission ( \"Pressure Injury Deep Tissue Diagnoses\", \"Present on Admission or Clinically Undetermined\" )"
+        "valueString": "define \"Encounter with Deep Tissue Pressure Injury POA by Indicator\":\n  \"Encounter with Age 18 and Older\" InpatientHospitalization\n    where InpatientHospitalization.isDiagnosisPresentOnAdmission ( \"Pressure Injury Deep Tissue Diagnoses\", \"Present on Admission or Clinically Undetermined\" )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 19
+        "valueInteger": 20
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -338,13 +353,13 @@
         "valueString": "Encounter with Deep Tissue Pressure Injury POA by Skin Exam within First 72 Hours"
       }, {
         "url": "statement",
-        "valueString": "define \"Encounter with Deep Tissue Pressure Injury POA by Skin Exam within First 72 Hours\":   \"Encounter with Age 18 and Older\" InpatientHospitalization     let hospitalizationPeriod: InpatientHospitalization.hospitalizationWithObservation ( )     with \"SkinExams with Pressure Injury\" SkinExam       such that SkinExam.effective.toInterval ( ) starts during Interval[start of hospitalizationPeriod, start of hospitalizationPeriod + 72 hours]"
+        "valueString": "define \"Encounter with Deep Tissue Pressure Injury POA by Skin Exam within First 72 Hours\":\n  \"Encounter with Age 18 and Older\" InpatientHospitalization\n    let hospitalizationPeriod: InpatientHospitalization.hospitalizationWithObservation ( )\n    with \"SkinExams with Pressure Injury\" SkinExam\n      such that SkinExam.effective.toInterval ( ) starts during Interval[start of hospitalizationPeriod, start of hospitalizationPeriod + 72 hours]"
       }, {
         "url": "displaySequence",
-        "valueInteger": 20
+        "valueInteger": 21
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -353,13 +368,13 @@
         "valueString": "Encounter with Deep Tissue Pressure Injury POA by Indicator or Skin Exam within First 72 Hours"
       }, {
         "url": "statement",
-        "valueString": "define \"Encounter with Deep Tissue Pressure Injury POA by Indicator or Skin Exam within First 72 Hours\":   \"Encounter with Deep Tissue Pressure Injury POA by Indicator\"     union \"Encounter with Deep Tissue Pressure Injury POA by Skin Exam within First 72 Hours\""
+        "valueString": "define \"Encounter with Deep Tissue Pressure Injury POA by Indicator or Skin Exam within First 72 Hours\":\n  \"Encounter with Deep Tissue Pressure Injury POA by Indicator\"\n    union \"Encounter with Deep Tissue Pressure Injury POA by Skin Exam within First 72 Hours\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 21
+        "valueInteger": 22
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -368,13 +383,13 @@
         "valueString": "Encounter with Stage 2, 3, 4, or Unstageable Pressure Injury Present on Admission by POA Indicator"
       }, {
         "url": "statement",
-        "valueString": "define \"Encounter with Stage 2, 3, 4, or Unstageable Pressure Injury Present on Admission by POA Indicator\":   \"Encounter with Age 18 and Older\" InpatientHospitalization     where InpatientHospitalization.isDiagnosisPresentOnAdmission ( \"Pressure Injury Stage 2, 3, 4, or Unstageable Diagnoses\", \"Present on Admission or Clinically Undetermined\" )"
+        "valueString": "define \"Encounter with Stage 2, 3, 4, or Unstageable Pressure Injury Present on Admission by POA Indicator\":\n  \"Encounter with Age 18 and Older\" InpatientHospitalization\n    where InpatientHospitalization.isDiagnosisPresentOnAdmission ( \"Pressure Injury Stage 2, 3, 4, or Unstageable Diagnoses\", \"Present on Admission or Clinically Undetermined\" )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 22
+        "valueInteger": 23
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -383,13 +398,13 @@
         "valueString": "Encounter with Stage 2, 3, 4 or Unstageable Pressure Injury POA by Skin Exam within 24 Hours"
       }, {
         "url": "statement",
-        "valueString": "define \"Encounter with Stage 2, 3, 4 or Unstageable Pressure Injury POA by Skin Exam within 24 Hours\":   \"Encounter with Age 18 and Older\" InpatientHospitalization     let hospitalizationPeriod: InpatientHospitalization.hospitalizationWithObservation ( )     with \"SkinExams with Pressure Injury\" SkinExam       such that SkinExam.effective.toInterval ( ) starts during Interval[start of hospitalizationPeriod, start of hospitalizationPeriod + 24 hours]"
+        "valueString": "define \"Encounter with Stage 2, 3, 4 or Unstageable Pressure Injury POA by Skin Exam within 24 Hours\":\n  \"Encounter with Age 18 and Older\" InpatientHospitalization\n    let hospitalizationPeriod: InpatientHospitalization.hospitalizationWithObservation ( )\n    with \"SkinExams with Pressure Injury\" SkinExam\n      such that SkinExam.effective.toInterval ( ) starts during Interval[start of hospitalizationPeriod, start of hospitalizationPeriod + 24 hours]"
       }, {
         "url": "displaySequence",
-        "valueInteger": 23
+        "valueInteger": 24
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -398,13 +413,13 @@
         "valueString": "Encounter with Stage 2, 3, 4 or Unstageable Pressure Injury POA"
       }, {
         "url": "statement",
-        "valueString": "define \"Encounter with Stage 2, 3, 4 or Unstageable Pressure Injury POA\":   \"Encounter with Stage 2, 3, 4, or Unstageable Pressure Injury Present on Admission by POA Indicator\"     union \"Encounter with Stage 2, 3, 4 or Unstageable Pressure Injury POA by Skin Exam within 24 Hours\""
+        "valueString": "define \"Encounter with Stage 2, 3, 4 or Unstageable Pressure Injury POA\":\n  \"Encounter with Stage 2, 3, 4, or Unstageable Pressure Injury Present on Admission by POA Indicator\"\n    union \"Encounter with Stage 2, 3, 4 or Unstageable Pressure Injury POA by Skin Exam within 24 Hours\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 24
+        "valueInteger": 25
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -413,13 +428,13 @@
         "valueString": "Denominator Exclusions"
       }, {
         "url": "statement",
-        "valueString": "define \"Denominator Exclusions\":   \"Encounter with Deep Tissue Pressure Injury POA by Indicator or Skin Exam within First 72 Hours\"     union \"Encounter with Stage 2, 3, 4 or Unstageable Pressure Injury POA\""
+        "valueString": "define \"Denominator Exclusions\":\n  \"Encounter with Deep Tissue Pressure Injury POA by Indicator or Skin Exam within First 72 Hours\"\n    union \"Encounter with Stage 2, 3, 4 or Unstageable Pressure Injury POA\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 25
+        "valueInteger": 26
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "SupplementalDataElements"
@@ -428,13 +443,13 @@
         "valueString": "SDE Race"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Race\":   Patient.race R     return Tuple {       codes: R.ombCategory union R.detailed,       display: R.text     }"
+        "valueString": "define \"SDE Race\":\n  Patient.race R\n    return Tuple {\n      codes: R.ombCategory union R.detailed,\n      display: R.text\n    }"
       }, {
         "url": "displaySequence",
-        "valueInteger": 26
+        "valueInteger": 27
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -443,13 +458,13 @@
         "valueString": "SDE Race"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Race\":   SDE.\"SDE Race\""
+        "valueString": "define \"SDE Race\":\n  SDE.\"SDE Race\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 27
+        "valueInteger": 28
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "FHIRHelpers"
@@ -461,10 +476,10 @@
         "valueString": "define function ToString(value uri): value.value"
       }, {
         "url": "displaySequence",
-        "valueInteger": 28
+        "valueInteger": 29
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "FHIRHelpers"
@@ -473,13 +488,13 @@
         "valueString": "ToInterval"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Converts the given [Period](https://hl7.org/fhir/datatypes.html#Period) value to a CQL DateTime Interval @comment: If the start value of the given period is unspecified, the starting boundary of the resulting interval will be open (meaning the start of the interval is unknown, as opposed to interpreted as the beginning of time). */ define function ToInterval(period FHIR.Period):     if period is null then         null     else         if period.\"start\" is null then             Interval(period.\"start\".value, period.\"end\".value]         else             Interval[period.\"start\".value, period.\"end\".value]"
+        "valueString": "/*\n@description: Converts the given [Period](https://hl7.org/fhir/datatypes.html#Period)\nvalue to a CQL DateTime Interval\n@comment: If the start value of the given period is unspecified, the starting\nboundary of the resulting interval will be open (meaning the start of the interval\nis unknown, as opposed to interpreted as the beginning of time).\n*/\ndefine function ToInterval(period FHIR.Period):\n    if period is null then\n        null\n    else\n        if period.\"start\" is null then\n            Interval(period.\"start\".value, period.\"end\".value]\n        else\n            Interval[period.\"start\".value, period.\"end\".value]"
       }, {
         "url": "displaySequence",
-        "valueInteger": 29
+        "valueInteger": 30
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CQMCommon"
@@ -488,13 +503,13 @@
         "valueString": "isDiagnosisPresentOnAdmission"
       }, {
         "url": "statement",
-        "valueString": "/*  @description: Returns true if the given diagnosis is present on admission, based on the given poaValueSet  @comment: See the QICore 6 Authoring Patterns discussion on [Principal Diagnosis and Present on Admission](https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Authoring-Patterns-QICore-v6.0.0#conditions-present-on-admission-and-principal-diagnoses) for more information  */  define fluent function isDiagnosisPresentOnAdmission(encounter Encounter, diagnosisValueSet ValueSet, poaValueSet ValueSet):    exists (      (encounter.claimDiagnosis()) CD        where CD.onAdmission in poaValueSet          and (            CD.diagnosis in diagnosisValueSet              or CD.diagnosis.getCondition().code in diagnosisValueSet          )    )"
+        "valueString": "/*\n @description: Returns true if the given diagnosis is present on admission, based on the given poaValueSet\n @comment: See the QICore 6 Authoring Patterns discussion on [Principal Diagnosis and Present on Admission](https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Authoring-Patterns-QICore-v6.0.0#conditions-present-on-admission-and-principal-diagnoses) for more information\n */\n define fluent function isDiagnosisPresentOnAdmission(encounter Encounter, diagnosisValueSet ValueSet, poaValueSet ValueSet):\n   exists (\n     (encounter.claimDiagnosis()) CD\n       where CD.onAdmission in poaValueSet\n         and (\n           CD.diagnosis in diagnosisValueSet\n             or CD.diagnosis.getCondition().code in diagnosisValueSet\n         )\n   )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 30
+        "valueInteger": 31
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CQMCommon"
@@ -503,28 +518,13 @@
         "valueString": "claimDiagnosis"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Returns the claim diagnosis elements for the given encounter @comment: See the QICore 6 Authoring Patterns discussion on [Principal Diagnosis and Present on Admission](https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Authoring-Patterns-QICore-v6.0.0#conditions-present-on-admission-and-principal-diagnoses) for more information */ define fluent function claimDiagnosis(encounter Encounter):   encounter E     let        claim: ([Claim] C where C.status = 'active' and C.use = 'claim' and exists (C.item I where I.encounter.references(E))),       claimItem: (claim.item I where I.encounter.references(E))     return claim.diagnosis D where D.sequence in claimItem.diagnosisSequence"
-      }, {
-        "url": "displaySequence",
-        "valueInteger": 31
-      } ]
-    }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
-      "extension": [ {
-        "url": "libraryName",
-        "valueString": "QICoreCommon"
-      }, {
-        "url": "name",
-        "valueString": "references"
-      }, {
-        "url": "statement",
-        "valueString": "/* @description: Returns true if any of the given references are to the given resource @comment: Returns true if the `id` element of the given resource exactly equals the tail of any of the given references. NOTE: This function assumes resources from the same source server. */ define fluent function references(references List<Reference>, resource Resource):   exists (references R where R.references(resource))"
+        "valueString": "/*\n@description: Returns the claim diagnosis elements for the given encounter\n@comment: See the QICore 6 Authoring Patterns discussion on [Principal Diagnosis and Present on Admission](https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Authoring-Patterns-QICore-v6.0.0#conditions-present-on-admission-and-principal-diagnoses) for more information\n*/\ndefine fluent function claimDiagnosis(encounter Encounter):\n  encounter E\n    let \n      claim: ([Claim] C where C.status = 'active' and C.use = 'claim' and exists (C.item I where I.encounter.references(E))),\n      claimItem: (claim.item I where I.encounter.references(E))\n    return claim.diagnosis D where D.sequence in claimItem.diagnosisSequence"
       }, {
         "url": "displaySequence",
         "valueInteger": 32
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "QICoreCommon"
@@ -533,13 +533,28 @@
         "valueString": "references"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Returns true if the given reference is to the given resource @comment: Returns true if the `id` element of the given resource exactly equals the tail of the given reference. NOTE: This function assumes resources from the same source server. */ define fluent function references(reference Reference, resource Resource):   resource.id = Last(Split(reference.reference, '/'))"
+        "valueString": "/*\n@description: Returns true if any of the given references are to the given resource\n@comment: Returns true if the `id` element of the given resource exactly equals the tail of any of the given references.\nNOTE: This function assumes resources from the same source server.\n*/\ndefine fluent function references(references List<Reference>, resource Resource):\n  exists (references R where R.references(resource))"
       }, {
         "url": "displaySequence",
         "valueInteger": 33
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "QICoreCommon"
+      }, {
+        "url": "name",
+        "valueString": "references"
+      }, {
+        "url": "statement",
+        "valueString": "/*\n@description: Returns true if the given reference is to the given resource\n@comment: Returns true if the `id` element of the given resource exactly equals the tail of the given reference.\nNOTE: This function assumes resources from the same source server.\n*/\ndefine fluent function references(reference Reference, resource Resource):\n  resource.id = Last(Split(reference.reference, '/'))"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 34
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CQMCommon"
@@ -548,13 +563,13 @@
         "valueString": "getCondition"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Returns the Condition resource for the given reference */ define fluent function getCondition(reference Reference):   singleton from (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where reference.references(C.id))"
+        "valueString": "/*\n@description: Returns the Condition resource for the given reference\n*/\ndefine fluent function getCondition(reference Reference):\n  singleton from (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where reference.references(C.id))"
       }, {
         "url": "displaySequence",
-        "valueInteger": 34
+        "valueInteger": 35
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "QICoreCommon"
@@ -563,13 +578,13 @@
         "valueString": "references"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Returns true if the given reference is to the given resourceId @comment: Returns true if the `resourceId` parameter exactly equals the tail of the given reference. NOTE: This function assumes resources from the same source server. */ define fluent function references(reference Reference, resourceId String):   resourceId = Last(Split(reference.reference, '/'))"
+        "valueString": "/*\n@description: Returns true if the given reference is to the given resourceId\n@comment: Returns true if the `resourceId` parameter exactly equals the tail of the given reference.\nNOTE: This function assumes resources from the same source server.\n*/\ndefine fluent function references(reference Reference, resourceId String):\n  resourceId = Last(Split(reference.reference, '/'))"
       }, {
         "url": "displaySequence",
-        "valueInteger": 35
+        "valueInteger": 36
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CQMCommon"
@@ -578,13 +593,13 @@
         "valueString": "hospitalizationWithObservation"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Hospitalization with Observation returns the total interval from the start of any immediately prior emergency department visit through the observation visit to the discharge of the given encounter */ define fluent function hospitalizationWithObservation(TheEncounter Encounter ):   TheEncounter Visit     let ObsVisit: Last([Encounter: \"Observation Services\"] LastObs       where LastObs.status = 'finished'             and LastObs.period ends 1 hour or less on or before start of Visit.period       sort by end of period      ),      VisitStart: Coalesce(start of ObsVisit.period, start of Visit.period),      EDVisit: Last([Encounter: \"Emergency Department Visit\"] LastED       where LastED.status = 'finished'             and LastED.period ends 1 hour or less on or before VisitStart       sort by end of period      )     return Interval[Coalesce(start of EDVisit.period, VisitStart), end of Visit.period]"
+        "valueString": "/*\n@description: Hospitalization with Observation returns the total interval from the start of any immediately prior emergency department visit through the observation visit to the discharge of the given encounter\n*/\ndefine fluent function hospitalizationWithObservation(TheEncounter Encounter ):\n  TheEncounter Visit\n  \t\tlet ObsVisit: Last([Encounter: \"Observation Services\"] LastObs\n  \t\t\t\twhere LastObs.status = 'finished'\n            and LastObs.period ends 1 hour or less on or before start of Visit.period\n  \t\t\t\tsort by end of period\n  \t\t\t),\n  \t\t\tVisitStart: Coalesce(start of ObsVisit.period, start of Visit.period),\n  \t\t\tEDVisit: Last([Encounter: \"Emergency Department Visit\"] LastED\n  \t\t\t\twhere LastED.status = 'finished'\n            and LastED.period ends 1 hour or less on or before VisitStart\n  \t\t\t\tsort by end of period\n  \t\t\t)\n  \t\treturn Interval[Coalesce(start of EDVisit.period, VisitStart), end of Visit.period]"
       }, {
         "url": "displaySequence",
-        "valueInteger": 36
+        "valueInteger": 37
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS826FHIRHHPI"
@@ -593,13 +608,13 @@
         "valueString": "isIn"
       }, {
         "url": "statement",
-        "valueString": "// @description This function, attached to either a SimpleObseration or an ObservationClinicalResult,  is used to determine if the observation is completed and its value is in the given value set // @example  anObservation.isIn(\"Pressure Injury Stage 2, 3, 4 or Unstageable\")    define fluent function isIn(observation Choice<\"SimpleObservation\", \"ObservationClinicalResult\">, vset ValueSet):   observation.status in { 'final', 'amended', 'corrected' }     and observation.effective during \"Measurement Period\"     and case       when observation is SimpleObservation then ( observation as SimpleObservation ).value as Concept in vset       when observation is ObservationClinicalResult then ( observation as ObservationClinicalResult ).value as Concept in vset        else null end"
+        "valueString": "// @description This function, attached to either a SimpleObseration or an ObservationClinicalResult,  is used to determine if the observation is completed and its value is in the given value set\n// @example  anObservation.isIn(\"Pressure Injury Stage 2, 3, 4 or Unstageable\")\n\n\n\ndefine fluent function isIn(observation Choice<\"SimpleObservation\", \"ObservationClinicalResult\">, vset ValueSet):\n  observation.status in { 'final', 'amended', 'corrected' }\n    and observation.effective during \"Measurement Period\"\n    and case\n      when observation is SimpleObservation then ( observation as SimpleObservation ).value as Concept in vset\n      when observation is ObservationClinicalResult then ( observation as ObservationClinicalResult ).value as Concept in vset \n      else null end"
       }, {
         "url": "displaySequence",
-        "valueInteger": 37
+        "valueInteger": 38
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CQMCommon"
@@ -608,13 +623,13 @@
         "valueString": "HospitalizationWithObservation"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Hospitalization with Observation returns the total interval from the start of any immediately prior emergency department visit through the observation visit to the discharge of the given encounter @deprecated: This function is deprecated. Use the fluent function `hospitalizationWithObservation()` instead. */ define function \"HospitalizationWithObservation\"(TheEncounter Encounter ):   TheEncounter Visit     let ObsVisit: Last([Encounter: \"Observation Services\"] LastObs       where LastObs.status = 'finished'             and LastObs.period ends 1 hour or less on or before start of Visit.period       sort by end of period      ),      VisitStart: Coalesce(start of ObsVisit.period, start of Visit.period),      EDVisit: Last([Encounter: \"Emergency Department Visit\"] LastED       where LastED.status = 'finished'             and LastED.period ends 1 hour or less on or before VisitStart       sort by end of period      )     return Interval[Coalesce(start of EDVisit.period, VisitStart), end of Visit.period]"
+        "valueString": "/*\n@description: Hospitalization with Observation returns the total interval from the start of any immediately prior emergency department visit through the observation visit to the discharge of the given encounter\n@deprecated: This function is deprecated. Use the fluent function `hospitalizationWithObservation()` instead.\n*/\ndefine function \"HospitalizationWithObservation\"(TheEncounter Encounter ):\n  TheEncounter Visit\n  \t\tlet ObsVisit: Last([Encounter: \"Observation Services\"] LastObs\n  \t\t\t\twhere LastObs.status = 'finished'\n            and LastObs.period ends 1 hour or less on or before start of Visit.period\n  \t\t\t\tsort by end of period\n  \t\t\t),\n  \t\t\tVisitStart: Coalesce(start of ObsVisit.period, start of Visit.period),\n  \t\t\tEDVisit: Last([Encounter: \"Emergency Department Visit\"] LastED\n  \t\t\t\twhere LastED.status = 'finished'\n            and LastED.period ends 1 hour or less on or before VisitStart\n  \t\t\t\tsort by end of period\n  \t\t\t)\n  \t\treturn Interval[Coalesce(start of EDVisit.period, VisitStart), end of Visit.period]"
       }, {
         "url": "displaySequence",
-        "valueInteger": 38
+        "valueInteger": 39
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "FHIRHelpers"
@@ -623,10 +638,10 @@
         "valueString": "ToCode"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Converts the given FHIR [Coding](https://hl7.org/fhir/datatypes.html#Coding) value to a CQL Code. */ define function ToCode(coding FHIR.Coding):     if coding is null then         null     else         System.Code {           code: coding.code.value,           system: coding.system.value,           version: coding.version.value,           display: coding.display.value         }"
+        "valueString": "/*\n@description: Converts the given FHIR [Coding](https://hl7.org/fhir/datatypes.html#Coding) value to a CQL Code.\n*/\ndefine function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }"
       }, {
         "url": "displaySequence",
-        "valueInteger": 39
+        "valueInteger": 40
       } ]
     } ],
     "name": "EffectiveDataRequirements",
@@ -640,19 +655,31 @@
     "relatedArtifact": [ {
       "type": "depends-on",
       "display": "Library SDE",
-      "resource": "https://madie.cms.gov/Library/SupplementalDataElements|5.1.000"
+      "resource": "Library/SupplementalDataElements|5.1.000"
     }, {
       "type": "depends-on",
       "display": "Library FHIRHelpers",
-      "resource": "https://madie.cms.gov/Library/FHIRHelpers|4.4.000"
+      "resource": "Library/FHIRHelpers|4.4.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library FHIRHelpers",
+      "resource": "Library/FHIRHelpers|4.4.000"
     }, {
       "type": "depends-on",
       "display": "Library CQMCommon",
-      "resource": "https://madie.cms.gov/Library/CQMCommon|4.1.000"
+      "resource": "Library/CQMCommon|4.1.000"
     }, {
       "type": "depends-on",
       "display": "Library QICoreCommon",
-      "resource": "https://madie.cms.gov/Library/QICoreCommon|4.0.000"
+      "resource": "Library/QICoreCommon|4.0.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library FHIRHelpers",
+      "resource": "Library/FHIRHelpers|4.4.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library QICoreCommon",
+      "resource": "Library/QICoreCommon|4.0.000"
     }, {
       "type": "depends-on",
       "display": "Code system SNOMEDCT",
@@ -705,6 +732,12 @@
       "max": "1",
       "type": "Period"
     }, {
+      "name": "SDE Sex",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "Coding"
+    }, {
       "name": "Numerator",
       "use": "out",
       "min": 0,
@@ -717,25 +750,13 @@
       "max": "*",
       "type": "Resource"
     }, {
-      "name": "Initial Population",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Resource"
-    }, {
-      "name": "Denominator Exclusions",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Resource"
-    }, {
-      "name": "SDE Sex",
-      "use": "out",
-      "min": 0,
-      "max": "1",
-      "type": "Coding"
-    }, {
       "name": "SDE Payer",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Resource"
+    }, {
+      "name": "Initial Population",
       "use": "out",
       "min": 0,
       "max": "*",
@@ -747,6 +768,12 @@
       "max": "1",
       "type": "Resource"
     }, {
+      "name": "Denominator Exclusions",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Resource"
+    }, {
       "name": "SDE Race",
       "use": "out",
       "min": 0,
@@ -755,36 +782,30 @@
     } ],
     "dataRequirement": [ {
       "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+    }, {
+      "type": "Patient",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "extension", "url" ]
+      "mustSupport": [ "url", "value.value" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "value.value" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
     }, {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type", "status", "status.value", "period", "onAdmission", "diagnosis", "diagnosis.code" ],
-      "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
-      } ]
-    }, {
-      "type": "Encounter",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type", "status", "status.value", "period", "onAdmission", "diagnosis", "diagnosis.code" ],
-      "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
-      } ]
-    }, {
-      "type": "Encounter",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type", "period", "status", "status.value", "onAdmission", "diagnosis", "diagnosis.code" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
       "codeFilter": [ {
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
       } ]
     }, {
-      "type": "Resource",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Resource" ],
-      "mustSupport": [ "id", "id.value" ]
+      "type": "Claim",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-claim" ],
+      "mustSupport": [ "status", "status.value", "use", "use.value", "item" ]
     }, {
       "type": "Claim",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-claim" ],
@@ -796,9 +817,57 @@
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ]
     }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "status", "status.value", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "status", "status.value", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "status", "status.value", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "status", "status.value", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
+      } ]
+    }, {
       "type": "Observation",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-simple-observation" ],
-      "mustSupport": [ "value" ]
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-clinical-result" ],
+      "mustSupport": [ "code" ],
+      "codeFilter": [ {
+        "path": "code",
+        "code": [ {
+          "system": "http://loinc.org",
+          "code": "8709-8",
+          "display": "Physical findings of Skin"
+        } ]
+      } ]
     }, {
       "type": "Observation",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-simple-observation" ],
@@ -814,10 +883,6 @@
     }, {
       "type": "Observation",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-clinical-result" ],
-      "mustSupport": [ "value" ]
-    }, {
-      "type": "Observation",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-clinical-result" ],
       "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
@@ -826,6 +891,74 @@
           "code": "8709-8",
           "display": "Physical findings of Skin"
         } ]
+      } ]
+    }, {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-simple-observation" ],
+      "mustSupport": [ "code" ],
+      "codeFilter": [ {
+        "path": "code",
+        "code": [ {
+          "system": "http://loinc.org",
+          "code": "8709-8",
+          "display": "Physical findings of Skin"
+        } ]
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "status", "status.value", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "status", "status.value", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "status", "status.value", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "status", "status.value", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
       } ]
     }, {
       "type": "Coverage",
@@ -835,6 +968,94 @@
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
       } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Coverage",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ],
+      "mustSupport": [ "type", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
     } ]
   } ],
   "extension": [ {
@@ -856,6 +1077,12 @@
     } ]
   }, {
     "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
+    "valueReference": {
+      "reference": "#effective-data-requirements"
+    }
+  }, {
+    "id": "effective-data-requirements",
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
     "valueReference": {
       "reference": "#effective-data-requirements"
     }
@@ -928,7 +1155,7 @@
   "title": "Hospital Harm - Pressure InjuryFHIR",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-19T19:40:52+00:00",
+  "date": "2025-07-14T20:51:04+00:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {

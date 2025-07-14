@@ -64,7 +64,7 @@
         "display": "[#] Births.term"
       }
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "SupplementalDataElements"
@@ -79,7 +79,7 @@
         "valueInteger": 0
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -94,7 +94,7 @@
         "valueInteger": 1
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CQMCommon"
@@ -109,7 +109,7 @@
         "valueInteger": 2
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "PCMaternal"
@@ -124,7 +124,7 @@
         "valueInteger": 3
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "PCMaternal"
@@ -139,7 +139,7 @@
         "valueInteger": 4
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -154,7 +154,7 @@
         "valueInteger": 5
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -169,7 +169,7 @@
         "valueInteger": 6
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -184,7 +184,7 @@
         "valueInteger": 7
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -199,7 +199,7 @@
         "valueInteger": 8
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -214,7 +214,7 @@
         "valueInteger": 9
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -229,7 +229,7 @@
         "valueInteger": 10
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -244,7 +244,7 @@
         "valueInteger": 11
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -259,7 +259,7 @@
         "valueInteger": 12
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -274,7 +274,7 @@
         "valueInteger": 13
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "SupplementalDataElements"
@@ -289,7 +289,7 @@
         "valueInteger": 14
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -304,7 +304,7 @@
         "valueInteger": 15
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -319,7 +319,7 @@
         "valueInteger": 16
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "SupplementalDataElements"
@@ -334,7 +334,7 @@
         "valueInteger": 17
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -349,7 +349,7 @@
         "valueInteger": 18
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -364,7 +364,7 @@
         "valueInteger": 19
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -379,7 +379,7 @@
         "valueInteger": 20
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -394,7 +394,7 @@
         "valueInteger": 21
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -409,7 +409,7 @@
         "valueInteger": 22
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "SupplementalDataElements"
@@ -424,7 +424,7 @@
         "valueInteger": 23
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -439,7 +439,7 @@
         "valueInteger": 24
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "PCMaternal"
@@ -454,7 +454,7 @@
         "valueInteger": 25
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -469,7 +469,7 @@
         "valueInteger": 26
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "FHIRHelpers"
@@ -484,7 +484,7 @@
         "valueInteger": 27
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "FHIRHelpers"
@@ -499,7 +499,7 @@
         "valueInteger": 28
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "QICoreCommon"
@@ -514,7 +514,7 @@
         "valueInteger": 29
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "PCMaternal"
@@ -529,7 +529,7 @@
         "valueInteger": 30
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "PCMaternal"
@@ -544,7 +544,7 @@
         "valueInteger": 31
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "PCMaternal"
@@ -559,7 +559,7 @@
         "valueInteger": 32
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "QICoreCommon"
@@ -574,7 +574,7 @@
         "valueInteger": 33
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "QICoreCommon"
@@ -589,7 +589,7 @@
         "valueInteger": 34
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "PCMaternal"
@@ -604,7 +604,7 @@
         "valueInteger": 35
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "PCMaternal"
@@ -619,7 +619,7 @@
         "valueInteger": 36
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CQMCommon"
@@ -634,7 +634,7 @@
         "valueInteger": 37
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "QICoreCommon"
@@ -649,7 +649,7 @@
         "valueInteger": 38
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "FHIRHelpers"
@@ -664,7 +664,7 @@
         "valueInteger": 39
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "FHIRHelpers"
@@ -679,7 +679,7 @@
         "valueInteger": 40
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -694,7 +694,7 @@
         "valueInteger": 41
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -709,7 +709,7 @@
         "valueInteger": 42
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -724,7 +724,7 @@
         "valueInteger": 43
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS0334FHIRPCCesareanBirth"
@@ -750,27 +750,55 @@
     "relatedArtifact": [ {
       "type": "depends-on",
       "display": "Library SDE",
-      "resource": "https://madie.cms.gov/Library/SupplementalDataElements|5.1.000"
+      "resource": "Library/SupplementalDataElements|5.1.000"
     }, {
       "type": "depends-on",
       "display": "Library FHIRHelpers",
-      "resource": "https://madie.cms.gov/Library/FHIRHelpers|4.4.000"
+      "resource": "Library/FHIRHelpers|4.4.000"
     }, {
       "type": "depends-on",
       "display": "Library PCMaternal",
-      "resource": "https://madie.cms.gov/Library/PCMaternal|5.25.000"
+      "resource": "Library/PCMaternal|5.25.000"
     }, {
       "type": "depends-on",
       "display": "Library CQMCommon",
-      "resource": "https://madie.cms.gov/Library/CQMCommon|4.1.000"
+      "resource": "Library/CQMCommon|4.1.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library FHIRHelpers",
+      "resource": "Library/FHIRHelpers|4.4.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library FHIRHelpers",
+      "resource": "Library/FHIRHelpers|4.4.000"
     }, {
       "type": "depends-on",
       "display": "Library QICoreCommon",
-      "resource": "https://madie.cms.gov/Library/QICoreCommon|4.0.000"
+      "resource": "Library/QICoreCommon|4.0.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library CQMCommon",
+      "resource": "Library/CQMCommon|4.1.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library QICoreCommon",
+      "resource": "Library/QICoreCommon|4.0.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library FHIRHelpers",
+      "resource": "Library/FHIRHelpers|4.4.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library QICoreCommon",
+      "resource": "Library/QICoreCommon|4.0.000"
     }, {
       "type": "depends-on",
       "display": "Code system SNOMEDCT",
       "resource": "http://snomed.info/sct"
+    }, {
+      "type": "depends-on",
+      "display": "Code system LOINC",
+      "resource": "http://loinc.org"
     }, {
       "type": "depends-on",
       "display": "Code system LOINC",
@@ -831,6 +859,12 @@
       "max": "1",
       "type": "Period"
     }, {
+      "name": "SDE Sex",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "Coding"
+    }, {
       "name": "Numerator",
       "use": "out",
       "min": 0,
@@ -843,25 +877,13 @@
       "max": "*",
       "type": "Resource"
     }, {
-      "name": "Initial Population",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Resource"
-    }, {
-      "name": "Denominator Exclusions",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Resource"
-    }, {
-      "name": "SDE Sex",
-      "use": "out",
-      "min": 0,
-      "max": "1",
-      "type": "Coding"
-    }, {
       "name": "SDE Payer",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Resource"
+    }, {
+      "name": "Initial Population",
       "use": "out",
       "min": 0,
       "max": "*",
@@ -871,6 +893,12 @@
       "use": "out",
       "min": 0,
       "max": "1",
+      "type": "Resource"
+    }, {
+      "name": "Denominator Exclusions",
+      "use": "out",
+      "min": 0,
+      "max": "*",
       "type": "Resource"
     }, {
       "name": "SDE Race",
@@ -887,12 +915,41 @@
     } ],
     "dataRequirement": [ {
       "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+    }, {
+      "type": "Patient",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "extension", "birthDate", "birthDate.value", "url" ]
+      "mustSupport": [ "url", "value.value" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "value.value" ]
     }, {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode", "id", "id.value" ],
+      "mustSupport": [ "type", "status", "status.value", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "status", "status.value", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
       "codeFilter": [ {
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
@@ -900,7 +957,7 @@
     }, {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode", "id", "id.value" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
       "codeFilter": [ {
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.369"
@@ -908,10 +965,18 @@
     }, {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type", "status", "status.value", "period", "reasonCode", "id", "id.value" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
       "codeFilter": [ {
         "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1029.369"
       } ]
     }, {
       "type": "Procedure",
@@ -922,12 +987,12 @@
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.59"
       } ]
     }, {
-      "type": "Procedure",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ],
-      "mustSupport": [ "code", "performed", "status", "status.value" ],
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "status", "status.value", "period" ],
       "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.282"
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
       } ]
     }, {
       "type": "Observation",
@@ -961,6 +1026,12 @@
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.26"
       } ]
+    }, {
+      "type": "Condition",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-encounter-diagnosis" ]
+    }, {
+      "type": "Condition",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ]
     }, {
       "type": "Observation",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-simple-observation" ],
@@ -1010,9 +1081,29 @@
         } ]
       } ]
     }, {
-      "type": "Observation",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-simple-observation" ],
-      "mustSupport": [ "value" ]
+      "type": "Procedure",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ],
+      "mustSupport": [ "code", "performed", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.282"
+      } ]
+    }, {
+      "type": "Coverage",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ],
+      "mustSupport": [ "type", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
+      } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
     }, {
       "type": "Observation",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-simple-observation" ],
@@ -1022,11 +1113,21 @@
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.105"
       } ]
     }, {
-      "type": "Condition",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-encounter-diagnosis" ]
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-simple-observation" ],
+      "mustSupport": [ "code", "effective", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.105"
+      } ]
     }, {
-      "type": "Condition",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ]
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
     }, {
       "type": "Coverage",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ],
@@ -1035,6 +1136,14 @@
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
       } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
     } ]
   } ],
   "extension": [ {
@@ -1056,6 +1165,12 @@
     } ]
   }, {
     "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
+    "valueReference": {
+      "reference": "#effective-data-requirements"
+    }
+  }, {
+    "id": "effective-data-requirements",
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
     "valueReference": {
       "reference": "#effective-data-requirements"
     }
@@ -1128,7 +1243,7 @@
   "title": "Cesarean BirthFHIR",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-21T01:50:02+00:00",
+  "date": "2025-07-14T20:51:03+00:00",
   "publisher": "The Joint Commission",
   "contact": [ {
     "telecom": [ {

@@ -176,7 +176,7 @@
         "display": "Status post administration of tPA (rtPA) in a different facility within the last 24 hours prior to admission to current facility"
       }
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "SupplementalDataElements"
@@ -185,13 +185,13 @@
         "valueString": "SDE Sex"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Sex\":   case     when Patient.sex = '248153007' then \"Male (finding)\"     when Patient.sex = '248152002' then \"Female (finding)\"     else null   end"
+        "valueString": "define \"SDE Sex\":\n  case\n    when Patient.sex = '248153007' then \"Male (finding)\"\n    when Patient.sex = '248152002' then \"Female (finding)\"\n    else null\n  end"
       }, {
         "url": "displaySequence",
         "valueInteger": 0
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -200,13 +200,13 @@
         "valueString": "SDE Sex"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Sex\":   SDE.\"SDE Sex\""
+        "valueString": "define \"SDE Sex\":\n  SDE.\"SDE Sex\""
       }, {
         "url": "displaySequence",
         "valueInteger": 1
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -215,13 +215,13 @@
         "valueString": "ED Encounter During MP"
       }, {
         "url": "statement",
-        "valueString": "define \"ED Encounter During MP\":   [\"Encounter\": \"Emergency Department Evaluation and Management Visit\"] EDEncounter     where EDEncounter.period ends during day of \"Measurement Period\"       and EDEncounter.status = 'finished'       and AgeInYearsAt(date from start of(EDEncounter.period)) >= 18"
+        "valueString": "define \"ED Encounter During MP\":\n  [\"Encounter\": \"Emergency Department Evaluation and Management Visit\"] EDEncounter\n    where EDEncounter.period ends during day of \"Measurement Period\"\n      and EDEncounter.status = 'finished'\n      and AgeInYearsAt(date from start of(EDEncounter.period)) >= 18"
       }, {
         "url": "displaySequence",
         "valueInteger": 2
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -230,13 +230,13 @@
         "valueString": "ED Encounter with STEMI Diagnosis"
       }, {
         "url": "statement",
-        "valueString": "define \"ED Encounter with STEMI Diagnosis\":   \"ED Encounter During MP\" EDEncounterinMP     where ( EDEncounterinMP.reasonCode in \"STEMI\"         or exists ( ( [ConditionProblemsHealthConcerns: \"STEMI\"]             union [ConditionEncounterDiagnosis: \"STEMI\"] ) DxSTEMI             where ( EDEncounterinMP.encounterDiagnosis ( ).code in \"STEMI\"                 or ( DxSTEMI.prevalenceInterval ( ) starts during EDEncounterinMP.period )             )               and ( DxSTEMI.verificationStatus is not null implies ( DxSTEMI.verificationStatus ~ QICoreCommon.\"confirmed\"                     or DxSTEMI.verificationStatus ~ QICoreCommon.\"unconfirmed\"                     or DxSTEMI.verificationStatus ~ QICoreCommon.\"provisional\"                     or DxSTEMI.verificationStatus ~ QICoreCommon.\"differential\"                 )               )         )     )"
+        "valueString": "define \"ED Encounter with STEMI Diagnosis\":\n  \"ED Encounter During MP\" EDEncounterinMP\n    where ( EDEncounterinMP.reasonCode in \"STEMI\"\n        or exists ( ( [ConditionProblemsHealthConcerns: \"STEMI\"]\n            union [ConditionEncounterDiagnosis: \"STEMI\"] ) DxSTEMI\n            where ( EDEncounterinMP.encounterDiagnosis ( ).code in \"STEMI\"\n                or ( DxSTEMI.prevalenceInterval ( ) starts during EDEncounterinMP.period )\n            )\n              and ( DxSTEMI.verificationStatus is not null implies ( DxSTEMI.verificationStatus ~ QICoreCommon.\"confirmed\"\n                    or DxSTEMI.verificationStatus ~ QICoreCommon.\"unconfirmed\"\n                    or DxSTEMI.verificationStatus ~ QICoreCommon.\"provisional\"\n                    or DxSTEMI.verificationStatus ~ QICoreCommon.\"differential\"\n                )\n              )\n        )\n    )"
       }, {
         "url": "displaySequence",
         "valueInteger": 3
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -245,13 +245,13 @@
         "valueString": "Fibrinolytic Therapy Administration within 30 Minutes of Arrival"
       }, {
         "url": "statement",
-        "valueString": "define \"Fibrinolytic Therapy Administration within 30 Minutes of Arrival\":   \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI     with [\"MedicationAdministration\": \"Fibrinolytic Therapy\"] Fibrinolytic       such that Fibrinolytic.status = 'completed'         and start of ( Fibrinolytic.effective.toInterval ( ) ) 30 minutes or less after EDwithSTEMI.currentemergencyDepartmentArrivalTime ( )"
+        "valueString": "define \"Fibrinolytic Therapy Administration within 30 Minutes of Arrival\":\n  \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI\n    with [\"MedicationAdministration\": \"Fibrinolytic Therapy\"] Fibrinolytic\n      such that Fibrinolytic.status = 'completed'\n        and start of ( Fibrinolytic.effective.toInterval ( ) ) 30 minutes or less after EDwithSTEMI.currentemergencyDepartmentArrivalTime ( )"
       }, {
         "url": "displaySequence",
         "valueInteger": 4
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -260,13 +260,13 @@
         "valueString": "PCI within 90 Minutes of Arrival"
       }, {
         "url": "statement",
-        "valueString": "define \"PCI within 90 Minutes of Arrival\":   \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI     with [\"Procedure\": \"Percutaneous Coronary Intervention\"] PCI       such that PCI.performed.toInterval ( ) starts 90 minutes or less after EDwithSTEMI.currentemergencyDepartmentArrivalTime ( )         and PCI.status = 'completed'"
+        "valueString": "define \"PCI within 90 Minutes of Arrival\":\n  \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI\n    with [\"Procedure\": \"Percutaneous Coronary Intervention\"] PCI\n      such that PCI.performed.toInterval ( ) starts 90 minutes or less after EDwithSTEMI.currentemergencyDepartmentArrivalTime ( )\n        and PCI.status = 'completed'"
       }, {
         "url": "displaySequence",
         "valueInteger": 5
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -275,13 +275,13 @@
         "valueString": "ED Departure with Discharge to Acute Care Facility Within 45 Minutes Of Arrival"
       }, {
         "url": "statement",
-        "valueString": "define \"ED Departure with Discharge to Acute Care Facility Within 45 Minutes Of Arrival\":   \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI     where EDwithSTEMI.currentemergencyDepartmentDepartTime ( ) 45 minutes or less after EDwithSTEMI.currentemergencyDepartmentArrivalTime ( )       and EDwithSTEMI.hospitalization.dischargeDisposition in \"Discharge To Acute Care Facility\""
+        "valueString": "define \"ED Departure with Discharge to Acute Care Facility Within 45 Minutes Of Arrival\":\n  \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI\n    where EDwithSTEMI.currentemergencyDepartmentDepartTime ( ) 45 minutes or less after EDwithSTEMI.currentemergencyDepartmentArrivalTime ( )\n      and EDwithSTEMI.hospitalization.dischargeDisposition in \"Discharge To Acute Care Facility\""
       }, {
         "url": "displaySequence",
         "valueInteger": 6
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -290,13 +290,13 @@
         "valueString": "Numerator"
       }, {
         "url": "statement",
-        "valueString": "define \"Numerator\":   \"Fibrinolytic Therapy Administration within 30 Minutes of Arrival\"     union \"PCI within 90 Minutes of Arrival\"     union \"ED Departure with Discharge to Acute Care Facility Within 45 Minutes Of Arrival\""
+        "valueString": "define \"Numerator\":\n  \"Fibrinolytic Therapy Administration within 30 Minutes of Arrival\"\n    union \"PCI within 90 Minutes of Arrival\"\n    union \"ED Departure with Discharge to Acute Care Facility Within 45 Minutes Of Arrival\""
       }, {
         "url": "displaySequence",
         "valueInteger": 7
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -305,13 +305,13 @@
         "valueString": "Initial Population"
       }, {
         "url": "statement",
-        "valueString": "define \"Initial Population\":   \"ED Encounter with STEMI Diagnosis\""
+        "valueString": "define \"Initial Population\":\n  \"ED Encounter with STEMI Diagnosis\""
       }, {
         "url": "displaySequence",
         "valueInteger": 8
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -320,13 +320,13 @@
         "valueString": "Denominator"
       }, {
         "url": "statement",
-        "valueString": "define \"Denominator\":   \"Initial Population\""
+        "valueString": "define \"Denominator\":\n  \"Initial Population\""
       }, {
         "url": "displaySequence",
         "valueInteger": 9
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "SupplementalDataElements"
@@ -335,13 +335,13 @@
         "valueString": "SDE Payer"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Payer\":   [Coverage: type in \"Payer Type\"] Payer     return {       code: Payer.type,       period: Payer.period     }"
+        "valueString": "define \"SDE Payer\":\n  [Coverage: type in \"Payer Type\"] Payer\n    return {\n      code: Payer.type,\n      period: Payer.period\n    }"
       }, {
         "url": "displaySequence",
         "valueInteger": 10
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -350,13 +350,28 @@
         "valueString": "SDE Payer"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Payer\":   SDE.\"SDE Payer\""
+        "valueString": "define \"SDE Payer\":\n  SDE.\"SDE Payer\""
       }, {
         "url": "displaySequence",
         "valueInteger": 11
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "CMS996FHIRAptTxforSTEMI"
+      }, {
+        "url": "name",
+        "valueString": "Initial Population"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Initial Population\":\n  \"ED Encounter with STEMI Diagnosis\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 12
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "SupplementalDataElements"
@@ -365,13 +380,13 @@
         "valueString": "SDE Ethnicity"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Ethnicity\":   Patient.ethnicity E     return Tuple {       codes: { E.ombCategory } union E.detailed,       display: E.text     }"
+        "valueString": "define \"SDE Ethnicity\":\n  Patient.ethnicity E\n    return Tuple {\n      codes: { E.ombCategory } union E.detailed,\n      display: E.text\n    }"
       }, {
         "url": "displaySequence",
-        "valueInteger": 12
+        "valueInteger": 13
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -380,13 +395,13 @@
         "valueString": "SDE Ethnicity"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Ethnicity\":   SDE.\"SDE Ethnicity\""
+        "valueString": "define \"SDE Ethnicity\":\n  SDE.\"SDE Ethnicity\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 13
+        "valueInteger": 14
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -395,13 +410,13 @@
         "valueString": "Allergy or Intolerance to Thrombolytic Medications Overlaps ED Encounter"
       }, {
         "url": "statement",
-        "valueString": "define \"Allergy or Intolerance to Thrombolytic Medications Overlaps ED Encounter\":   \"ED Encounter with STEMI Diagnosis\" EDwSTEMI     with [\"AllergyIntolerance\": \"Thrombolytic medications\"] ThrombolyticAllergy       such that ThrombolyticAllergy.clinicalStatus ~ QICoreCommon.\"allergy-active\"         and ( ThrombolyticAllergy.verificationStatus is not null implies ( ThrombolyticAllergy.verificationStatus ~ QICoreCommon.\"allergy-confirmed\"               or ThrombolyticAllergy.verificationStatus ~ QICoreCommon.\"allergy-unconfirmed\"           )         )         and ( ThrombolyticAllergy.onset.toInterval ( ) overlaps ( EDwSTEMI.period ) )"
+        "valueString": "define \"Allergy or Intolerance to Thrombolytic Medications Overlaps ED Encounter\":\n  \"ED Encounter with STEMI Diagnosis\" EDwSTEMI\n    with [\"AllergyIntolerance\": \"Thrombolytic medications\"] ThrombolyticAllergy\n      such that ThrombolyticAllergy.clinicalStatus ~ QICoreCommon.\"allergy-active\"\n        and ( ThrombolyticAllergy.verificationStatus is not null implies ( ThrombolyticAllergy.verificationStatus ~ QICoreCommon.\"allergy-confirmed\"\n              or ThrombolyticAllergy.verificationStatus ~ QICoreCommon.\"allergy-unconfirmed\"\n          )\n        )\n        and ( ThrombolyticAllergy.onset.toInterval ( ) overlaps ( EDwSTEMI.period ) )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 14
+        "valueInteger": 15
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -410,13 +425,13 @@
         "valueString": "Adverse Effect to Thrombolytic Medications Before End of ED Encounter"
       }, {
         "url": "statement",
-        "valueString": "define \"Adverse Effect to Thrombolytic Medications Before End of ED Encounter\":   \"ED Encounter with STEMI Diagnosis\" EDwSTEMI     with [AdverseEvent: \"Thrombolytics Adverse Event\"] ThrombolyticAdverseEvent       such that Coalesce(ThrombolyticAdverseEvent.date, ThrombolyticAdverseEvent.detected, ThrombolyticAdverseEvent.recordedDate) before end of ( EDwSTEMI.period )         and ThrombolyticAdverseEvent.actuality = 'actual'"
+        "valueString": "define \"Adverse Effect to Thrombolytic Medications Before End of ED Encounter\":\n  \"ED Encounter with STEMI Diagnosis\" EDwSTEMI\n    with [AdverseEvent: \"Thrombolytics Adverse Event\"] ThrombolyticAdverseEvent\n      such that Coalesce(ThrombolyticAdverseEvent.date, ThrombolyticAdverseEvent.detected, ThrombolyticAdverseEvent.recordedDate) before end of ( EDwSTEMI.period )\n        and ThrombolyticAdverseEvent.actuality = 'actual'"
       }, {
         "url": "displaySequence",
-        "valueInteger": 15
+        "valueInteger": 16
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -425,13 +440,13 @@
         "valueString": "Active Exclusion Diagnosis at Start of ED Encounter"
       }, {
         "url": "statement",
-        "valueString": "define \"Active Exclusion Diagnosis at Start of ED Encounter\":   \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI     with ( [\"ConditionProblemsHealthConcerns\": \"Active Bleeding or Bleeding Diathesis, Excluding Menses\"]       union [\"ConditionProblemsHealthConcerns\": \"Malignant Intracranial Neoplasm Group\"]       union [\"ConditionProblemsHealthConcerns\": \"Cerebral Vascular Lesion\"]       union [\"ConditionProblemsHealthConcerns\": \"Dementia and Related Intracranial Pathologies\"]       union [\"ConditionProblemsHealthConcerns\": \"Pregnant State\"]       union [\"ConditionProblemsHealthConcerns\": \"Allergy to thrombolytics\"] ) ActiveExclusionDx       such that ActiveExclusionDx.prevalenceInterval ( ) overlaps before ( EDwithSTEMI.period )         and ( ActiveExclusionDx.verificationStatus is not null implies ( ActiveExclusionDx.verificationStatus ~ QICoreCommon.\"confirmed\"               or ActiveExclusionDx.verificationStatus ~ QICoreCommon.\"unconfirmed\"               or ActiveExclusionDx.verificationStatus ~ QICoreCommon.\"provisional\"               or ActiveExclusionDx.verificationStatus ~ QICoreCommon.\"differential\"           )         )"
+        "valueString": "define \"Active Exclusion Diagnosis at Start of ED Encounter\":\n  \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI\n    with ( [\"ConditionProblemsHealthConcerns\": \"Active Bleeding or Bleeding Diathesis, Excluding Menses\"]\n      union [\"ConditionProblemsHealthConcerns\": \"Malignant Intracranial Neoplasm Group\"]\n      union [\"ConditionProblemsHealthConcerns\": \"Cerebral Vascular Lesion\"]\n      union [\"ConditionProblemsHealthConcerns\": \"Dementia and Related Intracranial Pathologies\"]\n      union [\"ConditionProblemsHealthConcerns\": \"Pregnant State\"]\n      union [\"ConditionProblemsHealthConcerns\": \"Allergy to thrombolytics\"] ) ActiveExclusionDx\n      such that ActiveExclusionDx.prevalenceInterval ( ) overlaps before ( EDwithSTEMI.period )\n        and ( ActiveExclusionDx.verificationStatus is not null implies ( ActiveExclusionDx.verificationStatus ~ QICoreCommon.\"confirmed\"\n              or ActiveExclusionDx.verificationStatus ~ QICoreCommon.\"unconfirmed\"\n              or ActiveExclusionDx.verificationStatus ~ QICoreCommon.\"provisional\"\n              or ActiveExclusionDx.verificationStatus ~ QICoreCommon.\"differential\"\n          )\n        )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 16
+        "valueInteger": 17
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -440,13 +455,13 @@
         "valueString": "Active Oral Anticoagulant Medication at the Start of ED Encounter"
       }, {
         "url": "statement",
-        "valueString": "define \"Active Oral Anticoagulant Medication at the Start of ED Encounter\":   \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI     with [\"MedicationRequest\": \"Oral Anticoagulant Medications\"] OralAnticoagulant       such that OralAnticoagulant.status in { 'active', 'completed' }         and OralAnticoagulant.intent = 'order'         and OralAnticoagulant.authoredOn 90 days or less before or on start of EDwithSTEMI.period"
+        "valueString": "define \"Active Oral Anticoagulant Medication at the Start of ED Encounter\":\n  \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI\n    with [\"MedicationRequest\": \"Oral Anticoagulant Medications\"] OralAnticoagulant\n      such that OralAnticoagulant.status in { 'active', 'completed' }\n        and OralAnticoagulant.intent = 'order'\n        and OralAnticoagulant.authoredOn 90 days or less before or on start of EDwithSTEMI.period"
       }, {
         "url": "displaySequence",
-        "valueInteger": 17
+        "valueInteger": 18
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -455,13 +470,13 @@
         "valueString": "Active Long Term use of Anticoagulants"
       }, {
         "url": "statement",
-        "valueString": "define \"Active Long Term use of Anticoagulants\":   \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI     with [\"ConditionProblemsHealthConcerns\": \"Long term (current) use of anticoagulants\"] LongTermAnticoagulant       such that ( LongTermAnticoagulant.prevalenceInterval ( ) starts before or on start of EDwithSTEMI.period           and LongTermAnticoagulant.prevalenceInterval ( ) ends on or after start of EDwithSTEMI.period       )         and ( LongTermAnticoagulant.verificationStatus is not null implies ( LongTermAnticoagulant.verificationStatus ~ QICoreCommon.\"confirmed\"               or LongTermAnticoagulant.verificationStatus ~ QICoreCommon.\"unconfirmed\"               or LongTermAnticoagulant.verificationStatus ~ QICoreCommon.\"provisional\"               or LongTermAnticoagulant.verificationStatus ~ QICoreCommon.\"differential\"           )         )"
+        "valueString": "define \"Active Long Term use of Anticoagulants\":\n  \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI\n    with [\"ConditionProblemsHealthConcerns\": \"Long term (current) use of anticoagulants\"] LongTermAnticoagulant\n      such that ( LongTermAnticoagulant.prevalenceInterval ( ) starts before or on start of EDwithSTEMI.period\n          and LongTermAnticoagulant.prevalenceInterval ( ) ends on or after start of EDwithSTEMI.period\n      )\n        and ( LongTermAnticoagulant.verificationStatus is not null implies ( LongTermAnticoagulant.verificationStatus ~ QICoreCommon.\"confirmed\"\n              or LongTermAnticoagulant.verificationStatus ~ QICoreCommon.\"unconfirmed\"\n              or LongTermAnticoagulant.verificationStatus ~ QICoreCommon.\"provisional\"\n              or LongTermAnticoagulant.verificationStatus ~ QICoreCommon.\"differential\"\n          )\n        )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 18
+        "valueInteger": 19
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -470,13 +485,13 @@
         "valueString": "Active use of Anticoagulants"
       }, {
         "url": "statement",
-        "valueString": "define \"Active use of Anticoagulants\":   \"Active Oral Anticoagulant Medication at the Start of ED Encounter\"     union \"Active Long Term use of Anticoagulants\""
+        "valueString": "define \"Active use of Anticoagulants\":\n  \"Active Oral Anticoagulant Medication at the Start of ED Encounter\"\n    union \"Active Long Term use of Anticoagulants\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 19
+        "valueInteger": 20
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -485,13 +500,13 @@
         "valueString": "Exclusion Diagnosis During ED Encounter or Within 24 Hours of ED Encounter Start"
       }, {
         "url": "statement",
-        "valueString": "define \"Exclusion Diagnosis During ED Encounter or Within 24 Hours of ED Encounter Start\":   \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI     with ( [\"ConditionProblemsHealthConcerns\": \"Aortic Dissection or Ruptured Aortic Aneurysm\"]       union [\"ConditionProblemsHealthConcerns\": \"Neurologic impairment\"]       union [\"ConditionProblemsHealthConcerns\": \"Angina pectoris with documented spasm\"]       union [\"ConditionProblemsHealthConcerns\": \"Ventricular aneurysm due to and following acute myocardial infarction (disorder)\"]       union [\"ConditionProblemsHealthConcerns\": \"Aneurysm of heart\"]       union [\"ConditionProblemsHealthConcerns\": \"Takotsubo cardiomyopathy (disorder)\"]       union [\"ConditionProblemsHealthConcerns\": \"Takotsubo syndrome\"]       union [\"ConditionProblemsHealthConcerns\": \"Cardiopulmonary Emergency\"] ) ExclusionDiagnosis       such that ( ( ExclusionDiagnosis.prevalenceInterval ( ) starts during EDwithSTEMI.period )           or ( ExclusionDiagnosis.prevalenceInterval ( ) starts 24 hours or less before start of EDwithSTEMI.period )       )         and ( ExclusionDiagnosis.verificationStatus is not null implies ( ExclusionDiagnosis.verificationStatus ~ QICoreCommon.\"confirmed\"               or ExclusionDiagnosis.verificationStatus ~ QICoreCommon.\"unconfirmed\"               or ExclusionDiagnosis.verificationStatus ~ QICoreCommon.\"provisional\"               or ExclusionDiagnosis.verificationStatus ~ QICoreCommon.\"differential\"           )         )"
+        "valueString": "define \"Exclusion Diagnosis During ED Encounter or Within 24 Hours of ED Encounter Start\":\n  \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI\n    with ( [\"ConditionProblemsHealthConcerns\": \"Aortic Dissection or Ruptured Aortic Aneurysm\"]\n      union [\"ConditionProblemsHealthConcerns\": \"Neurologic impairment\"]\n      union [\"ConditionProblemsHealthConcerns\": \"Angina pectoris with documented spasm\"]\n      union [\"ConditionProblemsHealthConcerns\": \"Ventricular aneurysm due to and following acute myocardial infarction (disorder)\"]\n      union [\"ConditionProblemsHealthConcerns\": \"Aneurysm of heart\"]\n      union [\"ConditionProblemsHealthConcerns\": \"Takotsubo cardiomyopathy (disorder)\"]\n      union [\"ConditionProblemsHealthConcerns\": \"Takotsubo syndrome\"]\n      union [\"ConditionProblemsHealthConcerns\": \"Cardiopulmonary Emergency\"] ) ExclusionDiagnosis\n      such that ( ( ExclusionDiagnosis.prevalenceInterval ( ) starts during EDwithSTEMI.period )\n          or ( ExclusionDiagnosis.prevalenceInterval ( ) starts 24 hours or less before start of EDwithSTEMI.period )\n      )\n        and ( ExclusionDiagnosis.verificationStatus is not null implies ( ExclusionDiagnosis.verificationStatus ~ QICoreCommon.\"confirmed\"\n              or ExclusionDiagnosis.verificationStatus ~ QICoreCommon.\"unconfirmed\"\n              or ExclusionDiagnosis.verificationStatus ~ QICoreCommon.\"provisional\"\n              or ExclusionDiagnosis.verificationStatus ~ QICoreCommon.\"differential\"\n          )\n        )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 20
+        "valueInteger": 21
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -500,13 +515,13 @@
         "valueString": "Major Surgical Procedure 21 Days or Less Before Start of or Starts During ED Encounter"
       }, {
         "url": "statement",
-        "valueString": "define \"Major Surgical Procedure 21 Days or Less Before Start of or Starts During ED Encounter\":   \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI     with [\"Procedure\": \"Major Surgical Procedure\"] MajorSurgery       such that ( MajorSurgery.performed.toInterval ( ) starts 21 days or less before start of EDwithSTEMI.period           or MajorSurgery.performed.toInterval ( ) starts during EDwithSTEMI.period       )         and MajorSurgery.status = 'completed'"
+        "valueString": "define \"Major Surgical Procedure 21 Days or Less Before Start of or Starts During ED Encounter\":\n  \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI\n    with [\"Procedure\": \"Major Surgical Procedure\"] MajorSurgery\n      such that ( MajorSurgery.performed.toInterval ( ) starts 21 days or less before start of EDwithSTEMI.period\n          or MajorSurgery.performed.toInterval ( ) starts during EDwithSTEMI.period\n      )\n        and MajorSurgery.status = 'completed'"
       }, {
         "url": "displaySequence",
-        "valueInteger": 21
+        "valueInteger": 22
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -515,13 +530,13 @@
         "valueString": "Intubation or Mechanical Circulatory Assist Device Placement or Removal Procedure During ED Encounter or Within 24 Hours of ED Encounter Start"
       }, {
         "url": "statement",
-        "valueString": "define \"Intubation or Mechanical Circulatory Assist Device Placement or Removal Procedure During ED Encounter or Within 24 Hours of ED Encounter Start\":   \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI     with ( [\"Procedure\": \"Endotracheal Intubation\"]       union [\"Procedure\": \"Mechanical Circulatory Assist Device\"] ) AirwayProcedure       such that ( ( AirwayProcedure.performed.toInterval ( ) starts during ( EDwithSTEMI.period ) )           or ( AirwayProcedure.performed.toInterval ( ) starts 24 hours or less before start of ( EDwithSTEMI.period ) )       )         and AirwayProcedure.status = 'completed'"
+        "valueString": "define \"Intubation or Mechanical Circulatory Assist Device Placement or Removal Procedure During ED Encounter or Within 24 Hours of ED Encounter Start\":\n  \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI\n    with ( [\"Procedure\": \"Endotracheal Intubation\"]\n      union [\"Procedure\": \"Mechanical Circulatory Assist Device\"] ) AirwayProcedure\n      such that ( ( AirwayProcedure.performed.toInterval ( ) starts during ( EDwithSTEMI.period ) )\n          or ( AirwayProcedure.performed.toInterval ( ) starts 24 hours or less before start of ( EDwithSTEMI.period ) )\n      )\n        and AirwayProcedure.status = 'completed'"
       }, {
         "url": "displaySequence",
-        "valueInteger": 22
+        "valueInteger": 23
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -530,13 +545,13 @@
         "valueString": "Active Exclusion Diagnosis Within 90 Days Before or At the Start of ED Encounter"
       }, {
         "url": "statement",
-        "valueString": "define \"Active Exclusion Diagnosis Within 90 Days Before or At the Start of ED Encounter\":   \"ED Encounter with STEMI Diagnosis\" EDwSTEMI     with ( [\"ConditionProblemsHealthConcerns\": \"Ischemic Stroke\"]       union [\"ConditionProblemsHealthConcerns\": \"Closed Head and Facial Trauma\"]       union [\"ConditionProblemsHealthConcerns\": \"Active Peptic Ulcer\"] ) ExclusionCondition       such that ExclusionCondition.prevalenceInterval ( ) starts during Interval[start of ( EDwSTEMI.period ) - 90 days, start of ( EDwSTEMI.period )]         and ( ExclusionCondition.verificationStatus is not null implies ( ExclusionCondition.verificationStatus ~ QICoreCommon.\"confirmed\"               or ExclusionCondition.verificationStatus ~ QICoreCommon.\"unconfirmed\"               or ExclusionCondition.verificationStatus ~ QICoreCommon.\"provisional\"               or ExclusionCondition.verificationStatus ~ QICoreCommon.\"differential\"           )         )"
+        "valueString": "define \"Active Exclusion Diagnosis Within 90 Days Before or At the Start of ED Encounter\":\n  \"ED Encounter with STEMI Diagnosis\" EDwSTEMI\n    with ( [\"ConditionProblemsHealthConcerns\": \"Ischemic Stroke\"]\n      union [\"ConditionProblemsHealthConcerns\": \"Closed Head and Facial Trauma\"]\n      union [\"ConditionProblemsHealthConcerns\": \"Active Peptic Ulcer\"] ) ExclusionCondition\n      such that ExclusionCondition.prevalenceInterval ( ) starts during Interval[start of ( EDwSTEMI.period ) - 90 days, start of ( EDwSTEMI.period )]\n        and ( ExclusionCondition.verificationStatus is not null implies ( ExclusionCondition.verificationStatus ~ QICoreCommon.\"confirmed\"\n              or ExclusionCondition.verificationStatus ~ QICoreCommon.\"unconfirmed\"\n              or ExclusionCondition.verificationStatus ~ QICoreCommon.\"provisional\"\n              or ExclusionCondition.verificationStatus ~ QICoreCommon.\"differential\"\n          )\n        )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 23
+        "valueInteger": 24
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -545,13 +560,13 @@
         "valueString": "Intracranial or Intraspinal Procedure 90 Days or Less Before Start of ED Encounter"
       }, {
         "url": "statement",
-        "valueString": "define \"Intracranial or Intraspinal Procedure 90 Days or Less Before Start of ED Encounter\":   \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI     with [\"Procedure\": \"Intracranial or Intraspinal surgery\"] CranialorSpinalSurgery       such that CranialorSpinalSurgery.performed.toInterval ( ) starts 90 days or less before start of ( EDwithSTEMI.period )         and CranialorSpinalSurgery.status = 'completed'"
+        "valueString": "define \"Intracranial or Intraspinal Procedure 90 Days or Less Before Start of ED Encounter\":\n  \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI\n    with [\"Procedure\": \"Intracranial or Intraspinal surgery\"] CranialorSpinalSurgery\n      such that CranialorSpinalSurgery.performed.toInterval ( ) starts 90 days or less before start of ( EDwithSTEMI.period )\n        and CranialorSpinalSurgery.status = 'completed'"
       }, {
         "url": "displaySequence",
-        "valueInteger": 24
+        "valueInteger": 25
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -560,13 +575,13 @@
         "valueString": "ED Encounter with Discharge Disposition as Patient Expired"
       }, {
         "url": "statement",
-        "valueString": "define \"ED Encounter with Discharge Disposition as Patient Expired\":   \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI     where EDwithSTEMI.hospitalization.dischargeDisposition in \"Patient Expired\""
+        "valueString": "define \"ED Encounter with Discharge Disposition as Patient Expired\":\n  \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI\n    where EDwithSTEMI.hospitalization.dischargeDisposition in \"Patient Expired\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 25
+        "valueInteger": 26
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -575,13 +590,13 @@
         "valueString": "ED Encounter with Discharge Disposition as Left Against Medical Advice"
       }, {
         "url": "statement",
-        "valueString": "define \"ED Encounter with Discharge Disposition as Left Against Medical Advice\":   \"ED Encounter with STEMI Diagnosis\" EDwSTEMI     where EDwSTEMI.hospitalization.dischargeDisposition in \"Left Against Medical Advice\""
+        "valueString": "define \"ED Encounter with Discharge Disposition as Left Against Medical Advice\":\n  \"ED Encounter with STEMI Diagnosis\" EDwSTEMI\n    where EDwSTEMI.hospitalization.dischargeDisposition in \"Left Against Medical Advice\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 26
+        "valueInteger": 27
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -590,13 +605,13 @@
         "valueString": "ED Encounter with Hospice Services"
       }, {
         "url": "statement",
-        "valueString": "define \"ED Encounter with Hospice Services\":   from     \"ED Encounter with STEMI Diagnosis\" EDwSTEMI     let SixMonthsBeforeToEndOfSTEMI: Interval[start of ( EDwSTEMI.period ) - 6 months, end of ( EDwSTEMI.period )]     where ( exists ( ( [Encounter: \"Encounter Inpatient\"] ) InpatientEncounter           where ( InpatientEncounter.hospitalization.dischargeDisposition ~ \"Discharge to home for hospice care (procedure)\"               or InpatientEncounter.hospitalization.dischargeDisposition ~ \"Discharge to healthcare facility for hospice care (procedure)\"           )             and InpatientEncounter.status = 'finished'             and InpatientEncounter.period starts before or on start of ( EDwSTEMI.period )             and InpatientEncounter.period overlaps day of SixMonthsBeforeToEndOfSTEMI       )         or exists ( ( [Encounter: \"Hospice Encounter\"] ) HospiceEncounter             where HospiceEncounter.period starts before or on start of ( EDwSTEMI.period )               and ( HospiceEncounter.period overlaps day of SixMonthsBeforeToEndOfSTEMI )               and HospiceEncounter.status = 'finished'         )         or exists ( ( ( [ObservationScreeningAssessment: \"Hospice care [Minimum Data Set]\"] ).isAssessmentPerformed ( ) ) HospiceAssessment             where ( HospiceAssessment as ObservationScreeningAssessment ).value ~ \"Yes (qualifier value)\"               and HospiceAssessment.effective.toInterval ( ) starts before or on start of ( EDwSTEMI.period )               and ( HospiceAssessment.effective.toInterval ( ) overlaps day of SixMonthsBeforeToEndOfSTEMI )         )         or exists ( ( ( [ServiceRequest: \"Hospice Care Ambulatory\"] ).isInterventionOrder ( ) ) HospiceOrder             where HospiceOrder.authoredOn 6 months or less before start of ( EDwSTEMI.period )         )         or exists ( ( ( [Procedure: \"Hospice Care Ambulatory\"] ).isInterventionPerformed ( ) ) HospicePerformed             where HospicePerformed.performed.toInterval ( ) starts before or on start of ( EDwSTEMI.period )               and ( HospicePerformed.performed.toInterval ( ) overlaps day of SixMonthsBeforeToEndOfSTEMI )         )         or exists ( ( [ConditionProblemsHealthConcerns: \"Hospice Diagnosis\"] ) HospiceCareDiagnosis             where HospiceCareDiagnosis.prevalenceInterval ( ) ends on or after start of ( EDwSTEMI.period )               and ( HospiceCareDiagnosis.verificationStatus is not null implies ( HospiceCareDiagnosis.verificationStatus ~ QICoreCommon.\"confirmed\"                     or HospiceCareDiagnosis.verificationStatus ~ QICoreCommon.\"unconfirmed\"                     or HospiceCareDiagnosis.verificationStatus ~ QICoreCommon.\"provisional\"                     or HospiceCareDiagnosis.verificationStatus ~ QICoreCommon.\"differential\"                 )               )         )     )"
+        "valueString": "define \"ED Encounter with Hospice Services\":\n  from\n    \"ED Encounter with STEMI Diagnosis\" EDwSTEMI\n    let SixMonthsBeforeToEndOfSTEMI: Interval[start of ( EDwSTEMI.period ) - 6 months, end of ( EDwSTEMI.period )]\n    where ( exists ( ( [Encounter: \"Encounter Inpatient\"] ) InpatientEncounter\n          where ( InpatientEncounter.hospitalization.dischargeDisposition ~ \"Discharge to home for hospice care (procedure)\"\n              or InpatientEncounter.hospitalization.dischargeDisposition ~ \"Discharge to healthcare facility for hospice care (procedure)\"\n          )\n            and InpatientEncounter.status = 'finished'\n            and InpatientEncounter.period starts before or on start of ( EDwSTEMI.period )\n            and InpatientEncounter.period overlaps day of SixMonthsBeforeToEndOfSTEMI\n      )\n        or exists ( ( [Encounter: \"Hospice Encounter\"] ) HospiceEncounter\n            where HospiceEncounter.period starts before or on start of ( EDwSTEMI.period )\n              and ( HospiceEncounter.period overlaps day of SixMonthsBeforeToEndOfSTEMI )\n              and HospiceEncounter.status = 'finished'\n        )\n        or exists ( ( ( [ObservationScreeningAssessment: \"Hospice care [Minimum Data Set]\"] ).isAssessmentPerformed ( ) ) HospiceAssessment\n            where ( HospiceAssessment as ObservationScreeningAssessment ).value ~ \"Yes (qualifier value)\"\n              and HospiceAssessment.effective.toInterval ( ) starts before or on start of ( EDwSTEMI.period )\n              and ( HospiceAssessment.effective.toInterval ( ) overlaps day of SixMonthsBeforeToEndOfSTEMI )\n        )\n        or exists ( ( ( [ServiceRequest: \"Hospice Care Ambulatory\"] ).isInterventionOrder ( ) ) HospiceOrder\n            where HospiceOrder.authoredOn 6 months or less before start of ( EDwSTEMI.period )\n        )\n        or exists ( ( ( [Procedure: \"Hospice Care Ambulatory\"] ).isInterventionPerformed ( ) ) HospicePerformed\n            where HospicePerformed.performed.toInterval ( ) starts before or on start of ( EDwSTEMI.period )\n              and ( HospicePerformed.performed.toInterval ( ) overlaps day of SixMonthsBeforeToEndOfSTEMI )\n        )\n        or exists ( ( [ConditionProblemsHealthConcerns: \"Hospice Diagnosis\"] ) HospiceCareDiagnosis\n            where HospiceCareDiagnosis.prevalenceInterval ( ) ends on or after start of ( EDwSTEMI.period )\n              and ( HospiceCareDiagnosis.verificationStatus is not null implies ( HospiceCareDiagnosis.verificationStatus ~ QICoreCommon.\"confirmed\"\n                    or HospiceCareDiagnosis.verificationStatus ~ QICoreCommon.\"unconfirmed\"\n                    or HospiceCareDiagnosis.verificationStatus ~ QICoreCommon.\"provisional\"\n                    or HospiceCareDiagnosis.verificationStatus ~ QICoreCommon.\"differential\"\n                )\n              )\n        )\n    )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 27
+        "valueInteger": 28
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -605,13 +620,13 @@
         "valueString": "Currently Pregnant"
       }, {
         "url": "statement",
-        "valueString": "define \"Currently Pregnant\":   \"ED Encounter with STEMI Diagnosis\" EDwSTEMI     with ( [\"USCoreObservationPregnancyStatusProfile\"] ) PregStatus       such that PregStatus.status = 'final'         and ( PregStatus.value in \"Pregnant State\" )         and ( PregStatus.effective.toInterval ( ) overlaps EDwSTEMI.period )"
+        "valueString": "define \"Currently Pregnant\":\n  \"ED Encounter with STEMI Diagnosis\" EDwSTEMI\n    with ( [\"USCoreObservationPregnancyStatusProfile\"] ) PregStatus\n      such that PregStatus.status = 'final'\n        and ( PregStatus.value in \"Pregnant State\" )\n        and ( PregStatus.effective.toInterval ( ) overlaps EDwSTEMI.period )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 28
+        "valueInteger": 29
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -620,13 +635,13 @@
         "valueString": "Denominator Exclusions"
       }, {
         "url": "statement",
-        "valueString": "define \"Denominator Exclusions\":   \"Allergy or Intolerance to Thrombolytic Medications Overlaps ED Encounter\"     union \"Adverse Effect to Thrombolytic Medications Before End of ED Encounter\"     union \"Active Exclusion Diagnosis at Start of ED Encounter\"     union \"Active use of Anticoagulants\"     union \"Exclusion Diagnosis During ED Encounter or Within 24 Hours of ED Encounter Start\"     union \"Major Surgical Procedure 21 Days or Less Before Start of or Starts During ED Encounter\"     union \"Intubation or Mechanical Circulatory Assist Device Placement or Removal Procedure During ED Encounter or Within 24 Hours of ED Encounter Start\"     union \"Active Exclusion Diagnosis Within 90 Days Before or At the Start of ED Encounter\"     union \"Intracranial or Intraspinal Procedure 90 Days or Less Before Start of ED Encounter\"     union \"ED Encounter with Discharge Disposition as Patient Expired\"     union \"ED Encounter with Discharge Disposition as Left Against Medical Advice\"     union \"ED Encounter with Hospice Services\"     union \"Currently Pregnant\""
+        "valueString": "define \"Denominator Exclusions\":\n  \"Allergy or Intolerance to Thrombolytic Medications Overlaps ED Encounter\"\n    union \"Adverse Effect to Thrombolytic Medications Before End of ED Encounter\"\n    union \"Active Exclusion Diagnosis at Start of ED Encounter\"\n    union \"Active use of Anticoagulants\"\n    union \"Exclusion Diagnosis During ED Encounter or Within 24 Hours of ED Encounter Start\"\n    union \"Major Surgical Procedure 21 Days or Less Before Start of or Starts During ED Encounter\"\n    union \"Intubation or Mechanical Circulatory Assist Device Placement or Removal Procedure During ED Encounter or Within 24 Hours of ED Encounter Start\"\n    union \"Active Exclusion Diagnosis Within 90 Days Before or At the Start of ED Encounter\"\n    union \"Intracranial or Intraspinal Procedure 90 Days or Less Before Start of ED Encounter\"\n    union \"ED Encounter with Discharge Disposition as Patient Expired\"\n    union \"ED Encounter with Discharge Disposition as Left Against Medical Advice\"\n    union \"ED Encounter with Hospice Services\"\n    union \"Currently Pregnant\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 29
+        "valueInteger": 30
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "SupplementalDataElements"
@@ -635,13 +650,13 @@
         "valueString": "SDE Race"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Race\":   Patient.race R     return Tuple {       codes: R.ombCategory union R.detailed,       display: R.text     }"
+        "valueString": "define \"SDE Race\":\n  Patient.race R\n    return Tuple {\n      codes: R.ombCategory union R.detailed,\n      display: R.text\n    }"
       }, {
         "url": "displaySequence",
-        "valueInteger": 30
+        "valueInteger": 31
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -650,13 +665,13 @@
         "valueString": "SDE Race"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Race\":   SDE.\"SDE Race\""
+        "valueString": "define \"SDE Race\":\n  SDE.\"SDE Race\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 31
+        "valueInteger": 32
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -665,13 +680,13 @@
         "valueString": "Received tPA in Another Facility within 24 hours Prior to Admission"
       }, {
         "url": "statement",
-        "valueString": "define \"Received tPA in Another Facility within 24 hours Prior to Admission\":   \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI     with ( [\"ConditionProblemsHealthConcerns\": \"Status post administration of tPA (rtPA) in a different facility within the last 24 hours prior to admission to current facility\"] ) TPA       such that TPA.prevalenceInterval ( ) starts during EDwithSTEMI.period         and ( TPA.verificationStatus is not null implies ( TPA.verificationStatus ~ QICoreCommon.\"confirmed\"               or TPA.verificationStatus ~ QICoreCommon.\"unconfirmed\"               or TPA.verificationStatus ~ QICoreCommon.\"provisional\"               or TPA.verificationStatus ~ QICoreCommon.\"differential\"           )         )"
+        "valueString": "define \"Received tPA in Another Facility within 24 hours Prior to Admission\":\n  \"ED Encounter with STEMI Diagnosis\" EDwithSTEMI\n    with ( [\"ConditionProblemsHealthConcerns\": \"Status post administration of tPA (rtPA) in a different facility within the last 24 hours prior to admission to current facility\"] ) TPA\n      such that TPA.prevalenceInterval ( ) starts during EDwithSTEMI.period\n        and ( TPA.verificationStatus is not null implies ( TPA.verificationStatus ~ QICoreCommon.\"confirmed\"\n              or TPA.verificationStatus ~ QICoreCommon.\"unconfirmed\"\n              or TPA.verificationStatus ~ QICoreCommon.\"provisional\"\n              or TPA.verificationStatus ~ QICoreCommon.\"differential\"\n          )\n        )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 32
+        "valueInteger": 33
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -680,13 +695,13 @@
         "valueString": "ED Encounter with a Documented Reason for No PCI Performed"
       }, {
         "url": "statement",
-        "valueString": "define \"ED Encounter with a Documented Reason for No PCI Performed\":   \"ED Encounter with STEMI Diagnosis\" EDwSTEMI     with [\"ProcedureNotDone\": \"Percutaneous Coronary Intervention\"] PCINotDone       such that ( PCINotDone.statusReason in \"Patient Refusal\"           or PCINotDone.statusReason in \"Procedure Not Indicated/Contraindicated\"       )         and PCINotDone.recorded during EDwSTEMI.period"
+        "valueString": "define \"ED Encounter with a Documented Reason for No PCI Performed\":\n  \"ED Encounter with STEMI Diagnosis\" EDwSTEMI\n    with [\"ProcedureNotDone\": \"Percutaneous Coronary Intervention\"] PCINotDone\n      such that ( PCINotDone.statusReason in \"Patient Refusal\"\n          or PCINotDone.statusReason in \"Procedure Not Indicated/Contraindicated\"\n      )\n        and PCINotDone.recorded during EDwSTEMI.period"
       }, {
         "url": "displaySequence",
-        "valueInteger": 33
+        "valueInteger": 34
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -695,13 +710,13 @@
         "valueString": "ED Encounter with a Documented Reason for Not Administering Fibrinolytic Therapy"
       }, {
         "url": "statement",
-        "valueString": "define \"ED Encounter with a Documented Reason for Not Administering Fibrinolytic Therapy\":   \"ED Encounter with STEMI Diagnosis\" EDwSTEMI     with [\"MedicationAdministrationNotDone\": \"Fibrinolytic Therapy\"] FibrinolyticNoMed       such that ( FibrinolyticNoMed.statusReason in \"Patient Refusal\"           or FibrinolyticNoMed.statusReason in \"Drug Intervention Not Indicated/Contraindicated\"       )         and FibrinolyticNoMed.recorded during EDwSTEMI.period"
+        "valueString": "define \"ED Encounter with a Documented Reason for Not Administering Fibrinolytic Therapy\":\n  \"ED Encounter with STEMI Diagnosis\" EDwSTEMI\n    with [\"MedicationAdministrationNotDone\": \"Fibrinolytic Therapy\"] FibrinolyticNoMed\n      such that ( FibrinolyticNoMed.statusReason in \"Patient Refusal\"\n          or FibrinolyticNoMed.statusReason in \"Drug Intervention Not Indicated/Contraindicated\"\n      )\n        and FibrinolyticNoMed.recorded during EDwSTEMI.period"
       }, {
         "url": "displaySequence",
-        "valueInteger": 34
+        "valueInteger": 35
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -710,13 +725,13 @@
         "valueString": "Denominator Exceptions"
       }, {
         "url": "statement",
-        "valueString": "define \"Denominator Exceptions\":   \"Received tPA in Another Facility within 24 hours Prior to Admission\"     union \"ED Encounter with a Documented Reason for No PCI Performed\"     union \"ED Encounter with a Documented Reason for Not Administering Fibrinolytic Therapy\""
+        "valueString": "define \"Denominator Exceptions\":\n  \"Received tPA in Another Facility within 24 hours Prior to Admission\"\n    union \"ED Encounter with a Documented Reason for No PCI Performed\"\n    union \"ED Encounter with a Documented Reason for Not Administering Fibrinolytic Therapy\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 35
+        "valueInteger": 36
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "FHIRHelpers"
@@ -728,10 +743,10 @@
         "valueString": "define function ToString(value uri): value.value"
       }, {
         "url": "displaySequence",
-        "valueInteger": 36
+        "valueInteger": 37
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "FHIRHelpers"
@@ -740,13 +755,13 @@
         "valueString": "ToInterval"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Converts the given [Period](https://hl7.org/fhir/datatypes.html#Period) value to a CQL DateTime Interval @comment: If the start value of the given period is unspecified, the starting boundary of the resulting interval will be open (meaning the start of the interval is unknown, as opposed to interpreted as the beginning of time). */ define function ToInterval(period FHIR.Period):     if period is null then         null     else         if period.\"start\" is null then             Interval(period.\"start\".value, period.\"end\".value]         else             Interval[period.\"start\".value, period.\"end\".value]"
+        "valueString": "/*\n@description: Converts the given [Period](https://hl7.org/fhir/datatypes.html#Period)\nvalue to a CQL DateTime Interval\n@comment: If the start value of the given period is unspecified, the starting\nboundary of the resulting interval will be open (meaning the start of the interval\nis unknown, as opposed to interpreted as the beginning of time).\n*/\ndefine function ToInterval(period FHIR.Period):\n    if period is null then\n        null\n    else\n        if period.\"start\" is null then\n            Interval(period.\"start\".value, period.\"end\".value]\n        else\n            Interval[period.\"start\".value, period.\"end\".value]"
       }, {
         "url": "displaySequence",
-        "valueInteger": 37
+        "valueInteger": 38
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "FHIRHelpers"
@@ -755,13 +770,13 @@
         "valueString": "ToConcept"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Converts the given FHIR [CodeableConcept](https://hl7.org/fhir/datatypes.html#CodeableConcept) value to a CQL Concept. */ define function ToConcept(concept FHIR.CodeableConcept):     if concept is null then         null     else         System.Concept {             codes: concept.coding C return ToCode(C),             display: concept.text.value         }"
+        "valueString": "/*\n@description: Converts the given FHIR [CodeableConcept](https://hl7.org/fhir/datatypes.html#CodeableConcept) value to a CQL Concept.\n*/\ndefine function ToConcept(concept FHIR.CodeableConcept):\n    if concept is null then\n        null\n    else\n        System.Concept {\n            codes: concept.coding C return ToCode(C),\n            display: concept.text.value\n        }"
       }, {
         "url": "displaySequence",
-        "valueInteger": 38
+        "valueInteger": 39
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "FHIRHelpers"
@@ -770,13 +785,13 @@
         "valueString": "ToCode"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Converts the given FHIR [Coding](https://hl7.org/fhir/datatypes.html#Coding) value to a CQL Code. */ define function ToCode(coding FHIR.Coding):     if coding is null then         null     else         System.Code {           code: coding.code.value,           system: coding.system.value,           version: coding.version.value,           display: coding.display.value         }"
+        "valueString": "/*\n@description: Converts the given FHIR [Coding](https://hl7.org/fhir/datatypes.html#Coding) value to a CQL Code.\n*/\ndefine function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }"
       }, {
         "url": "displaySequence",
-        "valueInteger": 39
+        "valueInteger": 40
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CQMCommon"
@@ -785,13 +800,13 @@
         "valueString": "encounterDiagnosis"
       }, {
         "url": "statement",
-        "valueString": "/*   @description: Returns the Condition resources referenced by the diagnosis element of the Encounter   */ define fluent function encounterDiagnosis(Encounter Encounter ):   Encounter.reasonReference D     return singleton from (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where D.references(C.id))"
+        "valueString": "/*  \n@description: Returns the Condition resources referenced by the diagnosis element of the Encounter  \n*/\ndefine fluent function encounterDiagnosis(Encounter Encounter ):\n  Encounter.reasonReference D\n    return singleton from (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where D.references(C.id))"
       }, {
         "url": "displaySequence",
-        "valueInteger": 40
+        "valueInteger": 41
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "QICoreCommon"
@@ -800,13 +815,13 @@
         "valueString": "references"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Returns true if the given reference is to the given resourceId @comment: Returns true if the `resourceId` parameter exactly equals the tail of the given reference. NOTE: This function assumes resources from the same source server. */ define fluent function references(reference Reference, resourceId String):   resourceId = Last(Split(reference.reference, '/'))"
+        "valueString": "/*\n@description: Returns true if the given reference is to the given resourceId\n@comment: Returns true if the `resourceId` parameter exactly equals the tail of the given reference.\nNOTE: This function assumes resources from the same source server.\n*/\ndefine fluent function references(reference Reference, resourceId String):\n  resourceId = Last(Split(reference.reference, '/'))"
       }, {
         "url": "displaySequence",
-        "valueInteger": 41
+        "valueInteger": 42
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -815,13 +830,13 @@
         "valueString": "currentemergencyDepartmentArrivalTime"
       }, {
         "url": "statement",
-        "valueString": "define fluent function currentemergencyDepartmentArrivalTime(EDEncounter Encounter):   First(EDEncounter.location EDLocation       where exists((CQMCommon.GetLocation(EDLocation.location).type) LocationType           where(LocationType in \"Emergency Department Visit\"               or LocationType ~ \"Emergency room\"           )             and start of EDLocation.period is not null       )       return start of EDLocation.period       sort ascending   )"
+        "valueString": "define fluent function currentemergencyDepartmentArrivalTime(EDEncounter Encounter):\n  First(EDEncounter.location EDLocation\n      where exists((CQMCommon.GetLocation(EDLocation.location).type) LocationType\n          where(LocationType in \"Emergency Department Visit\"\n              or LocationType ~ \"Emergency room\"\n          )\n            and start of EDLocation.period is not null\n      )\n      return start of EDLocation.period\n      sort ascending\n  )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 42
+        "valueInteger": 43
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CQMCommon"
@@ -830,13 +845,13 @@
         "valueString": "GetLocation"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Returns the Location resource specified by the given reference @deprecated: This function is deprecated. Use the fluent function `getLocation()` instead. */ define function \"GetLocation\"(reference Reference):   singleton from (     [Location] L where reference.references(L)   )"
+        "valueString": "/*\n@description: Returns the Location resource specified by the given reference\n@deprecated: This function is deprecated. Use the fluent function `getLocation()` instead.\n*/\ndefine function \"GetLocation\"(reference Reference):\n  singleton from (\n    [Location] L where reference.references(L)\n  )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 43
+        "valueInteger": 44
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "QICoreCommon"
@@ -845,13 +860,13 @@
         "valueString": "references"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Returns true if the given reference is to the given resource @comment: Returns true if the `id` element of the given resource exactly equals the tail of the given reference. NOTE: This function assumes resources from the same source server. */ define fluent function references(reference Reference, resource Resource):   resource.id = Last(Split(reference.reference, '/'))"
+        "valueString": "/*\n@description: Returns true if the given reference is to the given resource\n@comment: Returns true if the `id` element of the given resource exactly equals the tail of the given reference.\nNOTE: This function assumes resources from the same source server.\n*/\ndefine fluent function references(reference Reference, resource Resource):\n  resource.id = Last(Split(reference.reference, '/'))"
       }, {
         "url": "displaySequence",
-        "valueInteger": 44
+        "valueInteger": 45
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "QICoreCommon"
@@ -860,13 +875,13 @@
         "valueString": "toInterval"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Normalizes a value that is a choice of timing-valued types to an equivalent interval @comment: Normalizes a choice type of DateTime, Quanitty, Interval<DateTime>, or Interval<Quantity> types to an equivalent interval. This selection of choice types is a superset of the majority of choice types that are used as possible representations for timing-valued elements in QICore, allowing this function to be used across any resource. The input can be provided as a DateTime, Quantity, Interval<DateTime> or Interval<Quantity>. The intent of this function is to provide a clear and concise mechanism to treat single elements that have multiple possible representations as intervals so that logic doesn't have to account for the variability. More complex calculations (such as medication request period or dispense period calculation) need specific guidance and consideration. That guidance may make use of this function, but the focus of this function is on single element calculations where the semantics are unambiguous. If the input is a DateTime, the result a DateTime Interval beginning and ending on that DateTime. If the input is a Quantity, the quantity is expected to be a calendar-duration interpreted as an Age, and the result is a DateTime Interval beginning on the Date the patient turned that age and ending immediately before one year later. If the input is a DateTime Interval, the result is the input. If the input is a Quantity Interval, the quantities are expected to be calendar-durations interpreted as an Age, and the result is a DateTime Interval beginning on the date the patient turned the age given as the start of the quantity interval, and ending immediately before one year later than the date the patient turned the age given as the end of the quantity interval. If the input is a Timing, an error will be thrown indicating that Timing calculations are not implemented. Any other input will reslt in a null DateTime Interval */ define fluent function toInterval(choice Choice<DateTime, Quantity, Interval<DateTime>, Interval<Quantity>, Timing>):   case    when choice is DateTime then      Interval[choice as DateTime, choice as DateTime]   when choice is Interval<DateTime> then     choice as Interval<DateTime>   when choice is Quantity then     Interval[Patient.birthDate + (choice as Quantity),      Patient.birthDate + (choice as Quantity) + 1 year)   when choice is Interval<Quantity> then     Interval[Patient.birthDate + (choice.low as Quantity),      Patient.birthDate + (choice.high as Quantity) + 1 year)   when choice is Timing then       Message(null, true, 'NOT_IMPLEMENTED', 'Error', 'Calculation of an interval from a Timing value is not supported') as Interval<DateTime>   else    null as Interval<DateTime>  end"
+        "valueString": "/*\n@description: Normalizes a value that is a choice of timing-valued types to an equivalent interval\n@comment: Normalizes a choice type of DateTime, Quanitty, Interval<DateTime>, or Interval<Quantity> types\nto an equivalent interval. This selection of choice types is a superset of the majority of choice types that are used as possible\nrepresentations for timing-valued elements in QICore, allowing this function to be used across any resource.\nThe input can be provided as a DateTime, Quantity, Interval<DateTime> or Interval<Quantity>.\nThe intent of this function is to provide a clear and concise mechanism to treat single\nelements that have multiple possible representations as intervals so that logic doesn't have to account\nfor the variability. More complex calculations (such as medication request period or dispense period\ncalculation) need specific guidance and consideration. That guidance may make use of this function, but\nthe focus of this function is on single element calculations where the semantics are unambiguous.\nIf the input is a DateTime, the result a DateTime Interval beginning and ending on that DateTime.\nIf the input is a Quantity, the quantity is expected to be a calendar-duration interpreted as an Age,\nand the result is a DateTime Interval beginning on the Date the patient turned that age and ending immediately before one year later.\nIf the input is a DateTime Interval, the result is the input.\nIf the input is a Quantity Interval, the quantities are expected to be calendar-durations interpreted as an Age, and the result\nis a DateTime Interval beginning on the date the patient turned the age given as the start of the quantity interval, and ending\nimmediately before one year later than the date the patient turned the age given as the end of the quantity interval.\nIf the input is a Timing, an error will be thrown indicating that Timing calculations are not implemented. Any other input will reslt in a null DateTime Interval\n*/\ndefine fluent function toInterval(choice Choice<DateTime, Quantity, Interval<DateTime>, Interval<Quantity>, Timing>):\n  case\n\t  when choice is DateTime then\n    \tInterval[choice as DateTime, choice as DateTime]\n\t\twhen choice is Interval<DateTime> then\n  \t\tchoice as Interval<DateTime>\n\t\twhen choice is Quantity then\n\t\t  Interval[Patient.birthDate + (choice as Quantity),\n\t\t\t  Patient.birthDate + (choice as Quantity) + 1 year)\n\t\twhen choice is Interval<Quantity> then\n\t\t  Interval[Patient.birthDate + (choice.low as Quantity),\n\t\t\t  Patient.birthDate + (choice.high as Quantity) + 1 year)\n\t\twhen choice is Timing then\n      Message(null, true, 'NOT_IMPLEMENTED', 'Error', 'Calculation of an interval from a Timing value is not supported') as Interval<DateTime>\n\t\telse\n\t\t\tnull as Interval<DateTime>\n\tend"
       }, {
         "url": "displaySequence",
-        "valueInteger": 45
+        "valueInteger": 46
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS996FHIRAptTxforSTEMI"
@@ -875,13 +890,13 @@
         "valueString": "currentemergencyDepartmentDepartTime"
       }, {
         "url": "statement",
-        "valueString": "define fluent function currentemergencyDepartmentDepartTime(EDEncounter Encounter):   Last(EDEncounter.location EDLocation       where exists((CQMCommon.GetLocation(EDLocation.location).type) LocationType           where(LocationType in \"Emergency Department Visit\"               or LocationType ~ \"Emergency room\"           )             and              end of EDLocation.period is not null       )       return        end of EDLocation.period       sort ascending   )"
+        "valueString": "define fluent function currentemergencyDepartmentDepartTime(EDEncounter Encounter):\n  Last(EDEncounter.location EDLocation\n      where exists((CQMCommon.GetLocation(EDLocation.location).type) LocationType\n          where(LocationType in \"Emergency Department Visit\"\n              or LocationType ~ \"Emergency room\"\n          )\n            and \n            end of EDLocation.period is not null\n      )\n      return \n      end of EDLocation.period\n      sort ascending\n  )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 46
+        "valueInteger": 47
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "QICoreCommon"
@@ -890,13 +905,13 @@
         "valueString": "prevalenceInterval"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Returns an interval representing the normalized prevalence period of a given Condition. @comment: Uses the ToInterval and ToAbatementInterval functions to determine the widest potential interval from onset to abatement as specified in the given Condition. If the condition is active, or has an abatement date the resulting  interval will have a closed ending boundary. Otherwise, the resulting interval will have an open ending boundary. */ define fluent function prevalenceInterval(condition Choice<\"ConditionEncounterDiagnosis\", \"ConditionProblemsHealthConcerns\">): if condition.clinicalStatus ~ \"active\"   or condition.clinicalStatus ~ \"recurrence\"   or condition.clinicalStatus ~ \"relapse\" then   Interval[start of condition.onset.toInterval(), end of condition.abatementInterval()] else     (end of condition.abatementInterval()) abatementDate     return if abatementDate is null then       Interval[start of condition.onset.toInterval(), abatementDate)     else       Interval[start of condition.onset.toInterval(), abatementDate]"
+        "valueString": "/*\n@description: Returns an interval representing the normalized prevalence period of a given Condition.\n@comment: Uses the ToInterval and ToAbatementInterval functions to determine the widest potential interval from\nonset to abatement as specified in the given Condition. If the condition is active, or has an abatement date the resulting \ninterval will have a closed ending boundary. Otherwise, the resulting interval will have an open ending boundary.\n*/\ndefine fluent function prevalenceInterval(condition Choice<\"ConditionEncounterDiagnosis\", \"ConditionProblemsHealthConcerns\">):\nif condition.clinicalStatus ~ \"active\"\n  or condition.clinicalStatus ~ \"recurrence\"\n  or condition.clinicalStatus ~ \"relapse\" then\n  Interval[start of condition.onset.toInterval(), end of condition.abatementInterval()]\nelse\n    (end of condition.abatementInterval()) abatementDate\n    return if abatementDate is null then\n      Interval[start of condition.onset.toInterval(), abatementDate)\n    else\n      Interval[start of condition.onset.toInterval(), abatementDate]"
       }, {
         "url": "displaySequence",
-        "valueInteger": 47
+        "valueInteger": 48
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "QICoreCommon"
@@ -905,13 +920,13 @@
         "valueString": "abatementInterval"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Returns an interval representing the normalized abatement of a given Condition. @comment: If the abatement element of the Condition is represented as a DateTime, the result is an interval beginning and ending on that DateTime. If the abatement is represented as a Quantity, the quantity is expected to be a calendar-duration and is interpreted as the age of the patient. The result is an interval from the date the patient turned that age to immediately before one year later. If the abatement is represented as a Quantity Interval, the quantities are expected to be calendar-durations and are interpreted as an age range during which the abatement occurred. The result is an interval from the date the patient turned the starting age of the quantity interval, and ending immediately before one year later than the date the patient turned the ending age of the quantity interval. */ define fluent function abatementInterval(condition Choice<\"ConditionEncounterDiagnosis\", \"ConditionProblemsHealthConcerns\">):  if condition.abatement is DateTime then    Interval[condition.abatement as DateTime, condition.abatement as DateTime]  else if condition.abatement is Quantity then   Interval[Patient.birthDate + (condition.abatement as Quantity),    Patient.birthDate + (condition.abatement as Quantity) + 1 year)  else if condition.abatement is Interval<Quantity> then    Interval[Patient.birthDate + (condition.abatement.low as Quantity),     Patient.birthDate + (condition.abatement.high as Quantity) + 1 year)  else if condition.abatement is Interval<DateTime> then    Interval[condition.abatement.low, condition.abatement.high)  else null as Interval<DateTime>"
+        "valueString": "/*\n@description: Returns an interval representing the normalized abatement of a given Condition.\n@comment: If the abatement element of the Condition is represented as a DateTime, the result\nis an interval beginning and ending on that DateTime.\nIf the abatement is represented as a Quantity, the quantity is expected to be a calendar-duration and is interpreted as the age of the patient. The\nresult is an interval from the date the patient turned that age to immediately before one year later.\nIf the abatement is represented as a Quantity Interval, the quantities are expected to be calendar-durations and are interpreted as an age range during\nwhich the abatement occurred. The result is an interval from the date the patient turned the starting age of the quantity interval, and ending immediately\nbefore one year later than the date the patient turned the ending age of the quantity interval.\n*/\ndefine fluent function abatementInterval(condition Choice<\"ConditionEncounterDiagnosis\", \"ConditionProblemsHealthConcerns\">):\n\tif condition.abatement is DateTime then\n\t  Interval[condition.abatement as DateTime, condition.abatement as DateTime]\n\telse if condition.abatement is Quantity then\n\t\tInterval[Patient.birthDate + (condition.abatement as Quantity),\n\t\t\tPatient.birthDate + (condition.abatement as Quantity) + 1 year)\n\telse if condition.abatement is Interval<Quantity> then\n\t  Interval[Patient.birthDate + (condition.abatement.low as Quantity),\n\t\t  Patient.birthDate + (condition.abatement.high as Quantity) + 1 year)\n\telse if condition.abatement is Interval<DateTime> then\n\t  Interval[condition.abatement.low, condition.abatement.high)\n\telse null as Interval<DateTime>"
       }, {
         "url": "displaySequence",
-        "valueInteger": 48
+        "valueInteger": 49
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "Status"
@@ -920,13 +935,13 @@
         "valueString": "isAssessmentPerformed"
       }, {
         "url": "statement",
-        "valueString": "//This library contains functions used to constrain FHIR resource elements for measures authored by NCQA, based on QICore 6.0.0 resources including IG and authoring patterns. The functions may appear similar to some QICoreCommon functions but differ in that they have constraints that are relevant for measures authored by NCQA.  //Assessment, Performed define fluent function isAssessmentPerformed(Obs List<ObservationScreeningAssessment>):   Obs O     where O.status in { 'final', 'amended', 'corrected' }"
+        "valueString": "//This library contains functions used to constrain FHIR resource elements for measures authored by NCQA, based on QICore 6.0.0 resources including IG and authoring patterns. The functions may appear similar to some QICoreCommon functions but differ in that they have constraints that are relevant for measures authored by NCQA.\n\n//Assessment, Performed\ndefine fluent function isAssessmentPerformed(Obs List<ObservationScreeningAssessment>):\n  Obs O\n    where O.status in { 'final', 'amended', 'corrected' }"
       }, {
         "url": "displaySequence",
-        "valueInteger": 49
+        "valueInteger": 50
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "Status"
@@ -935,13 +950,13 @@
         "valueString": "isInterventionOrder"
       }, {
         "url": "statement",
-        "valueString": "//Intervention, Order define fluent function isInterventionOrder(ServiceRequest List<ServiceRequest>):   ServiceRequest S     where S.status in { 'active', 'completed' }       and S.intent = 'order'"
+        "valueString": "//Intervention, Order\ndefine fluent function isInterventionOrder(ServiceRequest List<ServiceRequest>):\n  ServiceRequest S\n    where S.status in { 'active', 'completed' }\n      and S.intent = 'order'"
       }, {
         "url": "displaySequence",
-        "valueInteger": 50
+        "valueInteger": 51
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "Status"
@@ -950,10 +965,10 @@
         "valueString": "isInterventionPerformed"
       }, {
         "url": "statement",
-        "valueString": "//Intervention, Performed define fluent function isInterventionPerformed(Proc List<Procedure>):   Proc P     where P.status ~ 'completed'"
+        "valueString": "//Intervention, Performed\ndefine fluent function isInterventionPerformed(Proc List<Procedure>):\n  Proc P\n    where P.status ~ 'completed'"
       }, {
         "url": "displaySequence",
-        "valueInteger": 51
+        "valueInteger": 52
       } ]
     } ],
     "name": "EffectiveDataRequirements",
@@ -967,23 +982,35 @@
     "relatedArtifact": [ {
       "type": "depends-on",
       "display": "Library SDE",
-      "resource": "https://madie.cms.gov/Library/SupplementalDataElements|5.1.000"
+      "resource": "Library/SupplementalDataElements|5.1.000"
     }, {
       "type": "depends-on",
       "display": "Library FHIRHelpers",
-      "resource": "https://madie.cms.gov/Library/FHIRHelpers|4.4.000"
+      "resource": "Library/FHIRHelpers|4.4.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library FHIRHelpers",
+      "resource": "Library/FHIRHelpers|4.4.000"
     }, {
       "type": "depends-on",
       "display": "Library CQMCommon",
-      "resource": "https://madie.cms.gov/Library/CQMCommon|4.1.000"
+      "resource": "Library/CQMCommon|4.1.000"
     }, {
       "type": "depends-on",
       "display": "Library QICoreCommon",
-      "resource": "https://madie.cms.gov/Library/QICoreCommon|4.0.000"
+      "resource": "Library/QICoreCommon|4.0.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library QICoreCommon",
+      "resource": "Library/QICoreCommon|4.0.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library FHIRHelpers",
+      "resource": "Library/FHIRHelpers|4.4.000"
     }, {
       "type": "depends-on",
       "display": "Library Status",
-      "resource": "https://madie.cms.gov/Library/Status|1.13.000"
+      "resource": "Library/Status|1.13.000"
     }, {
       "type": "depends-on",
       "display": "Code system SNOMEDCT",
@@ -1012,6 +1039,10 @@
       "type": "depends-on",
       "display": "Code system ICD10CM",
       "resource": "http://hl7.org/fhir/sid/icd-10-cm"
+    }, {
+      "type": "depends-on",
+      "display": "Code system SNOMEDCT",
+      "resource": "http://snomed.info/sct"
     }, {
       "type": "depends-on",
       "display": "Code system LOINC",
@@ -1164,6 +1195,12 @@
       "max": "1",
       "type": "Period"
     }, {
+      "name": "SDE Sex",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "Coding"
+    }, {
       "name": "Numerator",
       "use": "out",
       "min": 0,
@@ -1176,31 +1213,13 @@
       "max": "*",
       "type": "Resource"
     }, {
-      "name": "Initial Population",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Resource"
-    }, {
-      "name": "Denominator Exclusions",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Resource"
-    }, {
-      "name": "Denominator Exceptions",
-      "use": "out",
-      "min": 0,
-      "max": "*",
-      "type": "Resource"
-    }, {
-      "name": "SDE Sex",
-      "use": "out",
-      "min": 0,
-      "max": "1",
-      "type": "Coding"
-    }, {
       "name": "SDE Payer",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Resource"
+    }, {
+      "name": "Initial Population",
       "use": "out",
       "min": 0,
       "max": "*",
@@ -1212,36 +1231,42 @@
       "max": "1",
       "type": "Resource"
     }, {
+      "name": "Denominator Exclusions",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Resource"
+    }, {
       "name": "SDE Race",
       "use": "out",
       "min": 0,
       "max": "1",
       "type": "Resource"
+    }, {
+      "name": "Denominator Exceptions",
+      "use": "out",
+      "min": 0,
+      "max": "*",
+      "type": "Resource"
     } ],
     "dataRequirement": [ {
       "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+    }, {
+      "type": "Patient",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "extension", "birthDate", "birthDate.value", "url" ]
+      "mustSupport": [ "url", "value.value" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "value.value" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
     }, {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type", "hospitalization", "hospitalization.dischargeDisposition", "status", "status.value", "period", "location", "location.type" ],
-      "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
-      } ]
-    }, {
-      "type": "Encounter",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type", "period", "status", "status.value", "location", "location.type" ],
-      "codeFilter": [ {
-        "path": "type",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1003"
-      } ]
-    }, {
-      "type": "Encounter",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type", "period", "status", "status.value", "location", "location.type", "reasonCode", "hospitalization", "hospitalization.dischargeDisposition" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
       "codeFilter": [ {
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
@@ -1251,7 +1276,10 @@
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-encounter-diagnosis" ]
     }, {
       "type": "Condition",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-encounter-diagnosis" ],
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ]
+    }, {
+      "type": "Condition",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
       "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
@@ -1259,20 +1287,126 @@
       } ]
     }, {
       "type": "Condition",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "verificationStatus" ]
-    }, {
-      "type": "Condition",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-encounter-diagnosis" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4017"
       } ]
     }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "Location",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location" ]
+    }, {
+      "type": "MedicationAdministration",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministration" ],
+      "mustSupport": [ "medication" ],
+      "codeFilter": [ {
+        "path": "medication",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4019"
+      } ]
+    }, {
+      "type": "MedicationAdministration",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministration" ],
+      "mustSupport": [ "medication.reference.value" ]
+    }, {
+      "type": "Medication",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medication" ],
+      "mustSupport": [ "id.value", "code" ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+    }, {
+      "type": "Procedure",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ],
+      "mustSupport": [ "code", "performed", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.2000.5"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode", "hospitalization", "hospitalization.dischargeDisposition" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "Coverage",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ],
+      "mustSupport": [ "type", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
+      } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
+    }, {
+      "type": "AllergyIntolerance",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-allergyintolerance" ],
+      "mustSupport": [ "code", "clinicalStatus", "verificationStatus", "onset" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1170.4"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "AdverseEvent",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-adverseevent" ],
+      "mustSupport": [ "event", "date", "date.value", "detected", "detected.value", "recordedDate", "recordedDate.value", "actuality", "actuality.value" ],
+      "codeFilter": [ {
+        "path": "event",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1170.6"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4036"
@@ -1280,7 +1414,7 @@
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1170.3"
@@ -1288,7 +1422,7 @@
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4025"
@@ -1296,7 +1430,7 @@
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4043"
@@ -1304,7 +1438,7 @@
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4055"
@@ -1312,10 +1446,42 @@
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1170.5"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "MedicationRequest",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest" ],
+      "mustSupport": [ "medication" ],
+      "codeFilter": [ {
+        "path": "medication",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4045"
+      } ]
+    }, {
+      "type": "MedicationRequest",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest" ],
+      "mustSupport": [ "medication.reference.value" ]
+    }, {
+      "type": "Medication",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medication" ],
+      "mustSupport": [ "id.value", "code" ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
       } ]
     }, {
       "type": "Condition",
@@ -1330,9 +1496,17 @@
         } ]
       } ]
     }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4028"
@@ -1340,7 +1514,7 @@
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.114.12.1012"
@@ -1348,7 +1522,7 @@
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "code": [ {
@@ -1360,7 +1534,7 @@
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "code": [ {
@@ -1372,7 +1546,7 @@
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "code": [ {
@@ -1384,7 +1558,7 @@
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "code": [ {
@@ -1396,7 +1570,7 @@
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "code": [ {
@@ -1408,15 +1582,63 @@
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4048"
       } ]
     }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "Procedure",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ],
+      "mustSupport": [ "code", "performed", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4056"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "Procedure",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ],
+      "mustSupport": [ "code" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.69"
+      } ]
+    }, {
+      "type": "Procedure",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ],
+      "mustSupport": [ "code" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4052"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.247"
@@ -1424,7 +1646,7 @@
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4026"
@@ -1432,10 +1654,94 @@
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
-      "mustSupport": [ "code", "verificationStatus" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4031"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "Procedure",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ],
+      "mustSupport": [ "code", "performed", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1170.2"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode", "hospitalization", "hospitalization.dischargeDisposition" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode", "hospitalization", "hospitalization.dischargeDisposition" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "hospitalization", "hospitalization.dischargeDisposition", "status", "status.value", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1003"
+      } ]
+    }, {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-screening-assessment" ],
+      "mustSupport": [ "code", "effective" ],
+      "codeFilter": [ {
+        "path": "code",
+        "code": [ {
+          "system": "http://loinc.org",
+          "code": "45755-6",
+          "display": "Hospice care [Minimum Data Set]"
+        } ]
+      } ]
+    }, {
+      "type": "ServiceRequest",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicerequest" ],
+      "mustSupport": [ "code", "authoredOn", "authoredOn.value" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584"
+      } ]
+    }, {
+      "type": "Procedure",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ],
+      "mustSupport": [ "code", "performed" ],
+      "codeFilter": [ {
+        "path": "code",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584"
       } ]
     }, {
       "type": "Condition",
@@ -1445,6 +1751,34 @@
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.1165"
       } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "Observation",
+      "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus" ],
+      "mustSupport": [ "status", "status.value", "value", "effective", "effective.value" ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
     }, {
       "type": "Condition",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns" ],
@@ -1458,75 +1792,76 @@
         } ]
       } ]
     }, {
-      "type": "Resource",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Resource" ],
-      "mustSupport": [ "id", "id.value" ]
-    }, {
-      "type": "Location",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location" ]
-    }, {
-      "type": "MedicationAdministration",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministration" ],
-      "mustSupport": [ "medication", "status", "status.value", "effective" ],
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
       "codeFilter": [ {
-        "path": "medication",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4019"
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
       } ]
     }, {
-      "type": "MedicationAdministration",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministration" ],
-      "mustSupport": [ "medication.reference.value", "status", "status.value", "effective" ]
-    }, {
-      "type": "Medication",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medication" ],
-      "mustSupport": [ "id.value", "code" ]
-    }, {
       "type": "Procedure",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ],
-      "mustSupport": [ "code", "performed", "status", "status.value" ],
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurenotdone" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.2000.5"
       } ]
     }, {
       "type": "Procedure",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ],
-      "mustSupport": [ "code", "performed", "status", "status.value" ],
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurenotdone" ],
+      "mustSupport": [ "code" ],
       "codeFilter": [ {
         "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4056"
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.2000.5"
       } ]
     }, {
-      "type": "Procedure",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ],
-      "mustSupport": [ "code", "performed", "status", "status.value" ],
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
       "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1045.69"
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
       } ]
     }, {
-      "type": "Procedure",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ],
-      "mustSupport": [ "code", "performed", "status", "status.value" ],
+      "type": "MedicationAdministration",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministrationnotdone" ],
+      "mustSupport": [ "medication" ],
       "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4052"
+        "path": "medication",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4019"
       } ]
     }, {
-      "type": "Procedure",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ],
-      "mustSupport": [ "code", "performed", "status", "status.value" ],
+      "type": "MedicationAdministration",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministrationnotdone" ],
+      "mustSupport": [ "medication" ],
       "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1170.2"
+        "path": "medication",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4019"
       } ]
     }, {
-      "type": "Procedure",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure" ],
-      "mustSupport": [ "code", "performed", "status", "status.value" ],
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
       "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584"
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
       } ]
     }, {
       "type": "Coverage",
@@ -1537,93 +1872,21 @@
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
       } ]
     }, {
-      "type": "AllergyIntolerance",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-allergyintolerance" ],
-      "mustSupport": [ "code", "clinicalStatus", "verificationStatus", "onset" ],
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "period", "status", "status.value", "reasonCode" ],
       "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1170.4"
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.464.1003.101.12.1010"
       } ]
     }, {
-      "type": "AdverseEvent",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-adverseevent" ],
-      "mustSupport": [ "event", "date", "date.value", "detected", "detected.value", "recordedDate", "recordedDate.value", "actuality", "actuality.value" ],
-      "codeFilter": [ {
-        "path": "event",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1170.6"
-      } ]
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
     }, {
-      "type": "MedicationRequest",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest" ],
-      "mustSupport": [ "medication", "status", "status.value", "intent", "intent.value", "authoredOn", "authoredOn.value" ],
-      "codeFilter": [ {
-        "path": "medication",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4045"
-      } ]
-    }, {
-      "type": "MedicationRequest",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest" ],
-      "mustSupport": [ "medication.reference.value", "status", "status.value", "intent", "intent.value", "authoredOn", "authoredOn.value" ]
-    }, {
-      "type": "Observation",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-screening-assessment" ],
-      "mustSupport": [ "code", "effective", "status", "status.value" ],
-      "codeFilter": [ {
-        "path": "code",
-        "code": [ {
-          "system": "http://loinc.org",
-          "code": "45755-6",
-          "display": "Hospice care [Minimum Data Set]"
-        } ]
-      } ]
-    }, {
-      "type": "Observation",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-screening-assessment" ],
-      "mustSupport": [ "value", "status", "status.value" ]
-    }, {
-      "type": "ServiceRequest",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-servicerequest" ],
-      "mustSupport": [ "code", "authoredOn", "authoredOn.value", "status", "status.value", "intent", "intent.value" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.526.3.1584"
-      } ]
-    }, {
-      "type": "Observation",
-      "profile": [ "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus" ],
-      "mustSupport": [ "status", "status.value", "value", "effective", "effective.value" ]
-    }, {
-      "type": "Procedure",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurenotdone" ],
-      "mustSupport": [ "code", "statusReason", "extension" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.2000.5"
-      } ]
-    }, {
-      "type": "Procedure",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurenotdone" ],
-      "mustSupport": [ "code", "statusReason", "extension" ],
-      "codeFilter": [ {
-        "path": "code",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.2000.5"
-      } ]
-    }, {
-      "type": "MedicationAdministration",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministrationnotdone" ],
-      "mustSupport": [ "medication", "statusReason", "extension" ],
-      "codeFilter": [ {
-        "path": "medication",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4019"
-      } ]
-    }, {
-      "type": "MedicationAdministration",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministrationnotdone" ],
-      "mustSupport": [ "medication", "statusReason", "extension" ],
-      "codeFilter": [ {
-        "path": "medication",
-        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.3157.4019"
-      } ]
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
     } ]
   } ],
   "extension": [ {
@@ -1645,6 +1908,12 @@
     } ]
   }, {
     "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
+    "valueReference": {
+      "reference": "#effective-data-requirements"
+    }
+  }, {
+    "id": "effective-data-requirements",
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
     "valueReference": {
       "reference": "#effective-data-requirements"
     }
@@ -1717,7 +1986,7 @@
   "title": "Appropriate Treatment for ST-Segment Elevation Myocardial Infarction (STEMI) Patients in the Emergency Department FHIR",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-20T16:52:31+00:00",
+  "date": "2025-07-14T20:51:02+00:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {

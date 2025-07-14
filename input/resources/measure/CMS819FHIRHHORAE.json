@@ -22,7 +22,7 @@
         "display": "Female (finding)"
       }
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "SupplementalDataElements"
@@ -31,13 +31,13 @@
         "valueString": "SDE Sex"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Sex\":   case     when Patient.sex = '248153007' then \"Male (finding)\"     when Patient.sex = '248152002' then \"Female (finding)\"     else null   end"
+        "valueString": "define \"SDE Sex\":\n  case\n    when Patient.sex = '248153007' then \"Male (finding)\"\n    when Patient.sex = '248152002' then \"Female (finding)\"\n    else null\n  end"
       }, {
         "url": "displaySequence",
         "valueInteger": 0
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS819FHIRHHORAE"
@@ -46,13 +46,13 @@
         "valueString": "SDE Sex"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Sex\":   SDE.\"SDE Sex\""
+        "valueString": "define \"SDE Sex\":\n  SDE.\"SDE Sex\""
       }, {
         "url": "displaySequence",
         "valueInteger": 1
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS819FHIRHHORAE"
@@ -61,13 +61,13 @@
         "valueString": "Non Enteral Opioid Antagonist Administration"
       }, {
         "url": "statement",
-        "valueString": "define \"Non Enteral Opioid Antagonist Administration\":   [\"MedicationAdministration\": \"Opioid Antagonist\"] AntagonistGiven     where AntagonistGiven.status = 'completed'"
+        "valueString": "define \"Non Enteral Opioid Antagonist Administration\":\n  [\"MedicationAdministration\": \"Opioid Antagonist\"] AntagonistGiven\n    where AntagonistGiven.status = 'completed'"
       }, {
         "url": "displaySequence",
         "valueInteger": 2
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS819FHIRHHORAE"
@@ -76,13 +76,13 @@
         "valueString": "Opioid Administration"
       }, {
         "url": "statement",
-        "valueString": "define \"Opioid Administration\":   [\"MedicationAdministration\": \"Opioids, All\"] Opioids     where Opioids.status = 'completed'"
+        "valueString": "define \"Opioid Administration\":\n  [\"MedicationAdministration\": \"Opioids, All\"] Opioids\n    where Opioids.status = 'completed'"
       }, {
         "url": "displaySequence",
         "valueInteger": 3
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS819FHIRHHORAE"
@@ -91,13 +91,13 @@
         "valueString": "Qualifying Encounter"
       }, {
         "url": "statement",
-        "valueString": "define \"Qualifying Encounter\":   [\"Encounter\": \"Encounter Inpatient\"] InpatientEncounter     where AgeInYearsAt(date from start of InpatientEncounter.period) >= 18       and InpatientEncounter.period ends during day of \"Measurement Period\"       and InpatientEncounter.status = 'finished'"
+        "valueString": "define \"Qualifying Encounter\":\n  [\"Encounter\": \"Encounter Inpatient\"] InpatientEncounter\n    where AgeInYearsAt(date from start of InpatientEncounter.period) >= 18\n      and InpatientEncounter.period ends during day of \"Measurement Period\"\n      and InpatientEncounter.status = 'finished'"
       }, {
         "url": "displaySequence",
         "valueInteger": 4
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS819FHIRHHORAE"
@@ -106,13 +106,13 @@
         "valueString": "Encounter With Opioid Administration Outside Of Operating Room"
       }, {
         "url": "statement",
-        "valueString": "define \"Encounter With Opioid Administration Outside Of Operating Room\":   \"Qualifying Encounter\" InpatientEncounter     with \"Opioid Administration\" OpioidGiven       such that OpioidGiven.effective.toInterval ( ) starts during InpatientEncounter.hospitalizationWithObservation ( )         and not exists ( InpatientEncounter.location EncounterLocation             where EncounterLocation.location.getLocation ( ).type in \"Operating Room Suite\"               and OpioidGiven.effective.toInterval ( ) starts during EncounterLocation.period         )"
+        "valueString": "define \"Encounter With Opioid Administration Outside Of Operating Room\":\n  \"Qualifying Encounter\" InpatientEncounter\n    with \"Opioid Administration\" OpioidGiven\n      such that OpioidGiven.effective.toInterval ( ) starts during InpatientEncounter.hospitalizationWithObservation ( )\n        and not exists ( InpatientEncounter.location EncounterLocation\n            where EncounterLocation.location.getLocation ( ).type in \"Operating Room Suite\"\n              and OpioidGiven.effective.toInterval ( ) starts during EncounterLocation.period\n        )"
       }, {
         "url": "displaySequence",
         "valueInteger": 5
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS819FHIRHHORAE"
@@ -121,13 +121,13 @@
         "valueString": "Initial Population"
       }, {
         "url": "statement",
-        "valueString": "define \"Initial Population\":   \"Encounter With Opioid Administration Outside Of Operating Room\""
+        "valueString": "define \"Initial Population\":\n  \"Encounter With Opioid Administration Outside Of Operating Room\""
       }, {
         "url": "displaySequence",
         "valueInteger": 6
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS819FHIRHHORAE"
@@ -136,13 +136,13 @@
         "valueString": "Denominator"
       }, {
         "url": "statement",
-        "valueString": "define \"Denominator\":   \"Initial Population\""
+        "valueString": "define \"Denominator\":\n  \"Initial Population\""
       }, {
         "url": "displaySequence",
         "valueInteger": 7
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS819FHIRHHORAE"
@@ -151,13 +151,13 @@
         "valueString": "Encounter With NonOperating Room Opioid And Antagonist Administration"
       }, {
         "url": "statement",
-        "valueString": "define \"Encounter With NonOperating Room Opioid And Antagonist Administration\":   // Excludes opioid antagonist administered in operating room AND excludes opioids administered in operating room AND opioid is administered before opioid antagonist AND limits opioid antagonist to non-enteral routes//      from     \"Non Enteral Opioid Antagonist Administration\" NonEnteralOpioidAntagonistGiven,     \"Opioid Administration\" OpioidGiven,     \"Denominator\" InpatientHospitalization     where not exists ( InpatientHospitalization.location EncounterLocation         where EncounterLocation.location.getLocation ( ).type in \"Operating Room Suite\"           and NonEnteralOpioidAntagonistGiven.effective.toInterval ( ) starts during EncounterLocation.period     )       and ( NonEnteralOpioidAntagonistGiven.effective.toInterval ( ) starts during InpatientHospitalization.hospitalizationWithObservation ( )           and OpioidGiven.effective.toInterval ( ) starts during InpatientHospitalization.hospitalizationWithObservation ( )           and OpioidGiven.effective.toInterval ( ) ends 12 hours or less before start of NonEnteralOpioidAntagonistGiven.effective.toInterval ( )           and NonEnteralOpioidAntagonistGiven.dosage.route in \"Routes of Administration for Opioid Antagonists\"       )     return InpatientHospitalization"
+        "valueString": "define \"Encounter With NonOperating Room Opioid And Antagonist Administration\":\n  // Excludes opioid antagonist administered in operating room AND excludes opioids administered in operating room AND opioid is administered before opioid antagonist AND limits opioid antagonist to non-enteral routes//\n  \n  from\n    \"Non Enteral Opioid Antagonist Administration\" NonEnteralOpioidAntagonistGiven,\n    \"Opioid Administration\" OpioidGiven,\n    \"Denominator\" InpatientHospitalization\n    where not exists ( InpatientHospitalization.location EncounterLocation\n        where EncounterLocation.location.getLocation ( ).type in \"Operating Room Suite\"\n          and NonEnteralOpioidAntagonistGiven.effective.toInterval ( ) starts during EncounterLocation.period\n    )\n      and ( NonEnteralOpioidAntagonistGiven.effective.toInterval ( ) starts during InpatientHospitalization.hospitalizationWithObservation ( )\n          and OpioidGiven.effective.toInterval ( ) starts during InpatientHospitalization.hospitalizationWithObservation ( )\n          and OpioidGiven.effective.toInterval ( ) ends 12 hours or less before start of NonEnteralOpioidAntagonistGiven.effective.toInterval ( )\n          and NonEnteralOpioidAntagonistGiven.dosage.route in \"Routes of Administration for Opioid Antagonists\"\n      )\n    return InpatientHospitalization"
       }, {
         "url": "displaySequence",
         "valueInteger": 8
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS819FHIRHHORAE"
@@ -166,28 +166,43 @@
         "valueString": "Numerator"
       }, {
         "url": "statement",
-        "valueString": "define \"Numerator\":   \"Encounter With NonOperating Room Opioid And Antagonist Administration\""
+        "valueString": "define \"Numerator\":\n  \"Encounter With NonOperating Room Opioid And Antagonist Administration\""
       }, {
         "url": "displaySequence",
         "valueInteger": 9
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
-        "valueString": "SupplementalDataElements"
+        "valueString": "CMS819FHIRHHORAE"
       }, {
         "url": "name",
-        "valueString": "SDE Payer"
+        "valueString": "Denominator"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Payer\":   [Coverage: type in \"Payer Type\"] Payer     return {       code: Payer.type,       period: Payer.period     }"
+        "valueString": "define \"Denominator\":\n  \"Initial Population\""
       }, {
         "url": "displaySequence",
         "valueInteger": 10
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SupplementalDataElements"
+      }, {
+        "url": "name",
+        "valueString": "SDE Payer"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Payer\":\n  [Coverage: type in \"Payer Type\"] Payer\n    return {\n      code: Payer.type,\n      period: Payer.period\n    }"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 11
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS819FHIRHHORAE"
@@ -196,28 +211,43 @@
         "valueString": "SDE Payer"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Payer\":   SDE.\"SDE Payer\""
-      }, {
-        "url": "displaySequence",
-        "valueInteger": 11
-      } ]
-    }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
-      "extension": [ {
-        "url": "libraryName",
-        "valueString": "SupplementalDataElements"
-      }, {
-        "url": "name",
-        "valueString": "SDE Ethnicity"
-      }, {
-        "url": "statement",
-        "valueString": "define \"SDE Ethnicity\":   Patient.ethnicity E     return Tuple {       codes: { E.ombCategory } union E.detailed,       display: E.text     }"
+        "valueString": "define \"SDE Payer\":\n  SDE.\"SDE Payer\""
       }, {
         "url": "displaySequence",
         "valueInteger": 12
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "CMS819FHIRHHORAE"
+      }, {
+        "url": "name",
+        "valueString": "Initial Population"
+      }, {
+        "url": "statement",
+        "valueString": "define \"Initial Population\":\n  \"Encounter With Opioid Administration Outside Of Operating Room\""
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 13
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
+      "extension": [ {
+        "url": "libraryName",
+        "valueString": "SupplementalDataElements"
+      }, {
+        "url": "name",
+        "valueString": "SDE Ethnicity"
+      }, {
+        "url": "statement",
+        "valueString": "define \"SDE Ethnicity\":\n  Patient.ethnicity E\n    return Tuple {\n      codes: { E.ombCategory } union E.detailed,\n      display: E.text\n    }"
+      }, {
+        "url": "displaySequence",
+        "valueInteger": 14
+      } ]
+    }, {
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS819FHIRHHORAE"
@@ -226,13 +256,13 @@
         "valueString": "SDE Ethnicity"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Ethnicity\":   SDE.\"SDE Ethnicity\""
+        "valueString": "define \"SDE Ethnicity\":\n  SDE.\"SDE Ethnicity\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 13
+        "valueInteger": 15
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "SupplementalDataElements"
@@ -241,13 +271,13 @@
         "valueString": "SDE Race"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Race\":   Patient.race R     return Tuple {       codes: R.ombCategory union R.detailed,       display: R.text     }"
+        "valueString": "define \"SDE Race\":\n  Patient.race R\n    return Tuple {\n      codes: R.ombCategory union R.detailed,\n      display: R.text\n    }"
       }, {
         "url": "displaySequence",
-        "valueInteger": 14
+        "valueInteger": 16
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CMS819FHIRHHORAE"
@@ -256,13 +286,13 @@
         "valueString": "SDE Race"
       }, {
         "url": "statement",
-        "valueString": "define \"SDE Race\":   SDE.\"SDE Race\""
+        "valueString": "define \"SDE Race\":\n  SDE.\"SDE Race\""
       }, {
         "url": "displaySequence",
-        "valueInteger": 15
+        "valueInteger": 17
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "FHIRHelpers"
@@ -274,10 +304,10 @@
         "valueString": "define function ToString(value uri): value.value"
       }, {
         "url": "displaySequence",
-        "valueInteger": 16
+        "valueInteger": 18
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "FHIRHelpers"
@@ -286,13 +316,13 @@
         "valueString": "ToInterval"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Converts the given [Period](https://hl7.org/fhir/datatypes.html#Period) value to a CQL DateTime Interval @comment: If the start value of the given period is unspecified, the starting boundary of the resulting interval will be open (meaning the start of the interval is unknown, as opposed to interpreted as the beginning of time). */ define function ToInterval(period FHIR.Period):     if period is null then         null     else         if period.\"start\" is null then             Interval(period.\"start\".value, period.\"end\".value]         else             Interval[period.\"start\".value, period.\"end\".value]"
+        "valueString": "/*\n@description: Converts the given [Period](https://hl7.org/fhir/datatypes.html#Period)\nvalue to a CQL DateTime Interval\n@comment: If the start value of the given period is unspecified, the starting\nboundary of the resulting interval will be open (meaning the start of the interval\nis unknown, as opposed to interpreted as the beginning of time).\n*/\ndefine function ToInterval(period FHIR.Period):\n    if period is null then\n        null\n    else\n        if period.\"start\" is null then\n            Interval(period.\"start\".value, period.\"end\".value]\n        else\n            Interval[period.\"start\".value, period.\"end\".value]"
       }, {
         "url": "displaySequence",
-        "valueInteger": 17
+        "valueInteger": 19
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CQMCommon"
@@ -301,13 +331,13 @@
         "valueString": "hospitalizationWithObservation"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Hospitalization with Observation returns the total interval from the start of any immediately prior emergency department visit through the observation visit to the discharge of the given encounter */ define fluent function hospitalizationWithObservation(TheEncounter Encounter ):   TheEncounter Visit     let ObsVisit: Last([Encounter: \"Observation Services\"] LastObs       where LastObs.status = 'finished'             and LastObs.period ends 1 hour or less on or before start of Visit.period       sort by end of period      ),      VisitStart: Coalesce(start of ObsVisit.period, start of Visit.period),      EDVisit: Last([Encounter: \"Emergency Department Visit\"] LastED       where LastED.status = 'finished'             and LastED.period ends 1 hour or less on or before VisitStart       sort by end of period      )     return Interval[Coalesce(start of EDVisit.period, VisitStart), end of Visit.period]"
+        "valueString": "/*\n@description: Hospitalization with Observation returns the total interval from the start of any immediately prior emergency department visit through the observation visit to the discharge of the given encounter\n*/\ndefine fluent function hospitalizationWithObservation(TheEncounter Encounter ):\n  TheEncounter Visit\n  \t\tlet ObsVisit: Last([Encounter: \"Observation Services\"] LastObs\n  \t\t\t\twhere LastObs.status = 'finished'\n            and LastObs.period ends 1 hour or less on or before start of Visit.period\n  \t\t\t\tsort by end of period\n  \t\t\t),\n  \t\t\tVisitStart: Coalesce(start of ObsVisit.period, start of Visit.period),\n  \t\t\tEDVisit: Last([Encounter: \"Emergency Department Visit\"] LastED\n  \t\t\t\twhere LastED.status = 'finished'\n            and LastED.period ends 1 hour or less on or before VisitStart\n  \t\t\t\tsort by end of period\n  \t\t\t)\n  \t\treturn Interval[Coalesce(start of EDVisit.period, VisitStart), end of Visit.period]"
       }, {
         "url": "displaySequence",
-        "valueInteger": 18
+        "valueInteger": 20
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "CQMCommon"
@@ -316,13 +346,13 @@
         "valueString": "getLocation"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Returns the Location resource specified by the given reference. */ define fluent function getLocation(reference Reference):   singleton from (     [Location] L where reference.references(L)   )"
+        "valueString": "/*\n@description: Returns the Location resource specified by the given reference.\n*/\ndefine fluent function getLocation(reference Reference):\n  singleton from (\n    [Location] L where reference.references(L)\n  )"
       }, {
         "url": "displaySequence",
-        "valueInteger": 19
+        "valueInteger": 21
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "QICoreCommon"
@@ -331,13 +361,13 @@
         "valueString": "references"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Returns true if the given reference is to the given resource @comment: Returns true if the `id` element of the given resource exactly equals the tail of the given reference. NOTE: This function assumes resources from the same source server. */ define fluent function references(reference Reference, resource Resource):   resource.id = Last(Split(reference.reference, '/'))"
+        "valueString": "/*\n@description: Returns true if the given reference is to the given resource\n@comment: Returns true if the `id` element of the given resource exactly equals the tail of the given reference.\nNOTE: This function assumes resources from the same source server.\n*/\ndefine fluent function references(reference Reference, resource Resource):\n  resource.id = Last(Split(reference.reference, '/'))"
       }, {
         "url": "displaySequence",
-        "valueInteger": 20
+        "valueInteger": 22
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "FHIRHelpers"
@@ -346,13 +376,13 @@
         "valueString": "ToConcept"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Converts the given FHIR [CodeableConcept](https://hl7.org/fhir/datatypes.html#CodeableConcept) value to a CQL Concept. */ define function ToConcept(concept FHIR.CodeableConcept):     if concept is null then         null     else         System.Concept {             codes: concept.coding C return ToCode(C),             display: concept.text.value         }"
+        "valueString": "/*\n@description: Converts the given FHIR [CodeableConcept](https://hl7.org/fhir/datatypes.html#CodeableConcept) value to a CQL Concept.\n*/\ndefine function ToConcept(concept FHIR.CodeableConcept):\n    if concept is null then\n        null\n    else\n        System.Concept {\n            codes: concept.coding C return ToCode(C),\n            display: concept.text.value\n        }"
       }, {
         "url": "displaySequence",
-        "valueInteger": 21
+        "valueInteger": 23
       } ]
     }, {
-      "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+      "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-logicDefinition",
       "extension": [ {
         "url": "libraryName",
         "valueString": "FHIRHelpers"
@@ -361,10 +391,10 @@
         "valueString": "ToCode"
       }, {
         "url": "statement",
-        "valueString": "/* @description: Converts the given FHIR [Coding](https://hl7.org/fhir/datatypes.html#Coding) value to a CQL Code. */ define function ToCode(coding FHIR.Coding):     if coding is null then         null     else         System.Code {           code: coding.code.value,           system: coding.system.value,           version: coding.version.value,           display: coding.display.value         }"
+        "valueString": "/*\n@description: Converts the given FHIR [Coding](https://hl7.org/fhir/datatypes.html#Coding) value to a CQL Code.\n*/\ndefine function ToCode(coding FHIR.Coding):\n    if coding is null then\n        null\n    else\n        System.Code {\n          code: coding.code.value,\n          system: coding.system.value,\n          version: coding.version.value,\n          display: coding.display.value\n        }"
       }, {
         "url": "displaySequence",
-        "valueInteger": 22
+        "valueInteger": 24
       } ]
     } ],
     "name": "EffectiveDataRequirements",
@@ -378,19 +408,31 @@
     "relatedArtifact": [ {
       "type": "depends-on",
       "display": "Library SDE",
-      "resource": "https://madie.cms.gov/Library/SupplementalDataElements|5.1.000"
+      "resource": "Library/SupplementalDataElements|5.1.000"
     }, {
       "type": "depends-on",
       "display": "Library FHIRHelpers",
-      "resource": "https://madie.cms.gov/Library/FHIRHelpers|4.4.000"
+      "resource": "Library/FHIRHelpers|4.4.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library FHIRHelpers",
+      "resource": "Library/FHIRHelpers|4.4.000"
     }, {
       "type": "depends-on",
       "display": "Library QICoreCommon",
-      "resource": "https://madie.cms.gov/Library/QICoreCommon|4.0.000"
+      "resource": "Library/QICoreCommon|4.0.000"
     }, {
       "type": "depends-on",
       "display": "Library CQMCommon",
-      "resource": "https://madie.cms.gov/Library/CQMCommon|4.1.000"
+      "resource": "Library/CQMCommon|4.1.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library FHIRHelpers",
+      "resource": "Library/FHIRHelpers|4.4.000"
+    }, {
+      "type": "depends-on",
+      "display": "Library QICoreCommon",
+      "resource": "Library/QICoreCommon|4.0.000"
     }, {
       "type": "depends-on",
       "display": "Code system SNOMEDCT",
@@ -435,6 +477,12 @@
       "max": "1",
       "type": "Period"
     }, {
+      "name": "SDE Sex",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "Coding"
+    }, {
       "name": "Numerator",
       "use": "out",
       "min": 0,
@@ -447,19 +495,13 @@
       "max": "*",
       "type": "Resource"
     }, {
-      "name": "Initial Population",
+      "name": "SDE Payer",
       "use": "out",
       "min": 0,
       "max": "*",
       "type": "Resource"
     }, {
-      "name": "SDE Sex",
-      "use": "out",
-      "min": 0,
-      "max": "1",
-      "type": "Coding"
-    }, {
-      "name": "SDE Payer",
+      "name": "Initial Population",
       "use": "out",
       "min": 0,
       "max": "*",
@@ -479,12 +521,19 @@
     } ],
     "dataRequirement": [ {
       "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+    }, {
+      "type": "Patient",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
-      "mustSupport": [ "extension", "url" ]
+      "mustSupport": [ "url", "value.value" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "value.value" ]
     }, {
       "type": "MedicationAdministration",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministration" ],
-      "mustSupport": [ "medication", "status", "status.value", "effective", "dosage", "dosage.route" ],
+      "mustSupport": [ "medication" ],
       "codeFilter": [ {
         "path": "medication",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1248.119"
@@ -492,7 +541,15 @@
     }, {
       "type": "MedicationAdministration",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministration" ],
-      "mustSupport": [ "medication", "status", "status.value", "effective", "dosage", "dosage.route" ],
+      "mustSupport": [ "medication.reference.value" ]
+    }, {
+      "type": "Medication",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medication" ],
+      "mustSupport": [ "id.value", "code" ]
+    }, {
+      "type": "MedicationAdministration",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministration" ],
+      "mustSupport": [ "medication" ],
       "codeFilter": [ {
         "path": "medication",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1196.226"
@@ -500,15 +557,26 @@
     }, {
       "type": "MedicationAdministration",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationadministration" ],
-      "mustSupport": [ "medication.reference.value", "status", "status.value", "effective", "dosage", "dosage.route" ]
+      "mustSupport": [ "medication.reference.value" ]
     }, {
       "type": "Medication",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medication" ],
       "mustSupport": [ "id.value", "code" ]
     }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+    }, {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type", "status", "status.value", "period", "location" ],
+      "mustSupport": [ "type", "period", "status", "status.value" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "status", "status.value", "period" ],
       "codeFilter": [ {
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
@@ -516,11 +584,30 @@
     }, {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
-      "mustSupport": [ "type", "status", "status.value", "period", "location" ],
+      "mustSupport": [ "type", "status", "status.value", "period" ],
       "codeFilter": [ {
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
       } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "status", "status.value", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1111.143"
+      } ]
+    }, {
+      "type": "Encounter",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
+      "mustSupport": [ "type", "status", "status.value", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292"
+      } ]
+    }, {
+      "type": "Location",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location" ]
     }, {
       "type": "Encounter",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter" ],
@@ -530,12 +617,29 @@
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.666.5.307"
       } ]
     }, {
-      "type": "Resource",
-      "profile": [ "http://hl7.org/fhir/StructureDefinition/Resource" ],
-      "mustSupport": [ "id", "id.value" ]
+      "type": "Coverage",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ],
+      "mustSupport": [ "type", "period" ],
+      "codeFilter": [ {
+        "path": "type",
+        "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
+      } ]
     }, {
-      "type": "Location",
-      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location" ]
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
     }, {
       "type": "Coverage",
       "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-coverage" ],
@@ -544,6 +648,14 @@
         "path": "type",
         "valueSet": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3591"
       } ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
+    }, {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ],
+      "mustSupport": [ "url", "extension" ]
     } ]
   } ],
   "extension": [ {
@@ -565,6 +677,12 @@
     } ]
   }, {
     "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
+    "valueReference": {
+      "reference": "#effective-data-requirements"
+    }
+  }, {
+    "id": "effective-data-requirements",
+    "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-effectiveDataRequirements",
     "valueReference": {
       "reference": "#effective-data-requirements"
     }
@@ -637,7 +755,7 @@
   "title": "Hospital Harm - Opioid-Related Adverse EventsFHIR",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-19T19:39:00+00:00",
+  "date": "2025-07-14T20:51:02+00:00",
   "publisher": "Centers for Medicare & Medicaid Services (CMS)",
   "contact": [ {
     "telecom": [ {
