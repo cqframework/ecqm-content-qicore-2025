@@ -1,4 +1,4 @@
-library TJCOverall version '8.23.000'
+library TJCOverall version '8.24.000'
 
 
 using QICore version '6.0.0'
@@ -6,7 +6,7 @@ using QICore version '6.0.0'
 include FHIRHelpers version '4.4.000' called FHIRHelpers
 include CQMCommon   version '4.1.000' called CQMCommon
 include QICoreCommon version '4.0.000' called QICoreCommon
-include SupplementalDataElements version '4.0.000' called SDE
+include SupplementalDataElements version '5.1.000' called SDE
 
 valueset "Comfort Measures": 'http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45'
 valueset "Discharge To Acute Care Facility": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.87'

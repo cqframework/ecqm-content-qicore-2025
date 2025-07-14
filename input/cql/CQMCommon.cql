@@ -1,11 +1,13 @@
-library CQMCommon version '3.0.000'
+library CQMCommon version '4.1.000'
 
 using QICore version '6.0.0'
 
 include FHIRHelpers version '4.4.000' called FHIRHelpers
-include QICoreCommon version '3.0.000' called QICoreCommon
+include QICoreCommon version '4.0.000' called QICoreCommon
 
 codesystem DiagnosisRole: 'http://terminology.hl7.org/CodeSystem/diagnosis-role'
+codesystem "Diagnosis Type": 'http://terminology.hl7.org/CodeSystem/ex-diagnosistype'
+codesystem "Procedure Type": 'http://terminology.hl7.org/CodeSystem/ex-procedure-type'
 codesystem "Present On Admission Indicators": 'https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/HospitalAcqCond/Coding'
 
 valueset "Emergency Department Visit": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.292'
@@ -16,10 +18,24 @@ valueset "Outpatient Surgery Service": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.1
 valueset "Present on Admission or Clinically Undetermined": 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1147.197'
 
 code "Billing": 'billing' from DiagnosisRole display 'Billing'
+code "Admitting Diagnosis": 'admitting' from "Diagnosis Type" display 'Admitting Diagnosis'
+code "Clinical Diagnosis": 'clinical' from "Diagnosis Type" display 'Clinical Diagnosis'
+code "Differential Diagnosis": 'differential' from "Diagnosis Type" display 'Differential Diagnosis'
+code "Discharge Diagnosis": 'discharge' from "Diagnosis Type" display 'Discharge Diagnosis'
+code "Laboratory Diagnosis": 'laboratory' from "Diagnosis Type" display 'Laboratory Diagnosis'
+code "Nursing Diagnosis": 'nursing' from "Diagnosis Type" display 'Nursing Diagnosis'
+code "Prenatal Diagnosis": 'prenatal' from "Diagnosis Type" display 'Prenatal Diagnosis'
+code "Principal Diagnosis": 'principal' from "Diagnosis Type" display 'Principal Diagnosis'
+code "Radiology Diagnosis": 'radiology' from "Diagnosis Type" display 'Radiology Diagnosis'
+code "Remote Diagnosis": 'remote' from "Diagnosis Type" display 'Remote Diagnosis'
+code "Retrospective Diagnosis": 'retrospective' from "Diagnosis Type" display 'Retrospetive Diagnosis'
+code "Self Diagnosis": 'self' from "Diagnosis Type" display 'Self Diagnosis'
+code "Primary procedure": 'primary' from "Procedure Type" display 'Primary procedure'
 code "POA-Y": 'Y' from "Present On Admission Indicators" display 'POA-Y'
 code "POA-N": 'N' from "Present On Admission Indicators" display 'POA-N'
 code "POA-W": 'W' from "Present On Admission Indicators" display 'POA-W'
 code "POA-1": '1' from "Present On Admission Indicators" display 'POA-1'
+code "POA-U": 'U' from "Present On Admission Indicators" display 'POA-U'
 
 parameter "Measurement Period" Interval<DateTime>
 
@@ -340,12 +356,13 @@ define function "EncounterDiagnosis"(Encounter Encounter ):
   Encounter.diagnosis D
 	return singleton from (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where D.condition.references(C.id))
 
-/*
-@description: Returns the Condition resources referenced by the diagnosis element of the Encounter
+/*  
+@description: Returns the Condition resources referenced by the diagnosis element of the Encounter  
 */
 define fluent function encounterDiagnosis(Encounter Encounter ):
-  Encounter.diagnosis D
-    return singleton from (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where D.condition.references(C.id))
+  Encounter.reasonReference D
+    return singleton from (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where D.references(C.id))
+
 
 /*
 @description: Returns the Condition resource for the given reference
@@ -371,18 +388,17 @@ define function "PrincipalDiagnosis"(Encounter Encounter):
 	)
 
 /*
-@description: Returns the condition that is specified as the principal diagnosis for the encounter
-@deprecated: This function is deprecated. Use the claimDiagnosis function for principal diagnosis and present on admission use cases. See
-[ClaimDiagnoses](https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/blob/master/Source/Cooking%20With%20CQL/88/ClaimDiagnoses.md) 
-discussion for more information.
+@description: Returns the claim diagnosis element that is specified as the principal diagnosis for the encounter
+ @comment: See the QICore 6 Authoring Patterns discussion on [Principal Diagnosis and Present on Admission](https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Authoring-Patterns-QICore-v6.0.0#conditions-present-on-admission-and-principal-diagnoses) for more information
 */
-define fluent function principalDiagnosis(Encounter Encounter):
-	singleton from ((Encounter.diagnosis D where D.rank = 1 and D.use ~ "Billing") PD
-      return singleton from (([ConditionEncounterDiagnosis] union [ConditionProblemsHealthConcerns]) C where PD.condition.references(C.id))
-	)
-
+define fluent function principalDiagnosis(encounter Encounter):
+singleton from (
+     (encounter.claimDiagnosis()) CD
+       where CD.type.includesCode("Principal Diagnosis")
+   )
 /*
 @description: Returns the claim diagnosis elements for the given encounter
+@comment: See the QICore 6 Authoring Patterns discussion on [Principal Diagnosis and Present on Admission](https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Authoring-Patterns-QICore-v6.0.0#conditions-present-on-admission-and-principal-diagnoses) for more information
 */
 define fluent function claimDiagnosis(encounter Encounter):
   encounter E
@@ -390,6 +406,30 @@ define fluent function claimDiagnosis(encounter Encounter):
       claim: ([Claim] C where C.status = 'active' and C.use = 'claim' and exists (C.item I where I.encounter.references(E))),
       claimItem: (claim.item I where I.encounter.references(E))
     return claim.diagnosis D where D.sequence in claimItem.diagnosisSequence
+
+
+/*
+ @description: Returns the condition that is specified as the principal diagnosis for the encounter and has a code in the given valueSet.
+ @comment: See the QICore 6 Authoring Patterns discussion on [Principal Diagnosis and Present on Admission](https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Authoring-Patterns-QICore-v6.0.0#conditions-present-on-admission-and-principal-diagnoses) for more information
+ */
+ define fluent function hasPrincipalDiagnosisOf(encounter Encounter, valueSet ValueSet):
+   (encounter.principalDiagnosis()) PD
+     return PD.diagnosis in valueSet
+       or PD.diagnosis.getCondition().code in valueSet
+
+/*
+ @description: Returns true if the given diagnosis is present on admission, based on the given poaValueSet
+ @comment: See the QICore 6 Authoring Patterns discussion on [Principal Diagnosis and Present on Admission](https://github.com/cqframework/CQL-Formatting-and-Usage-Wiki/wiki/Authoring-Patterns-QICore-v6.0.0#conditions-present-on-admission-and-principal-diagnoses) for more information
+ */
+ define fluent function isDiagnosisPresentOnAdmission(encounter Encounter, diagnosisValueSet ValueSet, poaValueSet ValueSet):
+   exists (
+     (encounter.claimDiagnosis()) CD
+       where CD.onAdmission in poaValueSet
+         and (
+           CD.diagnosis in diagnosisValueSet
+             or CD.diagnosis.getCondition().code in diagnosisValueSet
+         )
+   )
 
 /*
 @description: Returns the Location resource specified by the given reference
@@ -426,3 +466,14 @@ define fluent function getMedicationCode(request MedicationRequest):
   	  request.medication as Concept
   	else
   	  (singleton from ([Medication] M where request.medication.references(M))).code
+  	  
+/*
+@description: Returns the claim procedure elements for the given encounter
+*/
+define fluent function principalProcedure(encounter Encounter):  	  
+  	 encounter E
+  	 let 
+        claim: [Claim] C where C.status = 'active' and C.use = 'claim' and exists (C.item I where I.encounter.references(E)),
+        claimItem: claim.item I where I.encounter.references(E),
+        princProcedure: singleton from (claim.procedure P where P.sequence in claimItem.procedureSequence and P.type.includesCode("Primary procedure"))
+    return princProcedure
