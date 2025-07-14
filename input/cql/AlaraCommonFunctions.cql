@@ -1,4 +1,4 @@
-library AlaraCommonFunctions version '1.6.000'
+library AlaraCommonFunctions version '1.10.000'
 
 using QICore version '6.0.0'
 
@@ -29,42 +29,88 @@ code "Thoracic or Lumbar Spine": 'LA31767-9' from "LOINC" display 'Thoracic or L
 
 context Patient
 
-define function "CT Scan Qualifies"(Obs LaboratoryResultObservation ):
-  "Qualifies"(Obs, "Abdomen and Pelvis Low Dose", 64, 598)
-    or "Qualifies"(Obs, "Abdomen and Pelvis Routine Dose", 29, 644)
-    or "Qualifies"(Obs, "Abdomen and Pelvis High Dose", 29, 1260)
-    or "Qualifies"(Obs, "Cardiac Low Dose", 55, 93)
-    or "Qualifies"(Obs, "Cardiac Routine Dose", 32, 576)
-    or "Qualifies"(Obs, "Chest Low Dose", 55, 377)
-    or "Qualifies"(Obs, "Chest Routine Dose", 49, 377)
-    or "Qualifies"(Obs, "Cardiac High Dose or Chest High Dose", 49, 1282)
-    or "Qualifies"(Obs, "Head Low Dose", 115, 582)
-    or "Qualifies"(Obs, "Head Routine Dose", 115, 1025)
-    or "Qualifies"(Obs, "Head High Dose", 115, 1832)
-    or "Qualifies"(Obs, "Extremity", 73, 320)
-    or "Qualifies"(Obs, "Neck or Cervical Spine", 25, 1260)
-    or "Qualifies"(Obs, "Thoracic or Lumbar Spine", 25, 1260)
-    or "Qualifies"(Obs, "Simultaneous Chest and Abdomen and Pelvis", 29, 1637)
-    or "Qualifies"(Obs, "Simultaneous Thoracic and Lumbar Spine", 25, 2520)
-    or "Qualifies"(Obs, "Simultaneous Head and Neck Routine Dose", 25, 2285)
-    or "Qualifies"(Obs, "Simultaneous Head and Neck High Dose", 25, 3092)
+define function "CT Scan Qualifies"(Result ObservationClinicalResult ):
+  Result.qualifies("Abdomen and Pelvis Low Dose", 64, 598)
+    or Result.qualifies("Abdomen and Pelvis Routine Dose", 29, 644)
+    or Result.qualifies("Abdomen and Pelvis High Dose", 29, 1260)
+    or Result.qualifies("Cardiac Low Dose", 55, 93)
+    or Result.qualifies("Cardiac Routine Dose", 32, 576)
+    or Result.qualifies("Chest Low Dose", 55, 377)
+    or Result.qualifies("Chest Routine Dose", 49, 377)
+    or Result.qualifies("Cardiac High Dose or Chest High Dose", 49, 1282)
+    or Result.qualifies("Head Low Dose", 115, 582)
+    or Result.qualifies("Head Routine Dose", 115, 1025)
+    or Result.qualifies("Head High Dose", 115, 1832)
+    or Result.qualifies("Extremity", 73, 320)
+    or Result.qualifies("Neck or Cervical Spine", 25, 1260)
+    or Result.qualifies("Thoracic or Lumbar Spine", 25, 1260)
+    or Result.qualifies("Simultaneous Chest and Abdomen and Pelvis", 29, 1637)
+    or Result.qualifies("Simultaneous Thoracic and Lumbar Spine", 25, 2520)
+    or Result.qualifies("Simultaneous Head and Neck Routine Dose", 25, 2285)
+    or Result.qualifies("Simultaneous Head and Neck High Dose", 25, 3092)
 
-define function "Qualifies"(Obs LaboratoryResultObservation, code System.Code, noiseThreshold Decimal, sizeDoseThreshold Decimal ):
-  (Obs.value as Concept).codes contains code
-    and ( "Global Noise Value"(Obs)>= noiseThreshold
-        or "Size Adjusted Value"(Obs)>= sizeDoseThreshold
+define fluent function "ctScanQualifies"(Result ObservationClinicalResult ):
+  Result.qualifies("Abdomen and Pelvis Low Dose", 64, 598)
+    or Result.qualifies("Abdomen and Pelvis Routine Dose", 29, 644)
+    or Result.qualifies("Abdomen and Pelvis High Dose", 29, 1260)
+    or Result.qualifies("Cardiac Low Dose", 55, 93)
+    or Result.qualifies("Cardiac Routine Dose", 32, 576)
+    or Result.qualifies("Chest Low Dose", 55, 377)
+    or Result.qualifies("Chest Routine Dose", 49, 377)
+    or Result.qualifies("Cardiac High Dose or Chest High Dose", 49, 1282)
+    or Result.qualifies("Head Low Dose", 115, 582)
+    or Result.qualifies("Head Routine Dose", 115, 1025)
+    or Result.qualifies("Head High Dose", 115, 1832)
+    or Result.qualifies("Extremity", 73, 320)
+    or Result.qualifies("Neck or Cervical Spine", 25, 1260)
+    or Result.qualifies("Thoracic or Lumbar Spine", 25, 1260)
+    or Result.qualifies("Simultaneous Chest and Abdomen and Pelvis", 29, 1637)
+    or Result.qualifies("Simultaneous Thoracic and Lumbar Spine", 25, 2520)
+    or Result.qualifies("Simultaneous Head and Neck Routine Dose", 25, 2285)
+    or Result.qualifies("Simultaneous Head and Neck High Dose", 25, 3092)
+    
+define function "Qualifies"(Result ObservationClinicalResult, code System.Code, noiseThreshold Decimal, sizeDoseThreshold Decimal ):
+  (Result.value as Concept) ~ code
+    and ( "Global Noise Value"(Result) >= noiseThreshold
+        or "Size Adjusted Value"(Result) >= sizeDoseThreshold
+    )
+    
+define fluent function "qualifies"(Result ObservationClinicalResult, code System.Code, noiseThreshold Decimal, sizeDoseThreshold Decimal ):
+  (Result.value as Concept) ~ code
+    and ( Result.globalNoiseValue() >= noiseThreshold
+        or Result.sizeAdjustedValue() >= sizeDoseThreshold
     )
 
-define function "Global Noise Value"(Obs LaboratoryResultObservation ):
-  singleton from ( Obs.component C
-      where C.code ~ "Calculated CT global noise"
+/* Note since the units has a special character in it this must be escaped in the CQL */
+define function "Global Noise Value"(Result ObservationClinicalResult ):
+  singleton from ( Result.component C
+      where Result.status in { 'final', 'amended', 'corrected' }
+        and C.code ~ "Calculated CT global noise"
+        and ( C.value as Quantity ).unit = '[hnsf\'U]'
+      return (C.value as Quantity).value
+  )
+  
+/* Note since the units has a special character in it this must be escaped in the CQL */
+define fluent function "globalNoiseValue"(Result ObservationClinicalResult ):
+  singleton from ( Result.component C
+      where Result.status in { 'final', 'amended', 'corrected' }
+        and C.code ~ "Calculated CT global noise"
         and ( C.value as Quantity ).unit = '[hnsf\'U]'
       return (C.value as Quantity).value
   )
 
-define function "Size Adjusted Value"(Obs LaboratoryResultObservation ):
-  singleton from ( Obs.component C
-      where C.code ~ "Calculated CT size-adjusted dose"
+define function "Size Adjusted Value"(Result ObservationClinicalResult ):
+  singleton from ( Result.component C
+      where Result.status in { 'final', 'amended', 'corrected' }
+        and C.code ~ "Calculated CT size-adjusted dose"
+        and ( C.value as Quantity ).unit = 'mGy.cm'
+      return (C.value as Quantity).value
+  )
+  
+define fluent function "sizeAdjustedValue"(Result ObservationClinicalResult ):
+  singleton from ( Result.component C
+      where Result.status in { 'final', 'amended', 'corrected' }
+        and C.code ~ "Calculated CT size-adjusted dose"
         and ( C.value as Quantity ).unit = 'mGy.cm'
       return (C.value as Quantity).value
   )
