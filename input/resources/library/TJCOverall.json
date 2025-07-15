@@ -66,6 +66,7 @@
       "code": "principal",
       "display": "Principal Diagnosis"
     }
+
   }, {
     "url": "http://hl7.org/fhir/StructureDefinition/cqf-cqlOptions",
     "valueReference": {
@@ -94,6 +95,7 @@
   "description": "Common functions and definitions used by TJC measures",
   "relatedArtifact": [ {
     "type": "depends-on",
+
     "display": "QICore model information",
     "resource": "http://hl7.org/fhir/Library/QICore-ModelInfo"
   }, {
@@ -120,13 +122,14 @@
     "type": "depends-on",
     "display": "Value set Comfort Measures",
     "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/1.3.6.1.4.1.33895.1.3.0.45"
+
   }, {
     "type": "depends-on",
     "display": "Value set Discharge To Acute Care Facility",
     "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.87"
   }, {
     "type": "depends-on",
-    "display": "Value set Discharged to Health Care Facility for Hospice Care",
+  "display": "Value set Discharged to Health Care Facility for Hospice Care",
     "resource": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.207"
   }, {
     "type": "depends-on",
