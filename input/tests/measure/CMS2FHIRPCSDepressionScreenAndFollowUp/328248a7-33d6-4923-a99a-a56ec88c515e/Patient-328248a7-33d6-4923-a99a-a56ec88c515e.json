@@ -20,9 +20,9 @@
     }, {
       "url": "detailed",
       "valueCoding": {
-        "system": "urn:oid:2.16.840.1.113883.6.238",
-        "code": "1653-5",
-        "display": "Tohono O'Odham"
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "code": "OTH",
+        "display": "other"
       }
     } ]
   }, {
@@ -41,9 +41,9 @@
     }, {
       "url": "detailed",
       "valueCoding": {
-        "system": "urn:oid:2.16.840.1.113883.6.238",
-        "code": "2153-5",
-        "display": "Mexican American Indian"
+        "system": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+        "code": "OTH",
+        "display": "other"
       }
     } ]
   } ],
