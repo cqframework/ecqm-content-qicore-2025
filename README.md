@@ -114,6 +114,53 @@ Subsequently, different attribution logic can be provided by specifying a differ
 
 In this way, the measure specification itself can remain unchanged and computable descriptions of different attribution models can be provided.
 
+### Multi-Measure Evaluation
+
+#### Setup
+
+**Measure Evaluation Service**: clinical-reasoning v3.23.0-SNAPSHOT [MeasureOperationsProvider](https://github.com/cqframework/clinical-reasoning/blob/feature-682-multi-measure-evaluate/cqf-fhir-cr-hapi/src/main/java/org/opencds/cqf/fhir/cr/hapi/r4/measure/MeasureOperationsProvider.java). Build and install locally the following [branch](https://github.com/cqframework/clinical-reasoning/tree/feature-682-multi-measure-evaluate) with `mvn install -U`
+
+**FHIR Server**: [hapi-fhir-jpaserver-starter](https://github.com/hapifhir/hapi-fhir-jpaserver-starter). Update the [pox.xml](https://github.com/hapifhir/hapi-fhir-jpaserver-starter/blob/master/pom.xml#L9) to reference the clinical-reasoning build in the previous step and configured with [`hapi.fhir.cr.enabled: true`](https://github.com/hapifhir/hapi-fhir-jpaserver-starter/blob/master/src/main/resources/application.yaml#L88) and [`hapi.fhir.enforce-referential-integrity-on-write: false`](https://github.com/hapifhir/hapi-fhir-jpaserver-starter/blob/master/src/main/resources/application.yaml#L210). This can be achieved by editing the [application.yaml](https://github.com/hapifhir/hapi-fhir-jpaserver-starter/blob/master/src/main/resources/application.yaml) or when starting the server from the command line (e.g. `mvn spring-boot:run -Dspring-boot.run.arguments="--hapi.fhir.cr.enabled=true,--hapi.fhir.enforce-referential-integrity-on-write=false"`).
+
+**Scenario Measures**: 
+ - [CMS143 Primary Open-Angle Glaucoma (POAG): Optic Nerve Evaluation](https://github.com/cqframework/ecqm-content-qicore-2025/blob/main/input/resources/measure/CMS143FHIRPOAGOpticNerveEvaluation.json)
+   - [Test Bundle](https://github.com/cqframework/ecqm-content-qicore-2025/blob/main/bundles/measure/CMS146FHIRAppropriateTestingforPharyngitis/CMS146FHIRAppropriateTestingforPharyngitis-bundle.json) 
+ - [CMS349 HIV Screening](https://github.com/cqframework/ecqm-content-qicore-2025/blob/main/input/resources/measure/CMS349FHIRHIVScreening.json)
+   - [Test Bundle](https://github.com/cqframework/ecqm-content-qicore-2025/blob/main/bundles/measure/CMS349FHIRHIVScreening/CMS349FHIRHIVScreening-bundle.json)
+
+#### Population Multi-Measure Scenario Steps
+
+1. Build and install the Measure Evaluation Service to your local .m2
+2. Configure and start your local hapi-fhir-jpaserver-starter (referencing the Measure Evaluation Service from step 1)
+3. Load the CMS143 and CMS349 test bundles into your local hapi-fhir-jpaserver-starter
+4. Call the $evaluate referencing the CMS143 and CMS349 measures in the parameters of the request:
+```
+POST [base]/Measure/$evaluate
+
+BODY
+{
+    "resourceType": "Parameters",
+    "parameter": [
+        {
+            "name": "periodStart",
+            "valueDate": "2026-01-01"
+        },
+        {
+            "name": "periodEnd",
+            "valueDate": "2026-12-31"
+        },
+        {
+            "name": "measureId",
+            "valueId": "CMS143FHIRPOAGOpticNerveEvaluation"
+        },
+        {
+            "name": "measureId",
+            "valueId": "CMS349FHIRHIVScreening"
+        }
+    ]
+}
+```
+
 ### Terminology API Testing
 
 To continue verifying terminology service capabilities as described by the Measure Terminology Service in the Quality Measure IG. Specifically, validating that:
