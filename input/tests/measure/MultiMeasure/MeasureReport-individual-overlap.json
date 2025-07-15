@@ -1,22 +1,22 @@
 {
   "resourceType": "Bundle",
-  "id": "f2475665-ca01-4c2e-a156-508d655d9e87",
+  "id": "a9280a43-d24d-46e6-a219-0c4a83088434",
   "identifier": {
     "system": "urn:ietf:rfc:3986",
-    "value": "urn:uuid:fd482877-b76b-491f-bbcc-e2301316049e"
+    "value": "urn:uuid:1b989ae3-6ffa-49ae-8623-82552bb57aa7"
   },
   "type": "searchset",
-  "timestamp": "2025-07-09T10:12:11.105-06:00",
+  "timestamp": "2025-07-15T08:10:49.781-06:00",
   "entry": [
     {
-      "fullUrl": "http://localhost:8080/fhir/MeasureReport/79f349e6-35a4-4bbc-861f-8450c2078bb2",
+      "fullUrl": "http://localhost:8080/fhir/MeasureReport/1f58ee45-2859-4dfb-9f0f-da3a7ea31a28",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "79f349e6-35a4-4bbc-861f-8450c2078bb2",
+        "id": "1f58ee45-2859-4dfb-9f0f-da3a7ea31a28",
         "contained": [
           {
             "resourceType": "Observation",
-            "id": "c3e0e7da-39ad-4020-b671-c8ddd09616da",
+            "id": "3219971c-89a5-45d8-8185-65fc6617656e",
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/cqf-measureInfo",
@@ -47,7 +47,7 @@
           },
           {
             "resourceType": "Observation",
-            "id": "30d51d54-0467-4640-9ea9-02fa2a1a4c45",
+            "id": "6d5a59ce-9caa-4842-a131-1ee9aa421e06",
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/cqf-measureInfo",
@@ -91,7 +91,7 @@
                   "valueString": "sde-race"
                 }
               ],
-              "reference": "#30d51d54-0467-4640-9ea9-02fa2a1a4c45"
+              "reference": "#6d5a59ce-9caa-4842-a131-1ee9aa421e06"
             }
           },
           {
@@ -103,7 +103,7 @@
                   "valueString": "sde-ethnicity"
                 }
               ],
-              "reference": "#c3e0e7da-39ad-4020-b671-c8ddd09616da"
+              "reference": "#3219971c-89a5-45d8-8185-65fc6617656e"
             }
           }
         ],
@@ -113,7 +113,7 @@
         "subject": {
           "reference": "Patient/1ea6ee4a-bfb0-44ec-8a94-5f0035c81c9e"
         },
-        "date": "2025-07-09T10:12:11-06:00",
+        "date": "2025-07-15T08:10:51-06:00",
         "period": {
           "start": "2025-12-31T17:00:00-07:00",
           "end": "2026-12-31T16:59:59-07:00"
@@ -334,45 +334,14 @@
       }
     },
     {
-      "fullUrl": "http://localhost:8080/fhir/MeasureReport/228e3847-d7d7-4f45-9fc8-0b0479558448",
+      "fullUrl": "http://localhost:8080/fhir/MeasureReport/e42deffd-3c09-41ce-a3ac-3e439216f27d",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "228e3847-d7d7-4f45-9fc8-0b0479558448",
+        "id": "e42deffd-3c09-41ce-a3ac-3e439216f27d",
         "contained": [
           {
             "resourceType": "Observation",
-            "id": "25e4733e-eed6-49dd-9c4c-a389e96936fc",
-            "extension": [
-              {
-                "url": "http://hl7.org/fhir/StructureDefinition/cqf-measureInfo",
-                "extension": [
-                  {
-                    "url": "measure",
-                    "valueCanonical": "https://madie.cms.gov/Measure/CMS349FHIRHIVScreening"
-                  }
-                ]
-              }
-            ],
-            "status": "final",
-            "code": {
-              "coding": [
-                {
-                  "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
-                  "code": "supplemental-data"
-                }
-              ]
-            },
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "code": "Tuple {\n  codes: [Code { code: 2106-3, system: urn:oid:2.16.840.1.113883.6.238, version: null, display: White }]\n  display: White\n}"
-                }
-              ]
-            }
-          },
-          {
-            "resourceType": "Observation",
-            "id": "a5ea07c2-fed8-49f1-86d9-daa41b13d401",
+            "id": "f0f73c38-491a-4c8c-9257-19c6e9a94a28",
             "extension": [
               {
                 "url": "http://hl7.org/fhir/StructureDefinition/cqf-measureInfo",
@@ -400,6 +369,37 @@
                 }
               ]
             }
+          },
+          {
+            "resourceType": "Observation",
+            "id": "410d6734-0aa3-4d9b-9b85-a0820ebcd9b0",
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/cqf-measureInfo",
+                "extension": [
+                  {
+                    "url": "measure",
+                    "valueCanonical": "https://madie.cms.gov/Measure/CMS349FHIRHIVScreening"
+                  }
+                ]
+              }
+            ],
+            "status": "final",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/measure-data-usage",
+                  "code": "supplemental-data"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "Tuple {\n  codes: [Code { code: 2106-3, system: urn:oid:2.16.840.1.113883.6.238, version: null, display: White }]\n  display: White\n}"
+                }
+              ]
+            }
           }
         ],
         "extension": [
@@ -413,10 +413,10 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
-                  "valueString": "sde-race"
+                  "valueString": "sde-ethnicity"
                 }
               ],
-              "reference": "#25e4733e-eed6-49dd-9c4c-a389e96936fc"
+              "reference": "#f0f73c38-491a-4c8c-9257-19c6e9a94a28"
             }
           },
           {
@@ -425,10 +425,10 @@
               "extension": [
                 {
                   "url": "http://hl7.org/fhir/us/davinci-deqm/StructureDefinition/extension-criteriaReference",
-                  "valueString": "sde-ethnicity"
+                  "valueString": "sde-race"
                 }
               ],
-              "reference": "#a5ea07c2-fed8-49f1-86d9-daa41b13d401"
+              "reference": "#410d6734-0aa3-4d9b-9b85-a0820ebcd9b0"
             }
           }
         ],
@@ -438,7 +438,7 @@
         "subject": {
           "reference": "Patient/1ea6ee4a-bfb0-44ec-8a94-5f0035c81c9e"
         },
-        "date": "2025-07-09T10:12:11-06:00",
+        "date": "2025-07-15T08:10:51-06:00",
         "period": {
           "start": "2025-12-31T17:00:00-07:00",
           "end": "2026-12-31T16:59:59-07:00"
@@ -687,6 +687,213 @@
             "reference": "Patient/1ea6ee4a-bfb0-44ec-8a94-5f0035c81c9e"
           }
         ]
+      }
+    },
+    {
+      "fullUrl": "http://localhost:8080/fhir/Condition/47c4bbe0-4066-4bb1-a5ce-0ee44fb5fae7",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "47c4bbe0-4066-4bb1-a5ce-0ee44fb5fae7",
+        "meta": {
+          "versionId": "2",
+          "lastUpdated": "2025-07-15T08:10:44.369-06:00",
+          "profile": [
+            "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "active",
+              "userSelected": true
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "problem-list-item",
+                "userSelected": true
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "H40.10X0"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/1ea6ee4a-bfb0-44ec-8a94-5f0035c81c9e"
+        },
+        "onsetDateTime": "2025-09-14T08:00:00.000+00:00"
+      }
+    },
+    {
+      "fullUrl": "http://localhost:8080/fhir/Encounter/CMS349",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "CMS349",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2025-07-15T08:10:44.369-06:00",
+          "profile": [
+            "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
+          ]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory",
+          "userSelected": true
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "99386"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/1ea6ee4a-bfb0-44ec-8a94-5f0035c81c9e"
+        },
+        "period": {
+          "start": "2026-02-15T08:00:00.000+00:00",
+          "end": "2026-02-15T08:15:00.000+00:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://localhost:8080/fhir/Encounter/146adddc-2929-4862-82f2-8e975ff4f61f",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "146adddc-2929-4862-82f2-8e975ff4f61f",
+        "meta": {
+          "versionId": "2",
+          "lastUpdated": "2025-07-15T08:10:44.369-06:00",
+          "profile": [
+            "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
+          ]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory",
+          "userSelected": true
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "37894004"
+              },
+              {
+                "system": "http://www.ama-assn.org/go/cpt",
+                "code": "99213",
+                "userSelected": true
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/1ea6ee4a-bfb0-44ec-8a94-5f0035c81c9e"
+        },
+        "period": {
+          "start": "2026-03-05T08:00:00.000+00:00",
+          "end": "2026-03-05T08:30:00.000+00:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://localhost:8080/fhir/Patient/1ea6ee4a-bfb0-44ec-8a94-5f0035c81c9e",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1ea6ee4a-bfb0-44ec-8a94-5f0035c81c9e",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2025-07-15T08:10:34.392-06:00",
+          "profile": [
+            "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2106-3",
+                  "display": "White",
+                  "userSelected": true
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "White"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2186-5",
+                  "display": "Not Hispanic or Latino",
+                  "userSelected": true
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "Not Hispanic or Latino"
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "MR"
+                }
+              ]
+            },
+            "system": "https://bonnie-fhir.healthit.gov/",
+            "value": "6109658e98086b538055b9e4"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "use": "usual",
+            "family": "IPPass",
+            "given": [
+              "CareServInLTRF Enc"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "2007-12-31"
       }
     }
   ]
