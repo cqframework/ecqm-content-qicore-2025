@@ -1,7 +1,7 @@
 # ecqm-content-qicore-2025
 eCQM Measure Content (Using QICore 6.0.0, based on FHIR R4 v4.0.1)
 
-These draft FHIR-based measures and shared libraries are translated from the QDM-based versions of eCQMs that were published in May 2024 for the 2025 reporting year as they existed in MADiE as of June 2024 or later and may not reflect the current updates from the 2025 AU review cycle of the QDM measures, and have specific versions, especially for the shared libraries, appropriate to the content for that publication update.
+These draft FHIR-based measures and shared libraries are translated from the QDM-based versions of eCQMs that were published in May 2025 for the 2026 reporting year as they existed in MADiE as of June 2025 or later.
 
 Commits to this repository will automatically trigger a build of the continuous integration build, available here:
 
@@ -11,11 +11,11 @@ https://build.fhir.org/ig/cqframework/ecqm-content-qicore-2025
 
 ### Measure Testing
 
-This repository is populated with FHIR-based measure specifications developed using the MADiE tool and based on published AU2024 eCQMs. See the [Measure Content Index](https://docs.google.com/spreadsheets/d/1DocNOIX3ZYWCzOxSHw00sl21WHWx5SeazrlSCUcjqqs/edit#gid=1008487491) for a complete listing of available measure content for measure testing.
+This repository is populated with FHIR-based measure specifications developed using the MADiE tool and based on published AU2025 eCQMs. See the [Measure Content Index](https://docs.google.com/spreadsheets/d/1DocNOIX3ZYWCzOxSHw00sl21WHWx5SeazrlSCUcjqqs/edit#gid=1008487491) for a complete listing of available measure content for measure testing.
 
 ### Multi-Provider Patient Scenario
 
-For systems that deal house data from multiple providers, it is often the case that individual patients may have encounters with multiple providers. In these cases, there must be a way to support identifying the data that should be reported with an individual based on the provider being reported. This is often referred to as the attribution of a patient (and their associated data for reporting) to a provider. Because attribution models vary based on where and why a measure is being evaluated (i.e. for what reporting program), attribution is not included as part of the measure specification. This means that currently, reporting systems must partition data differently when running the same measure for different programs. To support formal description of the attribution model, this scenario will look at ways to describe the attribution as part of the program, rather than as part of the measure itself.
+For systems that house data from multiple providers, it is often the case that individual patients may have encounters with multiple providers. In these cases, there must be a way to support identifying the data that should be reported with an individual based on the provider being reported. This is often referred to as the attribution of a patient (and their associated data for reporting) to a provider. Because attribution models vary based on where and why a measure is being evaluated (i.e. for what reporting program), attribution is not included as part of the measure specification. This means that currently, reporting systems must partition data differently when running the same measure for different programs. To support formal description of the attribution model, this scenario will look at ways to describe the attribution as part of the program, rather than as part of the measure itself.
 
 The testing scenario we are using to support these investigations is as follows:
 
