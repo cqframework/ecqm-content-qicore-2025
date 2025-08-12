@@ -1073,7 +1073,7 @@
         {
             "type": "composed-of",
             "display": "Measure Preventive Care and Screening: Screening for Depression and Follow-Up PlanFHIR, 0.4.000",
-            "resource": "https://madie.cms.gov/Measure/CMS2FHIRPCSDepressionScreenAndFollowUp|0.4.000"
+            "resource": "https://madie.cms.gov/Measure/CMS2FHIRPCSDepressionScreenAndFollowUp|0.4.001"
         },
         {
             "type": "composed-of",
@@ -1173,7 +1173,7 @@
         {
             "type": "composed-of",
             "display": "Measure Controlling High Blood PressureFHIR, 0.3.000",
-            "resource": "https://madie.cms.gov/Measure/CMS165FHIRControllingHighBloodPressure|0.3.000"
+            "resource": "https://madie.cms.gov/Measure/CMS165FHIRControllingHighBloodPressure|0.5.000"
         },
         {
             "type": "composed-of",
@@ -1208,7 +1208,7 @@
         {
             "type": "depends-on",
             "display": "Measure Preventive Care and Screening: Screening for Depression and Follow-Up PlanFHIR, 0.4.000",
-            "resource": "https://madie.cms.gov/Measure/CMS2FHIRPCSDepressionScreenAndFollowUp|0.4.000"
+            "resource": "https://madie.cms.gov/Measure/CMS2FHIRPCSDepressionScreenAndFollowUp|0.4.001"
         },
         {
             "type": "depends-on",
@@ -1308,7 +1308,7 @@
         {
             "type": "depends-on",
             "display": "Measure Controlling High Blood PressureFHIR, 0.3.000",
-            "resource": "https://madie.cms.gov/Measure/CMS165FHIRControllingHighBloodPressure|0.3.000"
+            "resource": "https://madie.cms.gov/Measure/CMS165FHIRControllingHighBloodPressure|0.5.000"
         },
         {
             "type": "depends-on",
