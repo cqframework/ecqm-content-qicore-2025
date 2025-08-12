@@ -13,51 +13,51 @@
             "parameter": [
                 {
                     "name": "system-version",
-                    "valueUri": "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20230901"
+                    "valueCanonical": "http://snomed.info/sct|http://snomed.info/sct/731000124108/version/20230901"
                 },
                 {
                     "name": "system-version",
-                    "valueUri": "http://loinc.org|2.76"
+                    "valueCanonical": "http://loinc.org|2.76"
                 },
                 {
                     "name": "system-version",
-                    "valueUri": "http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0"
+                    "valueCanonical": "http://terminology.hl7.org/CodeSystem/v3-ActCode|9.0.0"
                 },
                 {
                     "name": "system-version",
-                    "valueUri": "http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender|3.0.0"
+                    "valueCanonical": "http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender|3.0.0"
                 },
                 {
                     "name": "system-version",
-                    "valueUri": "urn:oid:2.16.840.1.113883.6.238|1.2"
+                    "valueCanonical": "urn:oid:2.16.840.1.113883.6.238|1.2"
                 },
                 {
                     "name": "system-version",
-                    "valueUri": "http://www.ama-assn.org/go/cpt|2024"
+                    "valueCanonical": "http://www.ama-assn.org/go/cpt|2024"
                 },
                 {
                     "name": "system-version",
-                    "valueUri": "http://hl7.org/fhir/sid/cvx|20231102"
+                    "valueCanonical": "http://hl7.org/fhir/sid/cvx|20231102"
                 },
                 {
                     "name": "system-version",
-                    "valueUri": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets|2024"
+                    "valueCanonical": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets|2024"
                 },
                 {
                     "name": "system-version",
-                    "valueUri": "http://hl7.org/fhir/sid/icd-10-cm|2024"
+                    "valueCanonical": "http://hl7.org/fhir/sid/icd-10-cm|2024"
                 },
                 {
                     "name": "system-version",
-                    "valueUri": "http://www.cms.gov/Medicare/Coding/ICD10|2024"
+                    "valueCanonical": "http://www.cms.gov/Medicare/Coding/ICD10|2024"
                 },
                 {
                     "name": "system-version",
-                    "valueUri": "http://www.nlm.nih.gov/research/umls/rxnorm|01022024"
+                    "valueCanonical": "http://www.nlm.nih.gov/research/umls/rxnorm|01022024"
                 },
                 {
                     "name": "system-version",
-                    "valueUri": "https://nahdo.org/sopt|9.2"
+                    "valueCanonical": "https://nahdo.org/sopt|9.2"
                 }
             ]
         },
@@ -191,7 +191,7 @@
         {
             "type": "composed-of",
             "display": "Preventive Care and Screening: Screening for Depression and Follow-Up PlanFHIR, 0.4.000",
-            "resource": "https://madie.cms.gov/Measure/CMS2FHIRPCSDepressionScreenAndFollowUp|0.4.000"
+            "resource": "https://madie.cms.gov/Measure/CMS2FHIRPCSDepressionScreenAndFollowUp|0.4.001"
         },
         {
             "type": "composed-of",
@@ -331,7 +331,7 @@
         {
             "type": "composed-of",
             "display": "Controlling High Blood PressureFHIR, 0.3.000",
-            "resource": "https://madie.cms.gov/Measure/CMS165FHIRControllingHighBloodPressure|0.3.000"
+            "resource": "https://madie.cms.gov/Measure/CMS165FHIRControllingHighBloodPressure|0.5.000"
         },
         {
             "type": "composed-of",

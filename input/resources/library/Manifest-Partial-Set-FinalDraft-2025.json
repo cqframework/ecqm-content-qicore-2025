@@ -191,7 +191,7 @@
         {
             "type": "composed-of",
             "display": "Preventive Care and Screening: Screening for Depression and Follow-Up PlanFHIR, 0.4.000",
-            "resource": "https://madie.cms.gov/Measure/CMS2FHIRPCSDepressionScreenAndFollowUp|0.4.000"
+            "resource": "https://madie.cms.gov/Measure/CMS2FHIRPCSDepressionScreenAndFollowUp|0.4.001"
         },
         {
             "type": "composed-of",
@@ -281,7 +281,7 @@
         {
             "type": "composed-of",
             "display": "Controlling High Blood PressureFHIR, 0.3.000",
-            "resource": "https://madie.cms.gov/Measure/CMS165FHIRControllingHighBloodPressure|0.3.000"
+            "resource": "https://madie.cms.gov/Measure/CMS165FHIRControllingHighBloodPressure|0.5.000"
         },
         {
             "type": "composed-of",
@@ -382,11 +382,6 @@
             "type": "composed-of",
             "display": "Core Clinical Data Elements HW Mortality FHIR, Draft based on 0.5.001",
             "resource": "https://madie.cms.gov/Measure/CMSFHIR844HybridHospitalWideMortality|Draft based on 0.5.001"
-        },
-        {
-            "type": "composed-of",
-            "display": "Oncology: Medical and Radiation Pain Intensity QuantifiedFHIR, 0.3.000",
-            "resource": "https://madie.cms.gov/Measure/OncologyPainIntensityQuantifiedFHIR|0.3.000"
         }
     ]
 }
