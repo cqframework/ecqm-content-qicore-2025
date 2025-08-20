@@ -1,9 +1,9 @@
 {
     "resourceType": "Library",
-    "id": "Manifest-Partial-Set-FinalDraft-2025",
+    "id": "Manifest-Partial-Set-Release-2025",
     "meta": {
-        "versionId": "6",
-        "lastUpdated": "2025-08-14T15:41:38.292-06:00",
+        "versionId": "2",
+        "lastUpdated": "2025-08-20T14:30:18.319-06:00",
         "profile": [
             "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-manifestlibrary"
         ]
@@ -745,6 +745,18 @@
                             {
                                 "url": "http://hl7.org/fhir/StructureDefinition/display",
                                 "valueString": "ValueSet Dental Tooth Extraction, 20220217"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "system-version",
+                    "valueCanonical": "http://www.ada.org/cdt|2023",
+                    "_valueCanonical": {
+                        "extension": [
+                            {
+                                "url": "http://hl7.org/fhir/StructureDefinition/display",
+                                "valueString": "CodeSystem Current Dental Terminology, 2023"
                             }
                         ]
                     }
@@ -10398,6 +10410,18 @@
                     }
                 },
                 {
+                    "name": "system-version",
+                    "valueCanonical": "https://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html|2022",
+                    "_valueCanonical": {
+                        "extension": [
+                            {
+                                "url": "http://hl7.org/fhir/StructureDefinition/display",
+                                "valueString": "CodeSystem Healthcare Service Location, 2022"
+                            }
+                        ]
+                    }
+                },
+                {
                     "name": "canonicalVersion",
                     "valueCanonical": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1248.119|20250211",
                     "_valueCanonical": {
@@ -10473,6 +10497,18 @@
                             {
                                 "url": "http://hl7.org/fhir/StructureDefinition/display",
                                 "valueString": "ValueSet Not Present On Admission or Documentation Insufficient to Determine, 20220415"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "system-version",
+                    "valueCanonical": "https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/HospitalAcqCond/Coding|2021",
+                    "_valueCanonical": {
+                        "extension": [
+                            {
+                                "url": "http://hl7.org/fhir/StructureDefinition/display",
+                                "valueString": "CodeSystem Present on Admission, 2021"
                             }
                         ]
                     }
@@ -13326,6 +13362,18 @@
                     }
                 },
                 {
+                    "name": "system-version",
+                    "valueCanonical": "http://terminology.hl7.org/CodeSystem/v3-RoleCode|3.0.0",
+                    "_valueCanonical": {
+                        "extension": [
+                            {
+                                "url": "http://hl7.org/fhir/StructureDefinition/display",
+                                "valueString": "CodeSystem RoleCode, 3.0.0"
+                            }
+                        ]
+                    }
+                },
+                {
                     "name": "canonicalVersion",
                     "valueCanonical": "http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1248.88|20230426",
                     "_valueCanonical": {
@@ -15697,7 +15745,7 @@
             "url": "http://hl7.org/fhir/StructureDefinition/cqf-directReferenceCode",
             "valueCoding": {
                 "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "version": "2023-02",
+                "version": "3.0.0",
                 "code": "ER",
                 "display": "Emergency room"
             }
@@ -15751,7 +15799,7 @@
             }
         ]
     },
-    "date": "2025-08-14T15:30:49-06:00",
+    "date": "2025-08-20T14:18:07-06:00",
     "publisher": "Clinical Quality Information WG",
     "contact": [
         {
@@ -17474,7 +17522,32 @@
         },
         {
             "type": "depends-on",
-            "resource": "http://www.ada.org/cdt",
+            "resource": "http://hl7.org/fhir/StructureDefinition/shareablecodesystem",
+            "_resource": {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/cqf-resourceType",
+                        "valueCode": "StructureDefinition"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "depends-on",
+            "resource": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/publishable-codesystem-cqfm",
+            "_resource": {
+                "extension": [
+                    {
+                        "url": "http://hl7.org/fhir/StructureDefinition/cqf-resourceType",
+                        "valueCode": "StructureDefinition"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "depends-on",
+            "display": "CodeSystem Current Dental Terminology, 2023",
+            "resource": "http://www.ada.org/cdt|2023",
             "_resource": {
                 "extension": [
                     {
@@ -25686,7 +25759,8 @@
         },
         {
             "type": "depends-on",
-            "resource": "https://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html",
+            "display": "CodeSystem Healthcare Service Location, 2022",
+            "resource": "https://www.cdc.gov/nhsn/cdaportal/terminology/codesystem/hsloc.html|2022",
             "_resource": {
                 "extension": [
                     {
@@ -25763,7 +25837,8 @@
         },
         {
             "type": "depends-on",
-            "resource": "https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/HospitalAcqCond/Coding",
+            "display": "CodeSystem Present on Admission, 2021",
+            "resource": "https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/HospitalAcqCond/Coding|2021",
             "_resource": {
                 "extension": [
                     {
@@ -28190,7 +28265,8 @@
         },
         {
             "type": "depends-on",
-            "resource": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+            "display": "CodeSystem RoleCode, 3.0.0",
+            "resource": "http://terminology.hl7.org/CodeSystem/v3-RoleCode|3.0.0",
             "_resource": {
                 "extension": [
                     {
